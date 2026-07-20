@@ -1,0 +1,422 @@
+{
+  "overview": [
+    {
+      "项目": "范围",
+      "结论": "美国20个重点项目 + 新加坡NUS/NTU 3个项目；结合原Excel主表与Web查询汇总"
+    },
+    {
+      "项目": "最强冲刺",
+      "结论": "Princeton MFin, MIT MFin, Baruch MFE, CMU MSCF, Stanford/Harvard统计"
+    },
+    {
+      "项目": "量化金融核心",
+      "结论": "Cornell ORIE FE, Columbia MAFN/MSFE, UChicago FinMath, NYU Courant/Tandon, UCLA MFE"
+    },
+    {
+      "项目": "性价比/匹配",
+      "结论": "Georgia Tech QCF, UIUC MSFE, Rutgers MQF, Duke Stats, NUS/NTU MFE"
+    },
+    {
+      "项目": "租房高风险城市",
+      "结论": "New York, Boston/Cambridge, Bay Area, Los Angeles, Singapore"
+    },
+    {
+      "项目": "申请策略",
+      "结论": "冲刺8-10所、匹配8-10所、保底3-5所；金融工程与统计项目文书主线需分开"
+    },
+    {
+      "项目": "数据说明",
+      "结论": "官网信息按2026-06-05可查页面整理；未在官网同页明确列出的学费/DDL以“需核验/估算”标记"
+    }
+  ],
+  "materials": [
+    {
+      "材料类别": "成绩单/学历",
+      "具体内容": "中英文成绩单、在读证明/毕业证学位证、GPA说明、排名证明（如有）",
+      "适用项目": "所有项目",
+      "备注": "需尽早确认是否要求官方寄送或WES/第三方认证"
+    },
+    {
+      "材料类别": "简历",
+      "具体内容": "1页英文CV/Resume，突出数学、编程、金融、科研、实习、竞赛",
+      "适用项目": "所有项目",
+      "备注": "MIT等明确偏好1页；量化项目避免泛泛金融履历"
+    },
+    {
+      "材料类别": "SOP/PS",
+      "具体内容": "项目动机、量化能力证据、职业目标、为何该项目",
+      "适用项目": "所有项目",
+      "备注": "Columbia/Princeton等可能同时要求Academic Statement和Personal Statement"
+    },
+    {
+      "材料类别": "推荐信",
+      "具体内容": "通常2-3封，优先数学/统计/CS/金融工程课程老师或量化实习主管",
+      "适用项目": "所有项目",
+      "备注": "Cornell 2封必需/3封更佳；Princeton/MIT/CMU通常3封"
+    },
+    {
+      "材料类别": "考试",
+      "具体内容": "GRE/GMAT、TOEFL/IELTS/DET按项目政策",
+      "适用项目": "按项目",
+      "备注": "GRE可选不等于没用；顶级quant项目强分数仍有信号价值"
+    },
+    {
+      "材料类别": "视频/面试",
+      "具体内容": "视频essay、异步video interview、invite interview、数学/量化assessment",
+      "适用项目": "MIT、Cornell、CMU、Baruch、部分NYU/UCLA/NUS/NTU",
+      "备注": "提前准备概率、线代、简历项目、金融市场基础和behavioral"
+    },
+    {
+      "材料类别": "作品/补充材料",
+      "具体内容": "GitHub、研究论文、量化策略项目、课程项目、Kaggle/竞赛",
+      "适用项目": "非强制但推荐",
+      "备注": "不要堆材料，选能证明能力的2-3项"
+    },
+    {
+      "材料类别": "资金/签证",
+      "具体内容": "存款证明、I-20/DS-2019资料、护照、租房预算",
+      "适用项目": "录取后",
+      "备注": "美国城市租金差异巨大，NYC/Bay Area/Boston需更高预算"
+    }
+  ],
+  "timeline": [
+    {
+      "月份": "6-7月",
+      "动作": "确定项目池；补齐数学/统计/编程先修；整理英文简历；开成绩单与排名证明",
+      "重点项目": "所有项目"
+    },
+    {
+      "月份": "8月",
+      "动作": "定稿PS/SOP主线；推荐人沟通；准备GRE/GMAT/TOEFL/IELTS如需",
+      "重点项目": "Princeton/CMU/Cornell/MIT/Baruch优先"
+    },
+    {
+      "月份": "9-10月",
+      "动作": "完成第一批网申账号、文书初稿、推荐信系统；准备视频题/面试题库",
+      "重点项目": "MIT、Baruch、CMU、Cornell、UChicago、NYU"
+    },
+    {
+      "月份": "11-12月",
+      "动作": "提交早轮/第一轮；重点检查成绩单、推荐信、考试送分、资金证明",
+      "重点项目": "Princeton、Baruch、CMU R1、Cornell、Stanford/Harvard等统计项目"
+    },
+    {
+      "月份": "1月",
+      "动作": "提交MIT/Columbia/UCB/UCLA/统计项目；跟进面试与补材料",
+      "重点项目": "MIT、Columbia、Berkeley、UCLA、Duke/Yale"
+    },
+    {
+      "月份": "2-3月",
+      "动作": "提交第二轮/补申；新加坡NUS/NTU常见窗口跟进",
+      "重点项目": "CMU R2、UChicago、NUS、NTU"
+    },
+    {
+      "月份": "4-5月",
+      "动作": "Columbia MAFN final及rolling项目收尾；比较offer、押金、签证/住宿",
+      "重点项目": "Columbia、NYU、Rutgers、USC、UIUC"
+    }
+  ],
+  "sources": [
+    {
+      "来源": "Princeton MFin apply",
+      "URL": "https://bcf.princeton.edu/academic-programs/master-in-finance/apply-for-the-master-in-finance-program/"
+    },
+    {
+      "来源": "Princeton graduate tuition",
+      "URL": "https://gradschool.princeton.edu/financial-support/financial-support-model/funding-calendar-university-rates-costs"
+    },
+    {
+      "来源": "Baruch MFE application",
+      "URL": "https://mfe.baruch.cuny.edu/application-process/"
+    },
+    {
+      "来源": "MIT MFin admissions",
+      "URL": "https://mitsloan.mit.edu/mfin/admissions/how-to-apply"
+    },
+    {
+      "来源": "MIT MFin tuition",
+      "URL": "https://mitsloan.mit.edu/mfin/admissions/tuition-and-financial-aid"
+    },
+    {
+      "来源": "Cornell ORIE MEng admissions",
+      "URL": "https://www.duffield.cornell.edu/orie/meng/meng-admissions-requirements-ithaca/"
+    },
+    {
+      "来源": "Columbia MAFN admissions",
+      "URL": "https://www.math.columbia.edu/mafn/admissions-2/"
+    },
+    {
+      "来源": "Berkeley IEOR MEng apply",
+      "URL": "https://ieor.berkeley.edu/academics/master-of-engineering/how-to-apply/"
+    },
+    {
+      "来源": "CMU MSCF apply",
+      "URL": "https://www.cmu.edu/mscf/admissions/apply.html"
+    },
+    {
+      "来源": "UChicago FinMath apply",
+      "URL": "https://finmath.uchicago.edu/admissions/apply/"
+    },
+    {
+      "来源": "NYU Tandon MSFE",
+      "URL": "https://engineering.nyu.edu/academics/programs/financial-engineering-ms"
+    },
+    {
+      "来源": "NYU Courant Math Finance",
+      "URL": "https://math.nyu.edu/financial_mathematics/"
+    },
+    {
+      "来源": "UCLA MFE",
+      "URL": "https://www.anderson.ucla.edu/degrees/master-of-financial-engineering"
+    },
+    {
+      "来源": "Georgia Tech QCF",
+      "URL": "https://qcf.gatech.edu/"
+    },
+    {
+      "来源": "Rutgers MQF",
+      "URL": "https://www.business.rutgers.edu/masters-quantitative-finance"
+    },
+    {
+      "来源": "USC MSFE",
+      "URL": "https://viterbigradadmission.usc.edu/programs/masters/msprograms/industrial-systems-engineering/ms-financial-engineering/"
+    },
+    {
+      "来源": "UIUC MSFE",
+      "URL": "https://msfe.illinois.edu/"
+    },
+    {
+      "来源": "Stanford MS Statistics",
+      "URL": "https://statistics.stanford.edu/academics/ms-statistics"
+    },
+    {
+      "来源": "Harvard Statistics",
+      "URL": "https://statistics.fas.harvard.edu/"
+    },
+    {
+      "来源": "Yale Statistics and Data Science",
+      "URL": "https://statistics.yale.edu/"
+    },
+    {
+      "来源": "Duke Statistical Science",
+      "URL": "https://stat.duke.edu/"
+    },
+    {
+      "来源": "NUS MSc Financial Engineering",
+      "URL": "https://rmi.nus.edu.sg/mfe/"
+    },
+    {
+      "来源": "NUS MSc Statistics",
+      "URL": "https://www.stat.nus.edu.sg/prospective-students/graduate-programme/msc-in-statistics/"
+    },
+    {
+      "来源": "NTU MSc Financial Engineering",
+      "URL": "https://www.ntu.edu.sg/business/admissions/graduate-studies/msc-financial-engineering"
+    }
+  ],
+  "originalIndex": [
+    {
+      "学校名称": "Princeton University\n普林斯顿大学",
+      "学院名称": "Bendheim Center for Finance\n本德海姆金融中心",
+      "项目名称": "Master of Finance (M.Fin.)\n金融硕士(M.Fin.)",
+      "项目时长": "2年",
+      "先修课程": "At a minimum, we expect applicants to be familiar in mathematics with linear algebra, multivariable calculus, differential equations, and probability and statistics at the level of an intermediate undergraduate course.",
+      "是否面试": "是",
+      "项目链接": "https://bcf.princeton.edu/master-in-finance/",
+      "申请要求": "https://bcf.princeton.edu/academic-programs/master-in-finance/apply-for-the-master-in-finance-program/",
+      "录取数据网址": "https://bcf.princeton.edu/academic-programs/master-in-finance/common-questions/",
+      "备注": "\n\n1.项目每年招 30-35人左右，25fall入学33学生，中国人占尽60%，这两年录取中国人比例逐步上升。中国学生 陆本偏好清北（尤其偏好北大光华（去年录取四五个），其次是清华，上交），海本偏向Qstop50英美顶尖院校；\n\n2.该项目专注量化领域，聚焦算法交易，量化资产管理，衍生品定价，因此看重申请者高阶量化课程，录取者背景多来自于数理基础强大申请者；偏好数学、工程、量化经济学背景；\n\n3.多数申请者有2-3段头部机构量化实习，垂直领域量化金融实习建议至少6个月以上，40%录取者有全职工作经验；案例：本科康奈尔大学经济计算机双学位，GPA3.85,2，两段校内计算机专业，4段量化实习累积尽10个月； "
+    },
+    {
+      "学校名称": "Baruch College",
+      "学院名称": "Weissman School of Arts & Sciences",
+      "项目名称": "MS in Financial Engineering ",
+      "项目时长": "3学期",
+      "先修课程": "Calculus (two semesters)\nProbability (one semester)\nLinear Algebra (one semester)\nC++ (one semester or certificate)\nFinance (one semester, or relevant work experience)",
+      "是否面试": "是",
+      "项目链接": "https://mfe.baruch.cuny.edu/",
+      "申请要求": "https://mfe.baruch.cuny.edu/application-process/",
+      "录取数据网址": "https://mfe.baruch.cuny.edu/student-profiles-fall-2024/",
+      "备注": "1.项目每年招25-30人左右，25fall526名申请者，录取26名学生，小班教学；\n2.录取BG偏好理工背景，数学和工程背景占比50%，其余录取的学生来自物理、统计等，侧重技能Python，C++为主；\n3.学校不强制有全职工程经验，但录取学生平均累积10-12个月左右实习或工作经验。学校在审核过程中是少有的技术面，主要考察计算机/数学能力技术能力（类似于求职技术面），有全职工作经验在面试环节能呈现技术层面竞争力；\n案例：北大材料科学与工程，绩点3.8+，GRE325+，本科期间修北大数学前置课程和美国院校线上前置课程，毕业后GAP一年基金公司做量化研究员‌交易员岗位；"
+    },
+    {
+      "学校名称": "Massachusetts Institute of Technology\n麻省理工学院",
+      "学院名称": "SLOAN SCHOOL OF MANAGEMENT\n斯隆管理学院",
+      "项目名称": "Master of Finance\n金融硕士",
+      "项目时长": "12- and 18-Month Options",
+      "先修课程": "Algebra\nMultivariable Calculus\nProbability Statistics",
+      "是否面试": "是",
+      "项目链接": "http://mitsloan.mit.edu/mfin/ ",
+      "申请要求": "https://mitsloan.mit.edu/mfin#apply",
+      "录取数据网址": "https://mitsloan.mit.edu/mfin/apply/class-profile",
+      "备注": "1.项目size相对比较大，25届127名申请者入学。对国际学生门槛要求越来越高，陆本优先C9院，平均GPA3.9，偏好海本学生；\n2.录取学生平均工作经验13个月，偏好全职工程经验，本科应届生录取者至少大半年量化实习经验；\n3.录取学生本科背景科学/数学31%，计算机19%、经济商业30%，近两年录取STEM背景占比80%+\n录取：LSE数学经济学，GPA3.8 ，两段强量化，kaggle竞赛银牌，实习强推荐；北大光华金融专业，GPA3.7，近一年实习经验；"
+    },
+    {
+      "学校名称": "Cornell University\n康奈尔大学 ",
+      "学院名称": "College of Engineering\n工学院",
+      "项目名称": "Cornell Financial Engineering Manhattan(M.Eng Degree)\n康奈尔金融工程",
+      "项目时长": "2 semester +1 semester Manhattan Campus",
+      "先修课程": "Two semesters of calculus-based probability, statistics, and/or stochastic processes, similar in content and rigor to Cornell courses ENGRD 2700, ORIE 3500 and/or ORIE 3510. Courses in which probability and statistical methods are used, but where theory is not the primary focus are not acceptable substitutes, nor are professional exam credentials (e.g., CFA, FRM).\nAn introductory finance course. Courses in economics and accounting are not acceptable substitutes.\nStrongly recommended: A course in differential equations, similar in content and rigor to Cornell course MATH 2930.\nStrongly recommended: Proficiency with R and/or Python.",
+      "是否面试": "Video ",
+      "项目链接": "https://www.orie.cornell.edu/orie/programs",
+      "申请要求": "https://www.orie.cornell.edu/orie/cfem",
+      "录取数据网址": "https://www.orie.cornell.edu/orie/programs/meng-degree-ithaca/admissions",
+      "备注": ""
+    },
+    {
+      "学校名称": "Columbia University\n哥伦比亚大学",
+      "学院名称": "Graduate School of Arts and Sciences\n艺术与科学研究生院",
+      "项目名称": "MA in Mathematical Finance\n数学金融学硕士",
+      "项目时长": " two or three semesters,",
+      "先修课程": "calculus, linear algebra, elementary differential equations, probability, and statistics, and a programming language.",
+      "是否面试": "否",
+      "项目链接": "http://www.math.columbia.edu/mafn/",
+      "申请要求": "http://www.math.columbia.edu/mafn/admissions/application-procedures/",
+      "录取数据网址": "https://www.math.columbia.edu/mafn/admissions/admissions-statistics/",
+      "备注": ""
+    },
+    {
+      "学校名称": "University of California,Berkeley \n加州大学伯克利分校",
+      "学院名称": "College of Engineering\n工程学院",
+      "项目名称": "Master of Engineering program in Industrial Engineering & Operations Research\nConcentrations： Management Science & Engineering/Fin Tech/Interllectual Property and Entrepreneurship Strategy\n工业工程与运筹学硕士学位\n专业方向:管理科学与工程/金融科技/知识产权与创业战略",
+      "项目时长": "one year",
+      "先修课程": "To be successful in this program, entering students are expected to have a basic understanding of probability, statistics and optimization, as well as fluency in a programming language.\n\nSpecifically, the FinTech concentration requires college level programming proficiency in Python, C, C++, and/or Java. Students will find knowledge and proficiency in S and R also beneficial.\n",
+      "是否面试": "case by case",
+      "项目链接": "https://ieor.berkeley.edu/academics/master-of-engineering/",
+      "申请要求": "https://ieor.berkeley.edu/academics/master-of-engineering/how-to-apply/",
+      "录取数据网址": "NA",
+      "备注": "1.UCB的MFE class size每年80人总有，25025年入学84名学生，在TOP量化金融里面属于属于中位数；\n2.偏向录取海本学而思，陆本基本上只会录取清北以及港前三，整体录取难度偏大；\n3.该项目只开设春季项目，录取者工作经验平均2.5年左右，平均年龄25岁，高质量量化经验有优势，非常看重全职工作经验；案例：北大经院 GPA3.8，本科毕业工作一年，大学期间数学竞赛获奖丰富，量化实习经验多段；"
+    },
+    {
+      "学校名称": "Carnegie Mellon University",
+      "学院名称": "Tepper School of Business",
+      "项目名称": "Master of Science in Computational Finance",
+      "项目时长": "3学期",
+      "先修课程": "Admissions prerequisites\nCalculus I and II\nLinear algebra\nCalculus-based probability\nA minimum of one semester of an object-oriented programming language course (C++, Java, Python, C#). More than one semester is preferred.",
+      "是否面试": "是",
+      "项目链接": "https://www.cmu.edu/mscf/news/evaluating-masters-in-financial-engineering-programs.html",
+      "申请要求": "https://www.cmu.edu/mscf/admissions/index.html",
+      "录取数据网址": "https://www.cmu.edu/mscf/admissions/class-profile.html",
+      "备注": "1.项目class size为108人，录取size相对较大，对国际学生友好，国际学生占比78%；项目分为匹茨堡校区和纽约校区，纽约占52，匹茨堡占56人；\n2. 该项目工作经验虽然非必需，但具有相关工作经验会被强烈建议并优先考虑，建议有一年工作经验申请更有竞争力；\n3.学术背景方面强烈偏好数学、统计学、计算机科学、工程或金融等相关领域的本科学位占比最高；华大数学专业，GPA3.86,，3段量化实习，其中一段三中一华，两个量化竞赛金牌，银牌奖项；"
+    },
+    {
+      "学校名称": "University of Chicago",
+      "学院名称": "Division of the Physical Sciences",
+      "项目名称": "MS in Financial Mathematics",
+      "项目时长": "15个月",
+      "先修课程": "Mathematics\nAll candidates should have a solid background in mathematics. The minimal math prerequisites are the successful completion of at least multivariable calculus, linear algebra, and probability.\nComputer Programming\nIn addition to academic mathematical training and work experience, candidates must have some level of computer programming skills, ideally in either C++, or Python, or other object-oriented languages. ",
+      "是否面试": "是",
+      "项目链接": "https://finmath.uchicago.edu/",
+      "申请要求": "https://finmath.uchicago.edu/admissions/",
+      "录取数据网址": "https://finmath.uchicago.edu/admissions/class-profile/",
+      "备注": "1.项目class size为108人，录取size相对较大 2.建议申请者有深厚的数学基础，量化以及编程经验；3，不强制强制工作经验但有丰富实习经验更有优势"
+    }
+  ],
+  "webSummary": [
+    {
+      "学校": "Princeton University",
+      "项目": "Master in Finance (M.Fin.)",
+      "最新公布学费（USD）": "2025-26 regular tuition $65,210 + SHP $3,800 = $69,010/年",
+      "学制": "2年（少量学生可压缩为1年）",
+      "申请时间/DDL（按官网最新可查）": "Fall 2026 DDL: 2025-12-15 23:59 EST",
+      "核心申请要求（精简）": "成绩单（含数学课）、Personal Statement、Academic Statement of Purpose、3封推荐信；所有申请者需参加数学测试；建议数理背景强",
+      "英语/GRE/GMAT": "GRE/GMAT可选；英语不达豁免者需TOEFL/IELTS/DET",
+      "面试": "官网未写常规面试；有数学assessment",
+      "官方来源1": "https://bcf.princeton.edu/academic-programs/master-in-finance/apply-for-the-master-in-finance-program/",
+      "官方来源2": "https://gradschool.princeton.edu/financial-support/financial-support-model/funding-calendar-university-rates-costs",
+      "备注": "学费按研究生院2025-26标准；2026-27暂未公布"
+    },
+    {
+      "学校": "Baruch College",
+      "项目": "MS in Financial Engineering",
+      "最新公布学费（USD）": "全项目学费：NY居民$27,675；州外/国际生$42,000",
+      "学制": "3学期",
+      "申请时间/DDL（按官网最新可查）": "Fall 2026: Round 1 2025-11-01；Round 2 2025-12-01",
+      "核心申请要求（精简）": "3封推荐信；先修含2学期Calculus、1学期Probability、1学期Linear Algebra、1学期C++、1学期Finance/相关工作经验",
+      "英语/GRE/GMAT": "GRE/GMAT不再要求，改为Quant Background Assessment (QBA)",
+      "面试": "是",
+      "官方来源1": "https://mfe.baruch.cuny.edu/",
+      "官方来源2": "https://mfe.baruch.cuny.edu/about/",
+      "备注": "官网FAQ仍写旧学费版本；about页显示较新的全项目学费"
+    },
+    {
+      "学校": "MIT",
+      "项目": "Master of Finance",
+      "最新公布学费（USD）": "2025-26: 12个月$93,834；18个月$128,820",
+      "学制": "12个月或18个月",
+      "申请时间/DDL（按官网最新可查）": "2026 entry官网显示已截止；OGE页面列出的DDL为2026-01-05",
+      "核心申请要求（精简）": "成绩单、3封推荐信、1页Resume、3个short answers、2个video questions；建议具备线代/多元微积分/概率/统计与Python",
+      "英语/GRE/GMAT": "GRE/GMAT可选但强烈建议提交；TOEFL/IELTS不要求申请时提交",
+      "面试": "面试为invite-only，且为必经环节",
+      "官方来源1": "https://mitsloan.mit.edu/mfin/admissions/how-to-apply",
+      "官方来源2": "https://mitsloan.mit.edu/mfin/admissions/tuition-and-financial-aid",
+      "备注": "MIT页面对英语要求与其他项目不同，MFin申请阶段不要求TOEFL/IELTS"
+    },
+    {
+      "学校": "Cornell University",
+      "项目": "M.Eng. in ORIE – Financial Engineering Concentration",
+      "最新公布学费（USD）": "2025-26 M.Eng. tuition $71,266/年；Graduate Student Activity Fee $110/年",
+      "学制": "3学期（Fall-Spring-Fall，第三学期在Manhattan）",
+      "申请时间/DDL（按官网最新可查）": "Fall admittance: 2025-12-01",
+      "核心申请要求（精简）": "简历、SOP、Personal Statement、2封必需/3封更佳推荐；异步视频面试；FE方向额外要求两学期概率统计/随机过程、intro finance，强烈建议微分方程与Python",
+      "英语/GRE/GMAT": "GRE/GMAT二选一，GRE preferred；英语按Cornell研究生院要求",
+      "面试": "异步video interview",
+      "官方来源1": "https://www.duffield.cornell.edu/orie/meng/meng-admissions-requirements-ithaca/",
+      "官方来源2": "https://bursar.cornell.edu/students-parents/tuition-rates-and-fees",
+      "备注": "此项目不是Cornell Tech，是ORIE M.Eng.下的Financial Engineering concentration"
+    },
+    {
+      "学校": "Columbia University",
+      "项目": "MA in Mathematical Finance (MAFN)",
+      "最新公布学费（USD）": "2025-26: $47,194/学期（Residence Unit，≤20 points）",
+      "学制": "2或3学期",
+      "申请时间/DDL（按官网最新可查）": "Fall 2026: early decision 2026-01-15；final deadline 2026-05-01",
+      "核心申请要求（精简）": "成绩单、Academic Statement of Purpose、Personal Statement、3封学术推荐信；需具备calculus/linear algebra/ODE/probability/statistics/programming",
+      "英语/GRE/GMAT": "GRE/GMAT强烈建议但非必需；国际生英语最低要求见GSAS（TOEFL iBT 100[旧标尺]/IELTS 7.5）",
+      "面试": "否",
+      "官方来源1": "https://www.math.columbia.edu/mafn/admissions-2/",
+      "官方来源2": "https://www.gsas.columbia.edu/content/cost-attendance",
+      "备注": "GSAS学费按学期计；总费用取决于修读学期和points"
+    },
+    {
+      "学校": "UC Berkeley",
+      "项目": "M.Eng. in IEOR (可选FinTech concentration)",
+      "最新公布学费（USD）": "2025-26估算：居民学费与费用$50,446.50；非居民$63,305.50；含SHIP后总学费+费约$58,576.50/$71,435.50",
+      "学制": "1年",
+      "申请时间/DDL（按官网最新可查）": "Fall 2026 DDL: 2026-01-07（Graduate Division项目页）",
+      "核心申请要求（精简）": "在线申请、文书、推荐信、成绩单；IEOR/MEng要求概率统计/优化/编程基础，FinTech方向要求Python/C/C++/Java等编程能力",
+      "英语/GRE/GMAT": "GRE要求Yes（IEOR MEng项目页/申请页）；国际生需满足英语要求",
+      "面试": "原表写case by case，官网未突出统一面试要求",
+      "官方来源1": "https://ieor.berkeley.edu/academics/master-of-engineering/how-to-apply/",
+      "官方来源2": "https://funginstitute.berkeley.edu/newadmit/resources/",
+      "备注": "你表里这项更接近IEOR MEng/FinTech方向，不是Berkeley Haas/UCB MFE"
+    },
+    {
+      "学校": "Carnegie Mellon University",
+      "项目": "MS in Computational Finance (MSCF)",
+      "最新公布学费（USD）": "2025-26 tuition $69,000；fees $1,006",
+      "学制": "3学期",
+      "申请时间/DDL（按官网最新可查）": "Round 1: 2025-12-01；Round 2: 2026-03-01",
+      "核心申请要求（精简）": "在线申请、1-2页Resume、正式成绩单/学位证明、2篇short essays+90秒video essay、3封推荐信",
+      "英语/GRE/GMAT": "GRE/GMAT二选一必需；国际生通常需Duolingo/TOEFL/IELTS（满足豁免条件可免）",
+      "面试": "是，invite-only",
+      "官方来源1": "https://www.cmu.edu/mscf/admissions/apply.html",
+      "官方来源2": "https://www.cmu.edu/sfs/tuition/graduate/index.html",
+      "备注": "官网明确会核验申请材料真实性"
+    },
+    {
+      "学校": "University of Chicago",
+      "项目": "MS in Financial Mathematics",
+      "最新公布学费（USD）": "2025-26按课程计费：每门100-unit课程$7,862；另有Student Services Fee $503/季度，USHIP 2025为$1,715/季度",
+      "学制": "15个月",
+      "申请时间/DDL（按官网最新可查）": "Round 1: 2026-01-08；Round 2: 2026-03-26",
+      "核心申请要求（精简）": "Resume/CV、所有成绩单、3个candidate statements、2个video statements、3封推荐信（至少1封professional）",
+      "英语/GRE/GMAT": "需较强数学与编程基础；英语要求按大学规定，常见最低TOEFL 90 / IELTS 7.0；官网不强调GRE必需",
+      "面试": "原表写是，但当前requirements页更强调video statements与材料，不突出常规面试",
+      "官方来源1": "https://finmath.uchicago.edu/admissions/application-requirements/",
+      "官方来源2": "https://finmath.uchicago.edu/admissions/tuition/",
+      "备注": "总学费需按实际修课门数计算，官网以每100-unit课程计价"
+    }
+  ],
+  "sourceDate": "2026-06-05"
+}

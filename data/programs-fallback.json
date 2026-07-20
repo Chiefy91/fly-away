@@ -1,0 +1,3374 @@
+[
+  {
+    "id": "hku-mscs",
+    "region": "香港",
+    "city": "中国香港",
+    "university": "香港大学",
+    "school": "计算与数据科学学院",
+    "program": "计算机科学理学硕士",
+    "category": "计算机与数据",
+    "background": "强先修要求",
+    "cycle": "2026/27 入学",
+    "intake": "2026 年 9 月",
+    "duration": "全日制 1 年",
+    "updated": "2026-07-15",
+    "academic": "认可院校学士学位或同等资格；可能要求资格考试",
+    "language": "非英语授课背景需满足港大研究生英语要求",
+    "tests": "GRE / GMAT 未列为必需",
+    "prerequisites": "不同方向对计算机基础的侧重不同",
+    "deadline": "主轮 2025-12-01；清算轮 2026-04-30",
+    "deadlineNote": "2026/27 申请已截止",
+    "requirements": [
+      {
+        "label": "学术背景",
+        "value": "相关学位优先",
+        "level": 78
+      },
+      {
+        "label": "英语要求",
+        "value": "校级标准",
+        "level": 61
+      },
+      {
+        "label": "标化考试",
+        "value": "非必需",
+        "level": 18
+      }
+    ],
+    "documents": [
+      "成绩单",
+      "学位证明",
+      "个人简历",
+      "英语成绩（如适用）"
+    ],
+    "notes": [
+      "个人陈述为可选材料",
+      "推荐信在申请阶段通常无需提交",
+      "设有多个专业方向"
+    ],
+    "source": "https://master.cds.hku.hk/msccs/admission/application-details/",
+    "direction": "计算机与数据",
+    "tuition": "官网最新费用页为准",
+    "applicationRequirements": "认可院校学士学位或同等资格；可能要求资格考试",
+    "interview": "以项目当年申请系统为准",
+    "rentBudget": "暂未收录",
+    "positioning": "待结合个人背景判断",
+    "sources": [
+      {
+        "label": "项目官网 / 招生要求",
+        "url": "https://master.cds.hku.hk/msccs/admission/application-details/",
+        "kind": "项目官网",
+        "year": "2026/27 入学"
+      }
+    ],
+    "sourceLabel": "Fly Away 官方页面核验",
+    "sourcePayload": {
+      "首批核验项目": {
+        "source": "https://master.cds.hku.hk/msccs/admission/application-details/",
+        "updated": "2026-07-15"
+      },
+      "qsRank": "11",
+      "qsEdition": "2027",
+      "verificationLevel": "深度核验",
+      "recordType": "项目"
+    }
+  },
+  {
+    "id": "hku-msai",
+    "region": "香港",
+    "city": "中国香港",
+    "university": "香港大学",
+    "school": "数学系",
+    "program": "人工智能理学硕士",
+    "category": "计算机与数据",
+    "background": "强先修要求",
+    "cycle": "2026/27 入学",
+    "intake": "2026 年 9 月",
+    "duration": "全日制 1 年",
+    "updated": "2026-07-15",
+    "academic": "学士学位或同等资格",
+    "language": "需满足港大研究生英语要求",
+    "tests": "GRE / GMAT 未列为必需",
+    "prerequisites": "线性代数、微积分、概率、统计与编程知识",
+    "deadline": "主轮 2025-12-01；第二轮 2026-02-09",
+    "deadlineNote": "2026/27 申请已截止",
+    "requirements": [
+      {
+        "label": "学术背景",
+        "value": "量化先修明确",
+        "level": 90
+      },
+      {
+        "label": "英语要求",
+        "value": "校级标准",
+        "level": 61
+      },
+      {
+        "label": "标化考试",
+        "value": "非必需",
+        "level": 18
+      }
+    ],
+    "documents": [
+      "成绩单",
+      "学位证明",
+      "英语成绩（如适用）",
+      "个人材料"
+    ],
+    "notes": [
+      "官方明确列出五类先修知识",
+      "申请按轮次审核",
+      "满足最低要求不代表录取"
+    ],
+    "source": "https://www.mscai.hku.hk/admissions/",
+    "direction": "计算机与数据",
+    "tuition": "官网最新费用页为准",
+    "applicationRequirements": "学士学位或同等资格",
+    "interview": "以项目当年申请系统为准",
+    "rentBudget": "暂未收录",
+    "positioning": "待结合个人背景判断",
+    "sources": [
+      {
+        "label": "项目官网 / 招生要求",
+        "url": "https://www.mscai.hku.hk/admissions/",
+        "kind": "项目官网",
+        "year": "2026/27 入学"
+      }
+    ],
+    "sourceLabel": "Fly Away 官方页面核验",
+    "sourcePayload": {
+      "首批核验项目": {
+        "source": "https://www.mscai.hku.hk/admissions/",
+        "updated": "2026-07-15"
+      },
+      "qsRank": "11",
+      "qsEdition": "2027",
+      "verificationLevel": "深度核验",
+      "recordType": "项目"
+    }
+  },
+  {
+    "id": "hkust-bdt",
+    "region": "香港",
+    "city": "中国香港",
+    "university": "香港科技大学",
+    "school": "工学院计算机科学与工程系 / 理学院数学系",
+    "program": "大数据科技理学硕士",
+    "category": "计算机与数据",
+    "background": "量化背景",
+    "cycle": "2026/27 入学",
+    "intake": "2026 年 9 月",
+    "duration": "全日制 1 年",
+    "updated": "2026-07-15",
+    "academic": "计算机工程、计算机科学、数学或相关领域学士学位；其他专业需相关工作经验",
+    "language": "IELTS 6.5（各项 5.5）；TOEFL 按考试日期适用新旧分制",
+    "tests": "GRE / GMAT 未列为必需",
+    "prerequisites": "计算机、数学或相关 IT / 数学工作经验",
+    "deadline": "第一轮 2025-12-01；第二轮 2026-03-01",
+    "deadlineNote": "2026/27 申请已截止",
+    "requirements": [
+      {
+        "label": "学术背景",
+        "value": "相关学位 / 经历",
+        "level": 84
+      },
+      {
+        "label": "英语要求",
+        "value": "IELTS 6.5",
+        "level": 66
+      },
+      {
+        "label": "标化考试",
+        "value": "非必需",
+        "level": 18
+      }
+    ],
+    "documents": [
+      "成绩单",
+      "学位证明",
+      "英语成绩（如适用）",
+      "工作经历证明（跨专业时）"
+    ],
+    "notes": [
+      "滚动审核，官方建议尽早申请",
+      "由计算机系与数学系联合开设",
+      "2026/27 项目信息已发布"
+    ],
+    "source": "https://prog-crs.hkust.edu.hk/pgprog/2026-27/msc-bdt/",
+    "direction": "计算机与数据",
+    "tuition": "官网最新费用页为准",
+    "applicationRequirements": "计算机工程、计算机科学、数学或相关领域学士学位；其他专业需相关工作经验",
+    "interview": "以项目当年申请系统为准",
+    "rentBudget": "暂未收录",
+    "positioning": "待结合个人背景判断",
+    "sources": [
+      {
+        "label": "项目官网 / 招生要求",
+        "url": "https://prog-crs.hkust.edu.hk/pgprog/2026-27/msc-bdt/",
+        "kind": "项目官网",
+        "year": "2026/27 入学"
+      }
+    ],
+    "sourceLabel": "Fly Away 官方页面核验",
+    "sourcePayload": {
+      "首批核验项目": {
+        "source": "https://prog-crs.hkust.edu.hk/pgprog/2026-27/msc-bdt/",
+        "updated": "2026-07-15"
+      },
+      "qsRank": "33",
+      "qsEdition": "2027",
+      "verificationLevel": "深度核验",
+      "recordType": "项目"
+    }
+  },
+  {
+    "id": "cuhk-mscba",
+    "region": "香港",
+    "city": "中国香港",
+    "university": "香港中文大学",
+    "school": "商学院",
+    "program": "商业分析理学硕士",
+    "category": "商科与管理",
+    "background": "跨专业友好",
+    "cycle": "2026/27 入学",
+    "intake": "2026 年 9 月",
+    "duration": "全日制 1 年",
+    "updated": "2026-07-15",
+    "academic": "认可大学学士学位，通常二等荣誉或平均成绩 B 及以上",
+    "language": "TOEFL iBT 79 / IELTS 6.5，或符合英语授课等豁免条件",
+    "tests": "GMAT / GRE 非必需，但良好成绩可增强申请",
+    "prerequisites": "不限本科专业；量化能力有助于课程学习",
+    "deadline": "早轮 2025-08-01；最终 2026-03-31",
+    "deadlineNote": "滚动录取，2026/27 已截止",
+    "requirements": [
+      {
+        "label": "学术背景",
+        "value": "二等荣誉 / B",
+        "level": 72
+      },
+      {
+        "label": "英语要求",
+        "value": "IELTS 6.5",
+        "level": 66
+      },
+      {
+        "label": "标化考试",
+        "value": "可选加分",
+        "level": 42
+      }
+    ],
+    "documents": [
+      "成绩单",
+      "学位证明",
+      "英语成绩（如适用）",
+      "两位推荐人"
+    ],
+    "notes": [
+      "GMAT / GRE 与工作经验均非强制",
+      "可能受邀参加面试",
+      "项目采用滚动审核"
+    ],
+    "source": "https://masters.bschool.cuhk.edu.hk/programmes/mscba/admissions-2/",
+    "direction": "商科与管理",
+    "tuition": "官网最新费用页为准",
+    "applicationRequirements": "认可大学学士学位，通常二等荣誉或平均成绩 B 及以上",
+    "interview": "以项目当年申请系统为准",
+    "rentBudget": "暂未收录",
+    "positioning": "待结合个人背景判断",
+    "sources": [
+      {
+        "label": "项目官网 / 招生要求",
+        "url": "https://masters.bschool.cuhk.edu.hk/programmes/mscba/admissions-2/",
+        "kind": "项目官网",
+        "year": "2026/27 入学"
+      }
+    ],
+    "sourceLabel": "Fly Away 官方页面核验",
+    "sourcePayload": {
+      "首批核验项目": {
+        "source": "https://masters.bschool.cuhk.edu.hk/programmes/mscba/admissions-2/",
+        "updated": "2026-07-15"
+      },
+      "qsRank": "18",
+      "qsEdition": "2027",
+      "verificationLevel": "深度核验",
+      "recordType": "项目"
+    }
+  },
+  {
+    "id": "nus-mcomp",
+    "region": "新加坡",
+    "city": "新加坡",
+    "university": "新加坡国立大学",
+    "school": "计算机学院",
+    "program": "计算机硕士（通用方向）",
+    "category": "计算机与数据",
+    "background": "跨专业友好",
+    "cycle": "2026/27 入学",
+    "intake": "2026 年 8 月",
+    "duration": "全日制约 1.5 年",
+    "updated": "2026-07-15",
+    "academic": "任何学科的良好荣誉学位；有 IT 工作经验者优先",
+    "language": "非英语授课背景：TOEFL iBT 90 或 IELTS 6.0",
+    "tests": "GRE 320 + 写作 3.5，或 GMAT 650；印度院校毕业生可用 GATE",
+    "prerequisites": "为非计算机背景申请人设计，课程含衔接内容",
+    "deadline": "2025-10-01 开放；2026-01-31 截止",
+    "deadlineNote": "2026/27 申请已截止",
+    "requirements": [
+      {
+        "label": "学术背景",
+        "value": "任何专业荣誉学位",
+        "level": 64
+      },
+      {
+        "label": "英语要求",
+        "value": "IELTS 6.0",
+        "level": 56
+      },
+      {
+        "label": "标化考试",
+        "value": "GRE / GMAT",
+        "level": 82
+      }
+    ],
+    "documents": [
+      "个人陈述",
+      "个人简历",
+      "成绩单与学位证明",
+      "至少一封推荐信",
+      "标化与英语成绩"
+    ],
+    "notes": [
+      "每年仅 8 月一次入学",
+      "申请材料不完整将不予处理",
+      "项目信息以计算机学院页面为准"
+    ],
+    "source": "https://www.comp.nus.edu.sg/programmes/pg/mcomp-gen/admissions/",
+    "direction": "计算机与数据",
+    "tuition": "官网最新费用页为准",
+    "applicationRequirements": "任何学科的良好荣誉学位；有 IT 工作经验者优先",
+    "interview": "以项目当年申请系统为准",
+    "rentBudget": "暂未收录",
+    "positioning": "待结合个人背景判断",
+    "sources": [
+      {
+        "label": "项目官网 / 招生要求",
+        "url": "https://www.comp.nus.edu.sg/programmes/pg/mcomp-gen/admissions/",
+        "kind": "项目官网",
+        "year": "2026/27 入学"
+      }
+    ],
+    "sourceLabel": "Fly Away 官方页面核验",
+    "sourcePayload": {
+      "首批核验项目": {
+        "source": "https://www.comp.nus.edu.sg/programmes/pg/mcomp-gen/admissions/",
+        "updated": "2026-07-15"
+      },
+      "qsRank": "10",
+      "qsEdition": "2027",
+      "verificationLevel": "深度核验",
+      "recordType": "项目"
+    }
+  },
+  {
+    "id": "ntu-msai",
+    "region": "新加坡",
+    "city": "新加坡",
+    "university": "南洋理工大学",
+    "school": "计算与数据科学学院",
+    "program": "人工智能理学硕士",
+    "category": "计算机与数据",
+    "background": "强先修要求",
+    "cycle": "2026/27 入学",
+    "intake": "2026 年",
+    "duration": "全日制 1 年 / 非全日制 2 年",
+    "updated": "2026-07-15",
+    "academic": "良好学士学位；录取采用综合竞争性评估",
+    "language": "TOEFL iBT 100 / IELTS 6.5，或英语授课证明",
+    "tests": "GRE 与推荐信为可选材料",
+    "prerequisites": "适合希望深入 AI 理论、方法与应用的申请人",
+    "deadline": "以 NTU 当期研究生申请系统为准",
+    "deadlineNote": "2026 要求已发布",
+    "requirements": [
+      {
+        "label": "学术背景",
+        "value": "良好学士学位",
+        "level": 72
+      },
+      {
+        "label": "英语要求",
+        "value": "IELTS 6.5",
+        "level": 66
+      },
+      {
+        "label": "标化考试",
+        "value": "GRE 可选",
+        "level": 34
+      }
+    ],
+    "documents": [
+      "个人简历",
+      "学位证明",
+      "成绩单",
+      "英语成绩或授课语言证明"
+    ],
+    "notes": [
+      "GRE 与推荐信可选",
+      "所有材料须在线上传",
+      "最低标准不保证录取"
+    ],
+    "source": "https://www.ntu.edu.sg/education/graduate-programme/master-of-science-in-artificial-intelligence",
+    "direction": "计算机与数据",
+    "tuition": "官网最新费用页为准",
+    "applicationRequirements": "良好学士学位；录取采用综合竞争性评估",
+    "interview": "以项目当年申请系统为准",
+    "rentBudget": "暂未收录",
+    "positioning": "待结合个人背景判断",
+    "sources": [
+      {
+        "label": "项目官网 / 招生要求",
+        "url": "https://www.ntu.edu.sg/education/graduate-programme/master-of-science-in-artificial-intelligence",
+        "kind": "项目官网",
+        "year": "2026/27 入学"
+      }
+    ],
+    "sourceLabel": "Fly Away 官方页面核验",
+    "sourcePayload": {
+      "首批核验项目": {
+        "source": "https://www.ntu.edu.sg/education/graduate-programme/master-of-science-in-artificial-intelligence",
+        "updated": "2026-07-15"
+      },
+      "qsRank": "12",
+      "qsEdition": "2027",
+      "verificationLevel": "深度核验",
+      "recordType": "项目"
+    }
+  },
+  {
+    "id": "ntu-analytics",
+    "region": "新加坡",
+    "city": "新加坡",
+    "university": "南洋理工大学",
+    "school": "数理科学学院",
+    "program": "分析学理学硕士",
+    "category": "计算机与数据",
+    "background": "量化背景",
+    "cycle": "2026/27 入学",
+    "intake": "2026 年 8 月",
+    "duration": "全日制 1 年 / 非全日制 2 年",
+    "updated": "2026-07-15",
+    "academic": "偏好数学、统计、工程、计算机等量化学科的良好学士学位",
+    "language": "非英语授课背景：IELTS 6.0；TOEFL 按 NTU 新旧分制要求",
+    "tests": "GMAT / GRE 与相关工作经验优先但非必需",
+    "prerequisites": "量化背景；开学前提供线性代数、微积分与 R 预备课程",
+    "deadline": "2025-11-01 至 2026-04-01",
+    "deadlineNote": "2026/27 申请已截止",
+    "requirements": [
+      {
+        "label": "学术背景",
+        "value": "量化学科优先",
+        "level": 82
+      },
+      {
+        "label": "英语要求",
+        "value": "IELTS 6.0",
+        "level": 56
+      },
+      {
+        "label": "标化考试",
+        "value": "可选加分",
+        "level": 42
+      }
+    ],
+    "documents": [
+      "成绩单",
+      "学位证明",
+      "英语成绩（如适用）",
+      "GMAT / GRE（可选）"
+    ],
+    "notes": [
+      "申请材料全部在线提交",
+      "2026 年 8 月 3 日开课",
+      "工作经验为加分项而非硬性要求"
+    ],
+    "source": "https://www.ntu.edu.sg/spms/about-us/mathematics/grad/msc-in-analytics",
+    "direction": "计算机与数据",
+    "tuition": "官网最新费用页为准",
+    "applicationRequirements": "偏好数学、统计、工程、计算机等量化学科的良好学士学位",
+    "interview": "以项目当年申请系统为准",
+    "rentBudget": "暂未收录",
+    "positioning": "待结合个人背景判断",
+    "sources": [
+      {
+        "label": "项目官网 / 招生要求",
+        "url": "https://www.ntu.edu.sg/spms/about-us/mathematics/grad/msc-in-analytics",
+        "kind": "项目官网",
+        "year": "2026/27 入学"
+      }
+    ],
+    "sourceLabel": "Fly Away 官方页面核验",
+    "sourcePayload": {
+      "首批核验项目": {
+        "source": "https://www.ntu.edu.sg/spms/about-us/mathematics/grad/msc-in-analytics",
+        "updated": "2026-07-15"
+      },
+      "qsRank": "12",
+      "qsEdition": "2027",
+      "verificationLevel": "深度核验",
+      "recordType": "项目"
+    }
+  },
+  {
+    "id": "ntu-msds",
+    "region": "新加坡",
+    "city": "新加坡",
+    "university": "南洋理工大学",
+    "school": "计算与数据科学学院",
+    "program": "数据科学理学硕士",
+    "category": "计算机与数据",
+    "background": "量化背景",
+    "cycle": "2026/27 入学",
+    "intake": "2026 年",
+    "duration": "全日制课程型硕士",
+    "updated": "2026-07-15",
+    "academic": "良好学士学位，录取按竞争性综合评估",
+    "language": "TOEFL iBT 100 / IELTS 6.5，或英语授课证明",
+    "tests": "以当期项目页面要求为准",
+    "prerequisites": "数据、计算与量化基础有助于申请",
+    "deadline": "以 NTU 当期申请系统为准",
+    "deadlineNote": "2026 要求已发布",
+    "requirements": [
+      {
+        "label": "学术背景",
+        "value": "量化背景优先",
+        "level": 80
+      },
+      {
+        "label": "英语要求",
+        "value": "IELTS 6.5",
+        "level": 66
+      },
+      {
+        "label": "标化考试",
+        "value": "按项目要求",
+        "level": 30
+      }
+    ],
+    "documents": [
+      "学位证明",
+      "成绩单",
+      "英语成绩或授课语言证明",
+      "个人材料"
+    ],
+    "notes": [
+      "课程总计 30 学分单位",
+      "英语成绩须在有效期内",
+      "官方页面为提交前最终依据"
+    ],
+    "source": "https://www.ntu.edu.sg/education/graduate-programme/master-of-science-in-data-science-%28msds%29",
+    "direction": "计算机与数据",
+    "tuition": "官网最新费用页为准",
+    "applicationRequirements": "良好学士学位，录取按竞争性综合评估",
+    "interview": "以项目当年申请系统为准",
+    "rentBudget": "暂未收录",
+    "positioning": "待结合个人背景判断",
+    "sources": [
+      {
+        "label": "项目官网 / 招生要求",
+        "url": "https://www.ntu.edu.sg/education/graduate-programme/master-of-science-in-data-science-%28msds%29",
+        "kind": "项目官网",
+        "year": "2026/27 入学"
+      }
+    ],
+    "sourceLabel": "Fly Away 官方页面核验",
+    "sourcePayload": {
+      "首批核验项目": {
+        "source": "https://www.ntu.edu.sg/education/graduate-programme/master-of-science-in-data-science-%28msds%29",
+        "updated": "2026-07-15"
+      },
+      "qsRank": "12",
+      "qsEdition": "2027",
+      "verificationLevel": "深度核验",
+      "recordType": "项目"
+    }
+  },
+  {
+    "id": "ntu-materials-analytics",
+    "region": "新加坡",
+    "city": "新加坡",
+    "university": "南洋理工大学",
+    "school": "材料科学与工程学院",
+    "program": "应用材料分析理学硕士",
+    "category": "工程与技术",
+    "background": "量化背景",
+    "cycle": "2026/27 入学",
+    "intake": "1 月 / 8 月",
+    "duration": "全日制 1 年",
+    "updated": "2026-07-15",
+    "academic": "工程学或相关学科的良好学士学位；具备长期相关经验的专科学历申请人也可能获考虑",
+    "language": "非英语母语申请人：TOEFL iBT 85 或 IELTS 6.0",
+    "tests": "课程型硕士不要求 GRE",
+    "prerequisites": "工程、材料或相关分析背景",
+    "deadline": "不同入学季申请窗口不同，以 NTU 当期系统为准",
+    "deadlineNote": "2026/27 要求已发布",
+    "requirements": [
+      {
+        "label": "学术背景",
+        "value": "工程相关学位",
+        "level": 82
+      },
+      {
+        "label": "英语要求",
+        "value": "IELTS 6.0",
+        "level": 56
+      },
+      {
+        "label": "标化考试",
+        "value": "GRE 不要求",
+        "level": 8
+      }
+    ],
+    "documents": [
+      "成绩单",
+      "学位证明",
+      "英语成绩",
+      "相关工作证明（如适用）"
+    ],
+    "notes": [
+      "每年设 1 月与 8 月两个入学季",
+      "无英语成绩者仍可能被要求参加面试或测试",
+      "最低标准不保证录取"
+    ],
+    "source": "https://www.ntu.edu.sg/spms/admissions/grad/detail/master-of-science-in-applied-materials-analytics",
+    "direction": "工程与技术",
+    "tuition": "官网最新费用页为准",
+    "applicationRequirements": "工程学或相关学科的良好学士学位；具备长期相关经验的专科学历申请人也可能获考虑",
+    "interview": "以项目当年申请系统为准",
+    "rentBudget": "暂未收录",
+    "positioning": "待结合个人背景判断",
+    "sources": [
+      {
+        "label": "项目官网 / 招生要求",
+        "url": "https://www.ntu.edu.sg/spms/admissions/grad/detail/master-of-science-in-applied-materials-analytics",
+        "kind": "项目官网",
+        "year": "2026/27 入学"
+      }
+    ],
+    "sourceLabel": "Fly Away 官方页面核验",
+    "sourcePayload": {
+      "首批核验项目": {
+        "source": "https://www.ntu.edu.sg/spms/admissions/grad/detail/master-of-science-in-applied-materials-analytics",
+        "updated": "2026-07-15"
+      },
+      "qsRank": "12",
+      "qsEdition": "2027",
+      "verificationLevel": "深度核验",
+      "recordType": "项目"
+    }
+  },
+  {
+    "id": "hkust-mass",
+    "region": "香港",
+    "city": "中国香港",
+    "university": "香港科技大学",
+    "school": "人文社会科学学院",
+    "program": "社会科学文学硕士",
+    "category": "社会科学",
+    "background": "跨专业友好",
+    "cycle": "2026/27 入学",
+    "intake": "2026 年秋季",
+    "duration": "授课型硕士",
+    "updated": "2026-07-15",
+    "academic": "认可大学的学士学位，或经校方认可的同等资格",
+    "language": "课程主要以英语授课，需满足港科大校级英语要求",
+    "tests": "GRE / GMAT 未列为必需",
+    "prerequisites": "未列出特定本科专业限制",
+    "deadline": "2026-03-28",
+    "deadlineNote": "2026/27 申请已截止",
+    "requirements": [
+      {
+        "label": "学术背景",
+        "value": "认可学士学位",
+        "level": 62
+      },
+      {
+        "label": "英语要求",
+        "value": "校级标准",
+        "level": 61
+      },
+      {
+        "label": "标化考试",
+        "value": "非必需",
+        "level": 18
+      }
+    ],
+    "documents": [
+      "成绩单",
+      "学位证明",
+      "英语成绩（如适用）",
+      "申请系统要求材料"
+    ],
+    "notes": [
+      "申请采用持续审核",
+      "课程主要使用英语",
+      "信息以学院与研究生院页面为准"
+    ],
+    "source": "https://shss.hkust.edu.hk/tpg/mass/application",
+    "direction": "社会科学",
+    "tuition": "官网最新费用页为准",
+    "applicationRequirements": "认可大学的学士学位，或经校方认可的同等资格",
+    "interview": "以项目当年申请系统为准",
+    "rentBudget": "暂未收录",
+    "positioning": "待结合个人背景判断",
+    "sources": [
+      {
+        "label": "项目官网 / 招生要求",
+        "url": "https://shss.hkust.edu.hk/tpg/mass/application",
+        "kind": "项目官网",
+        "year": "2026/27 入学"
+      }
+    ],
+    "sourceLabel": "Fly Away 官方页面核验",
+    "sourcePayload": {
+      "首批核验项目": {
+        "source": "https://shss.hkust.edu.hk/tpg/mass/application",
+        "updated": "2026-07-15"
+      },
+      "qsRank": "33",
+      "qsEdition": "2027",
+      "verificationLevel": "深度核验",
+      "recordType": "项目"
+    }
+  },
+  {
+    "id": "stanford-mscs",
+    "region": "美国",
+    "city": "美国 · 加利福尼亚",
+    "university": "斯坦福大学",
+    "school": "计算机科学系",
+    "program": "计算机科学理学硕士",
+    "category": "计算机与数据",
+    "background": "强先修要求",
+    "cycle": "2027 入学",
+    "intake": "2027 年秋季",
+    "duration": "至少 45 学分",
+    "updated": "2026-07-15",
+    "academic": "学士学位；申请材料需证明完成研究生计算机学习的准备度",
+    "language": "非英语母语申请人需 TOEFL / IELTS，符合官方豁免条件者除外",
+    "tests": "GRE 不要求且不纳入 MS 申请评估",
+    "prerequisites": "计算机科学核心基础与对应专业方向准备",
+    "deadline": "2026-12-08",
+    "deadlineNote": "2027 秋季申请将于 2026 年 9 月中旬开放",
+    "requirements": [
+      {
+        "label": "学术背景",
+        "value": "计算机基础",
+        "level": 88
+      },
+      {
+        "label": "英语要求",
+        "value": "TOEFL / IELTS",
+        "level": 72
+      },
+      {
+        "label": "标化考试",
+        "value": "GRE 不采纳",
+        "level": 8
+      }
+    ],
+    "documents": [
+      "成绩单",
+      "目的陈述",
+      "三封推荐信",
+      "个人简历",
+      "英语成绩（如适用）"
+    ],
+    "notes": [
+      "仅秋季入学",
+      "同一学年不得重复申请 MS",
+      "GRE 成绩不会被考虑"
+    ],
+    "source": "https://www.cs.stanford.edu/admissions/masters-admissions-frequently-asked-questions",
+    "direction": "计算机与数据",
+    "tuition": "官网最新费用页为准",
+    "applicationRequirements": "学士学位；申请材料需证明完成研究生计算机学习的准备度",
+    "interview": "以项目当年申请系统为准",
+    "rentBudget": "暂未收录",
+    "positioning": "待结合个人背景判断",
+    "sources": [
+      {
+        "label": "项目官网 / 招生要求",
+        "url": "https://www.cs.stanford.edu/admissions/masters-admissions-frequently-asked-questions",
+        "kind": "项目官网",
+        "year": "2027 入学"
+      }
+    ],
+    "sourceLabel": "Fly Away 官方页面核验",
+    "sourcePayload": {
+      "首批核验项目": {
+        "source": "https://www.cs.stanford.edu/admissions/masters-admissions-frequently-asked-questions",
+        "updated": "2026-07-15"
+      },
+      "qsRank": "=2",
+      "qsEdition": "2027",
+      "verificationLevel": "深度核验",
+      "recordType": "项目"
+    }
+  },
+  {
+    "id": "cmu-mscs",
+    "region": "美国",
+    "city": "美国 · 匹兹堡",
+    "university": "卡内基梅隆大学",
+    "school": "计算机科学系",
+    "program": "计算机科学理学硕士",
+    "category": "计算机与数据",
+    "background": "强先修要求",
+    "cycle": "2027 入学",
+    "intake": "2027 年秋季",
+    "duration": "通常 3–4 学期",
+    "updated": "2026-07-15",
+    "academic": "学士学位；需具备数学、编程与逻辑推理能力，计算机本科并非硬性要求",
+    "language": "TOEFL 通常至少旧制 100 / 新制 5；IELTS 7 可视为对应标准",
+    "tests": "按 SCS 当期测试政策提交；项目页未将 GRE 列为核心材料",
+    "prerequisites": "科学、工程或数学背景是重要的成功预测因素",
+    "deadline": "早申 2026-11-18；最终 2026-12-09",
+    "deadlineNote": "2027 秋季周期已公布",
+    "requirements": [
+      {
+        "label": "学术背景",
+        "value": "数理与编程能力",
+        "level": 90
+      },
+      {
+        "label": "英语要求",
+        "value": "TOEFL 100 / IELTS 7",
+        "level": 78
+      },
+      {
+        "label": "标化考试",
+        "value": "按当期政策",
+        "level": 30
+      }
+    ],
+    "documents": [
+      "成绩单",
+      "个人简历",
+      "目的陈述",
+      "三封推荐信",
+      "英语成绩"
+    ],
+    "notes": [
+      "至少两封推荐信应来自教师或近期雇主",
+      "仅秋季入学",
+      "项目不提供奖学金或助学金"
+    ],
+    "source": "https://csd.cs.cmu.edu/academics/masters/admissions",
+    "direction": "计算机与数据",
+    "tuition": "官网最新费用页为准",
+    "applicationRequirements": "学士学位；需具备数学、编程与逻辑推理能力，计算机本科并非硬性要求",
+    "interview": "以项目当年申请系统为准",
+    "rentBudget": "暂未收录",
+    "positioning": "待结合个人背景判断",
+    "sources": [
+      {
+        "label": "项目官网 / 招生要求",
+        "url": "https://csd.cs.cmu.edu/academics/masters/admissions",
+        "kind": "项目官网",
+        "year": "2027 入学"
+      }
+    ],
+    "sourceLabel": "Fly Away 官方页面核验",
+    "sourcePayload": {
+      "首批核验项目": {
+        "source": "https://csd.cs.cmu.edu/academics/masters/admissions",
+        "updated": "2026-07-15"
+      },
+      "verificationLevel": "深度核验",
+      "recordType": "项目"
+    }
+  },
+  {
+    "id": "columbia-msds",
+    "region": "美国",
+    "city": "美国 · 纽约",
+    "university": "哥伦比亚大学",
+    "school": "数据科学研究所",
+    "program": "数据科学理学硕士",
+    "category": "计算机与数据",
+    "background": "量化背景",
+    "cycle": "2026/27 入学",
+    "intake": "秋季",
+    "duration": "全日制项目",
+    "updated": "2026-07-15",
+    "academic": "本科学位；需修过微积分、线性代数等量化课程",
+    "language": "TOEFL / IELTS / PTE（如适用）",
+    "tests": "GRE 在 2026 申请中为可选",
+    "prerequisites": "具备 Python、SQL、R 等入门编程技能",
+    "deadline": "优先轮 01-15；最终轮 02-15",
+    "deadlineNote": "页面按秋季周期公布；提交前核对年份",
+    "requirements": [
+      {
+        "label": "学术背景",
+        "value": "量化课程",
+        "level": 84
+      },
+      {
+        "label": "英语要求",
+        "value": "如适用",
+        "level": 64
+      },
+      {
+        "label": "标化考试",
+        "value": "GRE 可选",
+        "level": 34
+      }
+    ],
+    "documents": [
+      "个人陈述",
+      "所有高等教育成绩单",
+      "三封推荐信",
+      "个人简历",
+      "英语成绩（如适用）"
+    ],
+    "notes": [
+      "要求入门编程能力",
+      "GRE 为可选项",
+      "优先轮与最终轮分开审核"
+    ],
+    "source": "https://datascience.columbia.edu/education/programs/m-s-in-data-science/admissions/",
+    "direction": "计算机与数据",
+    "tuition": "官网最新费用页为准",
+    "applicationRequirements": "本科学位；需修过微积分、线性代数等量化课程",
+    "interview": "以项目当年申请系统为准",
+    "rentBudget": "暂未收录",
+    "positioning": "待结合个人背景判断",
+    "sources": [
+      {
+        "label": "项目官网 / 招生要求",
+        "url": "https://datascience.columbia.edu/education/programs/m-s-in-data-science/admissions/",
+        "kind": "项目官网",
+        "year": "2026/27 入学"
+      }
+    ],
+    "sourceLabel": "Fly Away 官方页面核验",
+    "sourcePayload": {
+      "首批核验项目": {
+        "source": "https://datascience.columbia.edu/education/programs/m-s-in-data-science/admissions/",
+        "updated": "2026-07-15"
+      },
+      "qsRank": "=43",
+      "qsEdition": "2027",
+      "verificationLevel": "深度核验",
+      "recordType": "项目"
+    }
+  },
+  {
+    "id": "princeton-mse",
+    "region": "美国",
+    "city": "美国 · 新泽西",
+    "university": "普林斯顿大学",
+    "school": "计算机科学系",
+    "program": "计算机科学工程硕士",
+    "category": "计算机与数据",
+    "background": "强先修要求",
+    "cycle": "最近可用",
+    "intake": "2026 年秋季",
+    "duration": "2 年",
+    "updated": "2026-07-15",
+    "academic": "学士学位；按研究生院与计算机系标准综合评估",
+    "language": "英语要求按普林斯顿研究生院规定执行",
+    "tests": "GRE General 不接受",
+    "prerequisites": "计算机科学系统、AI 与理论方向的核心准备",
+    "deadline": "2025-12-15（2026 秋季）",
+    "deadlineNote": "2027 周期尚未在该页面发布",
+    "requirements": [
+      {
+        "label": "学术背景",
+        "value": "核心 CS 基础",
+        "level": 90
+      },
+      {
+        "label": "英语要求",
+        "value": "校级标准",
+        "level": 70
+      },
+      {
+        "label": "标化考试",
+        "value": "GRE 不接受",
+        "level": 8
+      }
+    ],
+    "documents": [
+      "申请表",
+      "成绩单",
+      "推荐信",
+      "个人陈述",
+      "英语成绩（如适用）"
+    ],
+    "notes": [
+      "每年仅秋季入学",
+      "GRE General 不接受",
+      "此处使用最近已发布的 2026 入学周期"
+    ],
+    "source": "https://gradschool.princeton.edu/academics/degrees-requirements/fields-study/computer-science",
+    "direction": "计算机与数据",
+    "tuition": "官网最新费用页为准",
+    "applicationRequirements": "学士学位；按研究生院与计算机系标准综合评估",
+    "interview": "以项目当年申请系统为准",
+    "rentBudget": "暂未收录",
+    "positioning": "待结合个人背景判断",
+    "sources": [
+      {
+        "label": "项目官网 / 招生要求",
+        "url": "https://gradschool.princeton.edu/academics/degrees-requirements/fields-study/computer-science",
+        "kind": "项目官网",
+        "year": "最近可用"
+      }
+    ],
+    "sourceLabel": "Fly Away 官方页面核验",
+    "sourcePayload": {
+      "首批核验项目": {
+        "source": "https://gradschool.princeton.edu/academics/degrees-requirements/fields-study/computer-science",
+        "updated": "2026-07-15"
+      },
+      "qsRank": "27",
+      "qsEdition": "2027",
+      "verificationLevel": "深度核验",
+      "recordType": "项目"
+    }
+  },
+  {
+    "id": "oxford-acs",
+    "region": "欧洲",
+    "city": "英国 · 牛津",
+    "university": "牛津大学",
+    "school": "计算机科学系",
+    "program": "高级计算机科学理学硕士",
+    "category": "计算机与数据",
+    "background": "强先修要求",
+    "cycle": "2026/27 入学",
+    "intake": "2026 年 10 月",
+    "duration": "全日制 12 个月",
+    "updated": "2026-07-15",
+    "academic": "计算机科学或数学一等荣誉学位或同等资格；美国本科通常要求 GPA 3.7/4.0",
+    "language": "IELTS 7.5（各项 7.0）；TOEFL iBT 110（分项另有要求，且注意 2026 新制政策）",
+    "tests": "GRE 未列为必需",
+    "prerequisites": "扎实的数学与计算机科学基础",
+    "deadline": "2026/27 已关闭；2027/28 待发布",
+    "deadlineNote": "可登记接收下一周期开放通知",
+    "requirements": [
+      {
+        "label": "学术背景",
+        "value": "一等荣誉",
+        "level": 96
+      },
+      {
+        "label": "英语要求",
+        "value": "IELTS 7.5",
+        "level": 90
+      },
+      {
+        "label": "标化考试",
+        "value": "未列为必需",
+        "level": 18
+      }
+    ],
+    "documents": [
+      "官方成绩单",
+      "个人陈述",
+      "推荐信",
+      "英语成绩",
+      "申请系统要求的其他材料"
+    ],
+    "notes": [
+      "2026/27 约 70 个名额",
+      "课程曾名为 MSc Computer Science",
+      "英语采用 Higher level"
+    ],
+    "source": "https://www.ox.ac.uk/admissions/graduate/courses/msc-advanced-computer-science",
+    "direction": "计算机与数据",
+    "tuition": "官网最新费用页为准",
+    "applicationRequirements": "计算机科学或数学一等荣誉学位或同等资格；美国本科通常要求 GPA 3.7/4.0",
+    "interview": "以项目当年申请系统为准",
+    "rentBudget": "暂未收录",
+    "positioning": "待结合个人背景判断",
+    "sources": [
+      {
+        "label": "项目官网 / 招生要求",
+        "url": "https://www.ox.ac.uk/admissions/graduate/courses/msc-advanced-computer-science",
+        "kind": "项目官网",
+        "year": "2026/27 入学"
+      }
+    ],
+    "sourceLabel": "Fly Away 官方页面核验",
+    "sourcePayload": {
+      "首批核验项目": {
+        "source": "https://www.ox.ac.uk/admissions/graduate/courses/msc-advanced-computer-science",
+        "updated": "2026-07-15"
+      },
+      "qsRank": "4",
+      "qsEdition": "2027",
+      "verificationLevel": "深度核验",
+      "recordType": "项目"
+    }
+  },
+  {
+    "id": "imperial-aiml",
+    "region": "欧洲",
+    "city": "英国 · 伦敦",
+    "university": "帝国理工学院",
+    "school": "计算机系",
+    "program": "计算（人工智能与机器学习）理学硕士",
+    "category": "计算机与数据",
+    "background": "强先修要求",
+    "cycle": "2026/27 入学",
+    "intake": "2026 年 9 月",
+    "duration": "全日制 1 年",
+    "updated": "2026-07-15",
+    "academic": "含大量计算机课程的一等荣誉学位或同等资格",
+    "language": "需达到帝国理工 Higher 英语标准",
+    "tests": "GRE / GMAT 未列为必需",
+    "prerequisites": "通常需具备约两年计算机本科课程的等量基础",
+    "deadline": "滚动审核，额满可能提前关闭",
+    "deadlineNote": "2026 入学信息已发布",
+    "requirements": [
+      {
+        "label": "学术背景",
+        "value": "一等荣誉 + CS",
+        "level": 96
+      },
+      {
+        "label": "英语要求",
+        "value": "Higher 标准",
+        "level": 78
+      },
+      {
+        "label": "标化考试",
+        "value": "非必需",
+        "level": 18
+      }
+    ],
+    "documents": [
+      "成绩单",
+      "个人陈述",
+      "推荐材料",
+      "英语成绩（如适用）"
+    ],
+    "notes": [
+      "面向已有扎实计算机背景的申请人",
+      "课程包含个人项目",
+      "ATAS 证书不要求"
+    ],
+    "source": "https://www.imperial.ac.uk/study/courses/postgraduate-taught/computing-artificial-intelligence-msc/",
+    "direction": "计算机与数据",
+    "tuition": "官网最新费用页为准",
+    "applicationRequirements": "含大量计算机课程的一等荣誉学位或同等资格",
+    "interview": "以项目当年申请系统为准",
+    "rentBudget": "暂未收录",
+    "positioning": "待结合个人背景判断",
+    "sources": [
+      {
+        "label": "项目官网 / 招生要求",
+        "url": "https://www.imperial.ac.uk/study/courses/postgraduate-taught/computing-artificial-intelligence-msc/",
+        "kind": "项目官网",
+        "year": "2026/27 入学"
+      }
+    ],
+    "sourceLabel": "Fly Away 官方页面核验",
+    "sourcePayload": {
+      "首批核验项目": {
+        "source": "https://www.imperial.ac.uk/study/courses/postgraduate-taught/computing-artificial-intelligence-msc/",
+        "updated": "2026-07-15"
+      },
+      "qsRank": "=2",
+      "qsEdition": "2027",
+      "verificationLevel": "深度核验",
+      "recordType": "项目"
+    }
+  },
+  {
+    "id": "ucl-ds",
+    "region": "欧洲",
+    "city": "英国 · 伦敦",
+    "university": "伦敦大学学院",
+    "school": "统计科学系",
+    "program": "数据科学理学硕士",
+    "category": "计算机与数据",
+    "background": "量化背景",
+    "cycle": "2026/27 入学",
+    "intake": "2026 年 9 月",
+    "duration": "全日制 1 个日历年",
+    "updated": "2026-07-15",
+    "academic": "量化学科二等一荣誉学位或同等资格",
+    "language": "UCL English Level 1",
+    "tests": "GRE / GMAT 未列为必需",
+    "prerequisites": "大学层级数学方法与线性代数；概率、统计和高级编程语言基础",
+    "deadline": "需签证：2026-03-27；无需签证：2026-08-28",
+    "deadlineNote": "需签证申请已关闭",
+    "requirements": [
+      {
+        "label": "学术背景",
+        "value": "2:1 量化学科",
+        "level": 82
+      },
+      {
+        "label": "英语要求",
+        "value": "UCL Level 1",
+        "level": 62
+      },
+      {
+        "label": "标化考试",
+        "value": "非必需",
+        "level": 18
+      }
+    ],
+    "documents": [
+      "成绩单",
+      "个人陈述",
+      "一封推荐信",
+      "英语成绩（如适用）"
+    ],
+    "notes": [
+      "高阶语言编程经验为硬性要求",
+      "上一周期每个名额收到超过 20 份申请",
+      "最多可提交两个 UCL 研究生课程申请"
+    ],
+    "source": "https://www.ucl.ac.uk/prospective-students/graduate/taught-degrees/data-science-msc",
+    "direction": "计算机与数据",
+    "tuition": "官网最新费用页为准",
+    "applicationRequirements": "量化学科二等一荣誉学位或同等资格",
+    "interview": "以项目当年申请系统为准",
+    "rentBudget": "暂未收录",
+    "positioning": "待结合个人背景判断",
+    "sources": [
+      {
+        "label": "项目官网 / 招生要求",
+        "url": "https://www.ucl.ac.uk/prospective-students/graduate/taught-degrees/data-science-msc",
+        "kind": "项目官网",
+        "year": "2026/27 入学"
+      }
+    ],
+    "sourceLabel": "Fly Away 官方页面核验",
+    "sourcePayload": {
+      "首批核验项目": {
+        "source": "https://www.ucl.ac.uk/prospective-students/graduate/taught-degrees/data-science-msc",
+        "updated": "2026-07-15"
+      },
+      "qsRank": "=8",
+      "qsEdition": "2027",
+      "verificationLevel": "深度核验",
+      "recordType": "项目"
+    }
+  },
+  {
+    "id": "eth-mscs",
+    "region": "欧洲",
+    "city": "瑞士 · 苏黎世",
+    "university": "苏黎世联邦理工学院",
+    "school": "计算机科学系",
+    "program": "计算机科学理学硕士",
+    "category": "计算机与数据",
+    "background": "强先修要求",
+    "cycle": "2026/27 入学",
+    "intake": "2026 年秋季",
+    "duration": "2 年 · 120 ECTS",
+    "updated": "2026-07-15",
+    "academic": "国际认可大学的计算机科学或相关学科学士学位，且成绩优秀",
+    "language": "英语 C1；证书必须在申请截止前提交，符合完整英语授课豁免者除外",
+    "tests": "是否要求 GRE 取决于项目文件与本科所在国家/地区",
+    "prerequisites": "需与 ETH 计算机科学学士的要求档案相匹配",
+    "deadline": "国际本科学位：2025-11-01 至 2025-11-30",
+    "deadlineNote": "2026 秋季国际申请已截止",
+    "requirements": [
+      {
+        "label": "学术背景",
+        "value": "相关学位 + 优秀成绩",
+        "level": 92
+      },
+      {
+        "label": "英语要求",
+        "value": "C1",
+        "level": 84
+      },
+      {
+        "label": "标化考试",
+        "value": "按申请身份",
+        "level": 50
+      }
+    ],
+    "documents": [
+      "成绩单",
+      "学位证明或在读证明",
+      "语言证明",
+      "项目指定附加材料"
+    ],
+    "notes": [
+      "仅秋季入学",
+      "国际本科学位必须参加 11 月申请窗口",
+      "可选择五个专业方向"
+    ],
+    "source": "https://ethz.ch/en/studies/master/degree-programmes/engineering-sciences/computer-science.html/1000",
+    "direction": "计算机与数据",
+    "tuition": "官网最新费用页为准",
+    "applicationRequirements": "国际认可大学的计算机科学或相关学科学士学位，且成绩优秀",
+    "interview": "以项目当年申请系统为准",
+    "rentBudget": "暂未收录",
+    "positioning": "待结合个人背景判断",
+    "sources": [
+      {
+        "label": "项目官网 / 招生要求",
+        "url": "https://ethz.ch/en/studies/master/degree-programmes/engineering-sciences/computer-science.html/1000",
+        "kind": "项目官网",
+        "year": "2026/27 入学"
+      }
+    ],
+    "sourceLabel": "Fly Away 官方页面核验",
+    "sourcePayload": {
+      "首批核验项目": {
+        "source": "https://ethz.ch/en/studies/master/degree-programmes/engineering-sciences/computer-science.html/1000",
+        "updated": "2026-07-15"
+      },
+      "qsRank": "=8",
+      "qsEdition": "2027",
+      "verificationLevel": "深度核验",
+      "recordType": "项目"
+    }
+  },
+  {
+    "id": "princeton-mfin",
+    "region": "美国",
+    "city": "Princeton, NJ",
+    "university": "Princeton University",
+    "school": "Bendheim Center for Finance",
+    "program": "金融硕士",
+    "category": "金融与量化",
+    "direction": "金融硕士/量化金融",
+    "background": "强先修要求",
+    "cycle": "最近可用",
+    "intake": "下一入学周期",
+    "duration": "2年，少数可1年",
+    "updated": "2026-06-05",
+    "academic": "成绩单、数学课程背景、Personal Statement、Academic Statement of Purpose、3封推荐信、数学测试；数理/编程/金融背景越强越好",
+    "language": "GRE/GMAT可选；TOEFL/IELTS/DET按研究生院豁免规则",
+    "tests": "GRE/GMAT可选；TOEFL/IELTS/DET按研究生院豁免规则",
+    "prerequisites": "线代、多元微积分、微分方程、概率统计；Python/R/C++与金融实习加分",
+    "deadline": "Fall 2026官网DDL: 2025-12-15 23:59 ET；Fall 2027通常需等官网更新",
+    "deadlineNote": "来自 2026-06-05 项目详表；如当年页面尚未发布，使用最近可用官方信息。",
+    "tuition": "2025-26 regular tuition约$65,210/年；SHP约$3,800/年；生活费另计",
+    "applicationRequirements": "成绩单、数学课程背景、Personal Statement、Academic Statement of Purpose、3封推荐信、数学测试；数理/编程/金融背景越强越好",
+    "interview": "官网未列常规面试；有数学assessment",
+    "rentBudget": "周边Princeton/NJ：studio约$1,600-2,300/月，1BR约$1,900-2,800/月；校内/研究生宿舍需尽早排队",
+    "positioning": "冲刺",
+    "requirements": [
+      {
+        "label": "学术背景",
+        "value": "量化基础",
+        "level": 86
+      },
+      {
+        "label": "英语要求",
+        "value": "按项目要求",
+        "level": 68
+      },
+      {
+        "label": "标化考试",
+        "value": "按当年政策",
+        "level": 42
+      }
+    ],
+    "documents": [
+      "成绩单、数学课程背景、Personal Statement、Academic Statement of Purpose、3封推荐信、数学测试",
+      "数理/编程/金融背景越强越好"
+    ],
+    "notes": [
+      "极小班，录取偏好顶尖数理背景",
+      "原表已列为Prefer"
+    ],
+    "source": "https://bcf.princeton.edu/academic-programs/master-in-finance/apply-for-the-master-in-finance-program/",
+    "sources": [
+      {
+        "label": "项目官网 / 最近可用招生页",
+        "url": "https://bcf.princeton.edu/academic-programs/master-in-finance/apply-for-the-master-in-finance-program/",
+        "kind": "项目官网",
+        "year": "最近可用"
+      },
+      {
+        "label": "Princeton graduate tuition",
+        "url": "https://gradschool.princeton.edu/financial-support/financial-support-model/funding-calendar-university-rates-costs",
+        "kind": "官网补充",
+        "year": "最近可用"
+      }
+    ],
+    "sourceLabel": "用户项目详表",
+    "sourcePayload": {
+      "02_项目详细库": {
+        "国家/地区": "美国",
+        "学校": "Princeton University",
+        "位置": "Princeton, NJ",
+        "学院": "Bendheim Center for Finance",
+        "项目": "Master in Finance (M.Fin.)",
+        "方向": "金融硕士/量化金融",
+        "学制": "2年，少数可1年",
+        "学费/费用": "2025-26 regular tuition约$65,210/年；SHP约$3,800/年；生活费另计",
+        "申请时间": "Fall 2026官网DDL: 2025-12-15 23:59 ET；Fall 2027通常需等官网更新",
+        "申请要求/材料": "成绩单、数学课程背景、Personal Statement、Academic Statement of Purpose、3封推荐信、数学测试；数理/编程/金融背景越强越好",
+        "考试要求": "GRE/GMAT可选；TOEFL/IELTS/DET按研究生院豁免规则",
+        "面试": "官网未列常规面试；有数学assessment",
+        "建议先修/能力": "线代、多元微积分、微分方程、概率统计；Python/R/C++与金融实习加分",
+        "周边租房预算": "周边Princeton/NJ：studio约$1,600-2,300/月，1BR约$1,900-2,800/月；校内/研究生宿舍需尽早排队",
+        "申请定位": "冲刺",
+        "备注": "极小班，录取偏好顶尖数理背景；原表已列为Prefer",
+        "官网来源": "https://bcf.princeton.edu/academic-programs/master-in-finance/apply-for-the-master-in-finance-program/"
+      },
+      "qsRank": "27",
+      "qsEdition": "2027",
+      "verificationLevel": "深度核验",
+      "recordType": "项目",
+      "originalProgramName": "Master in Finance (M.Fin.)",
+      "translatedProgramName": "金融硕士",
+      "programNameTranslatedAt": "2026-07-17"
+    }
+  },
+  {
+    "id": "baruch-mfe",
+    "region": "美国",
+    "city": "New York, NY",
+    "university": "Baruch College, CUNY",
+    "school": "Weissman School of Arts & Sciences",
+    "program": "金融工程硕士",
+    "category": "金融与量化",
+    "direction": "金融工程",
+    "background": "强先修要求",
+    "cycle": "最近可用",
+    "intake": "下一入学周期",
+    "duration": "3学期",
+    "updated": "2026-06-05",
+    "academic": "3封推荐信；Calculus两学期、Probability、Linear Algebra、C++、Finance/相关经验；提交QBA",
+    "language": "GRE/GMAT不再要求；英语按CUNY/项目规则",
+    "tests": "GRE/GMAT不再要求；英语按CUNY/项目规则",
+    "prerequisites": "C++、概率、统计、数值方法、Python；强量化实习非常关键",
+    "deadline": "Fall 2026: Round 1 2025-11-01；Round 2 2025-12-01",
+    "deadlineNote": "来自 2026-06-05 项目详表；如当年页面尚未发布，使用最近可用官方信息。",
+    "tuition": "项目全额学费：NY居民约$27,675；州外/国际约$42,000",
+    "applicationRequirements": "3封推荐信；Calculus两学期、Probability、Linear Algebra、C++、Finance/相关经验；提交QBA",
+    "interview": "是",
+    "rentBudget": "曼哈顿/Queens/Brooklyn通勤：studio约$2,600-3,800/月，合租单间约$1,400-2,400/月",
+    "positioning": "冲刺",
+    "requirements": [
+      {
+        "label": "学术背景",
+        "value": "量化基础",
+        "level": 86
+      },
+      {
+        "label": "英语要求",
+        "value": "按项目要求",
+        "level": 68
+      },
+      {
+        "label": "标化考试",
+        "value": "按当年政策",
+        "level": 42
+      }
+    ],
+    "documents": [
+      "3封推荐信",
+      "Calculus两学期、Probability、Linear Algebra、C++、Finance/相关经验",
+      "提交QBA"
+    ],
+    "notes": [
+      "性价比极高但录取率低，小班且就业导向强"
+    ],
+    "source": "https://mfe.baruch.cuny.edu/application-process/",
+    "sources": [
+      {
+        "label": "项目官网 / 最近可用招生页",
+        "url": "https://mfe.baruch.cuny.edu/application-process/",
+        "kind": "项目官网",
+        "year": "最近可用"
+      }
+    ],
+    "sourceLabel": "用户项目详表",
+    "sourcePayload": {
+      "02_项目详细库": {
+        "国家/地区": "美国",
+        "学校": "Baruch College, CUNY",
+        "位置": "New York, NY",
+        "学院": "Weissman School of Arts & Sciences",
+        "项目": "MS in Financial Engineering",
+        "方向": "金融工程",
+        "学制": "3学期",
+        "学费/费用": "项目全额学费：NY居民约$27,675；州外/国际约$42,000",
+        "申请时间": "Fall 2026: Round 1 2025-11-01；Round 2 2025-12-01",
+        "申请要求/材料": "3封推荐信；Calculus两学期、Probability、Linear Algebra、C++、Finance/相关经验；提交QBA",
+        "考试要求": "GRE/GMAT不再要求；英语按CUNY/项目规则",
+        "面试": "是",
+        "建议先修/能力": "C++、概率、统计、数值方法、Python；强量化实习非常关键",
+        "周边租房预算": "曼哈顿/Queens/Brooklyn通勤：studio约$2,600-3,800/月，合租单间约$1,400-2,400/月",
+        "申请定位": "冲刺",
+        "备注": "性价比极高但录取率低，小班且就业导向强",
+        "官网来源": "https://mfe.baruch.cuny.edu/application-process/"
+      },
+      "verificationLevel": "深度核验",
+      "recordType": "项目",
+      "originalProgramName": "MS in Financial Engineering",
+      "translatedProgramName": "金融工程硕士",
+      "programNameTranslatedAt": "2026-07-17"
+    }
+  },
+  {
+    "id": "mit-mfin",
+    "region": "美国",
+    "city": "Cambridge, MA",
+    "university": "Massachusetts Institute of Technology",
+    "school": "MIT Sloan School of Management",
+    "program": "金融硕士",
+    "category": "金融与量化",
+    "direction": "金融硕士/量化金融",
+    "background": "强先修要求",
+    "cycle": "最近可用",
+    "intake": "下一入学周期",
+    "duration": "12个月或18个月",
+    "updated": "2026-06-05",
+    "academic": "成绩单、3封推荐信、1页Resume、short answers、video questions；建议线代/多元微积分/概率/统计/Python",
+    "language": "GRE/GMAT可选但强烈建议；申请阶段通常不要求TOEFL/IELTS",
+    "tests": "GRE/GMAT可选但强烈建议；申请阶段通常不要求TOEFL/IELTS",
+    "prerequisites": "强数学、编程、金融实习；本科应届需高质量量化/投研实习",
+    "deadline": "2026 entry官网已截止；OGE页面曾列2026-01-05；下一轮以官网为准",
+    "deadlineNote": "来自 2026-06-05 项目详表；如当年页面尚未发布，使用最近可用官方信息。",
+    "tuition": "2025-26：12个月约$93,834；18个月约$128,820",
+    "applicationRequirements": "成绩单、3封推荐信、1页Resume、short answers、video questions；建议线代/多元微积分/概率/统计/Python",
+    "interview": "invite-only且为录取流程关键环节",
+    "rentBudget": "Cambridge/Boston：studio约$2,500-3,600/月，1BR约$2,800-4,200/月，合租单间约$1,300-2,200/月",
+    "positioning": "冲刺",
+    "requirements": [
+      {
+        "label": "学术背景",
+        "value": "量化基础",
+        "level": 86
+      },
+      {
+        "label": "英语要求",
+        "value": "按项目要求",
+        "level": 68
+      },
+      {
+        "label": "标化考试",
+        "value": "按当年政策",
+        "level": 42
+      }
+    ],
+    "documents": [
+      "成绩单、3封推荐信、1页Resume、short answers、video questions",
+      "建议线代/多元微积分/概率/统计/Python"
+    ],
+    "notes": [
+      "项目规模较大但国际生竞争极强",
+      "原表已含录取画像"
+    ],
+    "source": "https://mitsloan.mit.edu/mfin/admissions/how-to-apply",
+    "sources": [
+      {
+        "label": "项目官网 / 最近可用招生页",
+        "url": "https://mitsloan.mit.edu/mfin/admissions/how-to-apply",
+        "kind": "项目官网",
+        "year": "最近可用"
+      },
+      {
+        "label": "MIT MFin tuition",
+        "url": "https://mitsloan.mit.edu/mfin/admissions/tuition-and-financial-aid",
+        "kind": "官网补充",
+        "year": "最近可用"
+      }
+    ],
+    "sourceLabel": "用户项目详表",
+    "sourcePayload": {
+      "02_项目详细库": {
+        "国家/地区": "美国",
+        "学校": "Massachusetts Institute of Technology",
+        "位置": "Cambridge, MA",
+        "学院": "MIT Sloan School of Management",
+        "项目": "Master of Finance",
+        "方向": "金融硕士/量化金融",
+        "学制": "12个月或18个月",
+        "学费/费用": "2025-26：12个月约$93,834；18个月约$128,820",
+        "申请时间": "2026 entry官网已截止；OGE页面曾列2026-01-05；下一轮以官网为准",
+        "申请要求/材料": "成绩单、3封推荐信、1页Resume、short answers、video questions；建议线代/多元微积分/概率/统计/Python",
+        "考试要求": "GRE/GMAT可选但强烈建议；申请阶段通常不要求TOEFL/IELTS",
+        "面试": "invite-only且为录取流程关键环节",
+        "建议先修/能力": "强数学、编程、金融实习；本科应届需高质量量化/投研实习",
+        "周边租房预算": "Cambridge/Boston：studio约$2,500-3,600/月，1BR约$2,800-4,200/月，合租单间约$1,300-2,200/月",
+        "申请定位": "冲刺",
+        "备注": "项目规模较大但国际生竞争极强；原表已含录取画像",
+        "官网来源": "https://mitsloan.mit.edu/mfin/admissions/how-to-apply"
+      },
+      "qsRank": "1",
+      "qsEdition": "2027",
+      "verificationLevel": "深度核验",
+      "recordType": "项目",
+      "originalProgramName": "Master of Finance",
+      "translatedProgramName": "金融硕士",
+      "programNameTranslatedAt": "2026-07-17"
+    }
+  },
+  {
+    "id": "cornell-orie-fe",
+    "region": "美国",
+    "city": "Ithaca, NY / New York, NY",
+    "university": "Cornell University",
+    "school": "College of Engineering, ORIE",
+    "program": "工程硕士在 ORIE - 金融工程专业",
+    "category": "金融与量化",
+    "direction": "金融工程",
+    "background": "强先修要求",
+    "cycle": "最近可用",
+    "intake": "下一入学周期",
+    "duration": "3学期，第三学期Manhattan",
+    "updated": "2026-06-05",
+    "academic": "Resume、SOP、Personal Statement、2封必需/3封更佳推荐、异步视频面试；FE额外要求概率统计/随机过程与金融基础",
+    "language": "GRE/GMAT二选一，GRE preferred；英语按Cornell Graduate School",
+    "tests": "GRE/GMAT二选一，GRE preferred；英语按Cornell Graduate School",
+    "prerequisites": "概率/随机过程、优化、Python、金融市场基础；曼哈顿学期就业资源强",
+    "deadline": "Fall admittance常见DDL: 2025-12-01",
+    "deadlineNote": "来自 2026-06-05 项目详表；如当年页面尚未发布，使用最近可用官方信息。",
+    "tuition": "2025-26 M.Eng tuition约$71,266/年；费用另计",
+    "applicationRequirements": "Resume、SOP、Personal Statement、2封必需/3封更佳推荐、异步视频面试；FE额外要求概率统计/随机过程与金融基础",
+    "interview": "异步video interview",
+    "rentBudget": "Ithaca：studio约$1,200-1,800/月；Manhattan阶段按NYC预算studio约$2,700+/月或合租",
+    "positioning": "冲刺/高匹配",
+    "requirements": [
+      {
+        "label": "学术背景",
+        "value": "量化基础",
+        "level": 86
+      },
+      {
+        "label": "英语要求",
+        "value": "按项目要求",
+        "level": 68
+      },
+      {
+        "label": "标化考试",
+        "value": "GRE / GMAT",
+        "level": 82
+      }
+    ],
+    "documents": [
+      "Resume、SOP、Personal Statement、2封必需/3封更佳推荐、异步视频面试",
+      "FE额外要求概率统计/随机过程与金融基础"
+    ],
+    "notes": [
+      "课程和就业非常贴近quant",
+      "需解释为何ORIE/FE"
+    ],
+    "source": "https://www.duffield.cornell.edu/orie/meng/meng-admissions-requirements-ithaca/",
+    "sources": [
+      {
+        "label": "项目官网 / 最近可用招生页",
+        "url": "https://www.duffield.cornell.edu/orie/meng/meng-admissions-requirements-ithaca/",
+        "kind": "项目官网",
+        "year": "最近可用"
+      }
+    ],
+    "sourceLabel": "用户项目详表",
+    "sourcePayload": {
+      "02_项目详细库": {
+        "国家/地区": "美国",
+        "学校": "Cornell University",
+        "位置": "Ithaca, NY / New York, NY",
+        "学院": "College of Engineering, ORIE",
+        "项目": "M.Eng. in ORIE - Financial Engineering Concentration",
+        "方向": "金融工程",
+        "学制": "3学期，第三学期Manhattan",
+        "学费/费用": "2025-26 M.Eng tuition约$71,266/年；费用另计",
+        "申请时间": "Fall admittance常见DDL: 2025-12-01",
+        "申请要求/材料": "Resume、SOP、Personal Statement、2封必需/3封更佳推荐、异步视频面试；FE额外要求概率统计/随机过程与金融基础",
+        "考试要求": "GRE/GMAT二选一，GRE preferred；英语按Cornell Graduate School",
+        "面试": "异步video interview",
+        "建议先修/能力": "概率/随机过程、优化、Python、金融市场基础；曼哈顿学期就业资源强",
+        "周边租房预算": "Ithaca：studio约$1,200-1,800/月；Manhattan阶段按NYC预算studio约$2,700+/月或合租",
+        "申请定位": "冲刺/高匹配",
+        "备注": "课程和就业非常贴近quant；需解释为何ORIE/FE",
+        "官网来源": "https://www.duffield.cornell.edu/orie/meng/meng-admissions-requirements-ithaca/"
+      },
+      "qsRank": "=16",
+      "qsEdition": "2027",
+      "verificationLevel": "深度核验",
+      "recordType": "项目",
+      "originalProgramName": "M.Eng. in ORIE - Financial Engineering Concentration",
+      "translatedProgramName": "工程硕士在 ORIE - 金融工程专业",
+      "programNameTranslatedAt": "2026-07-17"
+    }
+  },
+  {
+    "id": "columbia-mafn",
+    "region": "美国",
+    "city": "New York, NY",
+    "university": "Columbia University",
+    "school": "Department of Mathematics",
+    "program": "数学硕士，金融数学专业",
+    "category": "金融与量化",
+    "direction": "金融数学",
+    "background": "强先修要求",
+    "cycle": "最近可用",
+    "intake": "下一入学周期",
+    "duration": "2或3学期",
+    "updated": "2026-06-05",
+    "academic": "成绩单、Academic SOP、Personal Statement、3封学术推荐；需calculus/linear algebra/ODE/probability/statistics/programming",
+    "language": "GRE/GMAT强烈建议但非必需；TOEFL/IELTS按GSAS",
+    "tests": "GRE/GMAT强烈建议但非必需；TOEFL/IELTS按GSAS",
+    "prerequisites": "数学深度是核心；建议补随机过程、数值方法、C++/Python",
+    "deadline": "Fall 2026: early 2026-01-15；final 2026-05-01",
+    "deadlineNote": "来自 2026-06-05 项目详表；如当年页面尚未发布，使用最近可用官方信息。",
+    "tuition": "2025-26 GSAS Residence Unit约$47,194/学期；总额取决于points/学期",
+    "applicationRequirements": "成绩单、Academic SOP、Personal Statement、3封学术推荐；需calculus/linear algebra/ODE/probability/statistics/programming",
+    "interview": "通常无统一面试",
+    "rentBudget": "Morningside/Upper West/Harlem：studio约$2,300-3,400/月，合租单间约$1,300-2,200/月",
+    "positioning": "高匹配",
+    "requirements": [
+      {
+        "label": "学术背景",
+        "value": "量化基础",
+        "level": 86
+      },
+      {
+        "label": "英语要求",
+        "value": "按项目要求",
+        "level": 68
+      },
+      {
+        "label": "标化考试",
+        "value": "GRE / GMAT",
+        "level": 82
+      }
+    ],
+    "documents": [
+      "成绩单、Academic SOP、Personal Statement、3封学术推荐",
+      "需calculus/linear algebra/ODE/probability/statistics/programming"
+    ],
+    "notes": [
+      "纽约区位强，费用高",
+      "课程偏数学金融"
+    ],
+    "source": "https://www.math.columbia.edu/mafn/admissions-2/",
+    "sources": [
+      {
+        "label": "项目官网 / 最近可用招生页",
+        "url": "https://www.math.columbia.edu/mafn/admissions-2/",
+        "kind": "项目官网",
+        "year": "最近可用"
+      }
+    ],
+    "sourceLabel": "用户项目详表",
+    "sourcePayload": {
+      "02_项目详细库": {
+        "国家/地区": "美国",
+        "学校": "Columbia University",
+        "位置": "New York, NY",
+        "学院": "Department of Mathematics",
+        "项目": "MA in Mathematics with Specialization in Mathematics of Finance",
+        "方向": "金融数学",
+        "学制": "2或3学期",
+        "学费/费用": "2025-26 GSAS Residence Unit约$47,194/学期；总额取决于points/学期",
+        "申请时间": "Fall 2026: early 2026-01-15；final 2026-05-01",
+        "申请要求/材料": "成绩单、Academic SOP、Personal Statement、3封学术推荐；需calculus/linear algebra/ODE/probability/statistics/programming",
+        "考试要求": "GRE/GMAT强烈建议但非必需；TOEFL/IELTS按GSAS",
+        "面试": "通常无统一面试",
+        "建议先修/能力": "数学深度是核心；建议补随机过程、数值方法、C++/Python",
+        "周边租房预算": "Morningside/Upper West/Harlem：studio约$2,300-3,400/月，合租单间约$1,300-2,200/月",
+        "申请定位": "高匹配",
+        "备注": "纽约区位强，费用高；课程偏数学金融",
+        "官网来源": "https://www.math.columbia.edu/mafn/admissions-2/"
+      },
+      "qsRank": "=43",
+      "qsEdition": "2027",
+      "verificationLevel": "深度核验",
+      "recordType": "项目",
+      "originalProgramName": "MA in Mathematics with Specialization in Mathematics of Finance",
+      "translatedProgramName": "数学硕士，金融数学专业",
+      "programNameTranslatedAt": "2026-07-17"
+    }
+  },
+  {
+    "id": "columbia-msfe",
+    "region": "美国",
+    "city": "New York, NY",
+    "university": "Columbia University",
+    "school": "IEOR Department",
+    "program": "金融工程硕士",
+    "category": "金融与量化",
+    "direction": "金融工程",
+    "background": "强先修要求",
+    "cycle": "最近可用",
+    "intake": "下一入学周期",
+    "duration": "3学期左右",
+    "updated": "2026-06-05",
+    "academic": "成绩单、简历、SOP、推荐信、先修数学/概率/统计/编程；项目偏工程与市场微观结构/衍生品/量化策略",
+    "language": "GRE要求需按当年页面核验；英语按Columbia Engineering",
+    "tests": "GRE要求需按当年页面核验；英语按Columbia Engineering",
+    "prerequisites": "概率统计、优化、编程、金融工程课程；适合目标纽约quant/fintech",
+    "deadline": "Fall申请常见优先/最终DDL在冬季；以MSFE官网当年页面为准",
+    "deadlineNote": "来自 2026-06-05 项目详表；如当年页面尚未发布，使用最近可用官方信息。",
+    "tuition": "工程学院研究生学费按学分计；2025-26需以SEAS Student Financial Services最新表核验",
+    "applicationRequirements": "成绩单、简历、SOP、推荐信、先修数学/概率/统计/编程；项目偏工程与市场微观结构/衍生品/量化策略",
+    "interview": "可能有面试/视频环节，按当年申请系统",
+    "rentBudget": "NYC预算同上；建议合租控制现金流",
+    "positioning": "高匹配",
+    "requirements": [
+      {
+        "label": "学术背景",
+        "value": "量化基础",
+        "level": 86
+      },
+      {
+        "label": "英语要求",
+        "value": "按项目要求",
+        "level": 68
+      },
+      {
+        "label": "标化考试",
+        "value": "按当年政策",
+        "level": 42
+      }
+    ],
+    "documents": [
+      "成绩单、简历、SOP、推荐信、先修数学/概率/统计/编程",
+      "项目偏工程与市场微观结构/衍生品/量化策略"
+    ],
+    "notes": [
+      "与MAFN同校不同学院，申请定位需区分"
+    ],
+    "source": "https://www.ieor.columbia.edu/financial-engineering-ms",
+    "sources": [
+      {
+        "label": "项目官网 / 最近可用招生页",
+        "url": "https://www.ieor.columbia.edu/financial-engineering-ms",
+        "kind": "项目官网",
+        "year": "最近可用"
+      }
+    ],
+    "sourceLabel": "用户项目详表",
+    "sourcePayload": {
+      "02_项目详细库": {
+        "国家/地区": "美国",
+        "学校": "Columbia University",
+        "位置": "New York, NY",
+        "学院": "IEOR Department",
+        "项目": "MS in Financial Engineering",
+        "方向": "金融工程",
+        "学制": "3学期左右",
+        "学费/费用": "工程学院研究生学费按学分计；2025-26需以SEAS Student Financial Services最新表核验",
+        "申请时间": "Fall申请常见优先/最终DDL在冬季；以MSFE官网当年页面为准",
+        "申请要求/材料": "成绩单、简历、SOP、推荐信、先修数学/概率/统计/编程；项目偏工程与市场微观结构/衍生品/量化策略",
+        "考试要求": "GRE要求需按当年页面核验；英语按Columbia Engineering",
+        "面试": "可能有面试/视频环节，按当年申请系统",
+        "建议先修/能力": "概率统计、优化、编程、金融工程课程；适合目标纽约quant/fintech",
+        "周边租房预算": "NYC预算同上；建议合租控制现金流",
+        "申请定位": "高匹配",
+        "备注": "与MAFN同校不同学院，申请定位需区分",
+        "官网来源": "https://www.ieor.columbia.edu/financial-engineering-ms"
+      },
+      "qsRank": "=43",
+      "qsEdition": "2027",
+      "verificationLevel": "深度核验",
+      "recordType": "项目",
+      "originalProgramName": "MS in Financial Engineering",
+      "translatedProgramName": "金融工程硕士",
+      "programNameTranslatedAt": "2026-07-17"
+    }
+  },
+  {
+    "id": "berkeley-ieor-fintech",
+    "region": "美国",
+    "city": "Berkeley, CA",
+    "university": "University of California, Berkeley",
+    "school": "IEOR / Fung Institute",
+    "program": "工程硕士在 IEOR 中，金融科技集中任选",
+    "category": "金融与量化",
+    "direction": "金融科技/运筹/工程管理",
+    "background": "强先修要求",
+    "cycle": "最近可用",
+    "intake": "下一入学周期",
+    "duration": "1年",
+    "updated": "2026-06-05",
+    "academic": "在线申请、文书、推荐信、成绩单；IEOR/MEng要求概率统计/优化/编程基础",
+    "language": "GRE要求以IEOR当年项目页为准；国际生英语要求",
+    "tests": "GRE要求以IEOR当年项目页为准；国际生英语要求",
+    "prerequisites": "概率、优化、统计学习、Python/C++/Java；项目不等同纯MFE",
+    "deadline": "Fall 2026 Graduate Division项目页DDL: 2026-01-07",
+    "deadlineNote": "来自 2026-06-05 项目详表；如当年页面尚未发布，使用最近可用官方信息。",
+    "tuition": "2025-26估算：非居民含SHIP总学费+费约$71k；居民约$58k",
+    "applicationRequirements": "在线申请、文书、推荐信、成绩单；IEOR/MEng要求概率统计/优化/编程基础",
+    "interview": "官网未突出统一面试",
+    "rentBudget": "Berkeley/Oakland：studio约$2,000-3,100/月，1BR约$2,400-3,600/月，合租单间约$1,100-1,900/月",
+    "positioning": "高匹配",
+    "requirements": [
+      {
+        "label": "学术背景",
+        "value": "量化基础",
+        "level": 86
+      },
+      {
+        "label": "英语要求",
+        "value": "按项目要求",
+        "level": 68
+      },
+      {
+        "label": "标化考试",
+        "value": "按当年政策",
+        "level": 42
+      }
+    ],
+    "documents": [
+      "在线申请、文书、推荐信、成绩单",
+      "IEOR/MEng要求概率统计/优化/编程基础"
+    ],
+    "notes": [
+      "名校光环强但方向更广",
+      "需用文书说明FinTech/IEOR路径"
+    ],
+    "source": "https://ieor.berkeley.edu/academics/master-of-engineering/how-to-apply/",
+    "sources": [
+      {
+        "label": "项目官网 / 最近可用招生页",
+        "url": "https://ieor.berkeley.edu/academics/master-of-engineering/how-to-apply/",
+        "kind": "项目官网",
+        "year": "最近可用"
+      }
+    ],
+    "sourceLabel": "用户项目详表",
+    "sourcePayload": {
+      "02_项目详细库": {
+        "国家/地区": "美国",
+        "学校": "University of California, Berkeley",
+        "位置": "Berkeley, CA",
+        "学院": "IEOR / Fung Institute",
+        "项目": "M.Eng. in IEOR, FinTech concentration可选",
+        "方向": "金融科技/运筹/工程管理",
+        "学制": "1年",
+        "学费/费用": "2025-26估算：非居民含SHIP总学费+费约$71k；居民约$58k",
+        "申请时间": "Fall 2026 Graduate Division项目页DDL: 2026-01-07",
+        "申请要求/材料": "在线申请、文书、推荐信、成绩单；IEOR/MEng要求概率统计/优化/编程基础",
+        "考试要求": "GRE要求以IEOR当年项目页为准；国际生英语要求",
+        "面试": "官网未突出统一面试",
+        "建议先修/能力": "概率、优化、统计学习、Python/C++/Java；项目不等同纯MFE",
+        "周边租房预算": "Berkeley/Oakland：studio约$2,000-3,100/月，1BR约$2,400-3,600/月，合租单间约$1,100-1,900/月",
+        "申请定位": "高匹配",
+        "备注": "名校光环强但方向更广；需用文书说明FinTech/IEOR路径",
+        "官网来源": "https://ieor.berkeley.edu/academics/master-of-engineering/how-to-apply/"
+      },
+      "qsRank": "=20",
+      "qsEdition": "2027",
+      "verificationLevel": "深度核验",
+      "recordType": "项目",
+      "originalProgramName": "M.Eng. in IEOR, FinTech concentration可选",
+      "translatedProgramName": "工程硕士在 IEOR 中，金融科技集中任选",
+      "programNameTranslatedAt": "2026-07-17"
+    }
+  },
+  {
+    "id": "cmu-mscf",
+    "region": "美国",
+    "city": "Pittsburgh, PA / New York option",
+    "university": "Carnegie Mellon University",
+    "school": "MSCF",
+    "program": "计算金融硕士",
+    "category": "金融与量化",
+    "direction": "计算金融/金融工程",
+    "background": "强先修要求",
+    "cycle": "最近可用",
+    "intake": "下一入学周期",
+    "duration": "3学期",
+    "updated": "2026-06-05",
+    "academic": "在线申请、Resume、正式成绩单/学位证明、2篇short essays、90秒video essay、3封推荐",
+    "language": "GRE/GMAT二选一必需；英语Duolingo/TOEFL/IELTS或豁免",
+    "tests": "GRE/GMAT二选一必需；英语Duolingo/TOEFL/IELTS或豁免",
+    "prerequisites": "数学、统计、编程、金融全部要强；适合高强度quant训练",
+    "deadline": "Round 1 2025-12-01；Round 2 2026-03-01",
+    "deadlineNote": "来自 2026-06-05 项目详表；如当年页面尚未发布，使用最近可用官方信息。",
+    "tuition": "2025-26 tuition约$69,000；fees约$1,006",
+    "applicationRequirements": "在线申请、Resume、正式成绩单/学位证明、2篇short essays、90秒video essay、3封推荐",
+    "interview": "invite-only",
+    "rentBudget": "Pittsburgh：studio约$1,100-1,700/月，1BR约$1,300-2,100/月；NYC option按纽约预算",
+    "positioning": "冲刺/高匹配",
+    "requirements": [
+      {
+        "label": "学术背景",
+        "value": "量化基础",
+        "level": 86
+      },
+      {
+        "label": "英语要求",
+        "value": "按项目要求",
+        "level": 68
+      },
+      {
+        "label": "标化考试",
+        "value": "GRE / GMAT",
+        "level": 82
+      }
+    ],
+    "documents": [
+      "在线申请、Resume、正式成绩单/学位证明、2篇short essays、90秒video essay、3封推荐"
+    ],
+    "notes": [
+      "顶级量化项目之一",
+      "对材料真实性和量化能力核验严格"
+    ],
+    "source": "https://www.cmu.edu/mscf/admissions/apply.html",
+    "sources": [
+      {
+        "label": "项目官网 / 最近可用招生页",
+        "url": "https://www.cmu.edu/mscf/admissions/apply.html",
+        "kind": "项目官网",
+        "year": "最近可用"
+      }
+    ],
+    "sourceLabel": "用户项目详表",
+    "sourcePayload": {
+      "02_项目详细库": {
+        "国家/地区": "美国",
+        "学校": "Carnegie Mellon University",
+        "位置": "Pittsburgh, PA / New York option",
+        "学院": "MSCF",
+        "项目": "MS in Computational Finance",
+        "方向": "计算金融/金融工程",
+        "学制": "3学期",
+        "学费/费用": "2025-26 tuition约$69,000；fees约$1,006",
+        "申请时间": "Round 1 2025-12-01；Round 2 2026-03-01",
+        "申请要求/材料": "在线申请、Resume、正式成绩单/学位证明、2篇short essays、90秒video essay、3封推荐",
+        "考试要求": "GRE/GMAT二选一必需；英语Duolingo/TOEFL/IELTS或豁免",
+        "面试": "invite-only",
+        "建议先修/能力": "数学、统计、编程、金融全部要强；适合高强度quant训练",
+        "周边租房预算": "Pittsburgh：studio约$1,100-1,700/月，1BR约$1,300-2,100/月；NYC option按纽约预算",
+        "申请定位": "冲刺/高匹配",
+        "备注": "顶级量化项目之一；对材料真实性和量化能力核验严格",
+        "官网来源": "https://www.cmu.edu/mscf/admissions/apply.html"
+      },
+      "verificationLevel": "深度核验",
+      "recordType": "项目",
+      "originalProgramName": "MS in Computational Finance",
+      "translatedProgramName": "计算金融硕士",
+      "programNameTranslatedAt": "2026-07-17"
+    }
+  },
+  {
+    "id": "uchicago-finmath",
+    "region": "美国",
+    "city": "Chicago, IL",
+    "university": "University of Chicago",
+    "school": "Department of Financial Mathematics",
+    "program": "金融数学硕士",
+    "category": "金融与量化",
+    "direction": "金融数学",
+    "background": "强先修要求",
+    "cycle": "最近可用",
+    "intake": "下一入学周期",
+    "duration": "15个月左右",
+    "updated": "2026-06-05",
+    "academic": "在线申请、成绩单、简历、推荐信、个人陈述、量化背景；建议数学/统计/计算机/金融扎实",
+    "language": "GRE政策与英语要求按当年页面；国际生需TOEFL/IELTS/DET或豁免",
+    "tests": "GRE政策与英语要求按当年页面；国际生需TOEFL/IELTS/DET或豁免",
+    "prerequisites": "随机过程、衍生品、编程、概率统计；芝加哥trading生态强",
+    "deadline": "2026申请轮次通常含多轮：秋冬春多轮截止；以官网Apply页为准",
+    "deadlineNote": "来自 2026-06-05 项目详表；如当年页面尚未发布，使用最近可用官方信息。",
+    "tuition": "学费按课程/学分与年度费率计；2025-26需以Bursar/项目页最新为准",
+    "applicationRequirements": "在线申请、成绩单、简历、推荐信、个人陈述、量化背景；建议数学/统计/计算机/金融扎实",
+    "interview": "可能有面试/补充评估",
+    "rentBudget": "Hyde Park/Chicago：studio约$1,200-2,000/月，1BR约$1,500-2,500/月",
+    "positioning": "高匹配",
+    "requirements": [
+      {
+        "label": "学术背景",
+        "value": "量化基础",
+        "level": 86
+      },
+      {
+        "label": "英语要求",
+        "value": "按项目要求",
+        "level": 68
+      },
+      {
+        "label": "标化考试",
+        "value": "按当年政策",
+        "level": 42
+      }
+    ],
+    "documents": [
+      "在线申请、成绩单、简历、推荐信、个人陈述、量化背景",
+      "建议数学/统计/计算机/金融扎实"
+    ],
+    "notes": [
+      "课程强度高，适合目标trading、risk、quant research"
+    ],
+    "source": "https://finmath.uchicago.edu/admissions/apply/",
+    "sources": [
+      {
+        "label": "项目官网 / 最近可用招生页",
+        "url": "https://finmath.uchicago.edu/admissions/apply/",
+        "kind": "项目官网",
+        "year": "最近可用"
+      }
+    ],
+    "sourceLabel": "用户项目详表",
+    "sourcePayload": {
+      "02_项目详细库": {
+        "国家/地区": "美国",
+        "学校": "University of Chicago",
+        "位置": "Chicago, IL",
+        "学院": "Department of Financial Mathematics",
+        "项目": "MS in Financial Mathematics",
+        "方向": "金融数学",
+        "学制": "15个月左右",
+        "学费/费用": "学费按课程/学分与年度费率计；2025-26需以Bursar/项目页最新为准",
+        "申请时间": "2026申请轮次通常含多轮：秋冬春多轮截止；以官网Apply页为准",
+        "申请要求/材料": "在线申请、成绩单、简历、推荐信、个人陈述、量化背景；建议数学/统计/计算机/金融扎实",
+        "考试要求": "GRE政策与英语要求按当年页面；国际生需TOEFL/IELTS/DET或豁免",
+        "面试": "可能有面试/补充评估",
+        "建议先修/能力": "随机过程、衍生品、编程、概率统计；芝加哥trading生态强",
+        "周边租房预算": "Hyde Park/Chicago：studio约$1,200-2,000/月，1BR约$1,500-2,500/月",
+        "申请定位": "高匹配",
+        "备注": "课程强度高，适合目标trading、risk、quant research",
+        "官网来源": "https://finmath.uchicago.edu/admissions/apply/"
+      },
+      "qsRank": "24",
+      "qsEdition": "2027",
+      "verificationLevel": "深度核验",
+      "recordType": "项目",
+      "originalProgramName": "MS in Financial Mathematics",
+      "translatedProgramName": "金融数学硕士",
+      "programNameTranslatedAt": "2026-07-17"
+    }
+  },
+  {
+    "id": "nyu-tandon-msfe",
+    "region": "美国",
+    "city": "Brooklyn, NY",
+    "university": "New York University",
+    "school": "Tandon School of Engineering",
+    "program": "金融工程硕士",
+    "category": "金融与量化",
+    "direction": "金融工程",
+    "background": "强先修要求",
+    "cycle": "最近可用",
+    "intake": "下一入学周期",
+    "duration": "约1.5-2年",
+    "updated": "2026-06-05",
+    "academic": "在线申请、成绩单、简历、SOP、推荐信；要求数学、概率统计、编程/工程基础",
+    "language": "GRE政策按当年Tandon页面；英语TOEFL/IELTS/Duolingo或豁免",
+    "tests": "GRE政策按当年Tandon页面；英语TOEFL/IELTS/Duolingo或豁免",
+    "prerequisites": "Python/C++、概率、数值方法、机器学习、金融市场；可选Risk/Quant Finance方向",
+    "deadline": "Fall国际生常见早春截止；Spring也可能开放；以Tandon Graduate Admissions为准",
+    "deadlineNote": "来自 2026-06-05 项目详表；如当年页面尚未发布，使用最近可用官方信息。",
+    "tuition": "NYU Tandon按学分收费；总成本需按当年学分费率估算，常见总学费约$70k-$90k区间",
+    "applicationRequirements": "在线申请、成绩单、简历、SOP、推荐信；要求数学、概率统计、编程/工程基础",
+    "interview": "通常非统一必需，可能case-by-case",
+    "rentBudget": "Brooklyn/Manhattan通勤：studio约$2,400-3,600/月，合租单间约$1,300-2,300/月",
+    "positioning": "高匹配",
+    "requirements": [
+      {
+        "label": "学术背景",
+        "value": "量化基础",
+        "level": 86
+      },
+      {
+        "label": "英语要求",
+        "value": "按项目要求",
+        "level": 68
+      },
+      {
+        "label": "标化考试",
+        "value": "按当年政策",
+        "level": 42
+      }
+    ],
+    "documents": [
+      "在线申请、成绩单、简历、SOP、推荐信",
+      "要求数学、概率统计、编程/工程基础"
+    ],
+    "notes": [
+      "纽约就业生态强，项目规模较大",
+      "需突出技术栈"
+    ],
+    "source": "https://engineering.nyu.edu/academics/programs/financial-engineering-ms",
+    "sources": [
+      {
+        "label": "项目官网 / 最近可用招生页",
+        "url": "https://engineering.nyu.edu/academics/programs/financial-engineering-ms",
+        "kind": "项目官网",
+        "year": "最近可用"
+      }
+    ],
+    "sourceLabel": "用户项目详表",
+    "sourcePayload": {
+      "02_项目详细库": {
+        "国家/地区": "美国",
+        "学校": "New York University",
+        "位置": "Brooklyn, NY",
+        "学院": "Tandon School of Engineering",
+        "项目": "MS in Financial Engineering",
+        "方向": "金融工程",
+        "学制": "约1.5-2年",
+        "学费/费用": "NYU Tandon按学分收费；总成本需按当年学分费率估算，常见总学费约$70k-$90k区间",
+        "申请时间": "Fall国际生常见早春截止；Spring也可能开放；以Tandon Graduate Admissions为准",
+        "申请要求/材料": "在线申请、成绩单、简历、SOP、推荐信；要求数学、概率统计、编程/工程基础",
+        "考试要求": "GRE政策按当年Tandon页面；英语TOEFL/IELTS/Duolingo或豁免",
+        "面试": "通常非统一必需，可能case-by-case",
+        "建议先修/能力": "Python/C++、概率、数值方法、机器学习、金融市场；可选Risk/Quant Finance方向",
+        "周边租房预算": "Brooklyn/Manhattan通勤：studio约$2,400-3,600/月，合租单间约$1,300-2,300/月",
+        "申请定位": "高匹配",
+        "备注": "纽约就业生态强，项目规模较大；需突出技术栈",
+        "官网来源": "https://engineering.nyu.edu/academics/programs/financial-engineering-ms"
+      },
+      "verificationLevel": "深度核验",
+      "recordType": "项目",
+      "originalProgramName": "MS in Financial Engineering",
+      "translatedProgramName": "金融工程硕士",
+      "programNameTranslatedAt": "2026-07-17"
+    }
+  },
+  {
+    "id": "nyu-courant-mathfin",
+    "region": "美国",
+    "city": "New York, NY",
+    "university": "New York University",
+    "school": "Courant Institute",
+    "program": "金融数学硕士",
+    "category": "金融与量化",
+    "direction": "金融数学",
+    "background": "强先修要求",
+    "cycle": "最近可用",
+    "intake": "下一入学周期",
+    "duration": "3学期左右",
+    "updated": "2026-06-05",
+    "academic": "成绩单、推荐信、SOP、简历；要求高阶数学、概率、编程与金融数学准备",
+    "language": "GRE/英语政策按Courant当年说明",
+    "tests": "GRE/英语政策按Courant当年说明",
+    "prerequisites": "更偏数学与quant；适合强数学/CS背景申请者",
+    "deadline": "通常Fall入学，冬季截止；以Courant Admissions最新页面为准",
+    "deadlineNote": "来自 2026-06-05 项目详表；如当年页面尚未发布，使用最近可用官方信息。",
+    "tuition": "按NYU Graduate Arts & Science/Courant学费费率；总学费通常高于$70k，需按当年学分核算",
+    "applicationRequirements": "成绩单、推荐信、SOP、简历；要求高阶数学、概率、编程与金融数学准备",
+    "interview": "可能有面试/测试",
+    "rentBudget": "NYC预算同上",
+    "positioning": "冲刺/高匹配",
+    "requirements": [
+      {
+        "label": "学术背景",
+        "value": "量化基础",
+        "level": 86
+      },
+      {
+        "label": "英语要求",
+        "value": "按项目要求",
+        "level": 68
+      },
+      {
+        "label": "标化考试",
+        "value": "按当年政策",
+        "level": 42
+      }
+    ],
+    "documents": [
+      "成绩单、推荐信、SOP、简历",
+      "要求高阶数学、概率、编程与金融数学准备"
+    ],
+    "notes": [
+      "与Tandon MSFE不同",
+      "Courant数学声誉强"
+    ],
+    "source": "https://math.nyu.edu/financial_mathematics/",
+    "sources": [
+      {
+        "label": "项目官网 / 最近可用招生页",
+        "url": "https://math.nyu.edu/financial_mathematics/",
+        "kind": "项目官网",
+        "year": "最近可用"
+      }
+    ],
+    "sourceLabel": "用户项目详表",
+    "sourcePayload": {
+      "02_项目详细库": {
+        "国家/地区": "美国",
+        "学校": "New York University",
+        "位置": "New York, NY",
+        "学院": "Courant Institute",
+        "项目": "MS in Mathematics in Finance",
+        "方向": "金融数学",
+        "学制": "3学期左右",
+        "学费/费用": "按NYU Graduate Arts & Science/Courant学费费率；总学费通常高于$70k，需按当年学分核算",
+        "申请时间": "通常Fall入学，冬季截止；以Courant Admissions最新页面为准",
+        "申请要求/材料": "成绩单、推荐信、SOP、简历；要求高阶数学、概率、编程与金融数学准备",
+        "考试要求": "GRE/英语政策按Courant当年说明",
+        "面试": "可能有面试/测试",
+        "建议先修/能力": "更偏数学与quant；适合强数学/CS背景申请者",
+        "周边租房预算": "NYC预算同上",
+        "申请定位": "冲刺/高匹配",
+        "备注": "与Tandon MSFE不同；Courant数学声誉强",
+        "官网来源": "https://math.nyu.edu/financial_mathematics/"
+      },
+      "verificationLevel": "深度核验",
+      "recordType": "项目",
+      "originalProgramName": "MS in Mathematics in Finance",
+      "translatedProgramName": "金融数学硕士",
+      "programNameTranslatedAt": "2026-07-17"
+    }
+  },
+  {
+    "id": "ucla-mfe",
+    "region": "美国",
+    "city": "Los Angeles, CA",
+    "university": "UCLA",
+    "school": "Anderson School of Management",
+    "program": "金融工程硕士",
+    "category": "金融与量化",
+    "direction": "金融工程",
+    "background": "强先修要求",
+    "cycle": "最近可用",
+    "intake": "下一入学周期",
+    "duration": "约15个月",
+    "updated": "2026-06-05",
+    "academic": "在线申请、成绩单、简历、推荐、essays、量化背景；偏好数学/CS/工程/经济金融背景",
+    "language": "GRE/GMAT政策按当年页面；英语按UCLA Graduate Division",
+    "tests": "GRE/GMAT政策按当年页面；英语按UCLA Graduate Division",
+    "prerequisites": "Los Angeles金融/tech交叉；建议准备Python、C++、概率统计、ML",
+    "deadline": "2026入学通常多轮：约Dec/Jan/Mar；以官网Application Deadlines为准",
+    "deadlineNote": "来自 2026-06-05 项目详表；如当年页面尚未发布，使用最近可用官方信息。",
+    "tuition": "项目学费/费用需按Anderson最新Cost of Attendance；常见总项目成本高于$90k",
+    "applicationRequirements": "在线申请、成绩单、简历、推荐、essays、量化背景；偏好数学/CS/工程/经济金融背景",
+    "interview": "可能invite interview",
+    "rentBudget": "Westwood/LA：studio约$2,000-3,000/月，1BR约$2,500-3,800/月，合租单间约$1,200-2,000/月",
+    "positioning": "高匹配",
+    "requirements": [
+      {
+        "label": "学术背景",
+        "value": "量化基础",
+        "level": 86
+      },
+      {
+        "label": "英语要求",
+        "value": "按项目要求",
+        "level": 68
+      },
+      {
+        "label": "标化考试",
+        "value": "按当年政策",
+        "level": 42
+      }
+    ],
+    "documents": [
+      "在线申请、成绩单、简历、推荐、essays、量化背景",
+      "偏好数学/CS/工程/经济金融背景"
+    ],
+    "notes": [
+      "商学院MFE，就业服务强",
+      "费用与生活成本高"
+    ],
+    "source": "https://www.anderson.ucla.edu/degrees/master-of-financial-engineering",
+    "sources": [
+      {
+        "label": "项目官网 / 最近可用招生页",
+        "url": "https://www.anderson.ucla.edu/degrees/master-of-financial-engineering",
+        "kind": "项目官网",
+        "year": "最近可用"
+      }
+    ],
+    "sourceLabel": "用户项目详表",
+    "sourcePayload": {
+      "02_项目详细库": {
+        "国家/地区": "美国",
+        "学校": "UCLA",
+        "位置": "Los Angeles, CA",
+        "学院": "Anderson School of Management",
+        "项目": "Master of Financial Engineering",
+        "方向": "金融工程",
+        "学制": "约15个月",
+        "学费/费用": "项目学费/费用需按Anderson最新Cost of Attendance；常见总项目成本高于$90k",
+        "申请时间": "2026入学通常多轮：约Dec/Jan/Mar；以官网Application Deadlines为准",
+        "申请要求/材料": "在线申请、成绩单、简历、推荐、essays、量化背景；偏好数学/CS/工程/经济金融背景",
+        "考试要求": "GRE/GMAT政策按当年页面；英语按UCLA Graduate Division",
+        "面试": "可能invite interview",
+        "建议先修/能力": "Los Angeles金融/tech交叉；建议准备Python、C++、概率统计、ML",
+        "周边租房预算": "Westwood/LA：studio约$2,000-3,000/月，1BR约$2,500-3,800/月，合租单间约$1,200-2,000/月",
+        "申请定位": "高匹配",
+        "备注": "商学院MFE，就业服务强；费用与生活成本高",
+        "官网来源": "https://www.anderson.ucla.edu/degrees/master-of-financial-engineering"
+      },
+      "qsRank": "49",
+      "qsEdition": "2027",
+      "verificationLevel": "深度核验",
+      "recordType": "项目",
+      "originalProgramName": "Master of Financial Engineering",
+      "translatedProgramName": "金融工程硕士",
+      "programNameTranslatedAt": "2026-07-17"
+    }
+  },
+  {
+    "id": "gatech-qcf",
+    "region": "美国",
+    "city": "Atlanta, GA",
+    "university": "Georgia Institute of Technology",
+    "school": "Interdisciplinary QCF",
+    "program": "定量与计算金融硕士",
+    "category": "金融与量化",
+    "direction": "量化与计算金融",
+    "background": "强先修要求",
+    "cycle": "最近可用",
+    "intake": "下一入学周期",
+    "duration": "3学期左右",
+    "updated": "2026-06-05",
+    "academic": "成绩单、推荐信、简历、SOP；重数学、统计、计算机、金融基础",
+    "language": "GRE/英语政策以当年项目页为准",
+    "tests": "GRE/英语政策以当年项目页为准",
+    "prerequisites": "计算金融、统计、优化、编程；性价比与工程声誉好",
+    "deadline": "Fall申请常见12月-2月；以QCF官网为准",
+    "deadlineNote": "来自 2026-06-05 项目详表；如当年页面尚未发布，使用最近可用官方信息。",
+    "tuition": "Georgia Tech按研究生学费/费用；非居民总学费通常显著低于纽约/加州私校，需按当年Bursar核算",
+    "applicationRequirements": "成绩单、推荐信、简历、SOP；重数学、统计、计算机、金融基础",
+    "interview": "可能case-by-case",
+    "rentBudget": "Atlanta：studio约$1,300-2,000/月，1BR约$1,500-2,300/月",
+    "positioning": "匹配",
+    "requirements": [
+      {
+        "label": "学术背景",
+        "value": "量化基础",
+        "level": 86
+      },
+      {
+        "label": "英语要求",
+        "value": "按项目要求",
+        "level": 68
+      },
+      {
+        "label": "标化考试",
+        "value": "按当年政策",
+        "level": 42
+      }
+    ],
+    "documents": [
+      "成绩单、推荐信、简历、SOP",
+      "重数学、统计、计算机、金融基础"
+    ],
+    "notes": [
+      "适合重工程/计算背景",
+      "就业市场偏Atlanta+全国"
+    ],
+    "source": "https://qcf.gatech.edu/",
+    "sources": [
+      {
+        "label": "项目官网 / 最近可用招生页",
+        "url": "https://qcf.gatech.edu/",
+        "kind": "项目官网",
+        "year": "最近可用"
+      }
+    ],
+    "sourceLabel": "用户项目详表",
+    "sourcePayload": {
+      "02_项目详细库": {
+        "国家/地区": "美国",
+        "学校": "Georgia Institute of Technology",
+        "位置": "Atlanta, GA",
+        "学院": "Interdisciplinary QCF",
+        "项目": "MS in Quantitative and Computational Finance",
+        "方向": "量化与计算金融",
+        "学制": "3学期左右",
+        "学费/费用": "Georgia Tech按研究生学费/费用；非居民总学费通常显著低于纽约/加州私校，需按当年Bursar核算",
+        "申请时间": "Fall申请常见12月-2月；以QCF官网为准",
+        "申请要求/材料": "成绩单、推荐信、简历、SOP；重数学、统计、计算机、金融基础",
+        "考试要求": "GRE/英语政策以当年项目页为准",
+        "面试": "可能case-by-case",
+        "建议先修/能力": "计算金融、统计、优化、编程；性价比与工程声誉好",
+        "周边租房预算": "Atlanta：studio约$1,300-2,000/月，1BR约$1,500-2,300/月",
+        "申请定位": "匹配",
+        "备注": "适合重工程/计算背景；就业市场偏Atlanta+全国",
+        "官网来源": "https://qcf.gatech.edu/"
+      },
+      "verificationLevel": "深度核验",
+      "recordType": "项目",
+      "originalProgramName": "MS in Quantitative and Computational Finance",
+      "translatedProgramName": "定量与计算金融硕士",
+      "programNameTranslatedAt": "2026-07-17"
+    }
+  },
+  {
+    "id": "rutgers-mqf",
+    "region": "美国",
+    "city": "New Brunswick/Newark, NJ",
+    "university": "Rutgers University",
+    "school": "Rutgers Business School",
+    "program": "数量金融硕士",
+    "category": "金融与量化",
+    "direction": "量化金融",
+    "background": "强先修要求",
+    "cycle": "最近可用",
+    "intake": "下一入学周期",
+    "duration": "约1.5-2年",
+    "updated": "2026-06-05",
+    "academic": "在线申请、成绩单、简历、推荐、个人陈述；要求数学/统计/编程/金融基础",
+    "language": "GRE/GMAT政策按当年页面；英语TOEFL/IELTS或豁免",
+    "tests": "GRE/GMAT政策按当年页面；英语TOEFL/IELTS或豁免",
+    "prerequisites": "NJ/NYC通勤优势；建议强化C++/Python和衍生品",
+    "deadline": "Fall申请多轮，国际生通常早于夏季；以RBS官网为准",
+    "deadlineNote": "来自 2026-06-05 项目详表；如当年页面尚未发布，使用最近可用官方信息。",
+    "tuition": "按Rutgers Business School研究生学费；国际/州外需按学分核算",
+    "applicationRequirements": "在线申请、成绩单、简历、推荐、个人陈述；要求数学/统计/编程/金融基础",
+    "interview": "可能case-by-case",
+    "rentBudget": "Newark/New Brunswick：studio约$1,500-2,300/月；近NYC通勤区更贵",
+    "positioning": "匹配/保底",
+    "requirements": [
+      {
+        "label": "学术背景",
+        "value": "量化基础",
+        "level": 86
+      },
+      {
+        "label": "英语要求",
+        "value": "按项目要求",
+        "level": 68
+      },
+      {
+        "label": "标化考试",
+        "value": "按当年政策",
+        "level": 42
+      }
+    ],
+    "documents": [
+      "在线申请、成绩单、简历、推荐、个人陈述",
+      "要求数学/统计/编程/金融基础"
+    ],
+    "notes": [
+      "名气不如顶级MFE但靠近纽约，适合就业导向组合"
+    ],
+    "source": "https://www.business.rutgers.edu/masters-quantitative-finance",
+    "sources": [
+      {
+        "label": "项目官网 / 最近可用招生页",
+        "url": "https://www.business.rutgers.edu/masters-quantitative-finance",
+        "kind": "项目官网",
+        "year": "最近可用"
+      }
+    ],
+    "sourceLabel": "用户项目详表",
+    "sourcePayload": {
+      "02_项目详细库": {
+        "国家/地区": "美国",
+        "学校": "Rutgers University",
+        "位置": "New Brunswick/Newark, NJ",
+        "学院": "Rutgers Business School",
+        "项目": "Master of Quantitative Finance",
+        "方向": "量化金融",
+        "学制": "约1.5-2年",
+        "学费/费用": "按Rutgers Business School研究生学费；国际/州外需按学分核算",
+        "申请时间": "Fall申请多轮，国际生通常早于夏季；以RBS官网为准",
+        "申请要求/材料": "在线申请、成绩单、简历、推荐、个人陈述；要求数学/统计/编程/金融基础",
+        "考试要求": "GRE/GMAT政策按当年页面；英语TOEFL/IELTS或豁免",
+        "面试": "可能case-by-case",
+        "建议先修/能力": "NJ/NYC通勤优势；建议强化C++/Python和衍生品",
+        "周边租房预算": "Newark/New Brunswick：studio约$1,500-2,300/月；近NYC通勤区更贵",
+        "申请定位": "匹配/保底",
+        "备注": "名气不如顶级MFE但靠近纽约，适合就业导向组合",
+        "官网来源": "https://www.business.rutgers.edu/masters-quantitative-finance"
+      },
+      "verificationLevel": "深度核验",
+      "recordType": "项目",
+      "originalProgramName": "Master of Quantitative Finance",
+      "translatedProgramName": "数量金融硕士",
+      "programNameTranslatedAt": "2026-07-17"
+    }
+  },
+  {
+    "id": "usc-msfe",
+    "region": "美国",
+    "city": "Los Angeles, CA",
+    "university": "University of Southern California",
+    "school": "Viterbi School of Engineering",
+    "program": "金融工程硕士",
+    "category": "金融与量化",
+    "direction": "金融工程",
+    "background": "量化背景",
+    "cycle": "最近可用",
+    "intake": "下一入学周期",
+    "duration": "约1.5-2年",
+    "updated": "2026-06-05",
+    "academic": "成绩单、简历、SOP、推荐信；工程数学、概率统计、编程背景",
+    "language": "GRE政策按Viterbi项目页；英语TOEFL/IELTS/PTE或豁免",
+    "tests": "GRE政策按Viterbi项目页；英语TOEFL/IELTS/PTE或豁免",
+    "prerequisites": "适合工程/CS转金融工程；LA生活成本较高",
+    "deadline": "Fall国际生常见12月/1月priority；Spring可能开放；以Viterbi Graduate Admission为准",
+    "deadlineNote": "来自 2026-06-05 项目详表；如当年页面尚未发布，使用最近可用官方信息。",
+    "tuition": "USC Viterbi按学分收费；总学费需按当年单位费率和学分数核算，通常$70k+区间",
+    "applicationRequirements": "成绩单、简历、SOP、推荐信；工程数学、概率统计、编程背景",
+    "interview": "通常非统一必需",
+    "rentBudget": "USC/LA：studio约$1,800-2,800/月，1BR约$2,300-3,500/月，合租单间约$1,100-1,900/月",
+    "positioning": "匹配",
+    "requirements": [
+      {
+        "label": "学术背景",
+        "value": "量化基础",
+        "level": 86
+      },
+      {
+        "label": "英语要求",
+        "value": "按项目要求",
+        "level": 68
+      },
+      {
+        "label": "标化考试",
+        "value": "按当年政策",
+        "level": 42
+      }
+    ],
+    "documents": [
+      "成绩单、简历、SOP、推荐信",
+      "工程数学、概率统计、编程背景"
+    ],
+    "notes": [
+      "项目在工程学院，申请叙事应强调技术能力"
+    ],
+    "source": "https://viterbigradadmission.usc.edu/programs/masters/msprograms/industrial-systems-engineering/ms-financial-engineering/",
+    "sources": [
+      {
+        "label": "项目官网 / 最近可用招生页",
+        "url": "https://viterbigradadmission.usc.edu/programs/masters/msprograms/industrial-systems-engineering/ms-financial-engineering/",
+        "kind": "项目官网",
+        "year": "最近可用"
+      }
+    ],
+    "sourceLabel": "用户项目详表",
+    "sourcePayload": {
+      "02_项目详细库": {
+        "国家/地区": "美国",
+        "学校": "University of Southern California",
+        "位置": "Los Angeles, CA",
+        "学院": "Viterbi School of Engineering",
+        "项目": "MS in Financial Engineering",
+        "方向": "金融工程",
+        "学制": "约1.5-2年",
+        "学费/费用": "USC Viterbi按学分收费；总学费需按当年单位费率和学分数核算，通常$70k+区间",
+        "申请时间": "Fall国际生常见12月/1月priority；Spring可能开放；以Viterbi Graduate Admission为准",
+        "申请要求/材料": "成绩单、简历、SOP、推荐信；工程数学、概率统计、编程背景",
+        "考试要求": "GRE政策按Viterbi项目页；英语TOEFL/IELTS/PTE或豁免",
+        "面试": "通常非统一必需",
+        "建议先修/能力": "适合工程/CS转金融工程；LA生活成本较高",
+        "周边租房预算": "USC/LA：studio约$1,800-2,800/月，1BR约$2,300-3,500/月，合租单间约$1,100-1,900/月",
+        "申请定位": "匹配",
+        "备注": "项目在工程学院，申请叙事应强调技术能力",
+        "官网来源": "https://viterbigradadmission.usc.edu/programs/masters/msprograms/industrial-systems-engineering/ms-financial-engineering/"
+      },
+      "verificationLevel": "深度核验",
+      "recordType": "项目",
+      "originalProgramName": "MS in Financial Engineering",
+      "translatedProgramName": "金融工程硕士",
+      "programNameTranslatedAt": "2026-07-17"
+    }
+  },
+  {
+    "id": "uiuc-msfe",
+    "region": "美国",
+    "city": "Champaign, IL",
+    "university": "University of Illinois Urbana-Champaign",
+    "school": "Gies/Liberal Arts/Engineering collaboration",
+    "program": "金融工程硕士",
+    "category": "金融与量化",
+    "direction": "金融工程",
+    "background": "强先修要求",
+    "cycle": "最近可用",
+    "intake": "下一入学周期",
+    "duration": "3学期左右",
+    "updated": "2026-06-05",
+    "academic": "在线申请、成绩单、推荐、文书、简历；数学、统计、编程、金融基础",
+    "language": "GRE/英语政策按当年官网",
+    "tests": "GRE/英语政策按当年官网",
+    "prerequisites": "性价比强；适合希望降低生活成本、保留量化训练的申请组合",
+    "deadline": "Fall申请常见多轮至冬春；以MSFE官网为准",
+    "deadlineNote": "来自 2026-06-05 项目详表；如当年页面尚未发布，使用最近可用官方信息。",
+    "tuition": "UIUC按项目/研究生学费；生活成本低，需以MSFE/Registrar最新为准",
+    "applicationRequirements": "在线申请、成绩单、推荐、文书、简历；数学、统计、编程、金融基础",
+    "interview": "可能case-by-case",
+    "rentBudget": "Champaign-Urbana：studio约$800-1,300/月，1BR约$900-1,500/月",
+    "positioning": "匹配",
+    "requirements": [
+      {
+        "label": "学术背景",
+        "value": "量化基础",
+        "level": 86
+      },
+      {
+        "label": "英语要求",
+        "value": "按项目要求",
+        "level": 68
+      },
+      {
+        "label": "标化考试",
+        "value": "按当年政策",
+        "level": 42
+      }
+    ],
+    "documents": [
+      "在线申请、成绩单、推荐、文书、简历",
+      "数学、统计、编程、金融基础"
+    ],
+    "notes": [
+      "生活成本优势明显",
+      "就业需主动network"
+    ],
+    "source": "https://msfe.illinois.edu/",
+    "sources": [
+      {
+        "label": "项目官网 / 最近可用招生页",
+        "url": "https://msfe.illinois.edu/",
+        "kind": "项目官网",
+        "year": "最近可用"
+      }
+    ],
+    "sourceLabel": "用户项目详表",
+    "sourcePayload": {
+      "02_项目详细库": {
+        "国家/地区": "美国",
+        "学校": "University of Illinois Urbana-Champaign",
+        "位置": "Champaign, IL",
+        "学院": "Gies/Liberal Arts/Engineering collaboration",
+        "项目": "MS in Financial Engineering",
+        "方向": "金融工程",
+        "学制": "3学期左右",
+        "学费/费用": "UIUC按项目/研究生学费；生活成本低，需以MSFE/Registrar最新为准",
+        "申请时间": "Fall申请常见多轮至冬春；以MSFE官网为准",
+        "申请要求/材料": "在线申请、成绩单、推荐、文书、简历；数学、统计、编程、金融基础",
+        "考试要求": "GRE/英语政策按当年官网",
+        "面试": "可能case-by-case",
+        "建议先修/能力": "性价比强；适合希望降低生活成本、保留量化训练的申请组合",
+        "周边租房预算": "Champaign-Urbana：studio约$800-1,300/月，1BR约$900-1,500/月",
+        "申请定位": "匹配",
+        "备注": "生活成本优势明显；就业需主动network",
+        "官网来源": "https://msfe.illinois.edu/"
+      },
+      "verificationLevel": "深度核验",
+      "recordType": "项目",
+      "originalProgramName": "MS in Financial Engineering",
+      "translatedProgramName": "金融工程硕士",
+      "programNameTranslatedAt": "2026-07-17"
+    }
+  },
+  {
+    "id": "stanford-msstats",
+    "region": "美国",
+    "city": "Stanford, CA",
+    "university": "Stanford University",
+    "school": "Department of Statistics",
+    "program": "统计学硕士",
+    "category": "数学与统计",
+    "direction": "统计学",
+    "background": "强先修要求",
+    "cycle": "最近可用",
+    "intake": "下一入学周期",
+    "duration": "约1-2年",
+    "updated": "2026-06-05",
+    "academic": "成绩单、SOP、推荐信；高阶数学、概率、统计、计算机背景；可走金融统计/ML/数据科学就业",
+    "language": "GRE政策按当年页面；英语TOEFL或豁免",
+    "tests": "GRE政策按当年页面；英语TOEFL或豁免",
+    "prerequisites": "不是MFE，但统计/ML牌子极强；适合quant research/data science",
+    "deadline": "Fall统计MS常见12月初截止；以Statistics Admissions当年页面为准",
+    "deadlineNote": "来自 2026-06-05 项目详表；如当年页面尚未发布，使用最近可用官方信息。",
+    "tuition": "Stanford研究生学费按quarter/units；总成本高，需以Student Services最新COA为准",
+    "applicationRequirements": "成绩单、SOP、推荐信；高阶数学、概率、统计、计算机背景；可走金融统计/ML/数据科学就业",
+    "interview": "通常无统一面试",
+    "rentBudget": "Palo Alto/Stanford：studio约$2,700-4,000/月，1BR约$3,200-4,800/月，合租单间约$1,600-2,600/月",
+    "positioning": "冲刺",
+    "requirements": [
+      {
+        "label": "学术背景",
+        "value": "量化基础",
+        "level": 86
+      },
+      {
+        "label": "英语要求",
+        "value": "按项目要求",
+        "level": 68
+      },
+      {
+        "label": "标化考试",
+        "value": "按当年政策",
+        "level": 42
+      }
+    ],
+    "documents": [
+      "成绩单、SOP、推荐信",
+      "高阶数学、概率、统计、计算机背景",
+      "可走金融统计/ML/数据科学就业"
+    ],
+    "notes": [
+      "适合把统计作为quant research底层能力申请"
+    ],
+    "source": "https://statistics.stanford.edu/academics/ms-statistics",
+    "sources": [
+      {
+        "label": "项目官网 / 最近可用招生页",
+        "url": "https://statistics.stanford.edu/academics/ms-statistics",
+        "kind": "项目官网",
+        "year": "最近可用"
+      }
+    ],
+    "sourceLabel": "用户项目详表",
+    "sourcePayload": {
+      "02_项目详细库": {
+        "国家/地区": "美国",
+        "学校": "Stanford University",
+        "位置": "Stanford, CA",
+        "学院": "Department of Statistics",
+        "项目": "MS in Statistics",
+        "方向": "统计学",
+        "学制": "约1-2年",
+        "学费/费用": "Stanford研究生学费按quarter/units；总成本高，需以Student Services最新COA为准",
+        "申请时间": "Fall统计MS常见12月初截止；以Statistics Admissions当年页面为准",
+        "申请要求/材料": "成绩单、SOP、推荐信；高阶数学、概率、统计、计算机背景；可走金融统计/ML/数据科学就业",
+        "考试要求": "GRE政策按当年页面；英语TOEFL或豁免",
+        "面试": "通常无统一面试",
+        "建议先修/能力": "不是MFE，但统计/ML牌子极强；适合quant research/data science",
+        "周边租房预算": "Palo Alto/Stanford：studio约$2,700-4,000/月，1BR约$3,200-4,800/月，合租单间约$1,600-2,600/月",
+        "申请定位": "冲刺",
+        "备注": "适合把统计作为quant research底层能力申请",
+        "官网来源": "https://statistics.stanford.edu/academics/ms-statistics"
+      },
+      "qsRank": "=2",
+      "qsEdition": "2027",
+      "verificationLevel": "深度核验",
+      "recordType": "项目",
+      "originalProgramName": "MS in Statistics",
+      "translatedProgramName": "统计学硕士",
+      "programNameTranslatedAt": "2026-07-17"
+    }
+  },
+  {
+    "id": "harvard-amstats",
+    "region": "美国",
+    "city": "Cambridge, MA",
+    "university": "Harvard University",
+    "school": "Department of Statistics",
+    "program": "统计中的 文学硕士",
+    "category": "数学与统计",
+    "direction": "统计学",
+    "background": "量化背景",
+    "cycle": "最近可用",
+    "intake": "下一入学周期",
+    "duration": "约1年",
+    "updated": "2026-06-05",
+    "academic": "成绩单、SOP、推荐信、数理统计准备；项目竞争极强",
+    "language": "GRE/英语政策按GSAS当年说明",
+    "tests": "GRE/英语政策按GSAS当年说明",
+    "prerequisites": "不是金融工程；可作为统计/数据科学顶级冲刺项",
+    "deadline": "Fall申请常见12月初截止；以GSAS/Statistics当年页面为准",
+    "deadlineNote": "来自 2026-06-05 项目详表；如当年页面尚未发布，使用最近可用官方信息。",
+    "tuition": "Harvard Griffin GSAS tuition按年度/term；需以2026-27 tuition表为准",
+    "applicationRequirements": "成绩单、SOP、推荐信、数理统计准备；项目竞争极强",
+    "interview": "通常无统一面试",
+    "rentBudget": "Cambridge/Boston预算同MIT",
+    "positioning": "冲刺",
+    "requirements": [
+      {
+        "label": "学术背景",
+        "value": "量化基础",
+        "level": 86
+      },
+      {
+        "label": "英语要求",
+        "value": "按项目要求",
+        "level": 68
+      },
+      {
+        "label": "标化考试",
+        "value": "按当年政策",
+        "level": 42
+      }
+    ],
+    "documents": [
+      "成绩单、SOP、推荐信、数理统计准备",
+      "项目竞争极强"
+    ],
+    "notes": [
+      "如目标纯quant finance，需在文书解释统计到金融的路径"
+    ],
+    "source": "https://statistics.fas.harvard.edu/",
+    "sources": [
+      {
+        "label": "项目官网 / 最近可用招生页",
+        "url": "https://statistics.fas.harvard.edu/",
+        "kind": "项目官网",
+        "year": "最近可用"
+      }
+    ],
+    "sourceLabel": "用户项目详表",
+    "sourcePayload": {
+      "02_项目详细库": {
+        "国家/地区": "美国",
+        "学校": "Harvard University",
+        "位置": "Cambridge, MA",
+        "学院": "Department of Statistics",
+        "项目": "AM in Statistics",
+        "方向": "统计学",
+        "学制": "约1年",
+        "学费/费用": "Harvard Griffin GSAS tuition按年度/term；需以2026-27 tuition表为准",
+        "申请时间": "Fall申请常见12月初截止；以GSAS/Statistics当年页面为准",
+        "申请要求/材料": "成绩单、SOP、推荐信、数理统计准备；项目竞争极强",
+        "考试要求": "GRE/英语政策按GSAS当年说明",
+        "面试": "通常无统一面试",
+        "建议先修/能力": "不是金融工程；可作为统计/数据科学顶级冲刺项",
+        "周边租房预算": "Cambridge/Boston预算同MIT",
+        "申请定位": "冲刺",
+        "备注": "如目标纯quant finance，需在文书解释统计到金融的路径",
+        "官网来源": "https://statistics.fas.harvard.edu/"
+      },
+      "qsRank": "5",
+      "qsEdition": "2027",
+      "verificationLevel": "深度核验",
+      "recordType": "项目",
+      "originalProgramName": "AM in Statistics",
+      "translatedProgramName": "统计中的 文学硕士",
+      "programNameTranslatedAt": "2026-07-17"
+    }
+  },
+  {
+    "id": "yale-msstatsds",
+    "region": "美国",
+    "city": "New Haven, CT",
+    "university": "Yale University",
+    "school": "Department of Statistics and Data Science",
+    "program": "统计与数据科学硕士",
+    "category": "数学与统计",
+    "direction": "统计学/数据科学",
+    "background": "量化背景",
+    "cycle": "最近可用",
+    "intake": "下一入学周期",
+    "duration": "约1年",
+    "updated": "2026-06-05",
+    "academic": "成绩单、SOP、推荐信；统计、数学、计算背景；项目名额有限",
+    "language": "GRE/英语政策按GSAS当年说明",
+    "tests": "GRE/英语政策按GSAS当年说明",
+    "prerequisites": "适合统计/数据科学+金融研究路径",
+    "deadline": "Fall申请常见12月-1月截止；以GSAS/S&DS页面为准",
+    "deadlineNote": "来自 2026-06-05 项目详表；如当年页面尚未发布，使用最近可用官方信息。",
+    "tuition": "Yale GSAS学费按年度；需以Yale Student Accounts最新为准",
+    "applicationRequirements": "成绩单、SOP、推荐信；统计、数学、计算背景；项目名额有限",
+    "interview": "通常无统一面试",
+    "rentBudget": "New Haven：studio约$1,300-2,000/月，1BR约$1,600-2,400/月",
+    "positioning": "冲刺/高匹配",
+    "requirements": [
+      {
+        "label": "学术背景",
+        "value": "量化基础",
+        "level": 86
+      },
+      {
+        "label": "英语要求",
+        "value": "按项目要求",
+        "level": 68
+      },
+      {
+        "label": "标化考试",
+        "value": "按当年政策",
+        "level": 42
+      }
+    ],
+    "documents": [
+      "成绩单、SOP、推荐信",
+      "统计、数学、计算背景",
+      "项目名额有限"
+    ],
+    "notes": [
+      "统计声誉强，金融工程直接性低于MFE项目"
+    ],
+    "source": "https://statistics.yale.edu/",
+    "sources": [
+      {
+        "label": "项目官网 / 最近可用招生页",
+        "url": "https://statistics.yale.edu/",
+        "kind": "项目官网",
+        "year": "最近可用"
+      }
+    ],
+    "sourceLabel": "用户项目详表",
+    "sourcePayload": {
+      "02_项目详细库": {
+        "国家/地区": "美国",
+        "学校": "Yale University",
+        "位置": "New Haven, CT",
+        "学院": "Department of Statistics and Data Science",
+        "项目": "MS in Statistics and Data Science",
+        "方向": "统计学/数据科学",
+        "学制": "约1年",
+        "学费/费用": "Yale GSAS学费按年度；需以Yale Student Accounts最新为准",
+        "申请时间": "Fall申请常见12月-1月截止；以GSAS/S&DS页面为准",
+        "申请要求/材料": "成绩单、SOP、推荐信；统计、数学、计算背景；项目名额有限",
+        "考试要求": "GRE/英语政策按GSAS当年说明",
+        "面试": "通常无统一面试",
+        "建议先修/能力": "适合统计/数据科学+金融研究路径",
+        "周边租房预算": "New Haven：studio约$1,300-2,000/月，1BR约$1,600-2,400/月",
+        "申请定位": "冲刺/高匹配",
+        "备注": "统计声誉强，金融工程直接性低于MFE项目",
+        "官网来源": "https://statistics.yale.edu/"
+      },
+      "qsRank": "=16",
+      "qsEdition": "2027",
+      "verificationLevel": "深度核验",
+      "recordType": "项目",
+      "originalProgramName": "MS in Statistics and Data Science",
+      "translatedProgramName": "统计与数据科学硕士",
+      "programNameTranslatedAt": "2026-07-17"
+    }
+  },
+  {
+    "id": "duke-msstats",
+    "region": "美国",
+    "city": "Durham, NC",
+    "university": "Duke University",
+    "school": "Department of Statistical Science",
+    "program": "统计科学硕士",
+    "category": "数学与统计",
+    "direction": "统计学",
+    "background": "量化背景",
+    "cycle": "最近可用",
+    "intake": "下一入学周期",
+    "duration": "2年左右",
+    "updated": "2026-06-05",
+    "academic": "成绩单、SOP、推荐信、简历；数学统计与计算背景",
+    "language": "GRE/英语政策按当年页面",
+    "tests": "GRE/英语政策按当年页面",
+    "prerequisites": "适合统计建模、ML、金融数据方向；生活成本较友好",
+    "deadline": "Fall申请常见1月初截止；以Statistical Science MS页面为准",
+    "deadlineNote": "来自 2026-06-05 项目详表；如当年页面尚未发布，使用最近可用官方信息。",
+    "tuition": "Duke研究生学费按年度；需以Bursar/Graduate School最新为准",
+    "applicationRequirements": "成绩单、SOP、推荐信、简历；数学统计与计算背景",
+    "interview": "通常无统一面试",
+    "rentBudget": "Durham：studio约$1,100-1,700/月，1BR约$1,300-2,000/月",
+    "positioning": "高匹配/匹配",
+    "requirements": [
+      {
+        "label": "学术背景",
+        "value": "量化基础",
+        "level": 86
+      },
+      {
+        "label": "英语要求",
+        "value": "按项目要求",
+        "level": 68
+      },
+      {
+        "label": "标化考试",
+        "value": "按当年政策",
+        "level": 42
+      }
+    ],
+    "documents": [
+      "成绩单、SOP、推荐信、简历",
+      "数学统计与计算背景"
+    ],
+    "notes": [
+      "作为统计方向名校组合很稳",
+      "非传统MFE"
+    ],
+    "source": "https://stat.duke.edu/",
+    "sources": [
+      {
+        "label": "项目官网 / 最近可用招生页",
+        "url": "https://stat.duke.edu/",
+        "kind": "项目官网",
+        "year": "最近可用"
+      }
+    ],
+    "sourceLabel": "用户项目详表",
+    "sourcePayload": {
+      "02_项目详细库": {
+        "国家/地区": "美国",
+        "学校": "Duke University",
+        "位置": "Durham, NC",
+        "学院": "Department of Statistical Science",
+        "项目": "MS in Statistical Science",
+        "方向": "统计学",
+        "学制": "2年左右",
+        "学费/费用": "Duke研究生学费按年度；需以Bursar/Graduate School最新为准",
+        "申请时间": "Fall申请常见1月初截止；以Statistical Science MS页面为准",
+        "申请要求/材料": "成绩单、SOP、推荐信、简历；数学统计与计算背景",
+        "考试要求": "GRE/英语政策按当年页面",
+        "面试": "通常无统一面试",
+        "建议先修/能力": "适合统计建模、ML、金融数据方向；生活成本较友好",
+        "周边租房预算": "Durham：studio约$1,100-1,700/月，1BR约$1,300-2,000/月",
+        "申请定位": "高匹配/匹配",
+        "备注": "作为统计方向名校组合很稳；非传统MFE",
+        "官网来源": "https://stat.duke.edu/"
+      },
+      "verificationLevel": "深度核验",
+      "recordType": "项目",
+      "originalProgramName": "MS in Statistical Science",
+      "translatedProgramName": "统计科学硕士",
+      "programNameTranslatedAt": "2026-07-17"
+    }
+  },
+  {
+    "id": "nus-mfe",
+    "region": "新加坡",
+    "city": "Singapore",
+    "university": "National University of Singapore",
+    "school": "Risk Management Institute / NUS",
+    "program": "金融工程硕士",
+    "category": "金融与量化",
+    "direction": "金融工程",
+    "background": "强先修要求",
+    "cycle": "最近可用",
+    "intake": "下一入学周期",
+    "duration": "约1年全日制，可兼读",
+    "updated": "2026-06-05",
+    "academic": "在线申请、成绩单、简历、推荐、个人陈述；数理、金融、编程背景；工作经验加分",
+    "language": "TOEFL/IELTS按NUS要求；GRE/GMAT如官网要求或建议",
+    "tests": "TOEFL/IELTS按NUS要求；GRE/GMAT如官网要求或建议",
+    "prerequisites": "适合亚洲quant/risk/fintech；建议准备Python、概率、衍生品",
+    "deadline": "通常秋季入学，申请窗口约前一年10月-次年3月；以NUS RMI官网为准",
+    "deadlineNote": "来自 2026-06-05 项目详表；如当年页面尚未发布，使用最近可用官方信息。",
+    "tuition": "NUS项目学费以当年MFE fee页面为准；国际生通常为SGD数万级别",
+    "applicationRequirements": "在线申请、成绩单、简历、推荐、个人陈述；数理、金融、编程背景；工作经验加分",
+    "interview": "可能面试",
+    "rentBudget": "Singapore近NUS/Clementi/Queenstown：整租studio/1BR约SGD 2,800-4,500/月；合租单间约SGD 1,000-1,800/月",
+    "positioning": "高匹配",
+    "requirements": [
+      {
+        "label": "学术背景",
+        "value": "量化基础",
+        "level": 86
+      },
+      {
+        "label": "英语要求",
+        "value": "按项目要求",
+        "level": 68
+      },
+      {
+        "label": "标化考试",
+        "value": "按当年政策",
+        "level": 42
+      }
+    ],
+    "documents": [
+      "在线申请、成绩单、简历、推荐、个人陈述",
+      "数理、金融、编程背景",
+      "工作经验加分"
+    ],
+    "notes": [
+      "亚洲就业与新加坡身份/签证路径需单独评估"
+    ],
+    "source": "https://rmi.nus.edu.sg/mfe/",
+    "sources": [
+      {
+        "label": "项目官网 / 最近可用招生页",
+        "url": "https://rmi.nus.edu.sg/mfe/",
+        "kind": "项目官网",
+        "year": "最近可用"
+      }
+    ],
+    "sourceLabel": "用户项目详表",
+    "sourcePayload": {
+      "02_项目详细库": {
+        "国家/地区": "新加坡",
+        "学校": "National University of Singapore",
+        "位置": "Singapore",
+        "学院": "Risk Management Institute / NUS",
+        "项目": "MSc in Financial Engineering",
+        "方向": "金融工程",
+        "学制": "约1年全日制，可兼读",
+        "学费/费用": "NUS项目学费以当年MFE fee页面为准；国际生通常为SGD数万级别",
+        "申请时间": "通常秋季入学，申请窗口约前一年10月-次年3月；以NUS RMI官网为准",
+        "申请要求/材料": "在线申请、成绩单、简历、推荐、个人陈述；数理、金融、编程背景；工作经验加分",
+        "考试要求": "TOEFL/IELTS按NUS要求；GRE/GMAT如官网要求或建议",
+        "面试": "可能面试",
+        "建议先修/能力": "适合亚洲quant/risk/fintech；建议准备Python、概率、衍生品",
+        "周边租房预算": "Singapore近NUS/Clementi/Queenstown：整租studio/1BR约SGD 2,800-4,500/月；合租单间约SGD 1,000-1,800/月",
+        "申请定位": "高匹配",
+        "备注": "亚洲就业与新加坡身份/签证路径需单独评估",
+        "官网来源": "https://rmi.nus.edu.sg/mfe/"
+      },
+      "qsRank": "10",
+      "qsEdition": "2027",
+      "verificationLevel": "深度核验",
+      "recordType": "项目",
+      "originalProgramName": "MSc in Financial Engineering",
+      "translatedProgramName": "金融工程硕士",
+      "programNameTranslatedAt": "2026-07-17"
+    }
+  },
+  {
+    "id": "nus-msstats",
+    "region": "新加坡",
+    "city": "Singapore",
+    "university": "National University of Singapore",
+    "school": "Department of Statistics and Data Science",
+    "program": "统计学硕士",
+    "category": "数学与统计",
+    "direction": "统计学",
+    "background": "量化背景",
+    "cycle": "最近可用",
+    "intake": "下一入学周期",
+    "duration": "约1年全日制，可兼读",
+    "updated": "2026-06-05",
+    "academic": "成绩单、推荐/个人陈述按申请系统；需数学、统计基础；可服务金融数据/风险建模",
+    "language": "TOEFL/IELTS按NUS要求",
+    "tests": "TOEFL/IELTS按NUS要求",
+    "prerequisites": "统计学位对quant/data science通用；金融工程直接性低于MFE",
+    "deadline": "通常每年有固定申请窗口；以NUS官方申请页为准",
+    "deadlineNote": "来自 2026-06-05 项目详表；如当年页面尚未发布，使用最近可用官方信息。",
+    "tuition": "学费以NUS Science MSc Statistics页面当年为准；国际生通常SGD数万级别",
+    "applicationRequirements": "成绩单、推荐/个人陈述按申请系统；需数学、统计基础；可服务金融数据/风险建模",
+    "interview": "通常不统一列面试",
+    "rentBudget": "Singapore预算同上",
+    "positioning": "匹配",
+    "requirements": [
+      {
+        "label": "学术背景",
+        "value": "量化基础",
+        "level": 86
+      },
+      {
+        "label": "英语要求",
+        "value": "按项目要求",
+        "level": 68
+      },
+      {
+        "label": "标化考试",
+        "value": "按当年政策",
+        "level": 42
+      }
+    ],
+    "documents": [
+      "成绩单、推荐/个人陈述按申请系统",
+      "需数学、统计基础",
+      "可服务金融数据/风险建模"
+    ],
+    "notes": [
+      "可作为新加坡统计路线补充"
+    ],
+    "source": "https://www.stat.nus.edu.sg/prospective-students/graduate-programme/msc-in-statistics/",
+    "sources": [
+      {
+        "label": "项目官网 / 最近可用招生页",
+        "url": "https://www.stat.nus.edu.sg/prospective-students/graduate-programme/msc-in-statistics/",
+        "kind": "项目官网",
+        "year": "最近可用"
+      }
+    ],
+    "sourceLabel": "用户项目详表",
+    "sourcePayload": {
+      "02_项目详细库": {
+        "国家/地区": "新加坡",
+        "学校": "National University of Singapore",
+        "位置": "Singapore",
+        "学院": "Department of Statistics and Data Science",
+        "项目": "MSc in Statistics",
+        "方向": "统计学",
+        "学制": "约1年全日制，可兼读",
+        "学费/费用": "学费以NUS Science MSc Statistics页面当年为准；国际生通常SGD数万级别",
+        "申请时间": "通常每年有固定申请窗口；以NUS官方申请页为准",
+        "申请要求/材料": "成绩单、推荐/个人陈述按申请系统；需数学、统计基础；可服务金融数据/风险建模",
+        "考试要求": "TOEFL/IELTS按NUS要求",
+        "面试": "通常不统一列面试",
+        "建议先修/能力": "统计学位对quant/data science通用；金融工程直接性低于MFE",
+        "周边租房预算": "Singapore预算同上",
+        "申请定位": "匹配",
+        "备注": "可作为新加坡统计路线补充",
+        "官网来源": "https://www.stat.nus.edu.sg/prospective-students/graduate-programme/msc-in-statistics/"
+      },
+      "qsRank": "10",
+      "qsEdition": "2027",
+      "verificationLevel": "深度核验",
+      "recordType": "项目",
+      "originalProgramName": "MSc in Statistics",
+      "translatedProgramName": "统计学硕士",
+      "programNameTranslatedAt": "2026-07-17"
+    }
+  },
+  {
+    "id": "ntu-mfe",
+    "region": "新加坡",
+    "city": "Singapore",
+    "university": "Nanyang Technological University",
+    "school": "Nanyang Business School",
+    "program": "金融工程硕士",
+    "category": "金融与量化",
+    "direction": "金融工程",
+    "background": "量化背景",
+    "cycle": "最近可用",
+    "intake": "下一入学周期",
+    "duration": "约1年全日制",
+    "updated": "2026-06-05",
+    "academic": "在线申请、成绩单、简历、推荐/推荐人信息、文书；数理/金融/编程背景；部分申请者面试",
+    "language": "TOEFL/IELTS按NTU要求；GRE/GMAT如官网建议/要求",
+    "tests": "TOEFL/IELTS按NTU要求；GRE/GMAT如官网建议/要求",
+    "prerequisites": "NTU MFE历史悠久，适合亚洲金融工程、risk、quant路径",
+    "deadline": "通常每年秋季入学，申请窗口约前一年下半年至次年初；以NTU NBS官网为准",
+    "deadlineNote": "来自 2026-06-05 项目详表；如当年页面尚未发布，使用最近可用官方信息。",
+    "tuition": "NTU项目学费以NBS MSc Financial Engineering最新fee为准；通常SGD数万级别",
+    "applicationRequirements": "在线申请、成绩单、简历、推荐/推荐人信息、文书；数理/金融/编程背景；部分申请者面试",
+    "interview": "可能面试",
+    "rentBudget": "Singapore西部/Jurong/Pioneer：studio/1BR约SGD 2,500-4,000/月；合租单间约SGD 900-1,600/月",
+    "positioning": "高匹配",
+    "requirements": [
+      {
+        "label": "学术背景",
+        "value": "量化基础",
+        "level": 86
+      },
+      {
+        "label": "英语要求",
+        "value": "按项目要求",
+        "level": 68
+      },
+      {
+        "label": "标化考试",
+        "value": "按当年政策",
+        "level": 42
+      }
+    ],
+    "documents": [
+      "在线申请、成绩单、简历、推荐/推荐人信息、文书",
+      "数理/金融/编程背景",
+      "部分申请者面试"
+    ],
+    "notes": [
+      "与NUS MFE可双申",
+      "新加坡租房需尽早预算"
+    ],
+    "source": "https://www.ntu.edu.sg/business/admissions/graduate-studies/msc-financial-engineering",
+    "sources": [
+      {
+        "label": "项目官网 / 最近可用招生页",
+        "url": "https://www.ntu.edu.sg/business/admissions/graduate-studies/msc-financial-engineering",
+        "kind": "项目官网",
+        "year": "最近可用"
+      }
+    ],
+    "sourceLabel": "用户项目详表",
+    "sourcePayload": {
+      "02_项目详细库": {
+        "国家/地区": "新加坡",
+        "学校": "Nanyang Technological University",
+        "位置": "Singapore",
+        "学院": "Nanyang Business School",
+        "项目": "MSc Financial Engineering",
+        "方向": "金融工程",
+        "学制": "约1年全日制",
+        "学费/费用": "NTU项目学费以NBS MSc Financial Engineering最新fee为准；通常SGD数万级别",
+        "申请时间": "通常每年秋季入学，申请窗口约前一年下半年至次年初；以NTU NBS官网为准",
+        "申请要求/材料": "在线申请、成绩单、简历、推荐/推荐人信息、文书；数理/金融/编程背景；部分申请者面试",
+        "考试要求": "TOEFL/IELTS按NTU要求；GRE/GMAT如官网建议/要求",
+        "面试": "可能面试",
+        "建议先修/能力": "NTU MFE历史悠久，适合亚洲金融工程、risk、quant路径",
+        "周边租房预算": "Singapore西部/Jurong/Pioneer：studio/1BR约SGD 2,500-4,000/月；合租单间约SGD 900-1,600/月",
+        "申请定位": "高匹配",
+        "备注": "与NUS MFE可双申；新加坡租房需尽早预算",
+        "官网来源": "https://www.ntu.edu.sg/business/admissions/graduate-studies/msc-financial-engineering"
+      },
+      "qsRank": "12",
+      "qsEdition": "2027",
+      "verificationLevel": "深度核验",
+      "recordType": "项目",
+      "originalProgramName": "MSc Financial Engineering",
+      "translatedProgramName": "金融工程硕士",
+      "programNameTranslatedAt": "2026-07-17"
+    }
+  }
+]

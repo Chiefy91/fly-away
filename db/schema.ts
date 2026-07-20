@@ -1,0 +1,47 @@
+import { index, integer, sqliteTable, text } from "drizzle-orm/sqlite-core";
+
+export const programs = sqliteTable("programs", {
+  id: text("id").primaryKey(),
+  region: text("region").notNull(),
+  city: text("city").notNull(),
+  university: text("university").notNull(),
+  school: text("school").notNull(),
+  program: text("program").notNull(),
+  category: text("category").notNull(),
+  direction: text("direction").notNull().default(""),
+  background: text("background").notNull(),
+  cycle: text("cycle").notNull(),
+  intake: text("intake").notNull(),
+  duration: text("duration").notNull(),
+  updated: text("updated").notNull(),
+  academic: text("academic").notNull(),
+  language: text("language").notNull(),
+  tests: text("tests").notNull(),
+  prerequisites: text("prerequisites").notNull(),
+  deadline: text("deadline").notNull(),
+  deadlineNote: text("deadline_note").notNull(),
+  tuition: text("tuition").notNull().default(""),
+  applicationRequirements: text("application_requirements").notNull().default(""),
+  interview: text("interview").notNull().default(""),
+  rentBudget: text("rent_budget").notNull().default(""),
+  positioning: text("positioning").notNull().default(""),
+  source: text("source").notNull(),
+  sourceLabel: text("source_label").notNull().default(""),
+  requirementsJson: text("requirements_json").notNull().default("[]"),
+  documentsJson: text("documents_json").notNull().default("[]"),
+  notesJson: text("notes_json").notNull().default("[]"),
+  sourcesJson: text("sources_json").notNull().default("[]"),
+  sourcePayloadJson: text("source_payload_json").notNull().default("{}"),
+}, (table) => [
+  index("programs_region_idx").on(table.region),
+  index("programs_category_idx").on(table.category),
+  index("programs_university_idx").on(table.university),
+]);
+
+export const guides = sqliteTable("guides", {
+  id: text("id").primaryKey(),
+  section: text("section").notNull(),
+  payloadJson: text("payload_json").notNull(),
+  sortOrder: integer("sort_order").notNull().default(0),
+  updated: text("updated").notNull(),
+}, (table) => [index("guides_section_idx").on(table.section)]);
