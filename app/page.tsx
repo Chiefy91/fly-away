@@ -8,6 +8,24 @@ type Region = "香港" | "新加坡" | "美国" | "欧洲";
 type Category = "计算机与数据" | "金融与量化" | "数学与统计" | "商科与管理" | "工程与技术" | "社会科学" | "自然科学" | "人文与艺术" | "法律与公共事务" | "医学与生命科学" | "教育" | "综合项目目录";
 type Background = "跨专业友好" | "量化背景" | "强先修要求" | "待核验";
 type Verification = "全部" | "深度核验" | "官网核验" | "目录级收录";
+type ApplicationStatus = "全部" | "已开始申请" | "往期要求";
+
+type QuantitativePreparation = "未填写" | "已修读核心量化课程" | "需要补强";
+type EnglishPreparation = "未填写" | "IELTS 6.0" | "IELTS 6.5" | "IELTS 7.0+" | "TOEFL 90" | "TOEFL 100+";
+type PlanStage = "研究中" | "准备材料" | "已提交";
+type ApplicantProfile = {
+  discipline: Category | "未填写";
+  quantitative: QuantitativePreparation;
+  english: EnglishPreparation;
+  targetRegions: Region[];
+};
+type PlannedProgram = { id: string; stage: PlanStage };
+type Readiness = {
+  label: "先补充背景" | "可优先研究" | "需要补条件" | "需进一步核验";
+  rank: number;
+  gaps: string[];
+  positives: string[];
+};
 
 type Requirement = {
   label: string;
@@ -572,9 +590,13 @@ const DISCIPLINES: Category[] = ["计算机与数据", "金融与量化", "数�
 const CATEGORIES: (Category | "全部")[] = ["全部", ...DISCIPLINES];
 const BACKGROUNDS: (Background | "全部")[] = ["全部", "跨专业友好", "量化背景", "强先修要求", "待核验"];
 const VERIFICATIONS: Verification[] = ["全部", "深度核验", "官网核验", "目录级收录"];
+const APPLICATION_STATUSES: ApplicationStatus[] = ["全部", "已开始申请", "往期要求"];
 const CYCLES: (Program["cycle"] | "全部")[] = ["全部", "2027 入学", "2026/27 入学", "最近可用"];
 const STATIC_PROGRAMS = (staticPrograms as Program[]).length ? staticPrograms as Program[] : PROGRAMS;
 const GUIDES = guideData as GuideData;
+const DEFAULT_PROFILE: ApplicantProfile = { discipline: "未填写", quantitative: "未填写", english: "未填写", targetRegions: [] };
+const PROFILE_STORAGE_KEY = "fly-away-applicant-profile";
+const PLAN_STORAGE_KEY = "fly-away-application-plan";
 
 function formatDate(date: string) {
   return date.replaceAll("-", ".");
@@ -608,6 +630,71 @@ function numericRank(program: Program) {
   return Number.parseInt(qsRankOf(program).replace(/\D/g, ""), 10) || 999;
 }
 
+function applicationStatusOf(program: Program): Exclude<ApplicationStatus, "全部"> {
+  return payloadValue(program, "applicationStatus") === "已开始申请" ? "已开始申请" : "往期要求";
+}
+
+function applicationStatusNoteOf(program: Program) {
+  const value = payloadValue(program, "applicationStatusNote");
+  return typeof value === "string" ? value : "当前申请季尚未在项目官网确认开放；页面保留最近可用官方要求。";
+}
+
+function applicationStatusCheckedAtOf(program: Program) {
+  const value = payloadValue(program, "applicationStatusCheckedAt");
+  return typeof value === "string" ? value : program.updated;
+}
+
+function applicationStatusSourceOf(program: Program) {
+  const value = payloadValue(program, "applicationStatusSource");
+  return typeof value === "string" ? value : program.source;
+}
+
+function englishScore(value: EnglishPreparation) {
+  if (value.startsWith("IELTS")) return { type: "IELTS", score: Number.parseFloat(value.replace(/[^\d.]/g, "")) };
+  if (value.startsWith("TOEFL")) return { type: "TOEFL", score: Number.parseFloat(value.replace(/[^\d.]/g, "")) };
+  return null;
+}
+
+function expectedEnglishScore(text: string) {
+  const ielts = text.match(/IELTS\s*(?:iBT\s*)?(\d(?:\.\d)?)/i);
+  const toefl = text.match(/TOEFL(?:\s+iBT)?\s*(\d{2,3})/i);
+  if (ielts) return { type: "IELTS", score: Number.parseFloat(ielts[1]), label: `IELTS ${ielts[1]}` };
+  if (toefl) return { type: "TOEFL", score: Number.parseFloat(toefl[1]), label: `TOEFL ${toefl[1]}` };
+  return null;
+}
+
+function readinessOf(program: Program, profile: ApplicantProfile): Readiness {
+  const gaps: string[] = [];
+  const positives: string[] = [];
+  const profileStarted = profile.discipline !== "未填写" || profile.quantitative !== "未填写" || profile.english !== "未填写" || profile.targetRegions.length > 0;
+  if (!profileStarted) return { label: "先补充背景", rank: 1, gaps: [], positives: [] };
+
+  if (profile.targetRegions.length && !profile.targetRegions.includes(program.region)) gaps.push("不在你的目标地区");
+  if (profile.discipline !== "未填写") {
+    if (profile.discipline === program.category) positives.push("学科方向一致");
+    else if (program.background === "跨专业友好") positives.push("项目标注为跨专业友好");
+    else gaps.push(program.background === "强先修要求" ? "需核对本专业与先修课程" : "学科方向需进一步核对");
+  }
+  if (program.background === "量化背景" && profile.quantitative !== "已修读核心量化课程") gaps.push("项目偏好量化基础");
+  if (program.background === "强先修要求" && profile.quantitative === "需要补强") gaps.push("需要补强项目要求的先修能力");
+
+  const expectedEnglish = expectedEnglishScore(program.language);
+  const currentEnglish = englishScore(profile.english);
+  if (expectedEnglish && currentEnglish) {
+    if (expectedEnglish.type === currentEnglish.type && currentEnglish.score < expectedEnglish.score) gaps.push(`当前英语成绩低于公开门槛（${expectedEnglish.label}）`);
+    else if (expectedEnglish.type === currentEnglish.type) positives.push("英语成绩达到公开门槛");
+  } else if (expectedEnglish && profile.english === "未填写") {
+    gaps.push(`待补充英语成绩（公开门槛：${expectedEnglish.label}）`);
+  }
+
+  if (/GRE|GMAT/i.test(program.tests) && /(必需|要求|required)/i.test(program.tests) && !/(非必需|可选|optional|not required)/i.test(program.tests)) gaps.push("需确认标化考试安排");
+  if (verificationOf(program) === "目录级收录") gaps.push("该项目仍为目录级收录，关键要求须打开官网核对");
+
+  if (gaps.some((gap) => /低于|补强|标化|目标地区/.test(gap))) return { label: "需要补条件", rank: 2, gaps, positives };
+  if (verificationOf(program) === "目录级收录" || gaps.some((gap) => /需核对|待补充|进一步核对/.test(gap))) return { label: "需进一步核验", rank: 3, gaps, positives };
+  return { label: "可优先研究", rank: 4, gaps, positives };
+}
+
 export default function Home() {
   const [programs, setPrograms] = useState<Program[]>(STATIC_PROGRAMS);
   const [guides, setGuides] = useState<GuideData>(GUIDES);
@@ -617,6 +704,7 @@ export default function Home() {
   const [background, setBackground] = useState<Background | "全部">("全部");
   const [cycle, setCycle] = useState<Program["cycle"] | "全部">("全部");
   const [verification, setVerification] = useState<Verification>("全部");
+  const [applicationStatus, setApplicationStatus] = useState<ApplicationStatus>("全部");
   const [sort, setSort] = useState("最新核验");
   const [pageState, setPageState] = useState({ key: "", count: 60 });
   const [selected, setSelected] = useState<string[]>([]);
@@ -624,6 +712,10 @@ export default function Home() {
   const [compareOpen, setCompareOpen] = useState(false);
   const [toolkitTab, setToolkitTab] = useState<"overview" | "materials" | "timeline" | "sources" | "appendix">("materials");
   const [toast, setToast] = useState("");
+  const [profile, setProfile] = useState<ApplicantProfile>(DEFAULT_PROFILE);
+  const [planned, setPlanned] = useState<PlannedProgram[]>([]);
+  const [storageReady, setStorageReady] = useState(false);
+  const [onlyProfileMatches, setOnlyProfileMatches] = useState(false);
 
   const announce = (message: string) => {
     setToast(message);
@@ -648,6 +740,32 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
+    const restoreSavedState = window.setTimeout(() => {
+      try {
+        const savedProfile = window.localStorage.getItem(PROFILE_STORAGE_KEY);
+        const savedPlan = window.localStorage.getItem(PLAN_STORAGE_KEY);
+        if (savedProfile) {
+          const parsedProfile = JSON.parse(savedProfile) as Partial<ApplicantProfile>;
+          setProfile({ ...DEFAULT_PROFILE, ...parsedProfile });
+        }
+        if (savedPlan) setPlanned(JSON.parse(savedPlan) as PlannedProgram[]);
+      } catch {
+        window.localStorage.removeItem(PROFILE_STORAGE_KEY);
+        window.localStorage.removeItem(PLAN_STORAGE_KEY);
+      } finally {
+        setStorageReady(true);
+      }
+    }, 0);
+    return () => window.clearTimeout(restoreSavedState);
+  }, []);
+
+  useEffect(() => {
+    if (!storageReady) return;
+    window.localStorage.setItem(PROFILE_STORAGE_KEY, JSON.stringify(profile));
+    window.localStorage.setItem(PLAN_STORAGE_KEY, JSON.stringify(planned));
+  }, [profile, planned, storageReady]);
+
+  useEffect(() => {
     const onKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
         setDetailId(null);
@@ -667,24 +785,34 @@ export default function Home() {
         && (category === "全部" || program.category === category)
         && (background === "全部" || program.background === background)
         && (cycle === "全部" || program.cycle === cycle)
-        && (verification === "全部" || verificationOf(program) === verification);
+        && (verification === "全部" || verificationOf(program) === verification)
+        && (applicationStatus === "全部" || applicationStatusOf(program) === applicationStatus)
+        && (!onlyProfileMatches || readinessOf(program, profile).rank >= 3);
     });
     return [...items].sort((a, b) => {
       if (sort === "QS 排名") return numericRank(a) - numericRank(b) || a.university.localeCompare(b.university, "zh-CN");
       if (sort === "院校名称") return a.university.localeCompare(b.university, "zh-CN");
       if (sort === "地区顺序") return REGIONS.indexOf(a.region) - REGIONS.indexOf(b.region);
+      if (sort === "按我的准备度") return readinessOf(b, profile).rank - readinessOf(a, profile).rank || b.updated.localeCompare(a.updated);
       return b.updated.localeCompare(a.updated) || a.university.localeCompare(b.university, "zh-CN");
     });
-  }, [programs, query, region, category, background, cycle, verification, sort]);
+  }, [programs, query, region, category, background, cycle, verification, applicationStatus, sort, profile, onlyProfileMatches]);
 
   const selectedPrograms = selected.map((id) => programs.find((program) => program.id === id)).filter(Boolean) as Program[];
+  const plannedPrograms = planned.map((item) => ({ ...item, program: programs.find((program) => program.id === item.id) })).filter((item): item is PlannedProgram & { program: Program } => Boolean(item.program));
   const detail = detailId ? programs.find((program) => program.id === detailId) ?? null : null;
-  const filterKey = [query, region, category, background, cycle, verification, sort].join("|");
+  const filterKey = [query, region, category, background, cycle, verification, applicationStatus, sort, onlyProfileMatches].join("|");
   const visibleCount = pageState.key === filterKey ? pageState.count : 60;
   const displayed = filtered.slice(0, visibleCount);
   const qsSchoolCount = new Set(programs.filter((program) => qsRankOf(program)).map((program) => program.university)).size;
   const deepVerifiedCount = programs.filter((program) => verificationOf(program) === "深度核验").length;
   const officialVerifiedCount = programs.filter((program) => verificationOf(program) === "官网核验").length;
+  const openApplicationCount = programs.filter((program) => applicationStatusOf(program) === "已开始申请").length;
+  const readinessSummary = programs.reduce<Record<Readiness["label"], number>>((summary, program) => {
+    const label = readinessOf(program, profile).label;
+    summary[label] += 1;
+    return summary;
+  }, { "先补充背景": 0, "可优先研究": 0, "需要补条件": 0, "需进一步核验": 0 });
 
   const toggleCompare = (id: string) => {
     setSelected((current) => {
@@ -701,6 +829,30 @@ export default function Home() {
     });
   };
 
+  const togglePlan = (id: string) => {
+    setPlanned((current) => {
+      if (current.some((item) => item.id === id)) {
+        announce("已从申请计划移除");
+        return current.filter((item) => item.id !== id);
+      }
+      announce("已加入申请计划");
+      return [...current, { id, stage: "研究中" }];
+    });
+  };
+
+  const updatePlanStage = (id: string, stage: PlanStage) => setPlanned((current) => current.map((item) => item.id === id ? { ...item, stage } : item));
+
+  const toggleTargetRegion = (target: Region) => setProfile((current) => ({
+    ...current,
+    targetRegions: current.targetRegions.includes(target) ? current.targetRegions.filter((region) => region !== target) : [...current.targetRegions, target],
+  }));
+
+  const resetProfile = () => {
+    setProfile(DEFAULT_PROFILE);
+    setOnlyProfileMatches(false);
+    announce("你的背景档案已清除");
+  };
+
   const resetFilters = () => {
     setQuery("");
     setRegion("全部");
@@ -708,7 +860,9 @@ export default function Home() {
     setBackground("全部");
     setCycle("全部");
     setVerification("全部");
+    setApplicationStatus("全部");
     setSort("最新核验");
+    setOnlyProfileMatches(false);
     announce("筛选条件已清除");
   };
 
@@ -721,12 +875,13 @@ export default function Home() {
         </a>
         <nav className="nav" aria-label="主导航">
           <a className="active" href="#programs">查项目</a>
+          <a href="#assistant">申请助手</a>
           <a href="#disciplines">学科地图</a>
           <button type="button" onClick={() => selected.length ? setCompareOpen(true) : announce("请先加入想对比的项目")}>项目对比</button>
           <a href="#toolkit">申请工具箱</a>
         </nav>
         <div className="top-actions">
-          <span className="fresh-label">资料更新至 2026.07</span>
+          <span className="fresh-label">资料更新至 2026.08</span>
           <button className="compare-pill" type="button" disabled={!selected.length} onClick={() => setCompareOpen(true)}>
             对比清单 <b>{selected.length}</b>
           </button>
@@ -746,8 +901,22 @@ export default function Home() {
               <input id="global-search" value={query} onChange={(event) => setQuery(event.target.value)} type="search" placeholder="搜索学校、学院或项目，例如：港大 人工智能" />
               <button type="submit">开始定位</button>
             </form>
-            <div className="search-hints"><span><b>{programs.length}</b> 条项目与目录记录</span><span><b>{qsSchoolCount}</b> 所 QS 前50院校</span><span><b>{officialVerifiedCount}</b> 条官网核验</span><span><b>{deepVerifiedCount}</b> 条深度核验</span></div>
+            <div className="search-hints"><span><b>{programs.length}</b> 条项目与目录记录</span><span><b>{qsSchoolCount}</b> 所 QS 前50院校</span><span><b>{openApplicationCount}</b> 项已开始申请</span><span><b>{officialVerifiedCount}</b> 条官网核验</span><span><b>{deepVerifiedCount}</b> 条深度核验</span></div>
           </div>
+        </section>
+
+        <section className="application-studio" id="assistant" aria-labelledby="assistant-title">
+          <div className="studio-intro"><p className="section-kicker">APPLICATION READINESS</p><h2 id="assistant-title">先看公开门槛，再安排下一步。</h2><p>填写你愿意提供的背景信息，Fly Away 会标注项目的公开条件、待补项和核验边界；这不是录取概率预测。</p><button type="button" onClick={resetProfile}>清除我的背景</button></div>
+          <div className="studio-main">
+            <div className="profile-form" aria-label="我的申请背景">
+              <label><span>本科 / 主要方向</span><select value={profile.discipline} onChange={(event) => setProfile((current) => ({ ...current, discipline: event.target.value as ApplicantProfile["discipline"] }))}><option>未填写</option>{DISCIPLINES.filter((item) => item !== "综合项目目录").map((item) => <option key={item}>{item}</option>)}</select></label>
+              <label><span>量化课程准备</span><select value={profile.quantitative} onChange={(event) => setProfile((current) => ({ ...current, quantitative: event.target.value as QuantitativePreparation }))}>{(["未填写", "已修读核心量化课程", "需要补强"] as QuantitativePreparation[]).map((item) => <option key={item}>{item}</option>)}</select></label>
+              <label><span>当前英语成绩</span><select value={profile.english} onChange={(event) => setProfile((current) => ({ ...current, english: event.target.value as EnglishPreparation }))}>{(["未填写", "IELTS 6.0", "IELTS 6.5", "IELTS 7.0+", "TOEFL 90", "TOEFL 100+"] as EnglishPreparation[]).map((item) => <option key={item}>{item}</option>)}</select></label>
+              <fieldset><legend>目标地区（可多选）</legend><div className="region-toggle-row">{REGIONS.map((item) => <button key={item} type="button" className={profile.targetRegions.includes(item) ? "is-selected" : ""} aria-pressed={profile.targetRegions.includes(item)} onClick={() => toggleTargetRegion(item)}>{item}</button>)}</div></fieldset>
+            </div>
+            <div className="readiness-panel"><div><small>公开门槛匹配</small><strong>{profile.discipline === "未填写" && profile.quantitative === "未填写" && profile.english === "未填写" && !profile.targetRegions.length ? "填写背景后开始" : `${readinessSummary["可优先研究"]} 个可优先研究`}</strong><p>{readinessSummary["需要补条件"]} 个项目提示需补条件；{readinessSummary["需进一步核验"]} 个项目仍需逐项打开官网确认。</p></div><button type="button" onClick={() => { const next = !onlyProfileMatches; setOnlyProfileMatches(next); setSort("按我的准备度"); document.getElementById("programs")?.scrollIntoView({ behavior: "smooth" }); announce(next ? "已优先显示准备度较高的项目" : "已显示全部项目"); }}>{onlyProfileMatches ? "显示全部项目" : "优先看准备度较高"}</button><small className="privacy-note">仅保存在当前浏览器，不上传个人背景。</small></div>
+          </div>
+          <div className="plan-board"><div className="plan-board-head"><div><p className="section-kicker">MY APPLICATION PLAN</p><h3>我的申请计划 <b>{plannedPrograms.length}</b></h3></div><span>加入项目后，可在这里标记进度。</span></div>{plannedPrograms.length ? <div className="plan-list">{plannedPrograms.map(({ id, stage, program }) => <article key={id}><div><strong>{program.university} · {program.program}</strong><small>关键日期：{program.deadline.split("；")[0]} · 最近核验：{formatDate(program.updated)}</small></div><label><span className="sr-only">申请进度</span><select value={stage} onChange={(event) => updatePlanStage(id, event.target.value as PlanStage)}>{(["研究中", "准备材料", "已提交"] as PlanStage[]).map((item) => <option key={item}>{item}</option>)}</select></label><button type="button" onClick={() => togglePlan(id)}>移除</button></article>)}</div> : <p className="plan-empty">从项目列表或项目详情中加入计划。计划会保存在当前浏览器。</p>}</div>
         </section>
 
         <section className="route-band" id="regions" aria-label="地区快速筛选">
@@ -781,13 +950,14 @@ export default function Home() {
             <FilterGroup title="学科方向" values={CATEGORIES} active={category} onChange={(value) => setCategory(value as Category | "全部")} />
             <FilterGroup title="背景匹配" values={BACKGROUNDS} active={background} onChange={(value) => setBackground(value as Background | "全部")} />
             <FilterGroup title="信息年份" values={CYCLES} active={cycle} onChange={(value) => setCycle(value as Program["cycle"] | "全部")} />
-            <div className="year-note"><b>数据口径</b><p>院校官网与项目页面优先。当年信息未发布时，显示最近可用年份，并提示复核风险。</p></div>
+            <FilterGroup title="申请状态" values={APPLICATION_STATUSES} active={applicationStatus} onChange={(value) => setApplicationStatus(value as ApplicationStatus)} />
+            <div className="year-note"><b>数据口径</b><p>绿标仅代表项目官网明确已开放当前申请季；其余记录显示最近可用官方要求，并以黄标提示复核。状态最近核验：2026.08.11。</p></div>
           </aside>
 
           <div className="results">
             <div className="results-head">
               <div><p className="section-kicker">PROGRAMME FINDER</p><h2>{filtered.length ? "与你匹配的项目" : "暂未找到项目"}</h2></div>
-              <div className="results-controls"><span>共 {filtered.length} 项</span><label>排序<select value={sort} onChange={(event) => setSort(event.target.value)}><option>最新核验</option><option>QS 排名</option><option>地区顺序</option><option>院校名称</option></select></label></div>
+              <div className="results-controls"><span>共 {filtered.length} 项 · 计划 {plannedPrograms.length} 项</span><label>排序<select value={sort} onChange={(event) => setSort(event.target.value)}><option>最新核验</option><option>按我的准备度</option><option>QS 排名</option><option>地区顺序</option><option>院校名称</option></select></label></div>
             </div>
 
             {filtered.length ? displayed.map((program, index) => {
@@ -796,18 +966,21 @@ export default function Home() {
               const recordType = recordTypeOf(program);
               const qsRank = qsRankOf(program);
               const originalProgramName = originalProgramNameOf(program);
+              const readiness = readinessOf(program, profile);
+              const inPlan = planned.some((item) => item.id === program.id);
+              const status = applicationStatusOf(program);
               return (
                 <article className="program-row" key={program.id}>
                   <div className="program-id">
                     <span className="rank">{String(index + 1).padStart(2, "0")}</span>
-                    <div className="school"><small>{program.region} · {program.school}</small><h3>{program.university}<br />{program.program}</h3>{originalProgramName && <p className="original-program">官方原名：{originalProgramName}</p>}<p>{program.duration} · {program.intake}</p><div className="program-tags"><span className={`cycle-tag ${program.cycle === "最近可用" ? "is-legacy" : ""}`}>{program.cycle}</span>{qsRank && <span className="qs-tag">QS {qsRank}</span>}<span className={`verification-tag ${verification === "深度核验" ? "is-deep" : verification === "官网核验" ? "is-official" : ""}`}>{verification}</span>{recordType === "目录入口" && <span className="directory-tag">完整目录入口</span>}</div></div>
+                    <div className="school"><small>{program.region} · {program.school}</small><h3>{program.university}<br />{program.program}</h3>{originalProgramName && <p className="original-program">官方原名：{originalProgramName}</p>}<p>{program.duration} · {program.intake}</p><div className="program-tags"><span className={`application-tag ${status === "已开始申请" ? "is-open" : "is-historical"}`}>{status}</span><span className={`cycle-tag ${program.cycle === "最近可用" ? "is-legacy" : ""}`}>{program.cycle}</span>{qsRank && <span className="qs-tag">QS {qsRank}</span>}<span className={`verification-tag ${verification === "深度核验" ? "is-deep" : verification === "官网核验" ? "is-official" : ""}`}>{verification}</span><span className={`readiness-tag readiness-${readiness.rank}`}>{readiness.label}</span>{recordType === "目录入口" && <span className="directory-tag">完整目录入口</span>}</div><small className="verification-date">申请状态核验：{formatDate(applicationStatusCheckedAtOf(program))} · {program.sources?.length || 1} 个官方来源</small></div>
                   </div>
                   <div className="requirements" aria-label={`${program.program}申请要求概览`}>
                     {program.requirements.map((requirement) => (
                       <div className="requirement" key={requirement.label}><span>{requirement.label}</span><div className={`bar ${requirement.level === 0 ? "is-empty" : ""}`}><i style={{ "--value": `${requirement.level}%` } as CSSProperties} /></div><b>{requirement.value}</b></div>
                     ))}
                   </div>
-                  <div className="row-action"><p>关键日期<strong>{program.deadline.split("；")[0]}</strong></p><button className="detail-button" type="button" onClick={() => setDetailId(program.id)}>查看详情</button><button className={`add-compare ${active ? "is-active" : ""}`} type="button" aria-pressed={active} onClick={() => toggleCompare(program.id)}>{active ? "已加入对比" : "加入对比"}</button></div>
+                  <div className="row-action"><p>关键日期<strong>{program.deadline.split("；")[0]}</strong></p><button className="detail-button" type="button" onClick={() => setDetailId(program.id)}>查看详情</button><button className={`add-plan ${inPlan ? "is-active" : ""}`} type="button" aria-pressed={inPlan} onClick={() => togglePlan(program.id)}>{inPlan ? "已在计划" : "加入计划"}</button><button className={`add-compare ${active ? "is-active" : ""}`} type="button" aria-pressed={active} onClick={() => toggleCompare(program.id)}>{active ? "已加入对比" : "加入对比"}</button></div>
                 </article>
               );
             }) : (
@@ -832,9 +1005,9 @@ export default function Home() {
         </section>
       </main>
 
-      <footer><span>Fly Away · 留学项目情报库</span><span>首批功能版 · 数据核验于 2026 年 7 月</span></footer>
+      <footer><span>Fly Away · 留学项目情报库</span><span>首批功能版 · 申请状态核验于 2026 年 8 月</span></footer>
 
-      {detail && <DetailDrawer program={detail} selected={selected.includes(detail.id)} onClose={() => setDetailId(null)} onCompare={() => toggleCompare(detail.id)} />}
+      {detail && <DetailDrawer program={detail} selected={selected.includes(detail.id)} planned={planned.some((item) => item.id === detail.id)} profile={profile} onClose={() => setDetailId(null)} onCompare={() => toggleCompare(detail.id)} onPlan={() => togglePlan(detail.id)} />}
       {compareOpen && <CompareDialog programs={selectedPrograms} onClose={() => setCompareOpen(false)} onRemove={toggleCompare} />}
       <div className={`toast ${toast ? "show" : ""}`} role="status" aria-live="polite">{toast}</div>
     </div>
@@ -862,23 +1035,32 @@ function AppendixGroup({ title, rows, primaryKey, secondaryKey }: { title: strin
   return <section className="appendix-group"><h3>{title}</h3>{rows.map((row, index) => <details key={`${row[primaryKey]}-${row[secondaryKey]}-${index}`}><summary><span><strong>{row[primaryKey]}</strong><small>{row[secondaryKey]}</small></span><b>展开全部字段</b></summary><dl>{Object.entries(row).map(([label, value]) => <div key={label}><dt>{label}</dt><dd>{value || "未提供"}</dd></div>)}</dl></details>)}</section>;
 }
 
-function DetailDrawer({ program, selected, onClose, onCompare }: { program: Program; selected: boolean; onClose: () => void; onCompare: () => void }) {
-  const sources = program.sources?.length ? program.sources : [{ label: "项目官网", url: program.source, kind: "项目官网", year: program.cycle }];
+function DetailDrawer({ program, selected, planned, profile, onClose, onCompare, onPlan }: { program: Program; selected: boolean; planned: boolean; profile: ApplicantProfile; onClose: () => void; onCompare: () => void; onPlan: () => void }) {
+  const initialSources = program.sources?.length ? program.sources : [{ label: "项目官网", url: program.source, kind: "项目官网", year: program.cycle }];
   const verification = verificationOf(program);
   const qsRank = qsRankOf(program);
   const originalProgramName = originalProgramNameOf(program);
+  const readiness = readinessOf(program, profile);
+  const policyScope = payloadValue(program, "policyScope");
+  const status = applicationStatusOf(program);
+  const statusNote = applicationStatusNoteOf(program);
+  const statusCheckedAt = applicationStatusCheckedAtOf(program);
+  const statusSource = applicationStatusSourceOf(program);
+  const sources = initialSources.some((source) => source.url === statusSource) ? initialSources : [{ label: "本次申请状态核验", url: statusSource, kind: "官方申请状态", year: formatDate(statusCheckedAt) }, ...initialSources];
   return <div className="overlay" role="presentation" onMouseDown={(event) => { if (event.target === event.currentTarget) onClose(); }}>
     <section className="detail-drawer" role="dialog" aria-modal="true" aria-labelledby="detail-title">
       <div className="drawer-head"><div><p>{program.region} · {program.school}</p><h2 id="detail-title">{program.university}<br />{program.program}</h2>{originalProgramName && <p className="original-program drawer-original">官方原名：{originalProgramName}</p>}</div><button type="button" onClick={onClose}>关闭</button></div>
-      <div className="drawer-meta"><span>{program.category}</span><span>{program.direction || program.category}</span><span>{program.cycle}</span><span>{program.duration}</span>{qsRank && <span>QS 2027 · {qsRank}</span>}<span>{verification} · {formatDate(program.updated)}</span></div>
+      <div className="drawer-meta"><span className={`application-tag ${status === "已开始申请" ? "is-open" : "is-historical"}`}>{status}</span><span>{program.category}</span><span>{program.direction || program.category}</span><span>{program.cycle}</span><span>{program.duration}</span>{qsRank && <span>QS 2027 · {qsRank}</span>}<span>{verification} · {formatDate(program.updated)}</span><span>{readiness.label}</span></div>
+      <div className={`application-status-notice ${status === "已开始申请" ? "is-open" : "is-historical"}`}><strong>{status}</strong><p>{statusNote}</p><small>状态核验：{formatDate(statusCheckedAt)} · 请在提交前再次打开项目官网确认。</small></div>
       {verification === "目录级收录" && <div className="catalog-notice"><strong>当前为目录级收录</strong><p>已确认项目名称及官方来源，但学术要求、语言、标化、截止日期和费用尚未逐项核验。页面中的“待核验”不是项目要求。</p></div>}
       {verification === "官网核验" && <div className="catalog-notice is-official"><strong>当前为官网核验</strong><p>项目直接官网与校级通用规则已核验；项目独有的截止日期、费用、先修课和附加材料仍须打开项目页确认，页面不会把校级规则伪装成项目专属要求。</p></div>}
-      <div className="detail-grid"><DetailBlock title="学术要求" text={program.academic} /><DetailBlock title="语言要求" text={program.language} /><DetailBlock title="标化考试" text={program.tests} /><DetailBlock title="先修与能力" text={program.prerequisites} /><DetailBlock title="面试" text={program.interview || "以当年申请系统为准"} /><DetailBlock title="学费 / 费用" text={program.tuition || "以官网最新费用页为准"} /><DetailBlock title="周边租房预算" text={program.rentBudget || "暂未收录"} /><DetailBlock title="申请定位" text={program.positioning || "待结合个人背景判断"} /><DetailBlock title="申请要求 / 材料" text={program.applicationRequirements || program.academic} /></div>
+      <div className="readiness-detail"><small>基于你填写的背景</small><strong>{readiness.label}</strong>{readiness.positives.length > 0 && <p>已具备：{readiness.positives.join("；")}</p>}{readiness.gaps.length > 0 && <ul>{readiness.gaps.map((gap) => <li key={gap}>{gap}</li>)}</ul>}{!readiness.gaps.length && !readiness.positives.length && <p>填写你的背景后，这里会显示公开门槛与待准备事项。</p>}<em>结果仅用于整理公开申请条件，不代表录取概率。</em></div>
+      <div className="detail-grid"><DetailBlock title="学术要求" text={program.academic} /><DetailBlock title="语言要求" text={program.language} /><DetailBlock title="标化考试" text={program.tests} /><DetailBlock title="先修与能力" text={program.prerequisites} /><DetailBlock title="面试" text={program.interview || "以当年申请系统为准"} /><DetailBlock title="学费 / 费用" text={program.tuition || "以官网最新费用页为准"} /><DetailBlock title="周边租房预算" text={program.rentBudget || "暂未收录"} /><DetailBlock title="申请定位" text={program.positioning || "待结合个人背景判断"} /><DetailBlock title="申请要求 / 材料" text={program.applicationRequirements || program.academic} /><DetailBlock title="核验范围" text={typeof policyScope === "string" ? policyScope : "项目官网与最近可用官方公告"} /></div>
       <div className="deadline-box"><small>申请时间 / 关键日期</small><strong>{program.deadline}</strong><p>{program.deadlineNote}</p></div>
       <div className="detail-section"><h3>申请材料</h3><ul>{program.documents.map((item) => <li key={item}>{item}</li>)}</ul></div>
       <div className="detail-section"><h3>备注与录取画像</h3><ul>{program.notes.length ? program.notes.map((item) => <li key={item}>{item}</li>) : <li>暂无补充备注</li>}</ul></div>
-      <div className="detail-section source-links"><h3>项目网站与最近可用公告</h3>{sources.map((source) => <a key={`${source.url}-${source.label}`} href={source.url} target="_blank" rel="noreferrer"><span><b>{source.label}</b><small>{source.kind} · {source.year}</small></span><strong>打开来源</strong></a>)}</div>
-      <div className="drawer-actions"><a href={program.source} target="_blank" rel="noreferrer">打开首要官方来源</a><button type="button" onClick={onCompare}>{selected ? "移出对比" : "加入对比"}</button></div>
+      <div className="detail-section source-links"><h3>项目网站与状态来源</h3>{sources.map((source) => <a key={`${source.url}-${source.label}`} href={source.url} target="_blank" rel="noreferrer"><span><b>{source.label}</b><small>{source.kind} · {source.year}</small></span><strong>打开来源</strong></a>)}</div>
+      <div className="drawer-actions"><a href={program.source} target="_blank" rel="noreferrer">打开首要官方来源</a><button type="button" onClick={onPlan}>{planned ? "移出申请计划" : "加入申请计划"}</button><button type="button" onClick={onCompare}>{selected ? "移出对比" : "加入对比"}</button></div>
     </section>
   </div>;
 }
@@ -888,7 +1070,7 @@ function DetailBlock({ title, text }: { title: string; text: string }) {
 }
 
 function CompareDialog({ programs, onClose, onRemove }: { programs: Program[]; onClose: () => void; onRemove: (id: string) => void }) {
-  return <div className="overlay compare-overlay" role="presentation" onMouseDown={(event) => { if (event.target === event.currentTarget) onClose(); }}><section className="compare-dialog" role="dialog" aria-modal="true" aria-labelledby="compare-title"><div className="compare-head"><div><p>PROGRAMME COMPARE</p><h2 id="compare-title">把项目放到同一张表里。</h2></div><button type="button" onClick={onClose}>关闭</button></div><div className="compare-table-wrap"><table><thead><tr><th>对比项目</th>{programs.map((program) => <th key={program.id}>{program.university}<strong>{program.program}</strong><button type="button" onClick={() => onRemove(program.id)}>移出</button></th>)}</tr></thead><tbody><CompareRow label="地区 / 入学" programs={programs} render={(program) => `${program.region} · ${program.intake}`} /><CompareRow label="学科方向" programs={programs} render={(program) => program.direction || program.category} /><CompareRow label="学术要求" programs={programs} render={(program) => program.academic} /><CompareRow label="先修与能力" programs={programs} render={(program) => program.prerequisites} /><CompareRow label="语言要求" programs={programs} render={(program) => program.language} /><CompareRow label="标化考试" programs={programs} render={(program) => program.tests} /><CompareRow label="面试" programs={programs} render={(program) => program.interview || "以当年申请系统为准"} /><CompareRow label="学费 / 费用" programs={programs} render={(program) => program.tuition || "以官网最新费用页为准"} /><CompareRow label="租房预算" programs={programs} render={(program) => program.rentBudget || "暂未收录"} /><CompareRow label="申请定位" programs={programs} render={(program) => program.positioning || "待结合个人背景判断"} /><CompareRow label="关键日期" programs={programs} render={(program) => program.deadline} /><CompareRow label="信息年份" programs={programs} render={(program) => program.cycle} /></tbody></table></div><p className="compare-note">对比表区分官方硬性要求与表格中的经验信息，不代表录取概率。申请提交前请进入来源页面再次核对。</p></section></div>;
+  return <div className="overlay compare-overlay" role="presentation" onMouseDown={(event) => { if (event.target === event.currentTarget) onClose(); }}><section className="compare-dialog" role="dialog" aria-modal="true" aria-labelledby="compare-title"><div className="compare-head"><div><p>PROGRAMME COMPARE</p><h2 id="compare-title">把项目放到同一张表里。</h2></div><button type="button" onClick={onClose}>关闭</button></div><div className="compare-table-wrap"><table><thead><tr><th>对比项目</th>{programs.map((program) => <th key={program.id}>{program.university}<strong>{program.program}</strong><button type="button" onClick={() => onRemove(program.id)}>移出</button></th>)}</tr></thead><tbody><CompareRow label="申请状态" programs={programs} render={(program) => applicationStatusOf(program)} /><CompareRow label="地区 / 入学" programs={programs} render={(program) => `${program.region} · ${program.intake}`} /><CompareRow label="学科方向" programs={programs} render={(program) => program.direction || program.category} /><CompareRow label="学术要求" programs={programs} render={(program) => program.academic} /><CompareRow label="先修与能力" programs={programs} render={(program) => program.prerequisites} /><CompareRow label="语言要求" programs={programs} render={(program) => program.language} /><CompareRow label="标化考试" programs={programs} render={(program) => program.tests} /><CompareRow label="面试" programs={programs} render={(program) => program.interview || "以当年申请系统为准"} /><CompareRow label="学费 / 费用" programs={programs} render={(program) => program.tuition || "以官网最新费用页为准"} /><CompareRow label="租房预算" programs={programs} render={(program) => program.rentBudget || "暂未收录"} /><CompareRow label="申请定位" programs={programs} render={(program) => program.positioning || "待结合个人背景判断"} /><CompareRow label="关键日期" programs={programs} render={(program) => program.deadline} /><CompareRow label="信息年份" programs={programs} render={(program) => program.cycle} /></tbody></table></div><p className="compare-note">绿标仅表示官方已明确开放当前申请季；其他项目须在提交前进入来源页面再次核对。</p></section></div>;
 }
 
 function CompareRow({ label, programs, render }: { label: string; programs: Program[]; render: (program: Program) => string }) {

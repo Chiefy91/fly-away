@@ -29,6 +29,13 @@
       "when": 1784304000000,
       "tag": "0003_translate_program_names",
       "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "6",
+      "when": 1786435200000,
+      "tag": "0004_application_cycle_status",
+      "breakpoints": true
     }
   ]
 }
