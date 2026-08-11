@@ -9,6 +9,7 @@ type Category = "计算机与数据" | "金融与量化" | "数学与统计" | "
 type Background = "跨专业友好" | "量化背景" | "强先修要求" | "待核验";
 type Verification = "全部" | "深度核验" | "官网核验" | "目录级收录";
 type ApplicationStatus = "全部" | "已开始申请" | "往期要求";
+type DegreeLevel = "硕士" | "博士";
 
 type QuantitativePreparation = "未填写" | "已修读核心量化课程" | "需要补强";
 type EnglishPreparation = "未填写" | "IELTS 6.0" | "IELTS 6.5" | "IELTS 7.0+" | "TOEFL 90" | "TOEFL 100+";
@@ -591,6 +592,7 @@ const CATEGORIES: (Category | "全部")[] = ["全部", ...DISCIPLINES];
 const BACKGROUNDS: (Background | "全部")[] = ["全部", "跨专业友好", "量化背景", "强先修要求", "待核验"];
 const VERIFICATIONS: Verification[] = ["全部", "深度核验", "官网核验", "目录级收录"];
 const APPLICATION_STATUSES: ApplicationStatus[] = ["全部", "已开始申请", "往期要求"];
+const DEGREE_LEVELS: (DegreeLevel | "全部")[] = ["全部", "硕士", "博士"];
 const CYCLES: (Program["cycle"] | "全部")[] = ["全部", "2027 入学", "2026/27 入学", "最近可用"];
 const STATIC_PROGRAMS = (staticPrograms as Program[]).length ? staticPrograms as Program[] : PROGRAMS;
 const GUIDES = guideData as GuideData;
@@ -649,6 +651,11 @@ function applicationStatusSourceOf(program: Program) {
   return typeof value === "string" ? value : program.source;
 }
 
+function degreeLevelOf(program: Program): DegreeLevel | "" {
+  const value = payloadValue(program, "degreeLevel");
+  return value === "硕士" || value === "博士" ? value : "";
+}
+
 function englishScore(value: EnglishPreparation) {
   if (value.startsWith("IELTS")) return { type: "IELTS", score: Number.parseFloat(value.replace(/[^\d.]/g, "")) };
   if (value.startsWith("TOEFL")) return { type: "TOEFL", score: Number.parseFloat(value.replace(/[^\d.]/g, "")) };
@@ -705,6 +712,7 @@ export default function Home() {
   const [cycle, setCycle] = useState<Program["cycle"] | "全部">("全部");
   const [verification, setVerification] = useState<Verification>("全部");
   const [applicationStatus, setApplicationStatus] = useState<ApplicationStatus>("全部");
+  const [degreeLevel, setDegreeLevel] = useState<DegreeLevel | "全部">("全部");
   const [sort, setSort] = useState("最新核验");
   const [pageState, setPageState] = useState({ key: "", count: 60 });
   const [selected, setSelected] = useState<string[]>([]);
@@ -787,6 +795,7 @@ export default function Home() {
         && (cycle === "全部" || program.cycle === cycle)
         && (verification === "全部" || verificationOf(program) === verification)
         && (applicationStatus === "全部" || applicationStatusOf(program) === applicationStatus)
+        && (degreeLevel === "全部" || degreeLevelOf(program) === degreeLevel)
         && (!onlyProfileMatches || readinessOf(program, profile).rank >= 3);
     });
     return [...items].sort((a, b) => {
@@ -796,12 +805,12 @@ export default function Home() {
       if (sort === "按我的准备度") return readinessOf(b, profile).rank - readinessOf(a, profile).rank || b.updated.localeCompare(a.updated);
       return b.updated.localeCompare(a.updated) || a.university.localeCompare(b.university, "zh-CN");
     });
-  }, [programs, query, region, category, background, cycle, verification, applicationStatus, sort, profile, onlyProfileMatches]);
+  }, [programs, query, region, category, background, cycle, verification, applicationStatus, degreeLevel, sort, profile, onlyProfileMatches]);
 
   const selectedPrograms = selected.map((id) => programs.find((program) => program.id === id)).filter(Boolean) as Program[];
   const plannedPrograms = planned.map((item) => ({ ...item, program: programs.find((program) => program.id === item.id) })).filter((item): item is PlannedProgram & { program: Program } => Boolean(item.program));
   const detail = detailId ? programs.find((program) => program.id === detailId) ?? null : null;
-  const filterKey = [query, region, category, background, cycle, verification, applicationStatus, sort, onlyProfileMatches].join("|");
+  const filterKey = [query, region, category, background, cycle, verification, applicationStatus, degreeLevel, sort, onlyProfileMatches].join("|");
   const visibleCount = pageState.key === filterKey ? pageState.count : 60;
   const displayed = filtered.slice(0, visibleCount);
   const qsSchoolCount = new Set(programs.filter((program) => qsRankOf(program)).map((program) => program.university)).size;
@@ -861,6 +870,7 @@ export default function Home() {
     setCycle("全部");
     setVerification("全部");
     setApplicationStatus("全部");
+    setDegreeLevel("全部");
     setSort("最新核验");
     setOnlyProfileMatches(false);
     announce("筛选条件已清除");
@@ -951,6 +961,7 @@ export default function Home() {
             <FilterGroup title="背景匹配" values={BACKGROUNDS} active={background} onChange={(value) => setBackground(value as Background | "全部")} />
             <FilterGroup title="信息年份" values={CYCLES} active={cycle} onChange={(value) => setCycle(value as Program["cycle"] | "全部")} />
             <FilterGroup title="申请状态" values={APPLICATION_STATUSES} active={applicationStatus} onChange={(value) => setApplicationStatus(value as ApplicationStatus)} />
+            <FilterGroup title="学位层次" values={DEGREE_LEVELS} active={degreeLevel} onChange={(value) => setDegreeLevel(value as DegreeLevel | "全部")} />
             <div className="year-note"><b>数据口径</b><p>绿标仅代表项目官网明确已开放当前申请季；其余记录显示最近可用官方要求，并以黄标提示复核。状态最近核验：2026.08.11。</p></div>
           </aside>
 
@@ -969,11 +980,12 @@ export default function Home() {
               const readiness = readinessOf(program, profile);
               const inPlan = planned.some((item) => item.id === program.id);
               const status = applicationStatusOf(program);
+              const degree = degreeLevelOf(program);
               return (
                 <article className="program-row" key={program.id}>
                   <div className="program-id">
                     <span className="rank">{String(index + 1).padStart(2, "0")}</span>
-                    <div className="school"><small>{program.region} · {program.school}</small><h3>{program.university}<br />{program.program}</h3>{originalProgramName && <p className="original-program">官方原名：{originalProgramName}</p>}<p>{program.duration} · {program.intake}</p><div className="program-tags"><span className={`application-tag ${status === "已开始申请" ? "is-open" : "is-historical"}`}>{status}</span><span className={`cycle-tag ${program.cycle === "最近可用" ? "is-legacy" : ""}`}>{program.cycle}</span>{qsRank && <span className="qs-tag">QS {qsRank}</span>}<span className={`verification-tag ${verification === "深度核验" ? "is-deep" : verification === "官网核验" ? "is-official" : ""}`}>{verification}</span><span className={`readiness-tag readiness-${readiness.rank}`}>{readiness.label}</span>{recordType === "目录入口" && <span className="directory-tag">完整目录入口</span>}</div><small className="verification-date">申请状态核验：{formatDate(applicationStatusCheckedAtOf(program))} · {program.sources?.length || 1} 个官方来源</small></div>
+                    <div className="school"><small>{program.region} · {program.school}</small><h3>{program.university}<br />{program.program}</h3>{originalProgramName && <p className="original-program">官方原名：{originalProgramName}</p>}<p>{program.duration} · {program.intake}</p><div className="program-tags"><span className={`application-tag ${status === "已开始申请" ? "is-open" : "is-historical"}`}>{status}</span>{degree && <span className={`degree-tag degree-${degree}`}>{degree}</span>}<span className={`cycle-tag ${program.cycle === "最近可用" ? "is-legacy" : ""}`}>{program.cycle}</span>{qsRank && <span className="qs-tag">QS {qsRank}</span>}<span className={`verification-tag ${verification === "深度核验" ? "is-deep" : verification === "官网核验" ? "is-official" : ""}`}>{verification}</span><span className={`readiness-tag readiness-${readiness.rank}`}>{readiness.label}</span>{recordType === "目录入口" && <span className="directory-tag">完整目录入口</span>}</div><small className="verification-date">申请状态核验：{formatDate(applicationStatusCheckedAtOf(program))} · {program.sources?.length || 1} 个官方来源</small></div>
                   </div>
                   <div className="requirements" aria-label={`${program.program}申请要求概览`}>
                     {program.requirements.map((requirement) => (
@@ -1043,6 +1055,7 @@ function DetailDrawer({ program, selected, planned, profile, onClose, onCompare,
   const readiness = readinessOf(program, profile);
   const policyScope = payloadValue(program, "policyScope");
   const status = applicationStatusOf(program);
+  const degree = degreeLevelOf(program);
   const statusNote = applicationStatusNoteOf(program);
   const statusCheckedAt = applicationStatusCheckedAtOf(program);
   const statusSource = applicationStatusSourceOf(program);
@@ -1050,7 +1063,7 @@ function DetailDrawer({ program, selected, planned, profile, onClose, onCompare,
   return <div className="overlay" role="presentation" onMouseDown={(event) => { if (event.target === event.currentTarget) onClose(); }}>
     <section className="detail-drawer" role="dialog" aria-modal="true" aria-labelledby="detail-title">
       <div className="drawer-head"><div><p>{program.region} · {program.school}</p><h2 id="detail-title">{program.university}<br />{program.program}</h2>{originalProgramName && <p className="original-program drawer-original">官方原名：{originalProgramName}</p>}</div><button type="button" onClick={onClose}>关闭</button></div>
-      <div className="drawer-meta"><span className={`application-tag ${status === "已开始申请" ? "is-open" : "is-historical"}`}>{status}</span><span>{program.category}</span><span>{program.direction || program.category}</span><span>{program.cycle}</span><span>{program.duration}</span>{qsRank && <span>QS 2027 · {qsRank}</span>}<span>{verification} · {formatDate(program.updated)}</span><span>{readiness.label}</span></div>
+      <div className="drawer-meta"><span className={`application-tag ${status === "已开始申请" ? "is-open" : "is-historical"}`}>{status}</span>{degree && <span className={`degree-tag degree-${degree}`}>{degree}</span>}<span>{program.category}</span><span>{program.direction || program.category}</span><span>{program.cycle}</span><span>{program.duration}</span>{qsRank && <span>QS 2027 · {qsRank}</span>}<span>{verification} · {formatDate(program.updated)}</span><span>{readiness.label}</span></div>
       <div className={`application-status-notice ${status === "已开始申请" ? "is-open" : "is-historical"}`}><strong>{status}</strong><p>{statusNote}</p><small>状态核验：{formatDate(statusCheckedAt)} · 请在提交前再次打开项目官网确认。</small></div>
       {verification === "目录级收录" && <div className="catalog-notice"><strong>当前为目录级收录</strong><p>已确认项目名称及官方来源，但学术要求、语言、标化、截止日期和费用尚未逐项核验。页面中的“待核验”不是项目要求。</p></div>}
       {verification === "官网核验" && <div className="catalog-notice is-official"><strong>当前为官网核验</strong><p>项目直接官网与校级通用规则已核验；项目独有的截止日期、费用、先修课和附加材料仍须打开项目页确认，页面不会把校级规则伪装成项目专属要求。</p></div>}

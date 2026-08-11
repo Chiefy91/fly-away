@@ -2895,63 +2895,72 @@
   {
     "id": "stanford-msstats",
     "region": "美国",
-    "city": "Stanford, CA",
-    "university": "Stanford University",
-    "school": "Department of Statistics",
-    "program": "统计学硕士",
+    "city": "斯坦福（加利福尼亚州）",
+    "university": "斯坦福大学",
+    "school": "统计系",
+    "program": "统计学理学硕士",
     "category": "数学与统计",
-    "direction": "统计学",
+    "direction": "统计学 · 硕士",
     "background": "强先修要求",
-    "cycle": "最近可用",
-    "intake": "下一入学周期",
-    "duration": "约1-2年",
-    "updated": "2026-06-05",
-    "academic": "成绩单、SOP、推荐信；高阶数学、概率、统计、计算机背景；可走金融统计/ML/数据科学就业",
-    "language": "GRE政策按当年页面；英语TOEFL或豁免",
-    "tests": "GRE政策按当年页面；英语TOEFL或豁免",
-    "prerequisites": "不是MFE，但统计/ML牌子极强；适合quant research/data science",
-    "deadline": "Fall统计MS常见12月初截止；以Statistics Admissions当年页面为准",
-    "deadlineNote": "来自 2026-06-05 项目详表；如当年页面尚未发布，使用最近可用官方信息。",
-    "tuition": "Stanford研究生学费按quarter/units；总成本高，需以Student Services最新COA为准",
-    "applicationRequirements": "成绩单、SOP、推荐信；高阶数学、概率、统计、计算机背景；可走金融统计/ML/数据科学就业",
-    "interview": "通常无统一面试",
-    "rentBudget": "Palo Alto/Stanford：studio约$2,700-4,000/月，1BR约$3,200-4,800/月，合租单间约$1,600-2,600/月",
-    "positioning": "冲刺",
+    "cycle": "2027 入学",
+    "intake": "2027 年秋季",
+    "duration": "全日制约 5–6 个学季",
+    "updated": "2026-08-11",
+    "academic": "须具备线性代数、多元微积分、统计/概率与编程准备；申请按整体材料评估，不设公开最低 GPA。",
+    "language": "如不符合豁免条件，Stanford 最低 TOEFL iBT 90 或 IELTS 7.0。",
+    "tests": "GRE General 必须提交；统计系不设公开最低 GRE 分数。",
+    "prerequisites": "线性代数、多元微积分、入门统计/概率及编程能力是入学课程的基础。",
+    "deadline": "2027 秋季：2027-01-07（太平洋时间 23:59）",
+    "deadlineNote": "统计系已发布 2027 截止日期；学校申请系统预计 2026 年 9 月下旬开放。",
+    "tuition": "以项目官网当年学费页为准",
+    "applicationRequirements": "在线申请、成绩单、目的陈述、推荐信、GRE General，以及英语成绩（如适用）。",
+    "interview": "以项目当年招生页面为准",
+    "rentBudget": "暂未收录",
+    "positioning": "授课型统计项目；重点评估量化先修、学术表现与材料完整度。",
     "requirements": [
       {
         "label": "学术背景",
-        "value": "量化基础",
+        "value": "量化/统计基础",
         "level": 86
       },
       {
         "label": "英语要求",
-        "value": "按项目要求",
-        "level": 68
+        "value": "如不符合豁免条件，Stanford 最低 TOEFL iBT 90 或 IELTS 7.0。",
+        "level": 74
       },
       {
         "label": "标化考试",
-        "value": "按当年政策",
-        "level": 42
+        "value": "GRE General 必须提交；统计系不设公开最低 GRE 分数。",
+        "level": 65
       }
     ],
     "documents": [
-      "成绩单、SOP、推荐信",
-      "高阶数学、概率、统计、计算机背景",
-      "可走金融统计/ML/数据科学就业"
+      "全部大学成绩单",
+      "目的陈述",
+      "推荐信",
+      "GRE General 成绩",
+      "英语成绩（如适用）"
     ],
     "notes": [
-      "适合把统计作为quant research底层能力申请"
+      "终结型硕士，不含论文或通向本系博士的自动衔接",
+      "统计系说明硕士不提供助学金或 RA/TA"
     ],
-    "source": "https://statistics.stanford.edu/academics/ms-statistics",
+    "source": "https://statistics.stanford.edu/admissions/ms-admissions",
     "sources": [
       {
-        "label": "项目官网 / 最近可用招生页",
-        "url": "https://statistics.stanford.edu/academics/ms-statistics",
+        "label": "Stanford Statistics MS 招生",
+        "url": "https://statistics.stanford.edu/admissions/ms-admissions",
         "kind": "项目官网",
-        "year": "最近可用"
+        "year": "2027 入学"
+      },
+      {
+        "label": "Stanford Statistics 2027 研究生截止日期",
+        "url": "https://statistics.stanford.edu/admissions/graduate-admissions",
+        "kind": "项目招生页面",
+        "year": "2027 入学"
       }
     ],
-    "sourceLabel": "用户项目详表",
+    "sourceLabel": "Fly Away 统计学专项官网核验 · 2026-08-11",
     "sourcePayload": {
       "02_项目详细库": {
         "国家/地区": "美国",
@@ -2977,12 +2986,16 @@
       "verificationLevel": "深度核验",
       "recordType": "项目",
       "originalProgramName": "MS in Statistics",
-      "translatedProgramName": "统计学硕士",
-      "programNameTranslatedAt": "2026-07-17",
+      "translatedProgramName": "统计学理学硕士",
+      "programNameTranslatedAt": "2026-08-11",
       "applicationStatus": "往期要求",
       "applicationStatusCheckedAt": "2026-08-11",
-      "applicationStatusNote": "当前申请季尚未在项目官网确认开放；页面展示最近可用官方要求。",
-      "applicationStatusSource": "https://statistics.stanford.edu/academics/ms-statistics"
+      "applicationStatusNote": "统计系已公布 2027 截止日期，但学校申请系统预计在 2026 年 9 月下旬才开放。",
+      "applicationStatusSource": "https://statistics.stanford.edu/admissions/graduate-admissions",
+      "degreeLevel": "硕士",
+      "policyScope": "项目直接招生页面",
+      "policyVerifiedAt": "2026-08-11",
+      "policySourceCount": 2
     }
   },
   {
@@ -3357,63 +3370,67 @@
   {
     "id": "nus-msstats",
     "region": "新加坡",
-    "city": "Singapore",
-    "university": "National University of Singapore",
-    "school": "Department of Statistics and Data Science",
-    "program": "统计学硕士",
+    "city": "新加坡",
+    "university": "新加坡国立大学",
+    "school": "统计与数据科学系",
+    "program": "统计学理学硕士",
     "category": "数学与统计",
-    "direction": "统计学",
+    "direction": "统计学 · 硕士",
     "background": "量化背景",
-    "cycle": "最近可用",
-    "intake": "下一入学周期",
-    "duration": "约1年全日制，可兼读",
-    "updated": "2026-06-05",
-    "academic": "成绩单、推荐/个人陈述按申请系统；需数学、统计基础；可服务金融数据/风险建模",
-    "language": "TOEFL/IELTS按NUS要求",
-    "tests": "TOEFL/IELTS按NUS要求",
-    "prerequisites": "统计学位对quant/data science通用；金融工程直接性低于MFE",
-    "deadline": "通常每年有固定申请窗口；以NUS官方申请页为准",
-    "deadlineNote": "来自 2026-06-05 项目详表；如当年页面尚未发布，使用最近可用官方信息。",
-    "tuition": "学费以NUS Science MSc Statistics页面当年为准；国际生通常SGD数万级别",
-    "applicationRequirements": "成绩单、推荐/个人陈述按申请系统；需数学、统计基础；可服务金融数据/风险建模",
-    "interview": "通常不统一列面试",
-    "rentBudget": "Singapore预算同上",
-    "positioning": "匹配",
+    "cycle": "2027 入学",
+    "intake": "2027 年 8 月",
+    "duration": "全日制 1–2 年；非全日制 2–4 年",
+    "updated": "2026-08-11",
+    "academic": "优先接受数学、工程、统计、生物统计、量化金融、计算机、物理、经济等四年制学士（荣誉）学位；三年制或其他专业可个案审理。",
+    "language": "非全英语授课背景：TOEFL iBT 85（新制 4.5）或 IELTS 6.0。",
+    "tests": "未列 GRE/GMAT 为必需。",
+    "prerequisites": "需有足以学习统计与数据科学的量化背景；其他专业将结合相关知识与经验个案审理。",
+    "deadline": "2027 年 8 月入学：早轮 2026-05-16 至 2026-07-15；常规轮 2026-10-01 至 2027-01-31",
+    "deadlineNote": "一年仅 8 月入学；截至 2026-08-11，早轮已结束，常规轮尚未开始。",
+    "tuition": "以项目官网当年学费页为准",
+    "applicationRequirements": "在线申请、官方学位/成绩材料、护照或身份证明、英语成绩（如适用）、资金证明；不要求推荐信、个人陈述或 SOP，CV 可选。",
+    "interview": "以项目当年招生页面为准",
+    "rentBudget": "暂未收录",
+    "positioning": "授课型统计项目；重点评估量化先修、学术表现与材料完整度。",
     "requirements": [
       {
         "label": "学术背景",
-        "value": "量化基础",
+        "value": "量化/统计基础",
         "level": 86
       },
       {
         "label": "英语要求",
-        "value": "按项目要求",
-        "level": 68
+        "value": "非全英语授课背景：TOEFL iBT 85（新制 4.5）或 IELTS 6.0。",
+        "level": 74
       },
       {
         "label": "标化考试",
-        "value": "按当年政策",
-        "level": 42
+        "value": "未列 GRE/GMAT 为必需。",
+        "level": 65
       }
     ],
     "documents": [
-      "成绩单、推荐/个人陈述按申请系统",
-      "需数学、统计基础",
-      "可服务金融数据/风险建模"
+      "学士学位与官方成绩材料",
+      "身份证明 / 护照",
+      "英语成绩（如适用）",
+      "资金证明",
+      "CAP/GPA 排名证明（如适用）",
+      "CV（可选）"
     ],
     "notes": [
-      "可作为新加坡统计路线补充"
+      "不要求推荐信、个人陈述或 SOP",
+      "所有文件应于关闭前以清晰 PDF 上传"
     ],
-    "source": "https://www.stat.nus.edu.sg/prospective-students/graduate-programme/msc-in-statistics/",
+    "source": "https://www.stat.nus.edu.sg/education/graduate/msc-in-statistics/prospective-students/",
     "sources": [
       {
-        "label": "项目官网 / 最近可用招生页",
-        "url": "https://www.stat.nus.edu.sg/prospective-students/graduate-programme/msc-in-statistics/",
+        "label": "NUS MSc Statistics 招生与材料清单",
+        "url": "https://www.stat.nus.edu.sg/education/graduate/msc-in-statistics/prospective-students/",
         "kind": "项目官网",
-        "year": "最近可用"
+        "year": "2027 入学"
       }
     ],
-    "sourceLabel": "用户项目详表",
+    "sourceLabel": "Fly Away 统计学专项官网核验 · 2026-08-11",
     "sourcePayload": {
       "02_项目详细库": {
         "国家/地区": "新加坡",
@@ -3439,12 +3456,16 @@
       "verificationLevel": "深度核验",
       "recordType": "项目",
       "originalProgramName": "MSc in Statistics",
-      "translatedProgramName": "统计学硕士",
-      "programNameTranslatedAt": "2026-07-17",
+      "translatedProgramName": "统计学理学硕士",
+      "programNameTranslatedAt": "2026-08-11",
       "applicationStatus": "往期要求",
       "applicationStatusCheckedAt": "2026-08-11",
-      "applicationStatusNote": "当前申请季尚未在项目官网确认开放；页面展示最近可用官方要求。",
-      "applicationStatusSource": "https://www.stat.nus.edu.sg/prospective-students/graduate-programme/msc-in-statistics/"
+      "applicationStatusNote": "2027 年 8 月早轮已于 2026-07-15 结束；常规轮将于 2026-10-01 开放。",
+      "applicationStatusSource": "https://www.stat.nus.edu.sg/education/graduate/msc-in-statistics/prospective-students/",
+      "degreeLevel": "硕士",
+      "policyScope": "项目直接招生页面",
+      "policyVerifiedAt": "2026-08-11",
+      "policySourceCount": 1
     }
   },
   {
@@ -46684,84 +46705,90 @@
     "region": "欧洲",
     "city": "苏黎世",
     "university": "苏黎世联邦理工学院",
-    "school": "学校官方项目目录",
-    "program": "统计硕士",
+    "school": "数学系",
+    "program": "统计学理学硕士",
     "category": "数学与统计",
-    "direction": "数学与统计",
-    "background": "待核验",
+    "direction": "统计学 · 硕士",
+    "background": "强先修要求",
     "cycle": "最近可用",
-    "intake": "以项目官网最新招生周期为准",
-    "duration": "以项目官网为准",
-    "updated": "2026-07-17",
-    "academic": "目录级收录：学术门槛待打开项目官网逐项核验。",
-    "language": "待核验；请以项目官网最新语言要求为准。",
-    "tests": "待核验；GRE、GMAT 或其他考试要求以项目官网为准。",
-    "prerequisites": "待核验；目录收录不代表已确认先修课或背景要求。",
-    "deadline": "以项目官网最新申请页面为准",
-    "deadlineNote": "目录级收录 · 最近核验 2026-07-17",
-    "tuition": "待核验；以学校或项目官网最新费用页为准",
-    "applicationRequirements": "当前仅完成官方目录收录，申请材料与硬性要求待逐项核验。",
-    "interview": "待核验；以项目当年申请系统为准",
+    "intake": "以 ETH 当年申请窗口为准",
+    "duration": "2 年 · 120 ECTS",
+    "updated": "2026-08-11",
+    "academic": "需有扎实的数学与计算机科学背景及优异成绩；须提交证明相关数学/计算机课程内容的课程清单。",
+    "language": "英语 C1，语言证明须在申请截止日前提交。",
+    "tests": "非 EU/EFTA 国家取得学士者须提交 GRE；预期最低为 Analytical 4.0、Quant 165、Verbal 158。",
+    "prerequisites": "数学与计算机科学背景、课程内容说明以及优异学业表现均为核心评估内容。",
+    "deadline": "不同学历来源适用不同申请窗口；请以 ETH 当年申请系统和本科背景分组规则为准",
+    "deadlineNote": "项目招生页为最近可用官方要求，未对下一周期状态作推断。",
+    "tuition": "以项目官网当年学费页为准",
+    "applicationRequirements": "学位与成绩材料、数学/计算机课程内容清单、两封推荐信、约一页动机信、英语 C1、GRE（符合条件者）。",
+    "interview": "以项目当年招生页面为准",
     "rentBudget": "暂未收录",
-    "positioning": "目录级记录不用于判断录取概率",
+    "positioning": "授课型统计项目；重点评估量化先修、学术表现与材料完整度。",
     "requirements": [
       {
         "label": "学术背景",
-        "value": "待核验",
-        "level": 0
+        "value": "量化/统计基础",
+        "level": 86
       },
       {
         "label": "英语要求",
-        "value": "待核验",
-        "level": 0
+        "value": "英语 C1，语言证明须在申请截止日前提交。",
+        "level": 74
       },
       {
         "label": "标化考试",
-        "value": "待核验",
-        "level": 0
+        "value": "非 EU/EFTA 国家取得学士者须提交 GRE；预期最低为 Analytical 4.0、Quant 165、Verbal 158。",
+        "level": 65
       }
     ],
     "documents": [
-      "成绩单",
-      "语言成绩（如适用）",
-      "项目指定材料（待核验）"
+      "学历与成绩材料",
+      "数学/计算机课程内容清单",
+      "2 封推荐信",
+      "约一页动机信",
+      "英语 C1 证明",
+      "GRE（符合条件者）"
     ],
     "notes": [
-      "QS 2027 世界大学排名第 并列 8 位",
-      "项目名称来自学校官方目录或最近可用官方通告",
-      "详细申请要求、截止日期和费用尚未逐项核验，请打开官方来源确认"
+      "项目以英语授课",
+      "部分国际背景还需满足 ETH 绩点/课程匹配要求"
     ],
-    "source": "https://math.ethz.ch/studies/master-programmes/statistics.html",
+    "source": "https://ethz.ch/en/studies/master/application/master-statistik.html",
     "sources": [
       {
-        "label": "项目官网 / 官方项目页",
-        "url": "https://math.ethz.ch/studies/master-programmes/statistics.html",
-        "kind": "学校官网",
+        "label": "ETH Zürich MSc Statistics 申请材料",
+        "url": "https://ethz.ch/en/studies/master/application/master-statistik.html",
+        "kind": "项目官网",
         "year": "最近可用"
       },
       {
-        "label": "院校项目总目录",
-        "url": "https://ethz.ch/students/en/studies/degree-programmes.html",
-        "kind": "学校官方目录",
+        "label": "ETH MSc Statistics 项目说明",
+        "url": "https://math.ethz.ch/studies/master-programmes/statistics.html",
+        "kind": "项目官网",
         "year": "最近可用"
       }
     ],
-    "sourceLabel": "QS 2027 前50院校 · 目录级收录",
+    "sourceLabel": "Fly Away 统计学专项官网核验 · 2026-08-11",
     "sourcePayload": {
       "qsRank": "=8",
       "qsEdition": "2027",
       "qualification": "待核验",
-      "verificationLevel": "目录级收录",
+      "verificationLevel": "深度核验",
       "recordType": "项目",
       "catalogUrl": "https://ethz.ch/students/en/studies/degree-programmes.html",
       "sourceIndex": 35,
-      "originalProgramName": "Statistics Master",
-      "translatedProgramName": "统计硕士",
-      "programNameTranslatedAt": "2026-07-17",
+      "originalProgramName": "MSc Statistics",
+      "translatedProgramName": "统计学理学硕士",
+      "programNameTranslatedAt": "2026-08-11",
       "applicationStatus": "往期要求",
       "applicationStatusCheckedAt": "2026-08-11",
-      "applicationStatusNote": "当前申请季尚未在项目官网确认开放；页面展示最近可用官方要求。",
-      "applicationStatusSource": "https://math.ethz.ch/studies/master-programmes/statistics.html"
+      "applicationStatusNote": "项目页展示最近可用申请要求；下一周期开放状态需以 ETH 申请系统为准。",
+      "applicationStatusSource": "https://ethz.ch/en/studies/master/application/master-statistik.html",
+      "degreeLevel": "硕士",
+      "policyScope": "项目直接招生页面",
+      "policyVerifiedAt": "2026-08-11",
+      "policySourceCount": 2
     }
   },
   {
@@ -109986,84 +110013,82 @@
     "region": "香港",
     "city": "香港",
     "university": "香港大学",
-    "school": "学校官方项目目录",
+    "school": "计算与数据科学学院",
     "program": "统计学硕士",
     "category": "数学与统计",
-    "direction": "数学与统计",
-    "background": "待核验",
+    "direction": "统计学 · 硕士",
+    "background": "强先修要求",
     "cycle": "最近可用",
-    "intake": "以项目官网最新招生周期为准",
-    "duration": "以项目官网为准",
-    "updated": "2026-07-17",
-    "academic": "目录级收录：学术门槛待打开项目官网逐项核验。",
-    "language": "待核验；请以项目官网最新语言要求为准。",
-    "tests": "待核验；GRE、GMAT 或其他考试要求以项目官网为准。",
-    "prerequisites": "待核验；目录收录不代表已确认先修课或背景要求。",
-    "deadline": "以项目官网最新申请页面为准",
-    "deadlineNote": "目录级收录 · 最近核验 2026-07-17",
-    "tuition": "待核验；以学校或项目官网最新费用页为准",
-    "applicationRequirements": "当前仅完成官方目录收录，申请材料与硬性要求待逐项核验。",
-    "interview": "待核验；以项目当年申请系统为准",
+    "intake": "通常 9 月",
+    "duration": "全日制 1 年；兼读制 2 年",
+    "updated": "2026-08-11",
+    "academic": "须持学士学位或同等学历，并具备矩阵与微积分、入门统计及线性模型知识。",
+    "language": "若本科教学/考试语言非英语，须满足 HKU 高等学位英语要求；具体豁免以校级规则为准。",
+    "tests": "未列 GRE/GMAT 为必需。",
+    "prerequisites": "矩阵与微积分、入门统计、线性模型是明确先修基础。",
+    "deadline": "最近可用：主轮 2025-12-01；清轮 2026-03-31",
+    "deadlineNote": "项目页当前仍显示 2026 入学信息；后续申请通常在 10 月初开放。",
+    "tuition": "以项目官网当年学费页为准",
+    "applicationRequirements": "在线申请、学历与成绩材料、申请费及系统要求的支持文件；英语成绩按 HKU 校级要求提交。",
+    "interview": "以项目当年招生页面为准",
     "rentBudget": "暂未收录",
-    "positioning": "目录级记录不用于判断录取概率",
+    "positioning": "授课型统计项目；重点评估量化先修、学术表现与材料完整度。",
     "requirements": [
       {
         "label": "学术背景",
-        "value": "待核验",
-        "level": 0
+        "value": "量化/统计基础",
+        "level": 86
       },
       {
         "label": "英语要求",
-        "value": "待核验",
-        "level": 0
+        "value": "若本科教学/考试语言非英语，须满足 HKU 高等学位英语要求；具体豁免以校级规则为准。",
+        "level": 74
       },
       {
         "label": "标化考试",
-        "value": "待核验",
-        "level": 0
+        "value": "未列 GRE/GMAT 为必需。",
+        "level": 65
       }
     ],
     "documents": [
-      "成绩单",
-      "语言成绩（如适用）",
-      "项目指定材料（待核验）"
+      "学位与成绩材料",
+      "在线申请表与申请费",
+      "支持文件",
+      "英语成绩（如适用）"
     ],
     "notes": [
-      "QS 2027 世界大学排名第 11 位",
-      "项目名称来自学校官方目录或最近可用官方通告",
-      "详细申请要求、截止日期和费用尚未逐项核验，请打开官方来源确认"
+      "可选择风险管理、数据分析或金融统计主题",
+      "满足最低要求不保证录取"
     ],
-    "source": "https://handbook.hku.hk/tpg/pdf/2025/2025_PG_COURSEWORK%20PROGRAMMES%20ADVISORS_final2.pdf",
+    "source": "https://mstat.cds.hku.hk/admissions/",
     "sources": [
       {
-        "label": "项目官网 / 官方项目页",
-        "url": "https://handbook.hku.hk/tpg/pdf/2025/2025_PG_COURSEWORK%20PROGRAMMES%20ADVISORS_final2.pdf",
-        "kind": "上一年度官方通告",
-        "year": "最近可用"
-      },
-      {
-        "label": "院校项目总目录",
-        "url": "https://handbook.hku.hk/tpg/2025/2025_PG_COURSEWORK%20PROGRAMMES%20ADVISORS_final2.pdf",
-        "kind": "学校官方目录",
+        "label": "HKU Master of Statistics 招生",
+        "url": "https://mstat.cds.hku.hk/admissions/",
+        "kind": "项目官网",
         "year": "最近可用"
       }
     ],
-    "sourceLabel": "QS 2027 前50院校 · 目录级收录",
+    "sourceLabel": "Fly Away 统计学专项官网核验 · 2026-08-11",
     "sourcePayload": {
       "qsRank": "11",
       "qsEdition": "2027",
       "qualification": "待核验",
-      "verificationLevel": "目录级收录",
+      "verificationLevel": "深度核验",
       "recordType": "项目",
       "catalogUrl": "https://handbook.hku.hk/tpg/2025/2025_PG_COURSEWORK%20PROGRAMMES%20ADVISORS_final2.pdf",
       "sourceIndex": 75,
       "originalProgramName": "Master of Statistics",
       "translatedProgramName": "统计学硕士",
-      "programNameTranslatedAt": "2026-07-17",
+      "programNameTranslatedAt": "2026-08-11",
       "applicationStatus": "往期要求",
       "applicationStatusCheckedAt": "2026-08-11",
-      "applicationStatusNote": "当前申请季尚未在项目官网确认开放；页面展示最近可用官方要求。",
-      "applicationStatusSource": "https://handbook.hku.hk/tpg/pdf/2025/2025_PG_COURSEWORK%20PROGRAMMES%20ADVISORS_final2.pdf"
+      "applicationStatusNote": "项目页面现展示最近可用的 2026 入学轮次；下一周期尚未在该项目页确认开放。",
+      "applicationStatusSource": "https://mstat.cds.hku.hk/admissions/",
+      "degreeLevel": "硕士",
+      "policyScope": "项目直接招生页面",
+      "policyVerifiedAt": "2026-08-11",
+      "policySourceCount": 1
     }
   },
   {
@@ -159730,84 +159755,88 @@
     "region": "香港",
     "city": "香港",
     "university": "香港中文大学",
-    "school": "学校官方项目目录",
-    "program": "数据科学和商业统计硕士",
-    "category": "计算机与数据",
-    "direction": "计算机与数据",
-    "background": "待核验",
+    "school": "统计学系",
+    "program": "数据科学与商业统计理学硕士",
+    "category": "数学与统计",
+    "direction": "统计学 · 硕士",
+    "background": "量化背景",
     "cycle": "最近可用",
-    "intake": "以项目官网最新招生周期为准",
-    "duration": "以项目官网为准",
-    "updated": "2026-07-17",
-    "academic": "目录级收录：学术门槛待打开项目官网逐项核验。",
-    "language": "待核验；请以项目官网最新语言要求为准。",
-    "tests": "待核验；GRE、GMAT 或其他考试要求以项目官网为准。",
-    "prerequisites": "待核验；目录收录不代表已确认先修课或背景要求。",
-    "deadline": "以项目官网最新申请页面为准",
-    "deadlineNote": "目录级收录 · 最近核验 2026-07-17",
-    "tuition": "待核验；以学校或项目官网最新费用页为准",
-    "applicationRequirements": "当前仅完成官方目录收录，申请材料与硬性要求待逐项核验。",
-    "interview": "待核验；以项目当年申请系统为准",
+    "intake": "全日制或兼读制",
+    "duration": "全日制 1 年；兼读制 2 年",
+    "updated": "2026-08-11",
+    "academic": "须满足香港中文大学研究生院通用入学资格；项目页未公开列出额外量化先修或最低 GPA。",
+    "language": "须满足研究生院通用英语要求；适用标准以申请系统和当年 Graduate School 规则为准。",
+    "tests": "项目页未列 GRE/GMAT 为统一必需。",
+    "prerequisites": "公开项目页未明确额外先修；建议具备统计、数据分析或商业量化背景，并在提交前核对当年系统。",
+    "deadline": "最近可用：优先轮 2025-12-31；最终轮 2026-02-28",
+    "deadlineNote": "研究生院截止日期页显示上述最近可用轮次；后续年度尚待项目公布。",
+    "tuition": "以项目官网当年学费页为准",
+    "applicationRequirements": "在线申请、学历与成绩材料、英语证明（如适用）及 Graduate School/系统指定材料。",
+    "interview": "以项目当年招生页面为准",
     "rentBudget": "暂未收录",
-    "positioning": "目录级记录不用于判断录取概率",
+    "positioning": "授课型统计项目；重点评估量化先修、学术表现与材料完整度。",
     "requirements": [
       {
         "label": "学术背景",
-        "value": "待核验",
-        "level": 0
+        "value": "量化/统计基础",
+        "level": 86
       },
       {
         "label": "英语要求",
-        "value": "待核验",
-        "level": 0
+        "value": "须满足研究生院通用英语要求；适用标准以申请系统和当年 Graduate School 规则为准。",
+        "level": 74
       },
       {
         "label": "标化考试",
-        "value": "待核验",
-        "level": 0
+        "value": "项目页未列 GRE/GMAT 为统一必需。",
+        "level": 65
       }
     ],
     "documents": [
-      "成绩单",
-      "语言成绩（如适用）",
-      "项目指定材料（待核验）"
+      "在线申请",
+      "学历与成绩材料",
+      "英语成绩（如适用）",
+      "系统指定支持文件"
     ],
     "notes": [
-      "QS 2027 世界大学排名第 18 位",
-      "项目名称来自学校官方目录或最近可用官方通告",
-      "详细申请要求、截止日期和费用尚未逐项核验，请打开官方来源确认"
+      "项目为自资，最低 24 学分",
+      "公开项目页列出全日制与兼读制模式"
     ],
     "source": "https://www.gs.cuhk.edu.hk/programmes/science/msc-data-science-and-business-statistics",
     "sources": [
       {
-        "label": "项目官网 / 官方项目页",
+        "label": "CUHK MSc Data Science and Business Statistics",
         "url": "https://www.gs.cuhk.edu.hk/programmes/science/msc-data-science-and-business-statistics",
-        "kind": "学校官网",
+        "kind": "项目官网",
         "year": "最近可用"
       },
       {
-        "label": "院校项目总目录",
-        "url": "https://www.gs.cuhk.edu.hk/programme-filter",
-        "kind": "学校官方目录",
+        "label": "CUHK 研究生项目截止日期",
+        "url": "https://www.gs.cuhk.edu.hk/admissions/application-deadline",
+        "kind": "研究生院截止日期",
         "year": "最近可用"
       }
     ],
-    "sourceLabel": "QS 2027 前50院校 · 目录级收录",
+    "sourceLabel": "Fly Away 统计学专项官网核验 · 2026-08-11",
     "sourcePayload": {
       "qsRank": "18",
       "qsEdition": "2027",
       "qualification": "待核验",
-      "verificationLevel": "目录级收录",
+      "verificationLevel": "深度核验",
       "recordType": "项目",
       "catalogUrl": "https://www.gs.cuhk.edu.hk/programme-filter",
       "sourceIndex": 115,
       "originalProgramName": "MSc in Data Science and Business Statistics",
-      "translatedProgramName": "数据科学和商业统计硕士",
-      "programNameTranslatedAt": "2026-07-17",
+      "translatedProgramName": "数据科学与商业统计理学硕士",
+      "programNameTranslatedAt": "2026-08-11",
       "applicationStatus": "往期要求",
       "applicationStatusCheckedAt": "2026-08-11",
-      "applicationStatusNote": "当前申请季尚未在项目官网确认开放；页面展示最近可用官方要求。",
-      "applicationStatusSource": "https://www.gs.cuhk.edu.hk/programmes/science/msc-data-science-and-business-statistics"
+      "applicationStatusNote": "研究生院公布的该项目最近可用轮次已结束；下一周期尚待项目更新。",
+      "applicationStatusSource": "https://www.gs.cuhk.edu.hk/admissions/application-deadline",
+      "degreeLevel": "硕士",
+      "policyScope": "项目直接招生页面",
+      "policyVerifiedAt": "2026-08-11",
+      "policySourceCount": 2
     }
   },
   {
@@ -187238,103 +187267,86 @@
   {
     "id": "qs2027-uchicago-46d24ee805",
     "region": "美国",
-    "city": "芝加哥",
+    "city": "芝加哥（伊利诺伊州）",
     "university": "芝加哥大学",
-    "school": "学校官方项目目录",
-    "program": "统计",
+    "school": "统计系",
+    "program": "统计学理学硕士",
     "category": "数学与统计",
-    "direction": "数学与统计",
-    "background": "待核验",
+    "direction": "统计学 · 硕士",
+    "background": "强先修要求",
     "cycle": "最近可用",
-    "intake": "以项目官网最新招生周期为准",
-    "duration": "以项目官网为准",
-    "updated": "2026-07-17",
-    "academic": "多数研究生项目要求学士学位或同等学历；三年制国际学士学位通常可按等值学历评估，具体项目可另设要求。",
-    "language": "除符合豁免条件外须提交 TOEFL iBT 或 IELTS Academic；校级不设覆盖所有项目的统一分数线，具体最低分由项目决定，成绩在截止日须仍处两年有效期内。",
-    "tests": "GRE/GMAT 等由具体项目决定；部分学院有独立招生政策。",
-    "prerequisites": "项目专属先修课、作品集、工作经验或专业背景仍须在当前项目页核对。",
-    "deadline": "各项目截止日期不同；请打开当前项目官网核对最新申请轮次",
-    "deadlineNote": "官网核验（项目页 + 校级规则） · 2026-07-17",
-    "tuition": "费用未跨项目统一推断；请从项目官网进入当前学年 Tuition / Fees 页面核对",
-    "applicationRequirements": "在线申请、成绩单、申请文书、推荐信、简历，以及英语/标化或项目指定附加材料。",
-    "interview": "是否面试、试镜、作品评审或补充测试由项目决定；官网未明确时不作推断",
+    "intake": "秋季",
+    "duration": "全日制通常不超过 2 年",
+    "updated": "2026-08-11",
+    "academic": "面向具强量化背景的申请者；数学、计算机、经济、物理、工程等相关专业可申请。",
+    "language": "如需满足校级英语要求，提交 TOEFL 或 IELTS。",
+    "tests": "GRE 可选，可提交以增强材料。",
+    "prerequisites": "微积分与线性代数、概率与数理统计为建议基础；实分析和编程/计算经验为推荐准备。",
+    "deadline": "最近可用最终截止：2026-01-15；2027/28 截止日期待官网后续公布",
+    "deadlineNote": "项目官网明确下一申请季日期将在夏季公布。",
+    "tuition": "以项目官网当年学费页为准",
+    "applicationRequirements": "在线申请、全部院校成绩单、3 封推荐信、目的陈述、CV/简历、英语成绩（如适用）；GRE 可选。",
+    "interview": "以项目当年招生页面为准",
     "rentBudget": "暂未收录",
-    "positioning": "已关联项目直接官网与校级申请规则；录取判断仍需结合项目先修、材料和个人背景",
+    "positioning": "授课型统计项目；重点评估量化先修、学术表现与材料完整度。",
     "requirements": [
       {
         "label": "学术背景",
-        "value": "学士或同等学历",
-        "level": 58
+        "value": "量化/统计基础",
+        "level": 86
       },
       {
         "label": "英语要求",
-        "value": "TOEFL / IELTS，项目定分",
-        "level": 56
+        "value": "如需满足校级英语要求，提交 TOEFL 或 IELTS。",
+        "level": 74
       },
       {
         "label": "标化考试",
-        "value": "项目决定",
-        "level": 38
+        "value": "GRE 可选，可提交以增强材料。",
+        "level": 18
       }
     ],
     "documents": [
-      "成绩单",
-      "申请文书",
-      "推荐信",
-      "简历",
-      "英语 / 标化 / 附加材料（按项目要求）"
+      "全部院校成绩单",
+      "3 封推荐信",
+      "目的陈述",
+      "CV/简历",
+      "英语成绩（如适用）",
+      "GRE（可选）"
     ],
     "notes": [
-      "QS 2027 世界大学排名第 24 位",
-      "项目名称与直接项目页/官方课程公告已核验，不再只是学校目录占位。",
-      "校级申请规则已补齐；项目专属截止日期、费用、先修课和附加材料仍以当前项目页为准。"
+      "项目强调概率、推断和计算基础",
+      "未公开宣布 2027/28 截止日期"
     ],
-    "source": "https://stat.uchicago.edu/",
+    "source": "https://stat.uchicago.edu/academics/ms-in-statistics/admission-requirements/",
     "sources": [
       {
-        "label": "项目官网 / 官方项目页",
-        "url": "https://stat.uchicago.edu/",
-        "kind": "学校官网",
+        "label": "UChicago MS in Statistics 招生要求",
+        "url": "https://stat.uchicago.edu/academics/ms-in-statistics/admission-requirements/",
+        "kind": "项目官网",
         "year": "最近可用"
-      },
-      {
-        "label": "院校项目总目录",
-        "url": "https://grad.uchicago.edu/admissions/programs/",
-        "kind": "学校官方目录",
-        "year": "最近可用"
-      },
-      {
-        "label": "UChicago 英语要求",
-        "url": "https://grad.uchicago.edu/admissions/apply/english-language-requirements/",
-        "kind": "校级语言政策",
-        "year": "最近核验 2026-07-17"
-      },
-      {
-        "label": "UChicago Graduate Admissions FAQ",
-        "url": "https://grad.uchicago.edu/admissions/apply/faqs/",
-        "kind": "校级申请规则",
-        "year": "最近核验 2026-07-17"
       }
     ],
-    "sourceLabel": "QS 2027 前50院校 · 官网核验（项目页 + 校级规则）",
+    "sourceLabel": "Fly Away 统计学专项官网核验 · 2026-08-11",
     "sourcePayload": {
       "qsRank": "24",
       "qsEdition": "2027",
       "qualification": "待核验",
-      "verificationLevel": "官网核验",
+      "verificationLevel": "深度核验",
       "recordType": "项目",
       "catalogUrl": "https://grad.uchicago.edu/admissions/programs/",
       "sourceIndex": 68,
-      "policyScope": "项目官方页 + 校级通用申请规则",
-      "policyVerifiedAt": "2026-07-17",
-      "policySourceCount": 2,
-      "originalProgramName": "Statistics",
-      "translatedProgramName": "统计",
-      "programNameTranslatedAt": "2026-07-17",
+      "policyScope": "项目直接招生页面",
+      "policyVerifiedAt": "2026-08-11",
+      "policySourceCount": 1,
+      "originalProgramName": "MS in Statistics",
+      "translatedProgramName": "统计学理学硕士",
+      "programNameTranslatedAt": "2026-08-11",
       "applicationStatus": "往期要求",
       "applicationStatusCheckedAt": "2026-08-11",
-      "applicationStatusNote": "当前申请季尚未在项目官网确认开放；页面展示最近可用官方要求。",
-      "applicationStatusSource": "https://stat.uchicago.edu/"
+      "applicationStatusNote": "项目官网显示 2027/28 截止日期将在夏季公布，当前保留最近可用的申请要求。",
+      "applicationStatusSource": "https://stat.uchicago.edu/academics/ms-in-statistics/admission-requirements/",
+      "degreeLevel": "硕士"
     }
   },
   {
@@ -280464,6 +280476,589 @@
       "applicationStatusCheckedAt": "2026-08-11",
       "applicationStatusNote": "当前申请季尚未在项目官网确认开放；页面展示最近可用官方要求。",
       "applicationStatusSource": "https://www.polyu.edu.hk/study/pg/taught-postgraduate"
+    }
+  },
+  {
+    "id": "stanford-phd-statistics",
+    "region": "美国",
+    "city": "斯坦福（加利福尼亚州）",
+    "university": "斯坦福大学",
+    "school": "统计系",
+    "program": "统计学博士",
+    "category": "数学与统计",
+    "direction": "统计学 · 博士",
+    "background": "强先修要求",
+    "cycle": "2027 入学",
+    "intake": "2027 年秋季",
+    "duration": "研究型博士，通常约 5 年",
+    "updated": "2026-08-11",
+    "academic": "以完整申请的学术记录、研究潜力与统计/数学准备综合评估；仅秋季入学。",
+    "language": "如不符合豁免条件，Stanford 最低 TOEFL iBT 90 或 IELTS 7.0。",
+    "tests": "GRE General 必须提交；本系博士 FAQ 未要求公开最低分数。",
+    "prerequisites": "应具备扎实的概率、统计、数学与计算准备；研究经历与推荐信是评估研究潜力的重要证据。",
+    "deadline": "2027 秋季：2026-12-02（太平洋时间 23:59）",
+    "deadlineNote": "学校申请系统预计在 2026 年 9 月下旬开放；仅可申请 MS 或 PhD 其中之一。",
+    "tuition": "以项目官网当年学费页为准",
+    "applicationRequirements": "在线申请、成绩单、研究/目的陈述、推荐信、GRE General，以及英语成绩（如适用）。",
+    "interview": "以项目当年招生页面为准",
+    "rentBudget": "暂未收录",
+    "positioning": "研究型项目；重点评估数学准备、研究潜力与导师匹配。",
+    "requirements": [
+      {
+        "label": "学术背景",
+        "value": "量化/统计基础",
+        "level": 86
+      },
+      {
+        "label": "英语要求",
+        "value": "如不符合豁免条件，Stanford 最低 TOEFL iBT 90 或 IELTS 7.0。",
+        "level": 74
+      },
+      {
+        "label": "标化考试",
+        "value": "GRE General 必须提交；本系博士 FAQ 未要求公开最低分数。",
+        "level": 65
+      }
+    ],
+    "documents": [
+      "全部大学成绩单",
+      "研究/目的陈述",
+      "推荐信",
+      "GRE General 成绩",
+      "英语成绩（如适用）"
+    ],
+    "notes": [
+      "PhD 学生可获院系资助；与硕士的自费性质不同",
+      "Knight-Hennessy Scholars 另有独立申请，且其项目截止日更早"
+    ],
+    "source": "https://statistics.stanford.edu/admissions/statistics-phd-admissions",
+    "sources": [
+      {
+        "label": "Stanford Statistics PhD 招生",
+        "url": "https://statistics.stanford.edu/admissions/statistics-phd-admissions",
+        "kind": "项目官网",
+        "year": "2027 入学"
+      },
+      {
+        "label": "Stanford Statistics PhD FAQ",
+        "url": "https://statistics.stanford.edu/admissions/statistics-phd-admissions/phd-admissions-frequently-asked-questions",
+        "kind": "项目招生 FAQ",
+        "year": "最近核验 2026-08-11"
+      }
+    ],
+    "sourceLabel": "Fly Away 统计学专项官网核验 · 2026-08-11",
+    "sourcePayload": {
+      "qsRank": "=2",
+      "qsEdition": "2027",
+      "verificationLevel": "深度核验",
+      "recordType": "项目",
+      "originalProgramName": "PhD in Statistics",
+      "translatedProgramName": "统计学博士",
+      "programNameTranslatedAt": "2026-08-11",
+      "degreeLevel": "博士",
+      "policyScope": "项目直接招生页面",
+      "policyVerifiedAt": "2026-08-11",
+      "policySourceCount": 2,
+      "applicationStatus": "往期要求",
+      "applicationStatusCheckedAt": "2026-08-11",
+      "applicationStatusNote": "统计系已公布 2027 博士截止日期；申请系统尚未在 2026-08-11 开放。",
+      "applicationStatusSource": "https://statistics.stanford.edu/admissions/graduate-admissions"
+    }
+  },
+  {
+    "id": "uc-berkeley-phd-statistics",
+    "region": "美国",
+    "city": "伯克利（加利福尼亚州）",
+    "university": "加州大学伯克利分校",
+    "school": "统计系",
+    "program": "统计学博士",
+    "category": "数学与统计",
+    "direction": "统计学 · 博士",
+    "background": "强先修要求",
+    "cycle": "2027 入学",
+    "intake": "2027 年秋季",
+    "duration": "研究型博士，通常约 5 年",
+    "updated": "2026-08-11",
+    "academic": "须具备学士学位或同等资格；如采用 4.0 体系，最低 GPA 3.0；需有数学、统计或其他量化领域准备。",
+    "language": "TOEFL 仅在校级规则要求时提交；具体豁免与送分以 Graduate Division 当年政策为准。",
+    "tests": "Fall 2027 不要求且不接受 GRE General；GRE Subject Test 可选。",
+    "prerequisites": "不强制特定统计课程，但需证明本科阶段数学与计算准备足以完成研究生统计课程。",
+    "deadline": "2027 秋季：2026-12-01；申请预计 2026 年 9 月开放",
+    "deadlineNote": "仅秋季入学；截止日期已由统计系公布。",
+    "tuition": "以项目官网当年学费页为准",
+    "applicationRequirements": "在线申请、非官方成绩单、3 封推荐信、研究目的陈述、个人陈述、CV、数学与统计课程说明、GPA 表及英语成绩（如适用）。",
+    "interview": "以项目当年招生页面为准",
+    "rentBudget": "暂未收录",
+    "positioning": "研究型项目；重点评估数学准备、研究潜力与导师匹配。",
+    "requirements": [
+      {
+        "label": "学术背景",
+        "value": "量化/统计基础",
+        "level": 86
+      },
+      {
+        "label": "英语要求",
+        "value": "TOEFL 仅在校级规则要求时提交；具体豁免与送分以 Graduate Division 当年政策为准。",
+        "level": 74
+      },
+      {
+        "label": "标化考试",
+        "value": "Fall 2027 不要求且不接受 GRE General；GRE Subject Test 可选。",
+        "level": 18
+      }
+    ],
+    "documents": [
+      "非官方成绩单",
+      "3 封推荐信",
+      "研究目的陈述",
+      "个人陈述",
+      "CV/简历",
+      "数学与统计课程说明",
+      "GPA Calculation Worksheet",
+      "TOEFL（如适用）"
+    ],
+    "notes": [
+      "本项目不提供春季入学",
+      "约 350 份博士申请中通常录取 18–22 人，最终新生约 10–12 人"
+    ],
+    "source": "https://statistics.berkeley.edu/academics/phd/requirements",
+    "sources": [
+      {
+        "label": "Berkeley Statistics PhD 申请要求",
+        "url": "https://statistics.berkeley.edu/academics/phd/requirements",
+        "kind": "项目官网",
+        "year": "2027 入学"
+      },
+      {
+        "label": "Berkeley Statistics PhD 招生页",
+        "url": "https://statistics.berkeley.edu/academics/phd/admissions",
+        "kind": "项目招生页面",
+        "year": "2027 入学"
+      }
+    ],
+    "sourceLabel": "Fly Away 统计学专项官网核验 · 2026-08-11",
+    "sourcePayload": {
+      "qsRank": "=20",
+      "qsEdition": "2027",
+      "verificationLevel": "深度核验",
+      "recordType": "项目",
+      "originalProgramName": "PhD in Statistics",
+      "translatedProgramName": "统计学博士",
+      "programNameTranslatedAt": "2026-08-11",
+      "degreeLevel": "博士",
+      "policyScope": "项目直接招生页面",
+      "policyVerifiedAt": "2026-08-11",
+      "policySourceCount": 2,
+      "applicationStatus": "往期要求",
+      "applicationStatusCheckedAt": "2026-08-11",
+      "applicationStatusNote": "统计系说明 Fall 2027 申请将于 2026 年 9 月开放；当前展示为已发布的当季要求。",
+      "applicationStatusSource": "https://statistics.berkeley.edu/academics/phd/requirements"
+    }
+  },
+  {
+    "id": "nus-phd-statistics-data-science",
+    "region": "新加坡",
+    "city": "新加坡",
+    "university": "新加坡国立大学",
+    "school": "统计与数据科学系",
+    "program": "统计与数据科学博士",
+    "category": "数学与统计",
+    "direction": "统计学 · 博士",
+    "background": "强先修要求",
+    "cycle": "2027 入学",
+    "intake": "2027 年 8 月",
+    "duration": "研究型博士，最短 2 年、最长 5 年",
+    "updated": "2026-08-11",
+    "academic": "须有数学/统计或同等量化领域的优秀学士或硕士背景；通常至少 Upper Second Class Honours，并具备从事统计/概率研究的能力。",
+    "language": "非英语母语或非英语本科授课者可提交 TOEFL/IELTS；官方将其列为可加强申请的证据。",
+    "tests": "GRE 可选，但强量化、语言与分析能力证据会加强申请。",
+    "prerequisites": "研究型申请应清楚展示统计、概率与研究方向准备；研究经历或论文可作为强化材料。",
+    "deadline": "2027 年 8 月入学：2026-05-16 至 2026-11-15",
+    "deadlineNote": "项目官网公布的 2027 年 8 月申请期正在进行。",
+    "tuition": "以项目官网当年学费页为准",
+    "applicationRequirements": "学术成绩与学历、研究兴趣 SOP、推荐信、CV 为必需；GRE、论文/研究项目与英语成绩为可选强化材料。",
+    "interview": "以项目当年招生页面为准",
+    "rentBudget": "暂未收录",
+    "positioning": "研究型项目；重点评估数学准备、研究潜力与导师匹配。",
+    "requirements": [
+      {
+        "label": "学术背景",
+        "value": "量化/统计基础",
+        "level": 86
+      },
+      {
+        "label": "英语要求",
+        "value": "非英语母语或非英语本科授课者可提交 TOEFL/IELTS；官方将其列为可加强申请的证据。",
+        "level": 74
+      },
+      {
+        "label": "标化考试",
+        "value": "GRE 可选，但强量化、语言与分析能力证据会加强申请。",
+        "level": 18
+      }
+    ],
+    "documents": [
+      "学术成绩与学历证明",
+      "研究兴趣 Statement of Purpose",
+      "推荐信",
+      "CV",
+      "GRE（可选）",
+      "论文或研究项目（可选）",
+      "英语成绩（可选/如适用）"
+    ],
+    "notes": [
+      "SOP、推荐信、CV 与相关学位背景为官网明确必需项",
+      "目标为理论、方法或应用统计的原创研究"
+    ],
+    "source": "https://www.stat.nus.edu.sg/education/graduate/phd-in-statistics-and-data-science/prospective-students/",
+    "sources": [
+      {
+        "label": "NUS PhD Statistics and Data Science 招生",
+        "url": "https://www.stat.nus.edu.sg/education/graduate/phd-in-statistics-and-data-science/prospective-students/",
+        "kind": "项目官网",
+        "year": "2027 入学"
+      }
+    ],
+    "sourceLabel": "Fly Away 统计学专项官网核验 · 2026-08-11",
+    "sourcePayload": {
+      "qsRank": "10",
+      "qsEdition": "2027",
+      "verificationLevel": "深度核验",
+      "recordType": "项目",
+      "originalProgramName": "PhD in Statistics and Data Science",
+      "translatedProgramName": "统计与数据科学博士",
+      "programNameTranslatedAt": "2026-08-11",
+      "degreeLevel": "博士",
+      "policyScope": "项目直接招生页面",
+      "policyVerifiedAt": "2026-08-11",
+      "policySourceCount": 1,
+      "applicationStatus": "已开始申请",
+      "applicationStatusCheckedAt": "2026-08-11",
+      "applicationStatusNote": "项目官网公布 2027 年 8 月博士申请期为 2026-05-16 至 2026-11-15。",
+      "applicationStatusSource": "https://www.stat.nus.edu.sg/education/graduate/phd-in-statistics-and-data-science/prospective-students/"
+    }
+  },
+  {
+    "id": "hku-phd-statistics-actuarial-science",
+    "region": "香港",
+    "city": "香港",
+    "university": "香港大学",
+    "school": "统计与精算学系",
+    "program": "统计学、概率与精算学博士",
+    "category": "数学与统计",
+    "direction": "统计学 · 博士",
+    "background": "强先修要求",
+    "cycle": "2027 入学",
+    "intake": "2027/28 学年",
+    "duration": "全日制 3 或 4 年",
+    "updated": "2026-08-11",
+    "academic": "直接读博通常考虑统计或数学的一等/二等一荣誉学士，或统计、概率、精算方向研究型硕士；亦可由 MPhil 成绩优异后转博。",
+    "language": "英语要求按 HKU 研究生院及申请系统当年规则执行。",
+    "tests": "项目页面未将 GRE 列为统一必需项。",
+    "prerequisites": "需有强统计/概率/数学研究训练；申请的研究方向应能与院系研究领域及潜在导师匹配。",
+    "deadline": "2027/28：第二清轮 2026-05-01 至 2026-08-31；主轮/奖学金轮以官网后续通知为准",
+    "deadlineNote": "官网说明 MPhil/PhD 全年接受申请；当前清轮仍在开放期内。",
+    "tuition": "以项目官网当年学费页为准",
+    "applicationRequirements": "通过 HKU 研究生申请系统提交学历与成绩、研究计划/陈述、推荐材料及英语证明（如适用）；以当年系统字段为准。",
+    "interview": "以项目当年招生页面为准",
+    "rentBudget": "暂未收录",
+    "positioning": "研究型项目；重点评估数学准备、研究潜力与导师匹配。",
+    "requirements": [
+      {
+        "label": "学术背景",
+        "value": "量化/统计基础",
+        "level": 86
+      },
+      {
+        "label": "英语要求",
+        "value": "英语要求按 HKU 研究生院及申请系统当年规则执行。",
+        "level": 52
+      },
+      {
+        "label": "标化考试",
+        "value": "项目页面未将 GRE 列为统一必需项。",
+        "level": 65
+      }
+    ],
+    "documents": [
+      "学历与成绩材料",
+      "研究计划或研究陈述",
+      "学术推荐材料",
+      "CV",
+      "英语成绩（如适用）"
+    ],
+    "notes": [
+      "研究范围涵盖高维统计、贝叶斯、时间序列、生物统计、统计学习等",
+      "博士学位要求原创研究与论文"
+    ],
+    "source": "https://saasweb.hku.hk/programme/rpg/mphil-phd",
+    "sources": [
+      {
+        "label": "HKU Statistics and Actuarial Science MPhil/PhD",
+        "url": "https://saasweb.hku.hk/programme/rpg/mphil-phd",
+        "kind": "项目官网",
+        "year": "2027/28 入学"
+      }
+    ],
+    "sourceLabel": "Fly Away 统计学专项官网核验 · 2026-08-11",
+    "sourcePayload": {
+      "qsRank": "11",
+      "qsEdition": "2027",
+      "verificationLevel": "深度核验",
+      "recordType": "项目",
+      "originalProgramName": "PhD in Statistics, Probability and Actuarial Science",
+      "translatedProgramName": "统计学、概率与精算学博士",
+      "programNameTranslatedAt": "2026-08-11",
+      "degreeLevel": "博士",
+      "policyScope": "项目直接招生页面",
+      "policyVerifiedAt": "2026-08-11",
+      "policySourceCount": 1,
+      "applicationStatus": "已开始申请",
+      "applicationStatusCheckedAt": "2026-08-11",
+      "applicationStatusNote": "HKU 项目页显示 2027/28 第二清轮为 2026-05-01 至 2026-08-31，当前仍可申请。",
+      "applicationStatusSource": "https://saasweb.hku.hk/programme/rpg/mphil-phd"
+    }
+  },
+  {
+    "id": "oxford-msc-statistical-science",
+    "region": "欧洲",
+    "city": "牛津",
+    "university": "牛津大学",
+    "school": "统计系",
+    "program": "统计科学理学硕士",
+    "category": "数学与统计",
+    "direction": "统计学 · 硕士",
+    "background": "强先修要求",
+    "cycle": "2026/27 入学",
+    "intake": "全日制",
+    "duration": "12 个月",
+    "updated": "2026-08-11",
+    "academic": "最低为具有高级数学与统计内容的一等荣誉学士；美国本科通常最低 GPA 3.7/4.0。",
+    "language": "Oxford Higher level：IELTS 7.5（单项 7.0）或 TOEFL iBT 110（分项按项目页）。",
+    "tests": "不要求 GRE 或 GMAT。",
+    "prerequisites": "须掌握基础数学、概率与统计；项目为高强度应用/计算统计与统计机器学习训练。",
+    "deadline": "当前项目页对应 2026/27 入学；下一周期截止日期须以 Oxford 当年课程页为准",
+    "deadlineNote": "页面明确标注其要求仅适用于 2026/27 入学。",
+    "tuition": "以项目官网当年学费页为准",
+    "applicationRequirements": "成绩单、CV、最多 1,000 字个人陈述、3 位推荐人（至少 2 位学术推荐）及英语成绩（如适用）。",
+    "interview": "以项目当年招生页面为准",
+    "rentBudget": "暂未收录",
+    "positioning": "授课型统计项目；重点评估量化先修、学术表现与材料完整度。",
+    "requirements": [
+      {
+        "label": "学术背景",
+        "value": "量化/统计基础",
+        "level": 86
+      },
+      {
+        "label": "英语要求",
+        "value": "Oxford Higher level：IELTS 7.5（单项 7.0）或 TOEFL iBT 110（分项按项目页）。",
+        "level": 52
+      },
+      {
+        "label": "标化考试",
+        "value": "不要求 GRE 或 GMAT。",
+        "level": 18
+      }
+    ],
+    "documents": [
+      "官方成绩单",
+      "CV/简历",
+      "最多 1,000 字个人陈述",
+      "3 位推荐人（至少 2 位学术）",
+      "英语成绩（如适用）"
+    ],
+    "notes": [
+      "通常不面试",
+      "最终包含独立研究论文"
+    ],
+    "source": "https://www.ox.ac.uk/admissions/graduate/courses/msc-statistical-science",
+    "sources": [
+      {
+        "label": "Oxford MSc Statistical Science 招生",
+        "url": "https://www.ox.ac.uk/admissions/graduate/courses/msc-statistical-science",
+        "kind": "项目官网",
+        "year": "2026/27 入学"
+      }
+    ],
+    "sourceLabel": "Fly Away 统计学专项官网核验 · 2026-08-11",
+    "sourcePayload": {
+      "qsRank": "4",
+      "qsEdition": "2027",
+      "verificationLevel": "深度核验",
+      "recordType": "项目",
+      "originalProgramName": "MSc in Statistical Science",
+      "translatedProgramName": "统计科学理学硕士",
+      "programNameTranslatedAt": "2026-08-11",
+      "degreeLevel": "硕士",
+      "policyScope": "项目直接招生页面",
+      "policyVerifiedAt": "2026-08-11",
+      "policySourceCount": 1,
+      "applicationStatus": "往期要求",
+      "applicationStatusCheckedAt": "2026-08-11",
+      "applicationStatusNote": "项目页当前对应 2026/27 入学；2027/28 要求尚待 Oxford 更新。",
+      "applicationStatusSource": "https://www.ox.ac.uk/admissions/graduate/courses/msc-statistical-science"
+    }
+  },
+  {
+    "id": "oxford-dphil-statistics",
+    "region": "欧洲",
+    "city": "牛津",
+    "university": "牛津大学",
+    "school": "统计系",
+    "program": "统计学博士",
+    "category": "数学与统计",
+    "direction": "统计学 · 博士",
+    "background": "强先修要求",
+    "cycle": "2026/27 入学",
+    "intake": "全日制",
+    "duration": "研究型博士，通常 3–4 年",
+    "updated": "2026-08-11",
+    "academic": "最低为相关学科一等或较强二等一荣誉学士，并须具强数学和/或统计背景；硕士优先但非必需。",
+    "language": "Oxford Standard level：IELTS 7.0（单项 6.5）或 TOEFL iBT 100（分项按项目页）。",
+    "tests": "不要求 GRE 或 GMAT。",
+    "prerequisites": "需展示与拟研究方向匹配的数学/统计训练与研究潜力；发表论文不作必需要求。",
+    "deadline": "当前项目页对应 2026/27 入学；下一周期截止日期以 Oxford 后续公告为准",
+    "deadlineNote": "官网将其定位为研究型 DPhil，硕士为优先而非硬性前置。",
+    "tuition": "以项目官网当年学费页为准",
+    "applicationRequirements": "成绩单、CV、研究计划/个人陈述、3 位推荐人及英语成绩（如适用）；择优申请人通常参加约 30 分钟面试。",
+    "interview": "以项目当年招生页面为准",
+    "rentBudget": "暂未收录",
+    "positioning": "研究型项目；重点评估数学准备、研究潜力与导师匹配。",
+    "requirements": [
+      {
+        "label": "学术背景",
+        "value": "量化/统计基础",
+        "level": 86
+      },
+      {
+        "label": "英语要求",
+        "value": "Oxford Standard level：IELTS 7.0（单项 6.5）或 TOEFL iBT 100（分项按项目页）。",
+        "level": 52
+      },
+      {
+        "label": "标化考试",
+        "value": "不要求 GRE 或 GMAT。",
+        "level": 18
+      }
+    ],
+    "documents": [
+      "官方成绩单",
+      "CV/简历",
+      "研究计划/个人陈述",
+      "3 位推荐人",
+      "英语成绩（如适用）"
+    ],
+    "notes": [
+      "面试通常仅针对书面材料中最符合条件的申请人",
+      "DPhil 为 Oxford 对 PhD 的称谓"
+    ],
+    "source": "https://www.ox.ac.uk/admissions/graduate/courses/dphil-statistics",
+    "sources": [
+      {
+        "label": "Oxford DPhil Statistics 招生",
+        "url": "https://www.ox.ac.uk/admissions/graduate/courses/dphil-statistics",
+        "kind": "项目官网",
+        "year": "2026/27 入学"
+      }
+    ],
+    "sourceLabel": "Fly Away 统计学专项官网核验 · 2026-08-11",
+    "sourcePayload": {
+      "qsRank": "4",
+      "qsEdition": "2027",
+      "verificationLevel": "深度核验",
+      "recordType": "项目",
+      "originalProgramName": "DPhil in Statistics",
+      "translatedProgramName": "统计学博士",
+      "programNameTranslatedAt": "2026-08-11",
+      "degreeLevel": "博士",
+      "policyScope": "项目直接招生页面",
+      "policyVerifiedAt": "2026-08-11",
+      "policySourceCount": 1,
+      "applicationStatus": "往期要求",
+      "applicationStatusCheckedAt": "2026-08-11",
+      "applicationStatusNote": "项目页当前对应 2026/27 入学；下一周期要求与截止日期尚待 Oxford 更新。",
+      "applicationStatusSource": "https://www.ox.ac.uk/admissions/graduate/courses/dphil-statistics"
+    }
+  },
+  {
+    "id": "imperial-msc-statistics",
+    "region": "欧洲",
+    "city": "伦敦",
+    "university": "帝国理工学院",
+    "school": "数学系 · 统计学",
+    "program": "统计学理学硕士",
+    "category": "数学与统计",
+    "direction": "统计学 · 硕士",
+    "background": "强先修要求",
+    "cycle": "2026/27 入学",
+    "intake": "全日制",
+    "duration": "1 年",
+    "updated": "2026-08-11",
+    "academic": "最低 2:1（统计、数学、工程、物理或计算机科学）；官网指出成功申请者几乎均为一等学位，非数理背景者须有实质理论数学知识。",
+    "language": "须达到 Imperial Higher 英语要求；具体考试与分数以当年校级英语要求页为准。",
+    "tests": "项目页未列 GRE/GMAT 为统一必需。",
+    "prerequisites": "概率、统计推断与应用/计算统计基础是课程的核心；理论数学准备会在择优中考量。",
+    "deadline": "2026 入学已关闭；分轮申请安排须以 Imperial 后续年度页面为准",
+    "deadlineNote": "官网显示 2026 入学申请已关闭。",
+    "tuition": "以项目官网当年学费页为准",
+    "applicationRequirements": "在线申请与 Imperial 当年申请系统要求的学历、成绩、个人材料和推荐信息；英语证明按校级要求提交。",
+    "interview": "以项目当年招生页面为准",
+    "rentBudget": "暂未收录",
+    "positioning": "授课型统计项目；重点评估量化先修、学术表现与材料完整度。",
+    "requirements": [
+      {
+        "label": "学术背景",
+        "value": "量化/统计基础",
+        "level": 86
+      },
+      {
+        "label": "英语要求",
+        "value": "须达到 Imperial Higher 英语要求；具体考试与分数以当年校级英语要求页为准。",
+        "level": 74
+      },
+      {
+        "label": "标化考试",
+        "value": "项目页未列 GRE/GMAT 为统一必需。",
+        "level": 65
+      }
+    ],
+    "documents": [
+      "学历与成绩材料",
+      "在线申请系统指定个人材料",
+      "推荐信息",
+      "英语成绩（如适用）"
+    ],
+    "notes": [
+      "项目有通用、应用统计、生物统计、数据科学与机器学习、统计金融、理论与方法等方向",
+      "项目通常不面试"
+    ],
+    "source": "https://www.imperial.ac.uk/study/courses/postgraduate-taught/statistics/",
+    "sources": [
+      {
+        "label": "Imperial MSc Statistics 招生",
+        "url": "https://www.imperial.ac.uk/study/courses/postgraduate-taught/statistics/",
+        "kind": "项目官网",
+        "year": "2026 入学"
+      }
+    ],
+    "sourceLabel": "Fly Away 统计学专项官网核验 · 2026-08-11",
+    "sourcePayload": {
+      "qsRank": "=2",
+      "qsEdition": "2027",
+      "verificationLevel": "深度核验",
+      "recordType": "项目",
+      "originalProgramName": "MSc Statistics",
+      "translatedProgramName": "统计学理学硕士",
+      "programNameTranslatedAt": "2026-08-11",
+      "degreeLevel": "硕士",
+      "policyScope": "项目直接招生页面",
+      "policyVerifiedAt": "2026-08-11",
+      "policySourceCount": 1,
+      "applicationStatus": "往期要求",
+      "applicationStatusCheckedAt": "2026-08-11",
+      "applicationStatusNote": "官网显示 2026 入学申请已关闭；后续申请轮次尚待项目更新。",
+      "applicationStatusSource": "https://www.imperial.ac.uk/study/courses/postgraduate-taught/statistics/"
     }
   }
 ]

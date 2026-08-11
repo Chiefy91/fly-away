@@ -153,9 +153,11 @@ h1 em { color: var(--coral); font-style: normal; }
 .cycle-tag { display: inline-block; padding: 3px 6px; background: var(--mint); color: var(--sea); font-size: 8px; }
 .cycle-tag.is-legacy { background: #eee7d9; color: #79684c; }
 .program-tags { display: flex; flex-wrap: wrap; gap: 5px; align-items: center; }
-.qs-tag, .verification-tag, .directory-tag, .readiness-tag, .application-tag { display: inline-block; padding: 3px 6px; border: 1px solid var(--line); color: var(--ink-soft); background: var(--paper); font-size: 9px; font-weight: 800; }
+.qs-tag, .verification-tag, .directory-tag, .readiness-tag, .application-tag, .degree-tag { display: inline-block; padding: 3px 6px; border: 1px solid var(--line); color: var(--ink-soft); background: var(--paper); font-size: 9px; font-weight: 800; }
 .application-tag.is-open { color: #155b4c; background: #d9eee7; border-color: #89bbaa; }
 .application-tag.is-historical { color: #775e35; background: #f2ebda; border-color: #d9c9a6; }
+.degree-tag.degree-硕士 { color: #174f67; background: #dcecf2; border-color: #a8cbd8; }
+.degree-tag.degree-博士 { color: #633d7c; background: #eee5f4; border-color: #cdb8db; }
 .verification-tag { color: #775e35; background: #f2ebda; border-color: #d9c9a6; }
 .verification-tag.is-deep { color: #155b4c; background: #d9eee7; border-color: #a8d0c3; }
 .verification-tag.is-official { color: #174f67; background: #dcecf2; border-color: #a8cbd8; }
