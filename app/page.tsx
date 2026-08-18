@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useState, type CSSProperties } from "react";
 import staticPrograms from "@/data/programs-fallback.json";
 import guideData from "@/data/guides.json";
+import cptPolicyData from "@/data/us-cpt-policies.json";
 
 type Region = "香港" | "新加坡" | "美国" | "欧洲";
 type Category = "计算机与数据" | "金融与量化" | "数学与统计" | "商科与管理" | "工程与技术" | "社会科学" | "自然科学" | "人文与艺术" | "法律与公共事务" | "医学与生命科学" | "教育" | "综合项目目录";
@@ -66,6 +67,37 @@ type Program = {
   sources?: Array<{ label: string; url: string; kind: string; year: string }>;
   sourceLabel?: string;
   sourcePayload?: Record<string, unknown>;
+};
+
+type CptPolicyStatus = "已核验" | "项目级差异" | "需重点关注" | "重大更新";
+type CptPolicy = {
+  key: string;
+  universities: string[];
+  institution: string;
+  status: CptPolicyStatus;
+  shortLabel: string;
+  summary: string;
+  eligibility: string;
+  curriculum: string;
+  timing: string;
+  optImpact: string;
+  warning?: string;
+  sourceLabel: string;
+  source: string;
+};
+type CptAlert = {
+  severity: "重大更新" | "政策变化" | "共通红线";
+  title: string;
+  summary: string;
+  date: string;
+  sourceLabel: string;
+  source: string;
+};
+type CptPolicyData = {
+  verifiedAt: string;
+  scope: string;
+  alerts: CptAlert[];
+  policies: CptPolicy[];
 };
 
 type GuideRow = Record<string, string | null>;
@@ -596,6 +628,7 @@ const DEGREE_LEVELS: (DegreeLevel | "全部")[] = ["全部", "硕士", "博士"]
 const CYCLES: (Program["cycle"] | "全部")[] = ["全部", "2027 入学", "2026/27 入学", "最近可用"];
 const STATIC_PROGRAMS = (staticPrograms as Program[]).length ? staticPrograms as Program[] : PROGRAMS;
 const GUIDES = guideData as GuideData;
+const US_CPT_DATA = cptPolicyData as CptPolicyData;
 const DEFAULT_PROFILE: ApplicantProfile = { discipline: "未填写", quantitative: "未填写", english: "未填写", targetRegions: [] };
 const PROFILE_STORAGE_KEY = "fly-away-applicant-profile";
 const PLAN_STORAGE_KEY = "fly-away-application-plan";
@@ -654,6 +687,18 @@ function applicationStatusSourceOf(program: Program) {
 function degreeLevelOf(program: Program): DegreeLevel | "" {
   const value = payloadValue(program, "degreeLevel");
   return value === "硕士" || value === "博士" ? value : "";
+}
+
+function cptPolicyOf(program: Program): CptPolicy | null {
+  if (program.region !== "美国") return null;
+  return US_CPT_DATA.policies.find((policy) => policy.universities.includes(program.university)) ?? null;
+}
+
+function cptStatusClass(status: CptPolicyStatus) {
+  if (status === "重大更新") return "is-critical";
+  if (status === "需重点关注") return "is-watch";
+  if (status === "项目级差异") return "is-project";
+  return "is-verified";
 }
 
 function englishScore(value: EnglishPreparation) {
@@ -787,7 +832,8 @@ export default function Home() {
   const filtered = useMemo(() => {
     const normalized = query.trim().toLowerCase();
     const items = programs.filter((program) => {
-      const haystack = [program.university, program.school, program.program, originalProgramNameOf(program), program.region, program.city, program.category, program.direction, program.prerequisites, program.applicationRequirements].join(" ").toLowerCase();
+      const cptPolicy = cptPolicyOf(program);
+      const haystack = [program.university, program.school, program.program, originalProgramNameOf(program), program.region, program.city, program.category, program.direction, program.prerequisites, program.applicationRequirements, cptPolicy?.summary, cptPolicy?.shortLabel, cptPolicy ? "cpt 美国实习 F-1" : ""].join(" ").toLowerCase();
       return (!normalized || haystack.includes(normalized))
         && (region === "全部" || program.region === region)
         && (category === "全部" || program.category === category)
@@ -817,6 +863,7 @@ export default function Home() {
   const deepVerifiedCount = programs.filter((program) => verificationOf(program) === "深度核验").length;
   const officialVerifiedCount = programs.filter((program) => verificationOf(program) === "官网核验").length;
   const openApplicationCount = programs.filter((program) => applicationStatusOf(program) === "已开始申请").length;
+  const usCptCoverageCount = programs.filter((program) => cptPolicyOf(program)).length;
   const readinessSummary = programs.reduce<Record<Readiness["label"], number>>((summary, program) => {
     const label = readinessOf(program, profile).label;
     summary[label] += 1;
@@ -953,6 +1000,11 @@ export default function Home() {
           </div>
         </section>
 
+        <section className="cpt-watchlist" id="cpt" aria-labelledby="cpt-title">
+          <div className="cpt-watchlist-intro"><p className="section-kicker">U.S. F-1 WORK AUTHORIZATION</p><h2 id="cpt-title">美国 CPT 政策雷达</h2><p>{US_CPT_DATA.scope}</p><small>本次核验：{formatDate(US_CPT_DATA.verifiedAt)} · 已挂载至当前载入的 {usCptCoverageCount} 条美国项目记录</small></div>
+          <div className="cpt-alert-list">{US_CPT_DATA.alerts.map((alert) => <article key={alert.title} className={`cpt-alert cpt-alert-${alert.severity === "重大更新" ? "critical" : alert.severity === "政策变化" ? "watch" : "base"}`}><div><span>{alert.severity}</span><small>{formatDate(alert.date)}</small></div><h3>{alert.title}</h3><p>{alert.summary}</p><a href={alert.source} target="_blank" rel="noreferrer">{alert.sourceLabel} <b>打开官网</b></a></article>)}</div>
+        </section>
+
         <section className="explore" id="programs">
           <aside className="filter-panel" aria-label="项目筛选">
             <div className="filter-title"><h2>缩小范围</h2><button type="button" onClick={resetFilters}>清除全部</button></div>
@@ -981,11 +1033,12 @@ export default function Home() {
               const inPlan = planned.some((item) => item.id === program.id);
               const status = applicationStatusOf(program);
               const degree = degreeLevelOf(program);
+              const cptPolicy = cptPolicyOf(program);
               return (
                 <article className="program-row" key={program.id}>
                   <div className="program-id">
                     <span className="rank">{String(index + 1).padStart(2, "0")}</span>
-                    <div className="school"><small>{program.region} · {program.school}</small><h3>{program.university}<br />{program.program}</h3>{originalProgramName && <p className="original-program">官方原名：{originalProgramName}</p>}<p>{program.duration} · {program.intake}</p><div className="program-tags"><span className={`application-tag ${status === "已开始申请" ? "is-open" : "is-historical"}`}>{status}</span>{degree && <span className={`degree-tag degree-${degree}`}>{degree}</span>}<span className={`cycle-tag ${program.cycle === "最近可用" ? "is-legacy" : ""}`}>{program.cycle}</span>{qsRank && <span className="qs-tag">QS {qsRank}</span>}<span className={`verification-tag ${verification === "深度核验" ? "is-deep" : verification === "官网核验" ? "is-official" : ""}`}>{verification}</span><span className={`readiness-tag readiness-${readiness.rank}`}>{readiness.label}</span>{recordType === "目录入口" && <span className="directory-tag">完整目录入口</span>}</div><small className="verification-date">申请状态核验：{formatDate(applicationStatusCheckedAtOf(program))} · {program.sources?.length || 1} 个官方来源</small></div>
+                    <div className="school"><small>{program.region} · {program.school}</small><h3>{program.university}<br />{program.program}</h3>{originalProgramName && <p className="original-program">官方原名：{originalProgramName}</p>}<p>{program.duration} · {program.intake}</p><div className="program-tags"><span className={`application-tag ${status === "已开始申请" ? "is-open" : "is-historical"}`}>{status}</span>{degree && <span className={`degree-tag degree-${degree}`}>{degree}</span>}{cptPolicy && <span className={`cpt-tag ${cptStatusClass(cptPolicy.status)}`}>CPT · {cptPolicy.status}</span>}<span className={`cycle-tag ${program.cycle === "最近可用" ? "is-legacy" : ""}`}>{program.cycle}</span>{qsRank && <span className="qs-tag">QS {qsRank}</span>}<span className={`verification-tag ${verification === "深度核验" ? "is-deep" : verification === "官网核验" ? "is-official" : ""}`}>{verification}</span><span className={`readiness-tag readiness-${readiness.rank}`}>{readiness.label}</span>{recordType === "目录入口" && <span className="directory-tag">完整目录入口</span>}</div><small className="verification-date">申请状态核验：{formatDate(applicationStatusCheckedAtOf(program))} · {program.sources?.length || 1} 个官方来源</small></div>
                   </div>
                   <div className="requirements" aria-label={`${program.program}申请要求概览`}>
                     {program.requirements.map((requirement) => (
@@ -1059,6 +1112,7 @@ function DetailDrawer({ program, selected, planned, profile, onClose, onCompare,
   const statusNote = applicationStatusNoteOf(program);
   const statusCheckedAt = applicationStatusCheckedAtOf(program);
   const statusSource = applicationStatusSourceOf(program);
+  const cptPolicy = cptPolicyOf(program);
   const sources = initialSources.some((source) => source.url === statusSource) ? initialSources : [{ label: "本次申请状态核验", url: statusSource, kind: "官方申请状态", year: formatDate(statusCheckedAt) }, ...initialSources];
   return <div className="overlay" role="presentation" onMouseDown={(event) => { if (event.target === event.currentTarget) onClose(); }}>
     <section className="detail-drawer" role="dialog" aria-modal="true" aria-labelledby="detail-title">
@@ -1067,6 +1121,7 @@ function DetailDrawer({ program, selected, planned, profile, onClose, onCompare,
       <div className={`application-status-notice ${status === "已开始申请" ? "is-open" : "is-historical"}`}><strong>{status}</strong><p>{statusNote}</p><small>状态核验：{formatDate(statusCheckedAt)} · 请在提交前再次打开项目官网确认。</small></div>
       {verification === "目录级收录" && <div className="catalog-notice"><strong>当前为目录级收录</strong><p>已确认项目名称及官方来源，但学术要求、语言、标化、截止日期和费用尚未逐项核验。页面中的“待核验”不是项目要求。</p></div>}
       {verification === "官网核验" && <div className="catalog-notice is-official"><strong>当前为官网核验</strong><p>项目直接官网与校级通用规则已核验；项目独有的截止日期、费用、先修课和附加材料仍须打开项目页确认，页面不会把校级规则伪装成项目专属要求。</p></div>}
+      {cptPolicy && <CptPolicyPanel policy={cptPolicy} />}
       <div className="readiness-detail"><small>基于你填写的背景</small><strong>{readiness.label}</strong>{readiness.positives.length > 0 && <p>已具备：{readiness.positives.join("；")}</p>}{readiness.gaps.length > 0 && <ul>{readiness.gaps.map((gap) => <li key={gap}>{gap}</li>)}</ul>}{!readiness.gaps.length && !readiness.positives.length && <p>填写你的背景后，这里会显示公开门槛与待准备事项。</p>}<em>结果仅用于整理公开申请条件，不代表录取概率。</em></div>
       <div className="detail-grid"><DetailBlock title="学术要求" text={program.academic} /><DetailBlock title="语言要求" text={program.language} /><DetailBlock title="标化考试" text={program.tests} /><DetailBlock title="先修与能力" text={program.prerequisites} /><DetailBlock title="面试" text={program.interview || "以当年申请系统为准"} /><DetailBlock title="学费 / 费用" text={program.tuition || "以官网最新费用页为准"} /><DetailBlock title="周边租房预算" text={program.rentBudget || "暂未收录"} /><DetailBlock title="申请定位" text={program.positioning || "待结合个人背景判断"} /><DetailBlock title="申请要求 / 材料" text={program.applicationRequirements || program.academic} /><DetailBlock title="核验范围" text={typeof policyScope === "string" ? policyScope : "项目官网与最近可用官方公告"} /></div>
       <div className="deadline-box"><small>申请时间 / 关键日期</small><strong>{program.deadline}</strong><p>{program.deadlineNote}</p></div>
@@ -1080,6 +1135,16 @@ function DetailDrawer({ program, selected, planned, profile, onClose, onCompare,
 
 function DetailBlock({ title, text }: { title: string; text: string }) {
   return <div><small>{title}</small><p>{text}</p></div>;
+}
+
+function CptPolicyPanel({ policy }: { policy: CptPolicy }) {
+  return <section className={`cpt-policy-panel ${cptStatusClass(policy.status)}`} aria-label={`${policy.institution} CPT 政策`}>
+    <div className="cpt-policy-head"><div><p>U.S. CPT POLICY · F-1 ONLY</p><h3>{policy.institution} · CPT 实习授权</h3></div><span>{policy.status}</span></div>
+    <p className="cpt-policy-summary">{policy.summary}</p>
+    {policy.warning && <p className="cpt-policy-warning">{policy.warning}</p>}
+    <div className="cpt-policy-grid"><DetailBlock title="资格 / 最早可用" text={policy.eligibility} /><DetailBlock title="课程与项目要求" text={policy.curriculum} /><DetailBlock title="提交与处理节奏" text={policy.timing} /><DetailBlock title="OPT 与身份风险" text={policy.optImpact} /></div>
+    <a className="cpt-policy-source" href={policy.source} target="_blank" rel="noreferrer">{policy.sourceLabel}<b>打开本校 CPT 官网</b></a>
+  </section>;
 }
 
 function CompareDialog({ programs, onClose, onRemove }: { programs: Program[]; onClose: () => void; onRemove: (id: string) => void }) {

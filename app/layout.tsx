@@ -11,17 +11,17 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     metadataBase: base,
     title: "Fly Away｜留学项目情报库",
-    description: "港新美欧全学科留学项目数据库，集中查看申请要求、费用、面试、先修、租房预算、官网与最近可用招生公告。",
+    description: "港新美欧全学科留学项目数据库，集中查看申请要求、费用、面试、先修、官网与最近可用招生公告；美国项目另附 F-1 CPT 政策、项目路径与更新提醒。",
     icons: { icon: "/favicon.svg", shortcut: "/favicon.svg" },
     openGraph: {
       title: "Fly Away｜信息无落差，选择更潇洒",
-      description: "港新美欧全学科项目要求、费用、面试与官方来源，一处筛选、查看与对比。",
+      description: "港新美欧全学科项目要求、费用、面试与官方来源；美国项目另附 F-1 CPT 政策与更新提醒。",
       type: "website",
     },
     twitter: {
       card: "summary",
       title: "Fly Away｜留学项目情报库",
-      description: "港新美欧全学科项目数据库，一处筛选、查看与对比。",
+      description: "港新美欧全学科项目数据库，含美国 F-1 CPT 政策与更新提醒。",
     },
   };
 }
