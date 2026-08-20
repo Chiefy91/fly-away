@@ -13,12 +13,10 @@ type Verification = "全部" | "深度核验" | "官网核验" | "目录级收�
 type ApplicationStatus = "全部" | "已开始申请" | "往期要求";
 type DegreeLevel = "硕士" | "博士";
 
-type QuantitativePreparation = "未填写" | "已修读核心量化课程" | "需要补强";
 type EnglishPreparation = "未填写" | "IELTS 6.0" | "IELTS 6.5" | "IELTS 7.0+" | "TOEFL 90" | "TOEFL 100+";
 type PlanStage = "研究中" | "准备材料" | "已提交";
 type ApplicantProfile = {
   discipline: Category | "未填写";
-  quantitative: QuantitativePreparation;
   english: EnglishPreparation;
   targetRegions: Region[];
 };
@@ -648,7 +646,7 @@ const STATIC_PROGRAMS = (staticPrograms as Program[]).length ? staticPrograms as
 const GUIDES = guideData as GuideData;
 const US_CPT_DATA = cptPolicyData as CptPolicyData;
 const WRITING_GUIDES = writingGuideData as WritingGuide[];
-const DEFAULT_PROFILE: ApplicantProfile = { discipline: "未填写", quantitative: "未填写", english: "未填写", targetRegions: [] };
+const DEFAULT_PROFILE: ApplicantProfile = { discipline: "未填写", english: "未填写", targetRegions: [] };
 const PROFILE_STORAGE_KEY = "fly-away-applicant-profile";
 const PLAN_STORAGE_KEY = "fly-away-application-plan";
 
@@ -760,7 +758,7 @@ function expectedEnglishScore(text: string) {
 function readinessOf(program: Program, profile: ApplicantProfile): Readiness {
   const gaps: string[] = [];
   const positives: string[] = [];
-  const profileStarted = profile.discipline !== "未填写" || profile.quantitative !== "未填写" || profile.english !== "未填写" || profile.targetRegions.length > 0;
+  const profileStarted = profile.discipline !== "未填写" || profile.english !== "未填写" || profile.targetRegions.length > 0;
   if (!profileStarted) return { label: "先补充背景", rank: 1, gaps: [], positives: [] };
 
   if (profile.targetRegions.length && !profile.targetRegions.includes(program.region)) gaps.push("不在你的目标地区");
@@ -769,9 +767,6 @@ function readinessOf(program: Program, profile: ApplicantProfile): Readiness {
     else if (program.background === "跨专业友好") positives.push("项目标注为跨专业友好");
     else gaps.push(program.background === "强先修要求" ? "需核对本专业与先修课程" : "学科方向需进一步核对");
   }
-  if (program.background === "量化背景" && profile.quantitative !== "已修读核心量化课程") gaps.push("项目偏好量化基础");
-  if (program.background === "强先修要求" && profile.quantitative === "需要补强") gaps.push("需要补强项目要求的先修能力");
-
   const expectedEnglish = expectedEnglishScore(program.language);
   const currentEnglish = englishScore(profile.english);
   if (expectedEnglish && currentEnglish) {
@@ -841,7 +836,11 @@ export default function Home() {
         const savedPlan = window.localStorage.getItem(PLAN_STORAGE_KEY);
         if (savedProfile) {
           const parsedProfile = JSON.parse(savedProfile) as Partial<ApplicantProfile>;
-          setProfile({ ...DEFAULT_PROFILE, ...parsedProfile });
+          setProfile({
+            discipline: parsedProfile.discipline ?? DEFAULT_PROFILE.discipline,
+            english: parsedProfile.english ?? DEFAULT_PROFILE.english,
+            targetRegions: Array.isArray(parsedProfile.targetRegions) ? parsedProfile.targetRegions : DEFAULT_PROFILE.targetRegions,
+          });
         }
         if (savedPlan) setPlanned(JSON.parse(savedPlan) as PlannedProgram[]);
       } catch {
@@ -1011,11 +1010,10 @@ export default function Home() {
           <div className="studio-main">
             <div className="profile-form" aria-label="我的申请背景">
               <label><span>本科 / 主要方向</span><select value={profile.discipline} onChange={(event) => setProfile((current) => ({ ...current, discipline: event.target.value as ApplicantProfile["discipline"] }))}><option>未填写</option>{DISCIPLINES.filter((item) => item !== "综合项目目录").map((item) => <option key={item}>{item}</option>)}</select></label>
-              <label><span>量化课程准备</span><select value={profile.quantitative} onChange={(event) => setProfile((current) => ({ ...current, quantitative: event.target.value as QuantitativePreparation }))}>{(["未填写", "已修读核心量化课程", "需要补强"] as QuantitativePreparation[]).map((item) => <option key={item}>{item}</option>)}</select></label>
               <label><span>当前英语成绩</span><select value={profile.english} onChange={(event) => setProfile((current) => ({ ...current, english: event.target.value as EnglishPreparation }))}>{(["未填写", "IELTS 6.0", "IELTS 6.5", "IELTS 7.0+", "TOEFL 90", "TOEFL 100+"] as EnglishPreparation[]).map((item) => <option key={item}>{item}</option>)}</select></label>
               <fieldset><legend>目标地区（可多选）</legend><div className="region-toggle-row">{REGIONS.map((item) => <button key={item} type="button" className={profile.targetRegions.includes(item) ? "is-selected" : ""} aria-pressed={profile.targetRegions.includes(item)} onClick={() => toggleTargetRegion(item)}>{item}</button>)}</div></fieldset>
             </div>
-            <div className="readiness-panel"><div><small>公开门槛匹配</small><strong>{profile.discipline === "未填写" && profile.quantitative === "未填写" && profile.english === "未填写" && !profile.targetRegions.length ? "填写背景后开始" : `${readinessSummary["可优先研究"]} 个可优先研究`}</strong><p>{readinessSummary["需要补条件"]} 个项目提示需补条件；{readinessSummary["需进一步核验"]} 个项目仍需逐项打开官网确认。</p></div><button type="button" onClick={() => { const next = !onlyProfileMatches; setOnlyProfileMatches(next); setSort("按我的准备度"); document.getElementById("programs")?.scrollIntoView({ behavior: "smooth" }); announce(next ? "已优先显示准备度较高的项目" : "已显示全部项目"); }}>{onlyProfileMatches ? "显示全部项目" : "优先看准备度较高"}</button><small className="privacy-note">仅保存在当前浏览器，不上传个人背景。</small></div>
+            <div className="readiness-panel"><div><small>公开门槛匹配</small><strong>{profile.discipline === "未填写" && profile.english === "未填写" && !profile.targetRegions.length ? "填写背景后开始" : `${readinessSummary["可优先研究"]} 个可优先研究`}</strong><p>{readinessSummary["需要补条件"]} 个项目提示需补条件；{readinessSummary["需进一步核验"]} 个项目仍需逐项打开官网确认。</p></div><button type="button" onClick={() => { const next = !onlyProfileMatches; setOnlyProfileMatches(next); setSort("按我的准备度"); document.getElementById("programs")?.scrollIntoView({ behavior: "smooth" }); announce(next ? "已优先显示准备度较高的项目" : "已显示全部项目"); }}>{onlyProfileMatches ? "显示全部项目" : "优先看准备度较高"}</button><small className="privacy-note">仅保存在当前浏览器，不上传个人背景。</small></div>
           </div>
           <div className="plan-board"><div className="plan-board-head"><div><p className="section-kicker">MY APPLICATION PLAN</p><h3>我的申请计划 <b>{plannedPrograms.length}</b></h3></div><span>加入项目后，可在这里标记进度。</span></div>{plannedPrograms.length ? <div className="plan-list">{plannedPrograms.map(({ id, stage, program }) => <article key={id}><div><strong>{program.university} · {program.program}</strong><small>关键日期：{program.deadline.split("；")[0]} · 最近核验：{formatDate(program.updated)}</small></div><label><span className="sr-only">申请进度</span><select value={stage} onChange={(event) => updatePlanStage(id, event.target.value as PlanStage)}>{(["研究中", "准备材料", "已提交"] as PlanStage[]).map((item) => <option key={item}>{item}</option>)}</select></label><button type="button" onClick={() => togglePlan(id)}>移除</button></article>)}</div> : <p className="plan-empty">从项目列表或项目详情中加入计划。计划会保存在当前浏览器。</p>}</div>
         </section>
