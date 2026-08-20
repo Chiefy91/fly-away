@@ -1077,7 +1077,7 @@ export default function Home() {
               const degree = degreeLevelOf(program);
               const cptPolicy = cptPolicyOf(program);
               return (
-                <article className="program-row" key={program.id}>
+                <article className="program-row program-row-enter" style={{ "--enter-delay": `${Math.min(index, 12) * 28}ms` } as CSSProperties} key={program.id}>
                   <div className="program-id">
                     <span className="rank">{String(index + 1).padStart(2, "0")}</span>
                     <div className="school"><small>{program.region} · {program.school}</small><h3>{program.university}<br />{program.program}</h3>{originalProgramName && <p className="original-program">官方原名：{originalProgramName}</p>}<p>{program.duration} · {program.intake}</p><div className="program-tags"><span className={`application-tag ${status === "已开始申请" ? "is-open" : "is-historical"}`}>{status}</span>{degree && <span className={`degree-tag degree-${degree}`}>{degree}</span>}{cptPolicy && <span className={`cpt-tag ${cptStatusClass(cptPolicy.status)}`}>CPT · {cptPolicy.status}</span>}<span className={`cycle-tag ${program.cycle === "最近可用" ? "is-legacy" : ""}`}>{program.cycle}</span>{qsRank && <span className="qs-tag">QS {qsRank}</span>}<span className={`verification-tag ${verification === "深度核验" ? "is-deep" : verification === "官网核验" ? "is-official" : ""}`}>{verification}</span><span className={`readiness-tag readiness-${readiness.rank}`}>{readiness.label}</span>{recordType === "目录入口" && <span className="directory-tag">完整目录入口</span>}</div><small className="verification-date">申请状态核验：{formatDate(applicationStatusCheckedAtOf(program))} · {program.sources?.length || 1} 个官方来源</small></div>
