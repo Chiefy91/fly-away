@@ -1,98 +1,162 @@
-# vinext-starter
+# Fly Away
 
-A clean full-stack starter running on
-[vinext](https://github.com/cloudflare/vinext), with optional Cloudflare D1 and
-Drizzle support.
+> **留学项目情报库**
+> 信息无落差，选择更潇洒。
 
-## Prerequisites
+Fly Away 面向准备留学的学生，把分散在各校官网、学院页面和国际学生办公室中的项目资讯整理成可检索、可比较、可追溯的中文信息库。它不替代学校官网，而是帮助你更快识别项目要求、材料清单、申请节奏与需要进一步核验的风险点。
 
-- Node.js `>=22.13.0`
+## 解决什么问题
 
-## Quick Start
+留学申请中的信息往往分散、术语不统一、更新频率不同：同一个项目的课程页、招生页、研究生院、国际学生办公室可能各自维护规则。Fly Away 将这些信息归到项目卡片中，优先展示对决策最有用的内容：
+
+- 项目中文名与官方原文名，降低理解门槛；
+- 学术背景、先修课、语言、标化、截止日期、学费与学制；
+- 申请材料（如成绩单、CV、SOP/PS、推荐信、作品集、研究计划等）；
+- 官方项目页、招生公告或最近可用要求的来源链接；
+- 当年申请状态与资料的核验层级；
+- 美国项目的 CPT 相关项目/学校政策提醒；
+- 文书准备要点，以及高优先级项目的官网级文书指引。
+
+## 当前收录范围
+
+**目前收录 QS 2027 前 50 中位于香港、新加坡、美国与欧洲的 33 所院校。**
+
+覆盖方向不局限于金融、量化或计算机，也包括数学与统计、商科与管理、工程与技术、社会科学、自然科学、人文与艺术、法律与公共事务、医学与生命科学、教育等留学生常见领域。页面同时支持硕士、博士及不同授课/研究型项目的浏览。
+
+> 数据库中同时保留广泛目录与重点深度记录；不同记录的完整度不同，请务必阅读核验标识，不要把目录级收录理解为逐项官方确认。
+
+## 核心功能
+
+### 查找与筛选
+
+- 关键词搜索学校、学院、项目及方向；
+- 按地区、项目类别、学位层级、背景要求、申请周期、申请状态与核验层级筛选；
+- 项目名称同时显示中文翻译和官方英文/原文名称；
+- 从卡片进入项目详情，查看要求、材料、备注与官网来源。
+
+### 申请决策
+
+- 多项目对比：把关键条件放在同一视图中，减少在多个官网间来回切换；
+- 个人匹配：用目标地区、专业方向和英语成绩进行轻量筛选；
+- 申请计划：在浏览器本地保存待申请项目和个人进度；
+- 申请资料区：梳理常见申请文件及准备逻辑；
+- 文书指引：提供通用 SOP/PS、CV、推荐信、研究计划等写作提醒，并为部分高优先级项目收录可追溯的官方口径。
+
+### 美国 CPT 信息提醒
+
+美国项目卡及 CPT 区域强调“项目/学院差异”，避免仅凭学校名推断可否使用 CPT。信息包括课程体系关联、审批时点、F-1/OPT 影响和学校国际学生办公室来源；它只用于前期研究，不能替代学校 DSO、国际学生办公室或移民律师的个案建议。
+
+## 如何理解标签
+
+| 标签 | 含义 | 使用建议 |
+| --- | --- | --- |
+| 绿色「已开始申请」 | 在记录核验时，官方来源显示相应申请周期正在开放或仍可递交。 | 仍需打开官网确认项目、轮次、时区和系统实时状态。 |
+| 黄色「往期要求」 | 当前周期尚未确认开放，或页面展示的是最近可用的历史要求。 | 可用于提前准备，不应把截止日期或材料原样当作新一轮的最终规则。 |
+| 「深度核验」 | 已围绕具体项目补充官方项目页、研究生院或其他直接来源。 | 优先阅读，但规则随时可能变化。 |
+| 「官网核验」 | 已连接至学校/学院/项目官方来源，信息完整度因项目而异。 | 点击来源继续核对细则。 |
+| 「目录级收录」 | 已收录项目目录线索，尚未完成逐项项目页梳理。 | 作为找项目入口，申请前必须自行回到官网确认。 |
+
+每条记录都应以其显示的“核验日期”“适用周期”和来源链接为准。不存在当年页面时，Fly Away 会保留最近可用的官方要求，并明确标为往期资料。
+
+## 数据原则
+
+1. **官网优先**：优先链接项目招生页、学校研究生院、学院页面与国际学生办公室；无法取得当年信息时使用最近可用的官方页面。
+2. **不把推测写成规则**：页面区分已核验信息、目录线索与待确认内容。
+3. **以项目为单位**：同一学校内，不同学院和学位的先修、材料、实习/CPT 资格可能完全不同。
+4. **中文辅助，原文为准**：中文名和中文说明用于理解；正式申请以官方英文/当地语言页面及申请系统为准。
+5. **持续更新**：项目开放、截止日期、签证及文书要求会变化。发现更新时，应记录来源、适用年度和核验日期后再写入数据。
+
+## 本地运行
+
+### 环境要求
+
+- Node.js `>= 22.13.0`
+- npm
+
+### 安装
 
 ```bash
+git clone https://github.com/Chiefy91/fly-away.git
+cd fly-away
 npm install
+```
+
+### 启动开发环境
+
+macOS / Linux：
+
+```bash
 npm run dev
+```
+
+Windows PowerShell：
+
+```powershell
+$env:WRANGLER_LOG_PATH = ".wrangler/wrangler.log"
+npx vinext dev --port 3000
+```
+
+随后在浏览器打开 [http://localhost:3000](http://localhost:3000)。
+
+> `package.json` 中的脚本使用 POSIX 形式的环境变量赋值；在 Windows PowerShell 中请采用上面的两行启动方式。若端口已被占用，可将 `3000` 换成其他端口。
+
+### 构建与检查
+
+macOS / Linux：
+
+```bash
 npm run build
+npm test
+npm run lint
 ```
 
-This starter does not use `wrangler.jsonc`.
+Windows PowerShell：
 
-## Included Shape
-
-- edit site code under `app/`
-- `.openai/hosting.json` declares optional Sites D1 and R2 bindings
-- `vite.config.ts` simulates declared bindings for local development
-- `db/schema.ts` starts intentionally empty
-- `examples/d1/` contains an optional D1 example surface
-- `drizzle.config.ts` supports local migration generation when needed
-
-## Workspace Auth Headers
-
-OpenAI workspace sites can read the current user's email from
-`oai-authenticated-user-email`.
-
-SIWC-authenticated workspace sites may also receive
-`oai-authenticated-user-full-name` when the user's SIWC profile has a non-empty
-`name` claim. The full-name value is percent-encoded UTF-8 and is accompanied by
-`oai-authenticated-user-full-name-encoding: percent-encoded-utf-8`.
-
-Treat the full name as optional and fall back to email when it is absent:
-
-```tsx
-import { headers } from "next/headers";
-
-export default async function Home() {
-  const requestHeaders = await headers();
-  const email = requestHeaders.get("oai-authenticated-user-email");
-  const encodedFullName = requestHeaders.get("oai-authenticated-user-full-name");
-  const fullName =
-    encodedFullName &&
-    requestHeaders.get("oai-authenticated-user-full-name-encoding") ===
-      "percent-encoded-utf-8"
-      ? decodeURIComponent(encodedFullName)
-      : null;
-
-  const displayName = fullName ?? email;
-  // ...
-}
+```powershell
+$env:WRANGLER_LOG_PATH = ".wrangler/wrangler.log"
+npx vinext build
+npx eslint . --ignore-pattern dist --ignore-pattern .next
 ```
 
-## Optional Dispatch-Owned ChatGPT Sign-In
+## 技术结构
 
-Import the ready-to-use helpers from `app/chatgpt-auth.ts` when the site needs
-optional or required ChatGPT sign-in:
+| 部分 | 作用 |
+| --- | --- |
+| `app/page.tsx` | 主界面、筛选、项目详情、对比、计划及交互动画。 |
+| `app/globals.css` | 中文阅读优先的视觉系统、动效与 `prefers-reduced-motion` 兼容。 |
+| `data/programs.json` | 广泛项目目录数据。 |
+| `data/programs-fallback.json` | 页面可离线展示的重点项目回退数据。 |
+| `data/writing-guides.json` | 文书类型与重点项目的写作指引及来源。 |
+| `data/us-cpt-policies.json` | 美国学校/项目 CPT 政策提醒与来源。 |
+| `db/` 与 `drizzle/` | SQLite / Cloudflare D1 数据结构与迁移。 |
+| `app/api/` | 读取项目和申请工具数据的接口；数据库暂不可用时，前端使用本地回退数据。 |
+| `.openai/hosting.json` | Sites 的 D1 绑定声明。 |
 
-- Use `getChatGPTUser()` for optional signed-in UI.
-- Use `requireChatGPTUser(returnTo)` for server-rendered pages that should send
-  anonymous visitors through Sign in with ChatGPT.
-- Use `chatGPTSignInPath(returnTo)` and `chatGPTSignOutPath(returnTo)` for
-  browser links or actions.
-- Pass a same-origin relative `returnTo` path for the destination after sign-in
-  or sign-out. The helper validates and safely encodes it.
-- Mark protected pages with `export const dynamic = "force-dynamic"` because
-  they depend on per-request identity headers.
+项目采用 React、Next 兼容 API、TypeScript、Vinext/Vite、Drizzle 与 SQLite/D1 结构。前端优先保证信息阅读和筛选体验；浏览器本地计划不会上传到服务器。
 
-Dispatch owns `/signin-with-chatgpt`, `/signout-with-chatgpt`, `/callback`, the
-OAuth cookies, and identity header injection. Do not implement app routes for
-those reserved paths. Routes that do not import and call the helper remain
-anonymous-compatible.
+## 数据更新流程
 
-SIWC establishes identity only; it does not prove workspace membership. Use the
-Sites hosting platform's access policy controls for workspace-wide restrictions,
-or enforce explicit server-side membership or allowlist checks.
+新增或修订一条项目记录时，请按以下顺序执行：
 
-Use SIWC for account pages, user-specific dashboards, saved records, and write
-actions tied to the current ChatGPT user. Leave public content anonymous.
+1. 找到该项目的官方项目页、招生页或研究生院页面；必要时查看学院和国际学生办公室页面。
+2. 记录适用入学年份、页面更新时间、链接和核验日期。
+3. 填写项目官方名与中文翻译，并分别确认学位、学制、先修、语言、标化、截止日期和材料。
+4. 若当年申请已确认开放，标为「已开始申请」；否则保留「往期要求」，不猜测新的截止日期。
+5. 根据来源覆盖度标注「深度核验」「官网核验」或「目录级收录」。
+6. 对 CPT、OPT、签证及就业相关内容，只引用政府或学校国际学生办公室的原始页面，并注明这是政策信息而非个人法律意见。
+7. 修改数据后在本地检查项目详情、筛选、来源链接和移动端布局，再提交变更。
 
-## Useful Commands
+## 部署说明
 
-- `npm run dev`: start local development
-- `npm run build`: verify the vinext build output
-- `npm test`: build the starter and verify its rendered loading skeleton
-- `npm run db:generate`: generate Drizzle migrations after schema changes
+仓库代码可以直接在本地启动。GitHub 推送只会更新代码仓库，不会自动使一个旧的站点地址恢复可访问。若要重新发布，需要由仓库所有者在 Sites 中恢复原项目访问权限，或在已获授权的托管项目中重新配置部署与 D1 数据绑定。
 
-## Learn More
+## 重要声明
 
-- [vinext Documentation](https://github.com/cloudflare/vinext)
-- [Drizzle D1 Guide](https://orm.drizzle.team/docs/get-started/d1-new)
+- Fly Away 是信息整理与决策辅助工具，不是学校、签证机构、律师或留学中介。
+- 录取标准、学费、材料、奖学金、截止日期、签证与 CPT/OPT 政策均可能在无预告情况下变动。
+- 提交申请、接受 offer、开始实习或作出移民相关决定前，请以学校官网、申请系统、DSO/国际学生办公室及合格专业人士的最新书面说明为准。
+- 任何“匹配度”仅为信息筛选，不构成录取预测或保证。
+
+## 仓库状态
+
+此仓库为私人项目。未经仓库所有者许可，请勿将其中的数据、文案或代码重新分发、商用或作为申请结果保证。
