@@ -15,12 +15,29 @@ type DegreeLevel = "硕士" | "博士";
 
 type EnglishPreparation = "未填写" | "IELTS 6.0" | "IELTS 6.5" | "IELTS 7.0+" | "TOEFL 90" | "TOEFL 100+";
 type PlanStage = "研究中" | "准备材料" | "已提交";
+type DocumentState = "待准备" | "已准备" | "已提交" | "不适用";
 type ApplicantProfile = {
   discipline: Category | "未填写";
   english: EnglishPreparation;
   targetRegions: Region[];
 };
-type PlannedProgram = { id: string; stage: PlanStage };
+type PlannedProgram = {
+  id: string;
+  stage: PlanStage;
+  documents?: Record<string, DocumentState>;
+  reminder?: { enabled: boolean };
+  updatedAt?: string;
+};
+type SourceSnapshot = {
+  id: string;
+  programId: string;
+  checkedAt: string;
+  httpStatus: number | null;
+  status: string;
+  pageTitle: string;
+  openSignal: number;
+  note: string;
+};
 type Readiness = {
   label: "先补充背景" | "可优先研究" | "需要补条件" | "需进一步核验";
   rank: number;
@@ -654,6 +671,35 @@ function formatDate(date: string) {
   return date.replaceAll("-", ".");
 }
 
+function officialDocumentsOf(program: Program) {
+  return [...new Set(program.documents.map((document) => document.trim()).filter(Boolean))];
+}
+
+function deadlineDateOf(program: Program) {
+  const candidates = [...new Set(program.deadline.match(/20\d{2}-\d{2}-\d{2}/g) ?? [])]
+    .map((value) => new Date(`${value}T23:59:59`))
+    .filter((date) => !Number.isNaN(date.getTime()))
+    .sort((a, b) => a.getTime() - b.getTime());
+  if (!candidates.length) return null;
+  const now = new Date();
+  return candidates.find((date) => date.getTime() >= now.getTime()) ?? candidates.at(-1) ?? null;
+}
+
+function deadlineWindowOf(program: Program) {
+  const deadline = deadlineDateOf(program);
+  if (!deadline) return { label: "待官网确认", days: null as number | null, className: "is-unknown" };
+  const now = new Date();
+  const days = Math.ceil((deadline.getTime() - now.getTime()) / 86_400_000);
+  if (days < 0) return { label: "该轮已过期", days, className: "is-expired" };
+  if (days <= 7) return { label: `${days} 天内截止`, days, className: "is-urgent" };
+  if (days <= 30) return { label: `${days} 天后截止`, days, className: "is-soon" };
+  return { label: `${days} 天后截止`, days, className: "is-planned" };
+}
+
+function documentStateOf(plan: PlannedProgram, document: string): DocumentState {
+  return plan.documents?.[document] ?? "待准备";
+}
+
 function payloadValue(program: Program, key: string) {
   return program.sourcePayload?.[key];
 }
@@ -805,6 +851,9 @@ export default function Home() {
   const [profile, setProfile] = useState<ApplicantProfile>(DEFAULT_PROFILE);
   const [planned, setPlanned] = useState<PlannedProgram[]>([]);
   const [storageReady, setStorageReady] = useState(false);
+  const [planSyncMode, setPlanSyncMode] = useState<"loading" | "synced" | "local">("loading");
+  const [monitorSnapshots, setMonitorSnapshots] = useState<SourceSnapshot[]>([]);
+  const [monitoring, setMonitoring] = useState(false);
   const [onlyProfileMatches, setOnlyProfileMatches] = useState(false);
 
   const announce = (message: string) => {
@@ -826,6 +875,20 @@ export default function Home() {
         if (active && payload.guides) setGuides((current) => ({ ...current, ...payload.guides }));
       })
       .catch(() => undefined);
+    return () => { active = false; };
+  }, []);
+
+  useEffect(() => {
+    let active = true;
+    fetch("/api/application-plan")
+      .then((response) => response.ok ? response.json() : Promise.reject(new Error("plan sync unavailable")))
+      .then((payload: { plans?: PlannedProgram[] }) => {
+        if (active && Array.isArray(payload.plans)) {
+          setPlanned((current) => payload.plans?.length ? payload.plans : current);
+          setPlanSyncMode("synced");
+        }
+      })
+      .catch(() => { if (active) setPlanSyncMode("local"); });
     return () => { active = false; };
   }, []);
 
@@ -858,6 +921,48 @@ export default function Home() {
     window.localStorage.setItem(PROFILE_STORAGE_KEY, JSON.stringify(profile));
     window.localStorage.setItem(PLAN_STORAGE_KEY, JSON.stringify(planned));
   }, [profile, planned, storageReady]);
+
+  useEffect(() => {
+    if (!storageReady || planSyncMode !== "synced") return;
+    const timer = window.setTimeout(() => {
+      fetch("/api/application-plan", {
+        method: "PUT",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ plans: planned }),
+      }).then((response) => {
+        if (!response.ok) setPlanSyncMode("local");
+      }).catch(() => setPlanSyncMode("local"));
+    }, 500);
+    return () => window.clearTimeout(timer);
+  }, [planned, storageReady, planSyncMode]);
+
+  useEffect(() => {
+    const ids = planned.map((item) => item.id).join(",");
+    if (!ids) return;
+    let active = true;
+    fetch(`/api/monitor?programIds=${encodeURIComponent(ids)}`)
+      .then((response) => response.ok ? response.json() : Promise.reject(new Error("monitor unavailable")))
+      .then((payload: { snapshots?: SourceSnapshot[] }) => { if (active && Array.isArray(payload.snapshots)) setMonitorSnapshots(payload.snapshots); })
+      .catch(() => undefined);
+    return () => { active = false; };
+  }, [planned]);
+
+  useEffect(() => {
+    if (!storageReady || !("Notification" in window) || Notification.permission !== "granted") return;
+    const remind = () => {
+      const upcoming = planned.map((plan) => ({ plan, program: programs.find((program) => program.id === plan.id) }))
+        .filter((item): item is { plan: PlannedProgram; program: Program } => Boolean(item.program))
+        .filter(({ plan, program }) => Boolean(plan.reminder?.enabled) && (deadlineWindowOf(program).days ?? 999) >= 0 && (deadlineWindowOf(program).days ?? 999) <= 7);
+      const key = `fly-away-deadline-notice-${new Date().toISOString().slice(0, 10)}`;
+      if (!upcoming.length || window.localStorage.getItem(key)) return;
+      window.localStorage.setItem(key, "sent");
+      const first = upcoming[0];
+      new Notification("Fly Away · 截止日期提醒", { body: `${first.program.university} · ${first.program.program} ${deadlineWindowOf(first.program).label}。请打开官网确认。` });
+    };
+    remind();
+    const interval = window.setInterval(remind, 6 * 60 * 60 * 1000);
+    return () => window.clearInterval(interval);
+  }, [planned, programs, storageReady]);
 
   useEffect(() => {
     const onKeyDown = (event: KeyboardEvent) => {
@@ -934,12 +1039,67 @@ export default function Home() {
         announce("已从申请计划移除");
         return current.filter((item) => item.id !== id);
       }
+      const program = programs.find((item) => item.id === id);
       announce("已加入申请计划");
-      return [...current, { id, stage: "研究中" }];
+      return [...current, {
+        id,
+        stage: "研究中",
+        documents: Object.fromEntries((program ? officialDocumentsOf(program) : []).map((document) => [document, "待准备"] as const)),
+        reminder: { enabled: false },
+      }];
     });
   };
 
   const updatePlanStage = (id: string, stage: PlanStage) => setPlanned((current) => current.map((item) => item.id === id ? { ...item, stage } : item));
+
+  const updateDocumentState = (id: string, document: string, state: DocumentState) => setPlanned((current) => current.map((item) => item.id === id ? {
+    ...item,
+    documents: { ...item.documents, [document]: state },
+  } : item));
+
+  const toggleDeadlineReminder = (id: string) => setPlanned((current) => current.map((item) => item.id === id ? {
+    ...item,
+    reminder: { enabled: !item.reminder?.enabled },
+  } : item));
+
+  const requestBrowserNotifications = async () => {
+    if (!("Notification" in window)) {
+      announce("当前浏览器不支持系统提醒，可继续使用页面内提醒");
+      return;
+    }
+    const permission = await Notification.requestPermission();
+    announce(permission === "granted" ? "系统提醒已启用；仅对你勾选的项目生效" : "未启用系统提醒，页面内提醒仍会显示");
+  };
+
+  const runMonitor = async () => {
+    const ids = planned.map((item) => item.id).slice(0, 8);
+    if (!ids.length) {
+      announce("先把项目加入申请计划，再运行官方来源巡检");
+      return;
+    }
+    setMonitoring(true);
+    try {
+      const response = await fetch("/api/monitor", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ programIds: ids }),
+      });
+      const payload = await response.json() as { checks?: SourceSnapshot[]; error?: string };
+      if (!response.ok) throw new Error(payload.error || "巡检不可用");
+      if (payload.checks) setMonitorSnapshots((current) => [...payload.checks, ...current].slice(0, 60));
+      const statusResponse = await fetch("/api/programs");
+      if (statusResponse.ok) {
+        const data = await statusResponse.json() as { programs?: Program[] };
+        if (data.programs?.length) setPrograms(data.programs);
+      }
+      const promoted = payload.checks?.filter((check) => Boolean((check as SourceSnapshot & { updatedStatus?: boolean }).updatedStatus)).length ?? 0;
+      announce(promoted ? `巡检完成，${promoted} 个项目已检测到强开放信号并更新状态` : "巡检完成；未检测到可安全自动标绿的新状态");
+    } catch (error) {
+      announce(error instanceof Error ? error.message : "巡检暂不可用，请稍后重试");
+    } finally {
+      setMonitoring(false);
+    }
+  };
 
   const toggleTargetRegion = (target: Region) => setProfile((current) => ({
     ...current,
@@ -977,6 +1137,7 @@ export default function Home() {
           <a className="active" href="#programs">查项目</a>
           <a href="#assistant">申请助手</a>
           <a href="#disciplines">学科地图</a>
+          <a href="/cpt">CPT / OPT</a>
           <button type="button" onClick={() => selected.length ? setCompareOpen(true) : announce("请先加入想对比的项目")}>项目对比</button>
           <a href="#toolkit">申请工具箱</a>
         </nav>
@@ -1015,7 +1176,7 @@ export default function Home() {
             </div>
             <div className="readiness-panel"><div><small>公开门槛匹配</small><strong>{profile.discipline === "未填写" && profile.english === "未填写" && !profile.targetRegions.length ? "填写背景后开始" : `${readinessSummary["可优先研究"]} 个可优先研究`}</strong><p>{readinessSummary["需要补条件"]} 个项目提示需补条件；{readinessSummary["需进一步核验"]} 个项目仍需逐项打开官网确认。</p></div><button type="button" onClick={() => { const next = !onlyProfileMatches; setOnlyProfileMatches(next); setSort("按我的准备度"); document.getElementById("programs")?.scrollIntoView({ behavior: "smooth" }); announce(next ? "已优先显示准备度较高的项目" : "已显示全部项目"); }}>{onlyProfileMatches ? "显示全部项目" : "优先看准备度较高"}</button><small className="privacy-note">仅保存在当前浏览器，不上传个人背景。</small></div>
           </div>
-          <div className="plan-board"><div className="plan-board-head"><div><p className="section-kicker">MY APPLICATION PLAN</p><h3>我的申请计划 <b>{plannedPrograms.length}</b></h3></div><span>加入项目后，可在这里标记进度。</span></div>{plannedPrograms.length ? <div className="plan-list">{plannedPrograms.map(({ id, stage, program }) => <article key={id}><div><strong>{program.university} · {program.program}</strong><small>关键日期：{program.deadline.split("；")[0]} · 最近核验：{formatDate(program.updated)}</small></div><label><span className="sr-only">申请进度</span><select value={stage} onChange={(event) => updatePlanStage(id, event.target.value as PlanStage)}>{(["研究中", "准备材料", "已提交"] as PlanStage[]).map((item) => <option key={item}>{item}</option>)}</select></label><button type="button" onClick={() => togglePlan(id)}>移除</button></article>)}</div> : <p className="plan-empty">从项目列表或项目详情中加入计划。计划会保存在当前浏览器。</p>}</div>
+          <ApplicationTimeline plannedPrograms={plannedPrograms} syncMode={planSyncMode} snapshots={monitorSnapshots} monitoring={monitoring} onStageChange={updatePlanStage} onDocumentChange={updateDocumentState} onToggleReminder={toggleDeadlineReminder} onRequestNotifications={requestBrowserNotifications} onRunMonitor={runMonitor} onRemove={togglePlan} />
         </section>
 
         <section className="route-band" id="regions" aria-label="地区快速筛选">
@@ -1043,7 +1204,7 @@ export default function Home() {
         </section>
 
         <section className="cpt-watchlist" id="cpt" aria-labelledby="cpt-title">
-          <div className="cpt-watchlist-intro"><p className="section-kicker">U.S. F-1 WORK AUTHORIZATION</p><h2 id="cpt-title">美国 CPT 政策雷达</h2><p>{US_CPT_DATA.scope}</p><small>本次核验：{formatDate(US_CPT_DATA.verifiedAt)} · 已挂载至当前载入的 {usCptCoverageCount} 条美国项目记录</small></div>
+          <div className="cpt-watchlist-intro"><p className="section-kicker">U.S. F-1 WORK AUTHORIZATION</p><h2 id="cpt-title">美国 CPT / OPT 政策雷达</h2><p>{US_CPT_DATA.scope}</p><small>本次核验：{formatDate(US_CPT_DATA.verifiedAt)} · 已挂载至当前载入的 {usCptCoverageCount} 条美国项目记录</small><a className="cpt-cta" href="/cpt">打开 CPT / OPT 决策页</a></div>
           <div className="cpt-alert-list">{US_CPT_DATA.alerts.map((alert) => <article key={alert.title} className={`cpt-alert cpt-alert-${alert.severity === "重大更新" ? "critical" : alert.severity === "政策变化" ? "watch" : "base"}`}><div><span>{alert.severity}</span><small>{formatDate(alert.date)}</small></div><h3>{alert.title}</h3><p>{alert.summary}</p><a href={alert.source} target="_blank" rel="noreferrer">{alert.sourceLabel} <b>打开官网</b></a></article>)}</div>
         </section>
 
@@ -1125,6 +1286,54 @@ function FilterGroup({ title, values, active, onChange }: { title: string; value
   return <div className="filter-group"><h3>{title}</h3><div className="chip-row">{values.map((value) => <button className="chip" type="button" aria-pressed={active === value} key={value} onClick={() => onChange(value)}>{value}</button>)}</div></div>;
 }
 
+function ApplicationTimeline({ plannedPrograms, syncMode, snapshots, monitoring, onStageChange, onDocumentChange, onToggleReminder, onRequestNotifications, onRunMonitor, onRemove }: {
+  plannedPrograms: Array<PlannedProgram & { program: Program }>;
+  syncMode: "loading" | "synced" | "local";
+  snapshots: SourceSnapshot[];
+  monitoring: boolean;
+  onStageChange: (id: string, stage: PlanStage) => void;
+  onDocumentChange: (id: string, document: string, state: DocumentState) => void;
+  onToggleReminder: (id: string) => void;
+  onRequestNotifications: () => void;
+  onRunMonitor: () => void;
+  onRemove: (id: string) => void;
+}) {
+  const sorted = [...plannedPrograms].sort((a, b) => {
+    const first = deadlineWindowOf(a.program).days ?? Number.MAX_SAFE_INTEGER;
+    const second = deadlineWindowOf(b.program).days ?? Number.MAX_SAFE_INTEGER;
+    return first - second;
+  });
+  const missingDocuments = plannedPrograms.reduce((total, item) => total + officialDocumentsOf(item.program).filter((document) => documentStateOf(item, document) === "待准备").length, 0);
+  const urgent = plannedPrograms.filter(({ program }) => {
+    const days = deadlineWindowOf(program).days;
+    return typeof days === "number" && days >= 0 && days <= 30;
+  }).length;
+  const syncText = syncMode === "synced" ? "已同步到你的账户" : syncMode === "loading" ? "正在连接计划库" : "当前仅保存在此浏览器";
+
+  return <section className="application-timeline" aria-labelledby="timeline-title">
+    <div className="timeline-head"><div><p className="section-kicker">MY APPLICATION TIMELINE</p><h3 id="timeline-title">把收藏项目变成可执行的申请计划。</h3><p>截止日、材料缺口、推荐信/语言成绩和官网巡检集中在一处。提醒只在你启用的项目上生效。</p></div><div className="timeline-actions"><span className={`sync-badge is-${syncMode}`}>{syncText}</span><button type="button" onClick={onRequestNotifications}>启用系统提醒</button><button type="button" className="monitor-button" disabled={monitoring} onClick={onRunMonitor}>{monitoring ? "正在巡检…" : "巡检官方来源"}</button></div></div>
+    <div className="timeline-summary"><span><b>{plannedPrograms.length}</b> 个计划项目</span><span><b>{urgent}</b> 个项目 30 天内截止</span><span><b>{missingDocuments}</b> 项材料待准备</span></div>
+    {sorted.length ? <div className="timeline-list">{sorted.map((item) => {
+      const { program } = item;
+      const documents = officialDocumentsOf(program);
+      const documentDone = documents.filter((document) => ["已准备", "已提交", "不适用"].includes(documentStateOf(item, document))).length;
+      const missing = documents.filter((document) => documentStateOf(item, document) === "待准备");
+      const deadline = deadlineWindowOf(program);
+      const latestSnapshot = snapshots.find((snapshot) => snapshot.programId === item.id);
+      return <article key={item.id} className={`timeline-card ${deadline.className}`}>
+        <div className="timeline-card-head"><div><span className={`deadline-badge ${deadline.className}`}>{deadline.label}</span><h4>{program.university} · {program.program}</h4><p>官方关键日期：{program.deadline} · 申请状态：{applicationStatusOf(program)}</p></div><button type="button" onClick={() => onRemove(item.id)}>移除</button></div>
+        <div className="timeline-card-grid">
+          <label><span>申请进度</span><select value={item.stage} onChange={(event) => onStageChange(item.id, event.target.value as PlanStage)}>{(["研究中", "准备材料", "已提交"] as PlanStage[]).map((stage) => <option key={stage}>{stage}</option>)}</select></label>
+          <div className="reminder-control"><span>截止提醒</span><button type="button" className={item.reminder?.enabled ? "is-enabled" : ""} aria-pressed={Boolean(item.reminder?.enabled)} onClick={() => onToggleReminder(item.id)}>{item.reminder?.enabled ? "已启用" : "未启用"}</button><small>仅在本页打开时检查；启用系统提醒后，7 天内截止会弹出通知。</small></div>
+          <div className="timeline-monitor"><span>最近官网巡检</span>{latestSnapshot ? <><strong>{latestSnapshot.status}{latestSnapshot.httpStatus ? ` · HTTP ${latestSnapshot.httpStatus}` : ""}</strong><small>{formatDate(latestSnapshot.checkedAt.slice(0, 10))} · {latestSnapshot.note}</small></> : <><strong>尚未运行</strong><small>加入计划后可巡检项目首要官方来源并记录页面变化。</small></>}</div>
+        </div>
+        <details className="document-checklist"><summary><span><strong>申请材料与缺口</strong><small>{documents.length ? `已处理 ${documentDone} / ${documents.length} · 待准备：${missing.length ? missing.join("、") : "无"}` : "项目材料待官网确认"}</small></span><b>展开清单</b></summary><div>{documents.length ? documents.map((document) => <label key={document}><span>{document}</span><select value={documentStateOf(item, document)} onChange={(event) => onDocumentChange(item.id, document, event.target.value as DocumentState)}>{(["待准备", "已准备", "已提交", "不适用"] as DocumentState[]).map((state) => <option key={state}>{state}</option>)}</select></label>) : <p>该项目尚未收录结构化材料。请打开项目官网或申请系统确认后再加入待办。</p>}<a href={program.source} target="_blank" rel="noreferrer">打开项目官方来源 <b>核对材料</b></a></div></details>
+      </article>;
+    })}</div> : <div className="timeline-empty"><strong>从项目卡片开始，建立你的申请时间线。</strong><p>加入计划后，系统会从该项目的公开材料中生成待办、标出可识别的截止日期，并保留巡检记录。</p></div>}
+    <p className="timeline-disclaimer">截止日期从已收录文本中识别；出现多个轮次、滚动录取或未公布日期时，必须以项目申请系统和官网为准。自动巡检只在检测到明确“申请开放”措辞时更新绿色状态，其余变化会保留为待复核记录。</p>
+  </section>;
+}
+
 function ToolkitContent({ tab, guides }: { tab: "overview" | "materials" | "timeline" | "sources" | "appendix"; guides: GuideData }) {
   if (tab === "overview") return <div className="overview-grid">{guides.overview.map((row, index) => <article key={`${row["项目"]}-${index}`}><small>{row["项目"]}</small><p>{row["结论"]}</p></article>)}</div>;
   if (tab === "materials") return <GuideTable rows={guides.materials} />;
@@ -1167,6 +1376,7 @@ function DetailDrawer({ program, selected, planned, profile, onClose, onCompare,
       <div className="readiness-detail"><small>基于你填写的背景</small><strong>{readiness.label}</strong>{readiness.positives.length > 0 && <p>已具备：{readiness.positives.join("；")}</p>}{readiness.gaps.length > 0 && <ul>{readiness.gaps.map((gap) => <li key={gap}>{gap}</li>)}</ul>}{!readiness.gaps.length && !readiness.positives.length && <p>填写你的背景后，这里会显示公开门槛与待准备事项。</p>}<em>结果仅用于整理公开申请条件，不代表录取概率。</em></div>
       <div className="detail-grid"><DetailBlock title="学术要求" text={program.academic} /><DetailBlock title="语言要求" text={program.language} /><DetailBlock title="标化考试" text={program.tests} /><DetailBlock title="先修与能力" text={program.prerequisites} /><DetailBlock title="面试" text={program.interview || "以当年申请系统为准"} /><DetailBlock title="学费 / 费用" text={program.tuition || "以官网最新费用页为准"} /><DetailBlock title="周边租房预算" text={program.rentBudget || "暂未收录"} /><DetailBlock title="申请定位" text={program.positioning || "待结合个人背景判断"} /><DetailBlock title="申请要求 / 材料" text={program.applicationRequirements || program.academic} /><DetailBlock title="核验范围" text={typeof policyScope === "string" ? policyScope : "项目官网与最近可用官方公告"} /></div>
       <div className="deadline-box"><small>申请时间 / 关键日期</small><strong>{program.deadline}</strong><p>{program.deadlineNote}</p></div>
+      <ProjectDocumentRequirements program={program} />
       <div className="detail-section"><h3>申请材料</h3><ul>{program.documents.map((item) => <li key={item}>{item}</li>)}</ul></div>
       <WritingGuideSection program={program} />
       <div className="detail-section"><h3>备注与录取画像</h3><ul>{program.notes.length ? program.notes.map((item) => <li key={item}>{item}</li>) : <li>暂无补充备注</li>}</ul></div>
@@ -1178,6 +1388,22 @@ function DetailDrawer({ program, selected, planned, profile, onClose, onCompare,
 
 function DetailBlock({ title, text }: { title: string; text: string }) {
   return <div><small>{title}</small><p>{text}</p></div>;
+}
+
+function ProjectDocumentRequirements({ program }: { program: Program }) {
+  const guide = writingGuideOf(program);
+  const materials = officialDocumentsOf(program);
+  const matchingGuide = (document: string) => guide.materials.find((material) => material.name.toLowerCase().includes(document.toLowerCase()) || document.toLowerCase().includes(material.name.toLowerCase()) || (/推荐/.test(document) && /推荐/.test(material.name)) || (/(陈述|SOP|statement|动机信)/i.test(document) && /(陈述|SOP|statement|动机信)/i.test(material.name)) || (/(CV|简历|resume)/i.test(document) && /(CV|简历|resume)/i.test(material.name)));
+  return <section className="detail-section project-document-requirements" aria-label={`${program.program}项目级材料要求`}>
+    <div className="project-document-head"><div><p>PROJECT DOCUMENT REQUIREMENTS</p><h3>项目级材料要求</h3></div><span>{formatDate(guide.checkedAt)} 核验</span></div>
+    <p>以下清单来自该项目已收录的公开材料与来源；“必交 / 可选 / 如适用”按原始表述或项目级文书来源显示，最终以当年申请系统为准。</p>
+    <div className="project-document-list">{materials.length ? materials.map((document) => {
+      const match = matchingGuide(document);
+      const requirement = match?.requirement ?? (/(可选|optional|如适用|if applicable)/i.test(document) ? "可选 / 如适用" : "申请系统 / 项目公开材料列示");
+      return <article key={document}><strong>{document}</strong><span>{requirement}</span>{match ? <small>{match.focus}</small> : <small>原始要求：{program.applicationRequirements || "请打开项目官方来源确认上传字段。"}</small>}</article>;
+    }) : <p>项目材料尚未结构化；请打开官方来源与申请系统确认。</p>}</div>
+    <a href={guide.source} target="_blank" rel="noreferrer"><span><small>适用周期：{program.cycle} · 来源</small><b>{guide.sourceLabel}</b></span><strong>打开官网</strong></a>
+  </section>;
 }
 
 function WritingGuideSection({ program }: { program: Program }) {

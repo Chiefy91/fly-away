@@ -43,6 +43,13 @@
       "when": 1786464000000,
       "tag": "0005_statistics_masters_phds",
       "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "6",
+      "when": 1787221046426,
+      "tag": "0006_bent_sheva_callister",
+      "breakpoints": true
     }
   ]
 }
