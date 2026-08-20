@@ -715,6 +715,22 @@ function verificationOf(program: Program) {
   return "深度核验";
 }
 
+function cardRequirementFactsOf(program: Program) {
+  const verification = verificationOf(program);
+  const facts = [
+    { label: "学术背景", value: program.academic, unavailable: "官网未公开具体学历或成绩门槛" },
+    { label: "英语要求", value: program.language, unavailable: "官网未公开具体语言分数" },
+    { label: "标化考试", value: program.tests, unavailable: "官网未明确 GRE / GMAT 政策" },
+  ];
+  return facts.map((fact) => {
+    const value = fact.value.trim();
+    const vaguePlaceholder = /^(量化基础|按项目要求|按当年政策|校级标准|项目政策|待核验|未提供|暂无|以.+为准)$/i.test(value);
+    if (verification === "目录级收录") return { label: fact.label, value: "待官网核验", verified: false };
+    if (!value || vaguePlaceholder) return { label: fact.label, value: fact.unavailable, verified: false };
+    return { label: fact.label, value, verified: true };
+  });
+}
+
 function recordTypeOf(program: Program) {
   return payloadValue(program, "recordType") === "目录入口" ? "目录入口" : "项目";
 }
@@ -1244,8 +1260,8 @@ export default function Home() {
                     <div className="school"><small>{program.region} · {program.school}</small><h3>{program.university}<br />{program.program}</h3>{originalProgramName && <p className="original-program">官方原名：{originalProgramName}</p>}<p>{program.duration} · {program.intake}</p><div className="program-tags"><span className={`application-tag ${status === "已开始申请" ? "is-open" : "is-historical"}`}>{status}</span>{degree && <span className={`degree-tag degree-${degree}`}>{degree}</span>}{cptPolicy && <span className={`cpt-tag ${cptStatusClass(cptPolicy.status)}`}>CPT · {cptPolicy.status}</span>}<span className={`cycle-tag ${program.cycle === "最近可用" ? "is-legacy" : ""}`}>{program.cycle}</span>{qsRank && <span className="qs-tag">QS {qsRank}</span>}<span className={`verification-tag ${verification === "深度核验" ? "is-deep" : verification === "官网核验" ? "is-official" : ""}`}>{verification}</span><span className={`readiness-tag readiness-${readiness.rank}`}>{readiness.label}</span>{recordType === "目录入口" && <span className="directory-tag">完整目录入口</span>}</div><small className="verification-date">申请状态核验：{formatDate(applicationStatusCheckedAtOf(program))} · {program.sources?.length || 1} 个官方来源</small></div>
                   </div>
                   <div className="requirements" aria-label={`${program.program}申请要求概览`}>
-                    {program.requirements.map((requirement) => (
-                      <div className="requirement" key={requirement.label}><span>{requirement.label}</span><div className={`bar ${requirement.level === 0 ? "is-empty" : ""}`}><i style={{ "--value": `${requirement.level}%` } as CSSProperties} /></div><b>{requirement.value}</b></div>
+                    {cardRequirementFactsOf(program).map((requirement) => (
+                      <div className={`requirement ${requirement.verified ? "" : "is-unverified"}`} key={requirement.label}><span>{requirement.label}</span><b>{requirement.value}</b></div>
                     ))}
                   </div>
                   <div className="row-action"><p>关键日期<strong>{program.deadline.split("；")[0]}</strong></p><button className="detail-button" type="button" onClick={() => setDetailId(program.id)}>查看详情</button><button className={`add-plan ${inPlan ? "is-active" : ""}`} type="button" aria-pressed={inPlan} onClick={() => togglePlan(program.id)}>{inPlan ? "已在计划" : "加入计划"}</button><button className={`add-compare ${active ? "is-active" : ""}`} type="button" aria-pressed={active} onClick={() => toggleCompare(program.id)}>{active ? "已加入对比" : "加入对比"}</button></div>

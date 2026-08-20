@@ -20,8 +20,12 @@ test("ships the Fly Away application timeline rather than the starter skeleton",
   assert.match(page, /申请材料与缺口/);
   assert.match(page, /巡检官方来源/);
   assert.match(page, /自动巡检只在检测到明确“申请开放”措辞时更新绿色状态/);
+  assert.match(page, /cardRequirementFactsOf/);
+  assert.match(page, /待官网核验/);
+  assert.doesNotMatch(page, /className=\{`bar/);
   assert.match(css, /\.application-timeline/);
   assert.match(css, /\.timeline-card/);
+  assert.doesNotMatch(css, /\.bar\s*\{/);
   assert.doesNotMatch(page, /SkeletonPreview|codex-preview|starter loading skeleton/i);
 });
 

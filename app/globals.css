@@ -199,13 +199,11 @@ h1 em { color: var(--coral); font-style: normal; }
 .readiness-4 { color: #155b4c; background: #d9eee7; border-color: #a8d0c3; }
 .verification-date { margin-top: 9px; color: var(--muted) !important; font-size: 10px !important; font-weight: 650; }
 .requirements { display: grid; gap: 10px; }
-.requirement { display: grid; grid-template-columns: 82px minmax(100px,1fr) 100px; gap: 11px; align-items: center; }
-.requirement > span { color: var(--muted); font-size: 9px; }
-.requirement > b { text-align: right; font-size: 9px; font-weight: 500; font-variant-numeric: tabular-nums; }
-.bar { height: 3px; background: var(--line-soft); }
-.bar i { display: block; width: var(--value); height: 3px; position: relative; background: var(--sea); transition: width .62s cubic-bezier(.22,.8,.22,1); }
-.bar i::after { content: ""; position: absolute; right: -3px; top: -1.5px; width: 6px; height: 6px; border-radius: 50%; background: var(--coral); }
-.bar.is-empty i::after { display: none; }
+.requirement { min-width: 0; padding: 9px 0; display: grid; grid-template-columns: 86px minmax(0,1fr); gap: 13px; align-items: start; border-bottom: 1px solid var(--line-soft); }
+.requirement:last-child { border-bottom: 0; }
+.requirement > span { padding-top: 2px; color: var(--muted); font-size: 10px; font-weight: 750; }
+.requirement > b { color: var(--ink); font-size: 11px; font-weight: 700; line-height: 1.65; overflow-wrap: anywhere; }
+.requirement.is-unverified > b { width: fit-content; padding: 3px 6px; border: 1px solid #d9c9a6; color: #775e35; background: #f8f2e5; font-size: 10px; }
 .row-action { display: grid; gap: 7px; justify-items: end; }
 .row-action p { margin: 0 0 2px; color: var(--muted); font-size: 9px; text-align: right; }
 .row-action p strong { display: block; margin-top: 4px; color: var(--ink); font-size: 10px; font-weight: 600; }
@@ -522,7 +520,8 @@ footer { padding: 24px var(--page-x); display: flex; justify-content: space-betw
 .school h3 { font-size: 16px; font-weight: 800; }
 .school p { color: var(--ink-soft); font-size: 11px; font-weight: 600; }
 .cycle-tag { font-size: 10px; font-weight: 750; }
-.requirement > span, .requirement > b { font-size: 11px; font-weight: 700; }
+.requirement > span { font-size: 11px; }
+.requirement > b { font-size: 12px; }
 .row-action p { color: var(--ink-soft); font-size: 11px; font-weight: 650; }
 .row-action p strong { font-size: 12px; font-weight: 800; }
 .detail-button, .add-compare { font-size: 11px; font-weight: 750; }
@@ -621,7 +620,7 @@ footer { color: var(--ink-soft); font-size: 12px; font-weight: 650; }
   .toolkit-tabs button { width: 100%; }
   .results-head { flex-direction: column; }
   .results-controls { width: 100%; flex-direction: row; justify-content: space-between; }
-  .requirement { grid-template-columns: 76px minmax(80px,1fr) 88px; }
+  .requirement { grid-template-columns: 78px minmax(0,1fr); }
   .row-action { grid-template-columns: 1fr 1fr; }
   .row-action p { grid-column: 1 / -1; }
   footer { flex-direction: column; gap: 7px; }
