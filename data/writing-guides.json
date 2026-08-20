@@ -1,0 +1,393 @@
+[
+  {
+    "programId": "nus-mcomp",
+    "verification": "最近可用官方资料",
+    "checkedAt": "2026-08-20",
+    "sourceLabel": "NUS MComp General Track 申请材料说明",
+    "source": "https://www.comp.nus.edu.sg/wp-content/uploads/2024/06/MCompGenTrk_flyer_A4_ver_June2024.pdf",
+    "summary": "项目列出个人陈述、CV、成绩与推荐材料；本页未公布独立文书题目，以下是依据项目的行业型 capstone 与实习设计给出的写作重点，提交前须以当年系统为准。",
+    "materials": [
+      {
+        "name": "个人陈述 / SOP",
+        "requirement": "最近可用官方资料列为申请材料",
+        "focus": "把转向计算机或深化技术能力的动机，接到你已完成的编程、系统或产品项目；说明希望在 industry-linked capstone 中解决哪类真实问题。",
+        "expression": "用“问题—你的技术行动—可量化结果—下一步要补的能力”组织，而不是只说“对计算机感兴趣”。",
+        "avoid": "不要把尚未确认的导师、课程或实习机会写成已获承诺。"
+      },
+      {
+        "name": "CV / 简历",
+        "requirement": "最近可用官方资料列为申请材料",
+        "focus": "优先呈现软件、数据、产品或 IT 工作中你亲自负责的模块，以及语言、框架、规模和结果。",
+        "expression": "每一段以动词开头，并补一个可核验结果，例如延迟、覆盖用户数、准确率或交付周期。",
+        "avoid": "不要只罗列课程、证书或工具名。"
+      }
+    ]
+  },
+  {
+    "programId": "nus-msstats",
+    "verification": "项目官网明确",
+    "checkedAt": "2026-08-20",
+    "sourceLabel": "NUS MSc Statistics 申请支持文件",
+    "source": "https://www.stat.nus.edu.sg/education/graduate/msc-in-statistics/prospective-students/",
+    "summary": "官网明确：推荐报告、Personal Statement 与 Statement of Purpose 均不要求；CV/Resume 可选。不要为了“看起来完整”额外上传未被要求的文书。",
+    "materials": [
+      {
+        "name": "SOP / Personal Statement",
+        "requirement": "不要求",
+        "focus": "把时间用于核对成绩单、学历材料、语言证明（如适用）、身份证件与资金证明。",
+        "expression": "不适用；申请系统若没有指定上传入口，不应以附加文档替代官方必需材料。",
+        "avoid": "不要把其他项目的长 SOP 直接塞进附加材料。"
+      },
+      {
+        "name": "CV / 简历",
+        "requirement": "可选",
+        "focus": "仅在它能清楚补足统计、数学、编程、研究或相关工作经验时提交。",
+        "expression": "一页即可；按“统计/计算项目—方法—数据或结果”列出，帮助委员会理解成绩单以外的准备度。",
+        "avoid": "不要用泛泛的自我评价填充篇幅。"
+      }
+    ]
+  },
+  {
+    "programId": "nus-phd-statistics-data-science",
+    "verification": "项目官网明确",
+    "checkedAt": "2026-08-20",
+    "sourceLabel": "NUS Statistics & Data Science PhD 招生要求",
+    "source": "https://www.stat.nus.edu.sg/education/graduate/phd-in-statistics-and-data-science/prospective-students/",
+    "summary": "官网要求 SOP、推荐信与 CV，并说明研究技能、研究经历、论文与 GRE 等证据会加强申请。项目目标是培养能做理论、方法或应用原创研究的人。",
+    "materials": [
+      {
+        "name": "研究型 SOP",
+        "requirement": "必交",
+        "focus": "清楚写出研究兴趣、职业目标、为何选择本项目；用一个具体研究问题展示你从课程/项目到可研究问题的推进。",
+        "expression": "写明“我处理过什么数据或理论问题、采用何种方法、结果/局限是什么、下一步想检验什么”。",
+        "avoid": "不要把博士 SOP 写成泛泛的就业愿望，或把兴趣罗列成互不相干的关键词。"
+      },
+      {
+        "name": "CV 与研究附件",
+        "requirement": "CV 必交；论文/研究项目可选",
+        "focus": "突出研究角色、方法贡献、代码/数据处理、海报或论文状态；可选材料应能验证研究能力。",
+        "expression": "区分独立完成、共同贡献与指导下完成；给出可复现实证或方法产出的简短说明。",
+        "avoid": "不要把未完成想法表述为已发表成果。"
+      },
+      {
+        "name": "推荐信",
+        "requirement": "必交",
+        "focus": "优先选择能具体评价研究潜力、量化/分析能力与科研诚信的人。",
+        "expression": "提前给推荐人研究摘要、CV 与项目匹配点，让其能举例而非只给排名形容词。",
+        "avoid": "不要只因职级高而选不了解你研究的人。"
+      }
+    ]
+  },
+  {
+    "programId": "ntu-msai",
+    "verification": "项目官网明确",
+    "checkedAt": "2026-08-20",
+    "sourceLabel": "NTU MSAI 招生与申请材料",
+    "source": "https://www.ntu.edu.sg/sbs/admissions/graduate/graduate-programmes/detail/master-of-science-in-artificial-intelligence",
+    "summary": "申请系统要求填写 GPA 与“申请该项目的原因”，并要求 CV；官网强调 AI 理论、方法、应用、伦理以及项目/实习式学习。",
+    "materials": [
+      {
+        "name": "申请原因（系统短答）",
+        "requirement": "必填系统栏位",
+        "focus": "把过往数学与编程准备，接到一个希望设计、部署或负责治理的 AI 场景；再说明为何需要理论、深度学习、AI 伦理和项目式训练的组合。",
+        "expression": "用“已有能力—真实问题—想系统补强的模块—毕业后要承担的角色”四步写，保持具体。",
+        "avoid": "不要只写“AI 很热门”或只堆叠模型名。"
+      },
+      {
+        "name": "CV / 简历",
+        "requirement": "必交",
+        "focus": "突出数学、编程与 AI 项目中的责任边界，以及模型评估、部署或负责任 AI 的考虑。",
+        "expression": "把项目写成“任务—数据/系统—方法—指标—你的贡献”，并标出 GitHub、论文或作品集（如有）。",
+        "avoid": "不要把课程作业写成独立商业产品。"
+      }
+    ]
+  },
+  {
+    "programId": "ntu-msds",
+    "verification": "项目官网明确",
+    "checkedAt": "2026-08-20",
+    "sourceLabel": "NTU MSDS 招生与申请材料",
+    "source": "https://www.ntu.edu.sg/computing/admissions/graduate-programmes/detail/master-of-science-in-data-science-%28msds%29",
+    "summary": "官网要求 CV，并在系统中填写 GPA 与申请原因；项目强调扎实数学训练、跨学科 Data Science Thinking，以及能与行业和不同学院合作的 capstone。",
+    "materials": [
+      {
+        "name": "申请原因（系统短答）",
+        "requirement": "必填系统栏位",
+        "focus": "说明你已具备的量化与编程基础，想解决的领域问题，以及为何需要跨学科数据思维与 capstone 来完成从分析到应用的闭环。",
+        "expression": "写一个能被数据检验的业务、科学或社会问题，并指向你需要补强的统计、计算或领域沟通能力。",
+        "avoid": "不要把“想转码/找工作”作为唯一理由。"
+      },
+      {
+        "name": "CV / 简历",
+        "requirement": "必交",
+        "focus": "把课程、实习或研究中关于数据处理、建模、可视化与跨团队协作的证据排在前面。",
+        "expression": "说明数据规模、方法选择理由与结果如何被使用，而不只写准确率。",
+        "avoid": "不要遗漏先修数学和编程课程或相关工作经验。"
+      }
+    ]
+  },
+  {
+    "programId": "stanford-mscs",
+    "verification": "最近可用官方资料",
+    "checkedAt": "2026-08-20",
+    "sourceLabel": "Stanford CS MS 申请说明（归档页，须复核当年系统）",
+    "source": "https://www-dev.cs.stanford.edu/admissions/masters/application-checklist",
+    "summary": "归档官方说明要求简洁、聚焦的 SOP，涵盖申请动机、学术准备、研究兴趣与职业计划；推荐信应以具体例子说明分析能力、独立性和表达能力。当前申请季必须再次核对系统。",
+    "materials": [
+      {
+        "name": "Statement of Purpose",
+        "requirement": "归档官方资料列为必交；以当年系统为准",
+        "focus": "把申请理由、CS 准备、研究兴趣与未来职业计划串成一条主线。",
+        "expression": "用少量代表性项目证明能力，并解释你从中学到的技术或研究判断。",
+        "avoid": "不要把 SOP 写成奖项清单，或用大量篇幅复述简历。"
+      },
+      {
+        "name": "推荐信与 CV",
+        "requirement": "归档官方资料列为必交",
+        "focus": "推荐信应能具体评价独立工作、分析思维和清晰表达；CV 应呈现论文与实际技术产出。",
+        "expression": "让推荐人围绕一两个项目写观察到的行为和结果；CV 中保留可核验的项目链接或发表信息。",
+        "avoid": "不要请推荐人只写“成绩优秀、态度认真”的泛化结论。"
+      }
+    ]
+  },
+  {
+    "programId": "cmu-mscs",
+    "verification": "项目官网明确",
+    "checkedAt": "2026-08-20",
+    "sourceLabel": "CMU MSCS 招生说明",
+    "source": "https://csd.cs.cmu.edu/academics/masters/admissions",
+    "summary": "官网要求 1–2 页 SOP，写主研究兴趣、相关经历和攻读 MSCS 的目标；至少两封推荐信应来自教师或近期雇主。",
+    "materials": [
+      {
+        "name": "SOP",
+        "requirement": "必交，1–2 页",
+        "focus": "围绕一个主研究/技术兴趣，选择相关教育、研究或工作经历来证明准备度，并明确 MSCS 阶段的目标。",
+        "expression": "每段回答一个问题：我做过什么、我如何思考、它如何导向下一步的 CS 学习目标。",
+        "avoid": "不要把过多不相关项目硬连成“全面”；官网强调 concise 和 specific。"
+      },
+      {
+        "name": "CV 与推荐信",
+        "requirement": "CV 必交；3 封推荐信",
+        "focus": "CV 覆盖教育、研究、工作、发表与奖励；推荐人要能评价你继续深造的能力。",
+        "expression": "研究/项目条目写清问题、你的贡献、方法与结果；给推荐人一页项目要点。",
+        "avoid": "不要把团队产出全部写成个人完成。"
+      }
+    ]
+  },
+  {
+    "programId": "columbia-msds",
+    "verification": "项目官网明确 + 项目定位推导",
+    "checkedAt": "2026-08-20",
+    "sourceLabel": "Columbia MS Data Science Admissions",
+    "source": "https://datascience.columbia.edu/education/programs/m-s-in-data-science/admissions/",
+    "summary": "官网要求 Personal Statement、3 封推荐信与 CV；项目面向希望强化职业前景或转向数据科学的人，重视定量先修、编程、研究/Capstone 与行业互动。官网未公布专属题目，项目匹配部分为基于公开定位的写作建议。",
+    "materials": [
+      {
+        "name": "Personal Statement",
+        "requirement": "必交",
+        "focus": "说明你为何需要数据科学训练、已有 calculus/linear algebra/编程准备如何支撑转变，以及想用数据解决的具体问题。",
+        "expression": "把职业转向写成能力缺口与行动计划，而不是身份标签；把项目和 Capstone/研究机会与目标连起来。",
+        "avoid": "不要只陈述“喜欢数据”或用公司/纽约资源替代自身准备度。"
+      },
+      {
+        "name": "CV 与推荐信",
+        "requirement": "CV 与 3 封推荐信必交",
+        "focus": "突出量化课程、Python/SQL/R 等基础、研究或业务数据项目，以及能证明学习能力的推荐人。",
+        "expression": "CV 用结果与方法；推荐人可具体说明你如何处理模糊数据问题或快速补足技术能力。",
+        "avoid": "不要把工具列表当成数据科学能力的唯一证据。"
+      }
+    ]
+  },
+  {
+    "programId": "princeton-mse",
+    "verification": "项目官网明确",
+    "checkedAt": "2026-08-20",
+    "sourceLabel": "Princeton Computer Science MSE 招生页",
+    "source": "https://gradschool.princeton.edu/academics/degrees-requirements/fields-study/computer-science",
+    "summary": "MSE 申请者须选择研究兴趣领域，并完成两道 250 词教学/解释能力短文以及可担任 TA 的课程选择；这是项目公开的明确文书任务。",
+    "materials": [
+      {
+        "name": "教学与解释能力短文",
+        "requirement": "必交，各 250 词上限",
+        "focus": "用一个真实的教学、助教、辅导或技术讲解场景，展示你如何发现误解、调整表达并让对方理解复杂概念。",
+        "expression": "按“受众原有理解—具体障碍—你采取的解释/演示—对方如何验证理解”写。",
+        "avoid": "不要只说“我很有耐心”或泛谈领导力。"
+      },
+      {
+        "name": "研究兴趣与 TA 课程匹配",
+        "requirement": "研究兴趣选择必交；MSE 需列 4–8 门可胜任 TA 的课程",
+        "focus": "将 CS 兴趣与已完成的课程或项目能力对应，显示你既能学习也能支持同伴学习。",
+        "expression": "每门课程给出一项证据：修过的先修课、项目、实验或教学经历。",
+        "avoid": "不要凭兴趣挑课程而缺少能力依据。"
+      }
+    ]
+  },
+  {
+    "programId": "princeton-mfin",
+    "verification": "项目官网明确",
+    "checkedAt": "2026-08-20",
+    "sourceLabel": "Princeton BCF MFin 申请要求",
+    "source": "https://bcf.princeton.edu/academic-programs/master-in-finance/apply-for-the-master-in-finance-program/",
+    "summary": "官网要求 Personal Statement 与 Academic Statement of Purpose、数学课程记录及 3 封推荐信；项目公开三条职业轨道：量化资管、数据科学与金融科技、估值与宏观分析。",
+    "materials": [
+      {
+        "name": "Academic Statement of Purpose",
+        "requirement": "必交",
+        "focus": "用已学数学、统计、编程或金融课程证明学术准备，并把研究/职业目标对应到一个明确的 MFin 轨道。",
+        "expression": "用课程、项目或研究作为证据，讲清你要解决的金融问题与方法路径。",
+        "avoid": "不要只说“想做量化”而不说明概率、优化、编程或金融基础。"
+      },
+      {
+        "name": "Personal Statement 与推荐信",
+        "requirement": "Personal Statement 与 3 封推荐信必交",
+        "focus": "Personal Statement 解释你的发展路径与目标；推荐信要匹配你的工作年限：有两年以上全职经历者可用两封雇主信，仍须一封学术信。",
+        "expression": "展示真实的职业选择和协作方式；让推荐人用任务难度、你的判断和结果举例。",
+        "avoid": "不要让两篇文书重复同一份履历。"
+      }
+    ]
+  },
+  {
+    "programId": "baruch-mfe",
+    "verification": "项目官网明确",
+    "checkedAt": "2026-08-20",
+    "sourceLabel": "Baruch MFE FAQ",
+    "source": "https://mfe.baruch.cuny.edu/faq/",
+    "summary": "官网说明会整体评估成绩、考试、个人文书、推荐信、相关工作经验，以及数学和 C++ 基础；目标是录取有较大机会完成课程并在金融业就业的申请者。",
+    "materials": [
+      {
+        "name": "个人文书",
+        "requirement": "项目申请材料之一",
+        "focus": "用具体经历证明 calculus、probability、linear algebra、编程（优先 C++）和金融知识如何支持你完成 MFE 训练。",
+        "expression": "讲一个你用数学或代码解决金融/风险问题的例子，再说明你还需补强什么。",
+        "avoid": "不要把高分或公司名当成数学与 C++ 准备度的替代品。"
+      },
+      {
+        "name": "推荐信与 CV",
+        "requirement": "项目申请材料之一",
+        "focus": "让材料相互印证：CV 说明技术深度，推荐信说明你如何在高强度量化任务中学习与交付。",
+        "expression": "CV 标注语言、模型、数据与结果；推荐人最好能说明你在分析或编程任务中的实际贡献。",
+        "avoid": "不要出现文书、CV、推荐信对岗位或项目角色描述不一致。"
+      }
+    ]
+  },
+  {
+    "programId": "cornell-orie-fe",
+    "verification": "最近可用官方资料（归档）",
+    "checkedAt": "2026-08-20",
+    "sourceLabel": "Cornell ORIE MEng 招生说明（2022 归档，须复核）",
+    "source": "https://www.orie.cornell.edu/sites/default/files/departments/ORIE/MEng%20Resources/ORIE%20MEng%20Admissions%20Fall%202022%20-%20July%2014%202021.pdf",
+    "summary": "归档招生说明要求约 1–1.5 页 SOP、至少 2 封推荐信（3 封更佳）和 Resume；金融工程方向公开先修包括概率/统计或随机过程、金融，且建议微分方程与 C++/Python。请以当年系统为准。",
+    "materials": [
+      {
+        "name": "SOP",
+        "requirement": "归档官方资料列为必交，约 1–1.5 页",
+        "focus": "证明你为何具备金融工程方向的概率、统计、金融和编程准备，并说明希望在工程项目中把模型用于何种金融/风险场景。",
+        "expression": "对关键先修课或项目写“学到的概念—用在什么问题—结果/局限”，避免只报课程名。",
+        "avoid": "不要把 CFA/FRM 等证书描述成概率理论课程的替代品；项目公开资料明确不作等同。"
+      },
+      {
+        "name": "Resume 与推荐信",
+        "requirement": "归档官方资料列为必交",
+        "focus": "Resume 体现建模、编程和金融问题的交集；推荐人要说明量化判断与工程执行。",
+        "expression": "把产出写得可验证，例如回测设计、风险模型、数值优化或生产代码的具体角色。",
+        "avoid": "不要仅列交易兴趣或市场观点。"
+      }
+    ]
+  },
+  {
+    "programId": "stanford-msstats",
+    "verification": "项目官网明确",
+    "checkedAt": "2026-08-20",
+    "sourceLabel": "Stanford Statistics MS 外部申请要求",
+    "source": "https://statistics.stanford.edu/msadmissionsms/external-candidates",
+    "summary": "官网要求不超过两页的 SOP，并要求在补充栏对应推荐先修课程；CV 可选但建议提交。SOP 要涵盖申请动机、学术准备、研究兴趣和职业计划。",
+    "materials": [
+      {
+        "name": "Statement of Purpose",
+        "requirement": "必交，最多两页",
+        "focus": "把统计兴趣与 linear algebra、multivariable calculus、probability/statistics、编程准备对应起来，并写出未来研究或职业方向。",
+        "expression": "每个兴趣都配一段过去的课程、研究、工作或项目证据；若已有研究生学位，明确为何仍需该训练。",
+        "avoid": "不要只写“喜欢数据分析”而未解释统计推理与编程准备度。"
+      },
+      {
+        "name": "CV 与先修课补充",
+        "requirement": "CV 可选但建议；先修课对应必填",
+        "focus": "CV 重点呈现最有意义的研究、发表、工作或项目；先修课名称必须能在成绩单或凭证上识别。",
+        "expression": "按重要性排序经历，写清方法与个人贡献；课程映射如实注明已修或在修。",
+        "avoid": "不要把 MOOC 或未完成课程写成正式等同课程。"
+      }
+    ]
+  },
+  {
+    "programId": "duke-msstats",
+    "verification": "项目官网明确 + 项目定位推导",
+    "checkedAt": "2026-08-20",
+    "sourceLabel": "Duke Statistical Science MS How to Apply",
+    "source": "https://stat.duke.edu/ms/prospective-students/how-apply",
+    "summary": "官网要求 candidate statement、CV/Resume 与 3 封推荐信；并明确看重 calculus-based probability/statistics、matrix algebra、regression、计算与数据分析，R/Python 经验高度期望。官网未公布专属题目，匹配点基于这些公开门槛。",
+    "materials": [
+      {
+        "name": "Candidate Statement",
+        "requirement": "必交",
+        "focus": "用课程与项目证明你已具备或正在补齐统计理论、矩阵、回归与 R/Python；说明为何需要两年制统计训练。",
+        "expression": "若先修有缺口，直接写已采取的补修/项目行动与时间线。",
+        "avoid": "不要回避明显的理论或编程缺口。"
+      },
+      {
+        "name": "CV 与推荐信",
+        "requirement": "CV 与 3 封推荐信必交",
+        "focus": "CV 展示数据分析过程而非只展示结果；推荐人可说明你的数学成熟度、编程学习能力和严谨性。",
+        "expression": "项目条目写清数据、模型选择、诊断/验证和结论如何被使用。",
+        "avoid": "不要把可视化或商业汇报包装为没有统计推断的建模研究。"
+      }
+    ]
+  },
+  {
+    "programId": "yale-msstatsds",
+    "verification": "项目官网明确 + 项目定位推导",
+    "checkedAt": "2026-08-20",
+    "sourceLabel": "Yale Statistics & Data Science Terminal MA/MS Admissions",
+    "source": "https://statistics.yale.edu/graduates/terminal-mams-programs/terminal-mams-admissions",
+    "summary": "官网说明录取基于学术准备、既往学业和工作经历、推荐信、标化成绩（如提交）与学习统计学的动机，并强调以学术标准评估。官网未公布专属文书题目。",
+    "materials": [
+      {
+        "name": "SOP / 申请动机",
+        "requirement": "以当年系统为准",
+        "focus": "把动机落实为统计训练的具体需求：理论、概率、计算或实际项目中的方法问题。",
+        "expression": "以一两个学术或工作问题说明你为何要读统计，而不是写笼统职业理想。",
+        "avoid": "不要将课外名望、地理或泛泛职业收益作为主论点。"
+      },
+      {
+        "name": "推荐信 / CV",
+        "requirement": "以当年系统为准",
+        "focus": "材料应共同证明能完成高强度课程、已有量化基础和对统计学习的真实动机。",
+        "expression": "CV 优先量化课程、研究与技术工作；推荐人用学术表现或项目判断举例。",
+        "avoid": "不要把终端硕士描述为进入 Yale 博士的自动通道。"
+      }
+    ]
+  },
+  {
+    "programId": "uc-berkeley-phd-statistics",
+    "verification": "校级官网明确 + 项目级材料待当年系统复核",
+    "checkedAt": "2026-08-20",
+    "sourceLabel": "UC Berkeley Graduate Division 文书指南",
+    "source": "https://grad.berkeley.edu/admissions/application-process/requirements/statement-purpose/",
+    "summary": "Berkeley 研究生申请区分 Statement of Purpose 与 Personal History Statement：前者写学术准备、研究计划和为何是 Berkeley；后者写影响求学路径的经历与视角，不能与 SOP 重复。统计博士的项目级题目仍须在当年系统确认。",
+    "materials": [
+      {
+        "name": "Statement of Purpose",
+        "requirement": "以当年 Statistics PhD 系统为准",
+        "focus": "说明研究方向、学术准备、近期活动与未来目标，并具体解释为何项目的学术环境适配。",
+        "expression": "用主动语态和证据；围绕研究问题、方法与可验证贡献，而不是形容自己“热爱科研”。",
+        "avoid": "不要用与 Personal History Statement 重复的人生故事占据 SOP。"
+      },
+      {
+        "name": "Personal History Statement",
+        "requirement": "以当年系统为准",
+        "focus": "解释哪些背景、经历、责任、挑战、服务或领导经验塑造了你的学术路径与将带来的视角。",
+        "expression": "写经历如何改变行动与能力；如要解释成绩异常，简明给出背景并回到后续成长证据。",
+        "avoid": "不要复述 SOP 的研究计划，也不要强行编造困难经历。"
+      }
+    ]
+  }
+]

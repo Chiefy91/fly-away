@@ -318,6 +318,28 @@ footer { padding: 24px var(--page-x); display: flex; justify-content: space-betw
 .detail-section { padding: 22px 0; border-bottom: 1px solid var(--line); }
 .detail-section h3 { margin: 0 0 10px; font-size: 12px; }
 .detail-section ul { margin: 0; padding-left: 18px; display: grid; gap: 7px; color: var(--ink-soft); font-size: 10px; line-height: 1.6; }
+.writing-guide { display: grid; gap: 14px; }
+.writing-guide-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; }
+.writing-guide-head p { margin: 0 0 5px; color: var(--coral); font-size: 9px; font-weight: 800; letter-spacing: .12em; }
+.writing-guide-head h3 { margin: 0; }
+.writing-guide-head > span { max-width: 190px; padding: 5px 8px; color: #315c52; background: var(--mint); font-size: 9px; font-weight: 800; line-height: 1.45; text-align: right; }
+.writing-guide-summary { margin: 0; color: var(--ink-soft); font-size: 11px; font-weight: 650; line-height: 1.75; }
+.writing-material-list { display: grid; gap: 9px; }
+.writing-material-list article { border: 1px solid var(--line); background: #fffdfa; }
+.writing-material-list article > div { display: flex; justify-content: space-between; gap: 16px; padding: 12px 14px; border-bottom: 1px solid var(--line); }
+.writing-material-list strong { font-size: 12px; }
+.writing-material-list small { color: var(--muted); font-size: 9px; font-weight: 750; text-align: right; }
+.writing-material-list dl { margin: 0; padding: 11px 14px 13px; display: grid; gap: 8px; }
+.writing-material-list dl > div { display: grid; grid-template-columns: 68px 1fr; gap: 10px; }
+.writing-material-list dt { color: var(--coral); font-size: 10px; font-weight: 850; }
+.writing-material-list dd { margin: 0; color: var(--ink-soft); font-size: 11px; font-weight: 600; line-height: 1.65; }
+.writing-guide-source { padding: 12px 14px; display: flex; justify-content: space-between; align-items: center; gap: 16px; border: 1px solid var(--line); color: var(--ink); text-decoration: none; }
+.writing-guide-source:hover { border-color: var(--sea); background: var(--mint); }
+.writing-guide-source span { display: grid; gap: 4px; }
+.writing-guide-source small { color: var(--muted); font-size: 9px; font-weight: 700; }
+.writing-guide-source b { font-size: 11px; }
+.writing-guide-source > strong { color: var(--coral); font-size: 10px; }
+.writing-guide-note { color: var(--muted); font-size: 9px; font-style: normal; font-weight: 650; line-height: 1.6; }
 .source-links { display: grid; gap: 8px; }
 .source-links h3 { margin-bottom: 3px; }
 .source-links a { padding: 13px 14px; display: flex; justify-content: space-between; align-items: center; gap: 18px; border: 1px solid var(--line); color: var(--ink); text-decoration: none; }

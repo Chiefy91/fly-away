@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState, type CSSProperties } from "react";
 import staticPrograms from "@/data/programs-fallback.json";
 import guideData from "@/data/guides.json";
 import cptPolicyData from "@/data/us-cpt-policies.json";
+import writingGuideData from "@/data/writing-guides.json";
 
 type Region = "香港" | "新加坡" | "美国" | "欧洲";
 type Category = "计算机与数据" | "金融与量化" | "数学与统计" | "商科与管理" | "工程与技术" | "社会科学" | "自然科学" | "人文与艺术" | "法律与公共事务" | "医学与生命科学" | "教育" | "综合项目目录";
@@ -109,6 +110,23 @@ type GuideData = {
   originalIndex: GuideRow[];
   webSummary: GuideRow[];
   sourceDate: string;
+};
+
+type WritingMaterial = {
+  name: string;
+  requirement: string;
+  focus: string;
+  expression: string;
+  avoid: string;
+};
+type WritingGuide = {
+  programId: string;
+  verification: string;
+  checkedAt: string;
+  sourceLabel: string;
+  source: string;
+  summary: string;
+  materials: WritingMaterial[];
 };
 
 const PROGRAMS: Program[] = [
@@ -629,6 +647,7 @@ const CYCLES: (Program["cycle"] | "全部")[] = ["全部", "2027 入学", "2026/
 const STATIC_PROGRAMS = (staticPrograms as Program[]).length ? staticPrograms as Program[] : PROGRAMS;
 const GUIDES = guideData as GuideData;
 const US_CPT_DATA = cptPolicyData as CptPolicyData;
+const WRITING_GUIDES = writingGuideData as WritingGuide[];
 const DEFAULT_PROFILE: ApplicantProfile = { discipline: "未填写", quantitative: "未填写", english: "未填写", targetRegions: [] };
 const PROFILE_STORAGE_KEY = "fly-away-applicant-profile";
 const PLAN_STORAGE_KEY = "fly-away-application-plan";
@@ -687,6 +706,29 @@ function applicationStatusSourceOf(program: Program) {
 function degreeLevelOf(program: Program): DegreeLevel | "" {
   const value = payloadValue(program, "degreeLevel");
   return value === "硕士" || value === "博士" ? value : "";
+}
+
+function genericWritingGuide(program: Program): WritingGuide {
+  const materials: WritingMaterial[] = [];
+  const documentText = program.documents.join(" ").toLowerCase();
+  const fieldFocus = program.prerequisites || program.academic;
+  if (/(sop|statement|个人陈述|目的陈述|动机信|申请原因|文书|essay)/i.test(documentText)) {
+    materials.push({ name: "SOP / 个人陈述", requirement: "请以当年申请系统为准", focus: `围绕你的准备度与项目匹配展开；本项目公开的先修/能力线索是：${fieldFocus}`, expression: "用“具体问题—你的行动—方法或能力—结果—下一步学习目标”组织，每个主张都配经历证据。", avoid: "不要把简历逐条改写成散文，也不要把通用模板中的学校名替换后直接提交。" });
+  }
+  if (/(cv|简历|resume)/i.test(documentText)) {
+    materials.push({ name: "CV / 简历", requirement: "请以当年申请系统为准", focus: "优先呈现与目标方向直接相关的课程、研究、实习、工作、作品或发表，并明确个人贡献。", expression: "项目条目写清任务、方法/工具、你的角色和可核验结果；按相关度排序。", avoid: "不要只堆叠工具、证书或团队名称，也不要把团队成果全部写成个人完成。" });
+  }
+  if (/(推荐|referee|recommendation)/i.test(documentText)) {
+    materials.push({ name: "推荐信", requirement: "请以当年申请系统为准", focus: "选择真正见过你处理课程、研究或专业任务的人，让材料能补充成绩单与简历看不到的学习能力和判断力。", expression: "提前提供 CV、文书要点和一两个可举例的项目，让推荐人能写出具体观察。", avoid: "不要只按职级选择不了解你的人，也不要让推荐信与文书中的角色描述冲突。" });
+  }
+  if (!materials.length) {
+    materials.push({ name: "材料清单核对", requirement: "项目具体材料待官网核验", focus: "先以本页“申请材料”列表和当年申请系统为准，确认是否有文书、推荐信、CV 或补充表格。", expression: "若系统出现短答，写清申请动机、准备度和下一步学习目标，并用具体课程或项目支撑。", avoid: "不要把非必需材料当成必需项，也不要向未开放的上传入口递交额外文件。" });
+  }
+  return { programId: program.id, verification: "通用写作建议 · 未主张为项目偏好", checkedAt: program.updated, sourceLabel: "本页已收录的项目材料与先修要求", source: program.source, summary: "该项目暂未收录项目级文书题目或招生偏好。以下内容只帮助你把已有材料写得可核验，不能替代当年项目官网的具体要求。", materials };
+}
+
+function writingGuideOf(program: Program) {
+  return WRITING_GUIDES.find((guide) => guide.programId === program.id) ?? genericWritingGuide(program);
 }
 
 function cptPolicyOf(program: Program): CptPolicy | null {
@@ -833,7 +875,9 @@ export default function Home() {
     const normalized = query.trim().toLowerCase();
     const items = programs.filter((program) => {
       const cptPolicy = cptPolicyOf(program);
-      const haystack = [program.university, program.school, program.program, originalProgramNameOf(program), program.region, program.city, program.category, program.direction, program.prerequisites, program.applicationRequirements, cptPolicy?.summary, cptPolicy?.shortLabel, cptPolicy ? "cpt 美国实习 F-1" : ""].join(" ").toLowerCase();
+      const writingGuide = writingGuideOf(program);
+      const writingText = [writingGuide.summary, ...writingGuide.materials.flatMap((material) => [material.name, material.focus, material.expression])];
+      const haystack = [program.university, program.school, program.program, originalProgramNameOf(program), program.region, program.city, program.category, program.direction, program.prerequisites, program.applicationRequirements, cptPolicy?.summary, cptPolicy?.shortLabel, cptPolicy ? "cpt 美国实习 F-1" : "", ...writingText].join(" ").toLowerCase();
       return (!normalized || haystack.includes(normalized))
         && (region === "全部" || program.region === region)
         && (category === "全部" || program.category === category)
@@ -1056,7 +1100,7 @@ export default function Home() {
         </section>
 
         <section className="toolkit" id="toolkit" aria-labelledby="toolkit-title">
-          <div className="toolkit-head"><div><p className="section-kicker">APPLICATION TOOLKIT</p><h2 id="toolkit-title">表格里的信息，一项也不丢。</h2></div><p>材料清单、申请时间线、项目池结论、24 条官网索引，以及原表 8 个重点项目的录取画像与 Web 核验汇总都已纳入。</p></div>
+          <div className="toolkit-head"><div><p className="section-kicker">APPLICATION TOOLKIT</p><h2 id="toolkit-title">表格里的信息，一项也不丢。</h2></div><p>材料清单、申请时间线、项目池结论、官网索引与原表重点项目画像均已纳入；项目详情还提供可追溯的文书重点与通用写作边界。</p></div>
           <div className="toolkit-tabs" role="tablist" aria-label="申请工具箱内容">
             {([['materials','材料清单'],['timeline','申请时间线'],['overview','项目池结论'],['sources','官网索引'],['appendix','原表附录']] as const).map(([value, label]) => <button key={value} type="button" role="tab" aria-selected={toolkitTab === value} onClick={() => setToolkitTab(value)}>{label}</button>)}
           </div>
@@ -1065,7 +1109,7 @@ export default function Home() {
 
         <section className="method" id="method">
           <p className="section-kicker">DATA METHOD</p>
-          <div><h2>用数据库保存事实，用来源标注边界。</h2><p>“深度核验”逐项整理项目要求；“官网核验”确认项目直接来源并补齐校级学历、语言、材料与标化规则；“目录级收录”只确认官方目录中的项目名称。三者不会混为一谈。</p></div>
+          <div><h2>用数据库保存事实，用来源标注边界。</h2><p>“深度核验”逐项整理项目要求；“官网核验”确认项目直接来源并补齐校级学历、语言、材料与标化规则；“目录级收录”只确认官方目录中的项目名称。文书建议同样区分项目级公开要求与通用写作方法，三者不会混为一谈。</p></div>
           <div className="method-points"><span><b>01</b> 33 所 QS 前50院校</span><span><b>02</b> 官网与年份可追溯</span><span><b>03</b> 三级核验不混淆</span></div>
         </section>
       </main>
@@ -1126,6 +1170,7 @@ function DetailDrawer({ program, selected, planned, profile, onClose, onCompare,
       <div className="detail-grid"><DetailBlock title="学术要求" text={program.academic} /><DetailBlock title="语言要求" text={program.language} /><DetailBlock title="标化考试" text={program.tests} /><DetailBlock title="先修与能力" text={program.prerequisites} /><DetailBlock title="面试" text={program.interview || "以当年申请系统为准"} /><DetailBlock title="学费 / 费用" text={program.tuition || "以官网最新费用页为准"} /><DetailBlock title="周边租房预算" text={program.rentBudget || "暂未收录"} /><DetailBlock title="申请定位" text={program.positioning || "待结合个人背景判断"} /><DetailBlock title="申请要求 / 材料" text={program.applicationRequirements || program.academic} /><DetailBlock title="核验范围" text={typeof policyScope === "string" ? policyScope : "项目官网与最近可用官方公告"} /></div>
       <div className="deadline-box"><small>申请时间 / 关键日期</small><strong>{program.deadline}</strong><p>{program.deadlineNote}</p></div>
       <div className="detail-section"><h3>申请材料</h3><ul>{program.documents.map((item) => <li key={item}>{item}</li>)}</ul></div>
+      <WritingGuideSection program={program} />
       <div className="detail-section"><h3>备注与录取画像</h3><ul>{program.notes.length ? program.notes.map((item) => <li key={item}>{item}</li>) : <li>暂无补充备注</li>}</ul></div>
       <div className="detail-section source-links"><h3>项目网站与状态来源</h3>{sources.map((source) => <a key={`${source.url}-${source.label}`} href={source.url} target="_blank" rel="noreferrer"><span><b>{source.label}</b><small>{source.kind} · {source.year}</small></span><strong>打开来源</strong></a>)}</div>
       <div className="drawer-actions"><a href={program.source} target="_blank" rel="noreferrer">打开首要官方来源</a><button type="button" onClick={onPlan}>{planned ? "移出申请计划" : "加入申请计划"}</button><button type="button" onClick={onCompare}>{selected ? "移出对比" : "加入对比"}</button></div>
@@ -1135,6 +1180,19 @@ function DetailDrawer({ program, selected, planned, profile, onClose, onCompare,
 
 function DetailBlock({ title, text }: { title: string; text: string }) {
   return <div><small>{title}</small><p>{text}</p></div>;
+}
+
+function WritingGuideSection({ program }: { program: Program }) {
+  const guide = writingGuideOf(program);
+  return <section className="detail-section writing-guide" aria-label={`${program.program}文书写作建议`}>
+    <div className="writing-guide-head"><div><p>WRITING BRIEF</p><h3>文书怎么写</h3></div><span>{guide.verification}</span></div>
+    <p className="writing-guide-summary">{guide.summary}</p>
+    <div className="writing-material-list">
+      {guide.materials.map((material) => <article key={material.name}><div><strong>{material.name}</strong><small>{material.requirement}</small></div><dl><div><dt>重点</dt><dd>{material.focus}</dd></div><div><dt>建议表述</dt><dd>{material.expression}</dd></div><div><dt>避免</dt><dd>{material.avoid}</dd></div></dl></article>)}
+    </div>
+    <a className="writing-guide-source" href={guide.source} target="_blank" rel="noreferrer"><span><small>核验来源 · {formatDate(guide.checkedAt)}</small><b>{guide.sourceLabel}</b></span><strong>打开来源</strong></a>
+    <em className="writing-guide-note">项目级建议仅依据公开页面；“通用写作建议”不等同于招生委员会偏好，也不代表录取承诺。</em>
+  </section>;
 }
 
 function CptPolicyPanel({ policy }: { policy: CptPolicy }) {
