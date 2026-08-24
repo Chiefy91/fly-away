@@ -5,6 +5,7 @@ import staticPrograms from "@/data/programs-fallback.json";
 import guideData from "@/data/guides.json";
 import cptPolicyData from "@/data/us-cpt-policies.json";
 import writingGuideData from "@/data/writing-guides.json";
+import signatureTagData from "@/data/signature-tags.json";
 
 type Region = "香港" | "新加坡" | "美国" | "欧洲";
 type Category = "计算机与数据" | "金融与量化" | "数学与统计" | "商科与管理" | "工程与技术" | "社会科学" | "自然科学" | "人文与艺术" | "法律与公共事务" | "医学与生命科学" | "教育" | "综合项目目录";
@@ -12,6 +13,22 @@ type Background = "跨专业友好" | "量化背景" | "强先修要求" | "待�
 type Verification = "全部" | "深度核验" | "官网核验" | "目录级收录";
 type ApplicationStatus = "全部" | "已开始申请" | "往期要求";
 type DegreeLevel = "硕士" | "博士";
+type SignatureTagTone = "stats" | "quant" | "cs";
+type SignatureTag = {
+  id: string;
+  label: string;
+  tone: SignatureTagTone;
+  programIds: string[];
+  basis: string;
+  evidence: string;
+  sourceLabel: string;
+  source: string;
+};
+type SignatureTagData = {
+  checkedAt: string;
+  policy: string;
+  tags: SignatureTag[];
+};
 
 type EnglishPreparation = "未填写" | "IELTS 6.0" | "IELTS 6.5" | "IELTS 7.0+" | "TOEFL 90" | "TOEFL 100+";
 type PlanStage = "研究中" | "准备材料" | "已提交";
@@ -663,6 +680,7 @@ const STATIC_PROGRAMS = (staticPrograms as Program[]).length ? staticPrograms as
 const GUIDES = guideData as GuideData;
 const US_CPT_DATA = cptPolicyData as CptPolicyData;
 const WRITING_GUIDES = writingGuideData as WritingGuide[];
+const SIGNATURE_TAG_DATA = signatureTagData as SignatureTagData;
 const DEFAULT_PROFILE: ApplicantProfile = { discipline: "未填写", english: "未填写", targetRegions: [] };
 const PROFILE_STORAGE_KEY = "fly-away-applicant-profile";
 const PLAN_STORAGE_KEY = "fly-away-application-plan";
@@ -738,6 +756,10 @@ function recordTypeOf(program: Program) {
 function qsRankOf(program: Program) {
   const value = payloadValue(program, "qsRank");
   return typeof value === "string" ? value : "";
+}
+
+function signatureTagsOf(program: Program) {
+  return SIGNATURE_TAG_DATA.tags.filter((tag) => tag.programIds.includes(program.id));
 }
 
 function numericRank(program: Program) {
@@ -1253,11 +1275,12 @@ export default function Home() {
               const status = applicationStatusOf(program);
               const degree = degreeLevelOf(program);
               const cptPolicy = cptPolicyOf(program);
+              const signatureTags = signatureTagsOf(program);
               return (
                 <article className="program-row program-row-enter" style={{ "--enter-delay": `${Math.min(index, 12) * 28}ms` } as CSSProperties} key={program.id}>
                   <div className="program-id">
                     <span className="rank">{String(index + 1).padStart(2, "0")}</span>
-                    <div className="school"><small>{program.region} · {program.school}</small><h3>{program.university}<br />{program.program}</h3>{originalProgramName && <p className="original-program">官方原名：{originalProgramName}</p>}<p>{program.duration} · {program.intake}</p><div className="program-tags"><span className={`application-tag ${status === "已开始申请" ? "is-open" : "is-historical"}`}>{status}</span>{degree && <span className={`degree-tag degree-${degree}`}>{degree}</span>}{cptPolicy && <span className={`cpt-tag ${cptStatusClass(cptPolicy.status)}`}>CPT · {cptPolicy.status}</span>}<span className={`cycle-tag ${program.cycle === "最近可用" ? "is-legacy" : ""}`}>{program.cycle}</span>{qsRank && <span className="qs-tag">QS {qsRank}</span>}<span className={`verification-tag ${verification === "深度核验" ? "is-deep" : verification === "官网核验" ? "is-official" : ""}`}>{verification}</span><span className={`readiness-tag readiness-${readiness.rank}`}>{readiness.label}</span>{recordType === "目录入口" && <span className="directory-tag">完整目录入口</span>}</div><small className="verification-date">申请状态核验：{formatDate(applicationStatusCheckedAtOf(program))} · {program.sources?.length || 1} 个官方来源</small></div>
+                    <div className="school"><small>{program.region} · {program.school}</small><h3>{program.university}<br />{program.program}</h3>{originalProgramName && <p className="original-program">官方原名：{originalProgramName}</p>}<p>{program.duration} · {program.intake}</p><div className="program-tags"><span className={`application-tag ${status === "已开始申请" ? "is-open" : "is-historical"}`}>{status}</span>{degree && <span className={`degree-tag degree-${degree}`}>{degree}</span>}{signatureTags.map((tag) => <span className={`signature-tag signature-${tag.tone}`} title={tag.basis} key={tag.id}>{tag.label}</span>)}{cptPolicy && <span className={`cpt-tag ${cptStatusClass(cptPolicy.status)}`}>CPT · {cptPolicy.status}</span>}<span className={`cycle-tag ${program.cycle === "最近可用" ? "is-legacy" : ""}`}>{program.cycle}</span>{qsRank && <span className="qs-tag">QS {qsRank}</span>}<span className={`verification-tag ${verification === "深度核验" ? "is-deep" : verification === "官网核验" ? "is-official" : ""}`}>{verification}</span><span className={`readiness-tag readiness-${readiness.rank}`}>{readiness.label}</span>{recordType === "目录入口" && <span className="directory-tag">完整目录入口</span>}</div><small className="verification-date">申请状态核验：{formatDate(applicationStatusCheckedAtOf(program))} · {program.sources?.length || 1} 个官方来源</small></div>
                   </div>
                   <div className="requirements" aria-label={`${program.program}申请要求概览`}>
                     {cardRequirementFactsOf(program).map((requirement) => (
@@ -1380,11 +1403,13 @@ function DetailDrawer({ program, selected, planned, profile, onClose, onCompare,
   const statusCheckedAt = applicationStatusCheckedAtOf(program);
   const statusSource = applicationStatusSourceOf(program);
   const cptPolicy = cptPolicyOf(program);
+  const signatureTags = signatureTagsOf(program);
   const sources = initialSources.some((source) => source.url === statusSource) ? initialSources : [{ label: "本次申请状态核验", url: statusSource, kind: "官方申请状态", year: formatDate(statusCheckedAt) }, ...initialSources];
   return <div className="overlay" role="presentation" onMouseDown={(event) => { if (event.target === event.currentTarget) onClose(); }}>
     <section className="detail-drawer" role="dialog" aria-modal="true" aria-labelledby="detail-title">
       <div className="drawer-head"><div><p>{program.region} · {program.school}</p><h2 id="detail-title">{program.university}<br />{program.program}</h2>{originalProgramName && <p className="original-program drawer-original">官方原名：{originalProgramName}</p>}</div><button type="button" onClick={onClose}>关闭</button></div>
-      <div className="drawer-meta"><span className={`application-tag ${status === "已开始申请" ? "is-open" : "is-historical"}`}>{status}</span>{degree && <span className={`degree-tag degree-${degree}`}>{degree}</span>}<span>{program.category}</span><span>{program.direction || program.category}</span><span>{program.cycle}</span><span>{program.duration}</span>{qsRank && <span>QS 2027 · {qsRank}</span>}<span>{verification} · {formatDate(program.updated)}</span><span>{readiness.label}</span></div>
+      <div className="drawer-meta"><span className={`application-tag ${status === "已开始申请" ? "is-open" : "is-historical"}`}>{status}</span>{degree && <span className={`degree-tag degree-${degree}`}>{degree}</span>}{signatureTags.map((tag) => <span className={`signature-tag signature-${tag.tone}`} key={tag.id}>{tag.label}</span>)}<span>{program.category}</span><span>{program.direction || program.category}</span><span>{program.cycle}</span><span>{program.duration}</span>{qsRank && <span>QS 2027 · {qsRank}</span>}<span>{verification} · {formatDate(program.updated)}</span><span>{readiness.label}</span></div>
+      {signatureTags.length > 0 && <SignatureEvidencePanel tags={signatureTags} />}
       <div className={`application-status-notice ${status === "已开始申请" ? "is-open" : "is-historical"}`}><strong>{status}</strong><p>{statusNote}</p><small>状态核验：{formatDate(statusCheckedAt)} · 请在提交前再次打开项目官网确认。</small></div>
       {verification === "目录级收录" && <div className="catalog-notice"><strong>当前为目录级收录</strong><p>已确认项目名称及官方来源，但学术要求、语言、标化、截止日期和费用尚未逐项核验。页面中的“待核验”不是项目要求。</p></div>}
       {verification === "官网核验" && <div className="catalog-notice is-official"><strong>当前为官网核验</strong><p>项目直接官网与校级通用规则已核验；项目独有的截止日期、费用、先修课和附加材料仍须打开项目页确认，页面不会把校级规则伪装成项目专属要求。</p></div>}
@@ -1400,6 +1425,14 @@ function DetailDrawer({ program, selected, planned, profile, onClose, onCompare,
       <div className="drawer-actions"><a href={program.source} target="_blank" rel="noreferrer">打开首要官方来源</a><button type="button" onClick={onPlan}>{planned ? "移出申请计划" : "加入申请计划"}</button><button type="button" onClick={onCompare}>{selected ? "移出对比" : "加入对比"}</button></div>
     </section>
   </div>;
+}
+
+function SignatureEvidencePanel({ tags }: { tags: SignatureTag[] }) {
+  return <section className="signature-evidence" aria-label="招牌项目标签依据">
+    <div className="signature-evidence-head"><div><p>SIGNATURE STRENGTH · EVIDENCE</p><h3>为什么有这个标签</h3></div><span>{formatDate(SIGNATURE_TAG_DATA.checkedAt)} 核验</span></div>
+    <div className="signature-evidence-list">{tags.map((tag) => <article key={tag.id}><div><span className={`signature-tag signature-${tag.tone}`}>{tag.label}</span><strong>{tag.basis}</strong></div><p>{tag.evidence}</p><a href={tag.source} target="_blank" rel="noreferrer"><span>{tag.sourceLabel}</span><b>查看榜单依据</b></a></article>)}</div>
+    <small>{SIGNATURE_TAG_DATA.policy}</small>
+  </section>;
 }
 
 function DetailBlock({ title, text }: { title: string; text: string }) {

@@ -180,7 +180,11 @@ h1 em { color: var(--coral); font-style: normal; }
 .cycle-tag { display: inline-block; padding: 3px 6px; background: var(--mint); color: var(--sea); font-size: 8px; }
 .cycle-tag.is-legacy { background: #eee7d9; color: #79684c; }
 .program-tags { display: flex; flex-wrap: wrap; gap: 5px; align-items: center; }
-.qs-tag, .verification-tag, .directory-tag, .readiness-tag, .application-tag, .degree-tag, .cpt-tag { display: inline-block; padding: 3px 6px; border: 1px solid var(--line); color: var(--ink-soft); background: var(--paper); font-size: 9px; font-weight: 800; }
+.qs-tag, .verification-tag, .directory-tag, .readiness-tag, .application-tag, .degree-tag, .cpt-tag, .signature-tag { display: inline-block; padding: 3px 6px; border: 1px solid var(--line); color: var(--ink-soft); background: var(--paper); font-size: 9px; font-weight: 800; }
+.signature-tag { border-width: 1px; letter-spacing: .02em; }
+.signature-tag.signature-stats { color: #5d3577; background: #f0e7f5; border-color: #c8acd8; }
+.signature-tag.signature-quant { color: #7a4b12; background: #f7e8c6; border-color: #d9b86c; }
+.signature-tag.signature-cs { color: #174f67; background: #dcecf2; border-color: #94bfd0; }
 .application-tag.is-open { color: #155b4c; background: #d9eee7; border-color: #89bbaa; }
 .application-tag.is-historical { color: #775e35; background: #f2ebda; border-color: #d9c9a6; }
 .degree-tag.degree-硕士 { color: #174f67; background: #dcecf2; border-color: #a8cbd8; }
@@ -406,6 +410,19 @@ footer { padding: 24px var(--page-x); display: flex; justify-content: space-betw
 .application-status-notice.is-open strong { color: #155b4c; }
 .application-status-notice.is-open p { color: #315c52; }
 .application-status-notice.is-open small { color: #557b70; }
+.signature-evidence { margin: 0 0 20px; padding: 18px; border: 1px solid #c8ddd6; background: linear-gradient(135deg, #f6fbf8, #fffaf0); }
+.signature-evidence-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 18px; }
+.signature-evidence-head p { margin: 0 0 5px; color: var(--coral); font-size: 9px; font-weight: 850; letter-spacing: .11em; }
+.signature-evidence-head h3 { margin: 0; color: var(--ink-deep); font-size: 18px; }
+.signature-evidence-head > span { color: var(--muted); font-size: 10px; font-weight: 750; }
+.signature-evidence-list { display: grid; gap: 10px; margin-top: 14px; }
+.signature-evidence-list article { padding: 13px; border: 1px solid var(--line-soft); background: rgba(255,255,255,.72); }
+.signature-evidence-list article > div { display: flex; align-items: center; gap: 10px; }
+.signature-evidence-list article strong { color: var(--ink-deep); font-size: 12px; }
+.signature-evidence-list article p { margin: 9px 0; color: var(--ink-soft); font-size: 11px; font-weight: 650; line-height: 1.7; }
+.signature-evidence-list article a { display: flex; justify-content: space-between; gap: 12px; color: var(--sea); font-size: 10px; font-weight: 800; text-decoration: none; }
+.signature-evidence-list article a b { color: var(--coral); }
+.signature-evidence > small { display: block; margin-top: 12px; color: var(--muted); font-size: 9px; font-weight: 650; line-height: 1.65; }
 .cpt-policy-panel { margin: 0 0 20px; padding: 19px; border: 1px solid #a8d0c3; background: #f4faf7; }
 .cpt-policy-panel.is-project { border-color: #a8cbd8; background: #f2f8fa; }
 .cpt-policy-panel.is-watch { border-color: #d9c9a6; background: #fdfaf1; }

@@ -51,3 +51,24 @@ test("keeps durable plans, source snapshots, and the CPT decision page in the pr
   assert.match(cptPage, /CPT \/ OPT 决策台/);
   assert.match(cptDesk, /学校横向比较/);
 });
+
+test("shows evidence-backed signature labels only on explicitly matched programs", async () => {
+  const [page, css, signatureDataSource] = await Promise.all([
+    source("app/page.tsx"),
+    source("app/globals.css"),
+    source("data/signature-tags.json"),
+  ]);
+  const signatureData = JSON.parse(signatureDataSource);
+
+  assert.equal(signatureData.checkedAt, "2026-08-24");
+  assert.ok(signatureData.tags.length >= 18);
+  assert.ok(signatureData.tags.every((tag) => tag.programIds.length > 0 && tag.basis && tag.source));
+  assert.match(signatureDataSource, /统计强校/);
+  assert.match(signatureDataSource, /金工强校/);
+  assert.match(signatureDataSource, /计算机强校/);
+  assert.match(page, /signatureTagsOf/);
+  assert.match(page, /为什么有这个标签/);
+  assert.match(page, /查看榜单依据/);
+  assert.match(css, /\.signature-evidence/);
+  assert.match(css, /\.signature-tag\.signature-quant/);
+});
