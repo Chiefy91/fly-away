@@ -73,3 +73,21 @@ test("shows evidence-backed signature labels only on explicitly matched programs
   assert.match(css, /\.signature-evidence/);
   assert.match(css, /\.signature-tag\.signature-quant/);
 });
+
+test("labels current and previous-cycle language requirements with sources", async () => {
+  const [page, css, languageDataSource] = await Promise.all([
+    source("app/page.tsx"),
+    source("app/globals.css"),
+    source("data/language-requirements.json"),
+  ]);
+  const languageData = JSON.parse(languageDataSource);
+
+  assert.equal(languageData.checkedAt, "2026-08-24");
+  assert.ok(languageData.records.length >= 15);
+  assert.ok(languageData.records.every((record) => record.cycle && record.text && record.source));
+  assert.match(page, /英语要求 · 往期/);
+  assert.match(page, /往期语言要求/);
+  assert.match(page, /打开语言要求来源/);
+  assert.match(css, /\.language-requirement-panel/);
+  assert.match(css, /\.language-cycle-tag\.is-previous/);
+});

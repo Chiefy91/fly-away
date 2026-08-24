@@ -6,6 +6,7 @@ import guideData from "@/data/guides.json";
 import cptPolicyData from "@/data/us-cpt-policies.json";
 import writingGuideData from "@/data/writing-guides.json";
 import signatureTagData from "@/data/signature-tags.json";
+import languageRequirementData from "@/data/language-requirements.json";
 
 type Region = "香港" | "新加坡" | "美国" | "欧洲";
 type Category = "计算机与数据" | "金融与量化" | "数学与统计" | "商科与管理" | "工程与技术" | "社会科学" | "自然科学" | "人文与艺术" | "法律与公共事务" | "医学与生命科学" | "教育" | "综合项目目录";
@@ -28,6 +29,20 @@ type SignatureTagData = {
   checkedAt: string;
   policy: string;
   tags: SignatureTag[];
+};
+type LanguageRequirement = {
+  programIds: string[];
+  status: "current" | "previous";
+  cycle: string;
+  text: string;
+  scope: string;
+  sourceLabel: string;
+  source: string;
+};
+type LanguageRequirementData = {
+  checkedAt: string;
+  policy: string;
+  records: LanguageRequirement[];
 };
 
 type EnglishPreparation = "未填写" | "IELTS 6.0" | "IELTS 6.5" | "IELTS 7.0+" | "TOEFL 90" | "TOEFL 100+";
@@ -681,6 +696,7 @@ const GUIDES = guideData as GuideData;
 const US_CPT_DATA = cptPolicyData as CptPolicyData;
 const WRITING_GUIDES = writingGuideData as WritingGuide[];
 const SIGNATURE_TAG_DATA = signatureTagData as SignatureTagData;
+const LANGUAGE_REQUIREMENT_DATA = languageRequirementData as LanguageRequirementData;
 const DEFAULT_PROFILE: ApplicantProfile = { discipline: "未填写", english: "未填写", targetRegions: [] };
 const PROFILE_STORAGE_KEY = "fly-away-applicant-profile";
 const PLAN_STORAGE_KEY = "fly-away-application-plan";
@@ -738,9 +754,10 @@ function verificationOf(program: Program) {
 
 function cardRequirementFactsOf(program: Program) {
   const verification = verificationOf(program);
+  const languageRequirement = languageRequirementOf(program);
   const facts = [
     { label: "学术背景", value: program.academic, unavailable: "官网未公开具体学历或成绩门槛" },
-    { label: "英语要求", value: program.language, unavailable: "官网未公开具体语言分数" },
+    { label: languageRequirement.status === "current" ? "英语要求 · 当年" : "英语要求 · 往期", value: languageRequirement.text, unavailable: "官网未公开具体语言分数" },
     { label: "标化考试", value: program.tests, unavailable: "官网未明确 GRE / GMAT 政策" },
   ];
   return facts.map((fact) => {
@@ -750,6 +767,21 @@ function cardRequirementFactsOf(program: Program) {
     if (!value || vaguePlaceholder) return { label: fact.label, value: fact.unavailable, verified: false };
     return { label: fact.label, value, verified: true };
   });
+}
+
+function languageRequirementOf(program: Program): LanguageRequirement {
+  const matched = LANGUAGE_REQUIREMENT_DATA.records.find((record) => record.programIds.includes(program.id));
+  if (matched) return matched;
+  const current = program.cycle === "2027 入学" && applicationStatusOf(program) === "已开始申请";
+  return {
+    programIds: [program.id],
+    status: current ? "current" : "previous",
+    cycle: current ? "2027" : program.cycle === "2026/27 入学" ? "2026/27" : "最近可用",
+    text: program.language,
+    scope: current ? "项目当前申请季公开要求" : "项目最近可用公开要求",
+    sourceLabel: program.sourceLabel || "项目官方来源",
+    source: program.source,
+  };
 }
 
 function recordTypeOf(program: Program) {
@@ -1021,8 +1053,9 @@ export default function Home() {
     const items = programs.filter((program) => {
       const cptPolicy = cptPolicyOf(program);
       const writingGuide = writingGuideOf(program);
+      const languageRequirement = languageRequirementOf(program);
       const writingText = [writingGuide.summary, ...writingGuide.materials.flatMap((material) => [material.name, material.focus, material.expression])];
-      const haystack = [program.university, UNIVERSITY_SEARCH_ALIASES[program.university], program.school, program.program, originalProgramNameOf(program), program.region, program.city, program.category, program.direction, program.prerequisites, program.applicationRequirements, cptPolicy?.summary, cptPolicy?.shortLabel, cptPolicy ? "cpt 美国实习 F-1" : "", ...writingText].join(" ").toLowerCase();
+      const haystack = [program.university, UNIVERSITY_SEARCH_ALIASES[program.university], program.school, program.program, originalProgramNameOf(program), program.region, program.city, program.category, program.direction, program.prerequisites, program.applicationRequirements, languageRequirement.text, cptPolicy?.summary, cptPolicy?.shortLabel, cptPolicy ? "cpt 美国实习 F-1" : "", ...writingText].join(" ").toLowerCase();
       return (!normalized || haystack.includes(normalized))
         && (region === "全部" || program.region === region)
         && (category === "全部" || program.category === category)
@@ -1407,18 +1440,21 @@ function DetailDrawer({ program, selected, planned, profile, onClose, onCompare,
   const statusSource = applicationStatusSourceOf(program);
   const cptPolicy = cptPolicyOf(program);
   const signatureTags = signatureTagsOf(program);
-  const sources = initialSources.some((source) => source.url === statusSource) ? initialSources : [{ label: "本次申请状态核验", url: statusSource, kind: "官方申请状态", year: formatDate(statusCheckedAt) }, ...initialSources];
+  const languageRequirement = languageRequirementOf(program);
+  const statusSources = initialSources.some((source) => source.url === statusSource) ? initialSources : [{ label: "本次申请状态核验", url: statusSource, kind: "官方申请状态", year: formatDate(statusCheckedAt) }, ...initialSources];
+  const sources = statusSources.some((source) => source.url === languageRequirement.source) ? statusSources : [{ label: languageRequirement.sourceLabel, url: languageRequirement.source, kind: languageRequirement.scope, year: languageRequirement.cycle }, ...statusSources];
   return <div className="overlay" role="presentation" onMouseDown={(event) => { if (event.target === event.currentTarget) onClose(); }}>
     <section className="detail-drawer" role="dialog" aria-modal="true" aria-labelledby="detail-title">
       <div className="drawer-head"><div><p>{program.region} · {program.school}</p><h2 id="detail-title">{program.university}<br />{program.program}</h2>{originalProgramName && <p className="original-program drawer-original">官方原名：{originalProgramName}</p>}</div><button type="button" onClick={onClose}>关闭</button></div>
-      <div className="drawer-meta"><span className={`application-tag ${status === "已开始申请" ? "is-open" : "is-historical"}`}>{status}</span>{degree && <span className={`degree-tag degree-${degree}`}>{degree}</span>}{signatureTags.map((tag) => <span className={`signature-tag signature-${tag.tone}`} key={tag.id}>{tag.label}</span>)}<span>{program.category}</span><span>{program.direction || program.category}</span><span>{program.cycle}</span><span>{program.duration}</span>{qsRank && <span>QS 2027 · {qsRank}</span>}<span>{verification} · {formatDate(program.updated)}</span><span>{readiness.label}</span></div>
+      <div className="drawer-meta"><span className={`application-tag ${status === "已开始申请" ? "is-open" : "is-historical"}`}>{status}</span>{degree && <span className={`degree-tag degree-${degree}`}>{degree}</span>}{signatureTags.map((tag) => <span className={`signature-tag signature-${tag.tone}`} key={tag.id}>{tag.label}</span>)}<span className={`language-cycle-tag is-${languageRequirement.status}`}>{languageRequirement.status === "current" ? "当年语言要求" : "往期语言要求"}</span><span>{program.category}</span><span>{program.direction || program.category}</span><span>{program.cycle}</span><span>{program.duration}</span>{qsRank && <span>QS 2027 · {qsRank}</span>}<span>{verification} · {formatDate(program.updated)}</span><span>{readiness.label}</span></div>
       {signatureTags.length > 0 && <SignatureEvidencePanel tags={signatureTags} />}
       <div className={`application-status-notice ${status === "已开始申请" ? "is-open" : "is-historical"}`}><strong>{status}</strong><p>{statusNote}</p><small>状态核验：{formatDate(statusCheckedAt)} · 请在提交前再次打开项目官网确认。</small></div>
       {verification === "目录级收录" && <div className="catalog-notice"><strong>当前为目录级收录</strong><p>已确认项目名称及官方来源，但学术要求、语言、标化、截止日期和费用尚未逐项核验。页面中的“待核验”不是项目要求。</p></div>}
       {verification === "官网核验" && <div className="catalog-notice is-official"><strong>当前为官网核验</strong><p>项目直接官网与校级通用规则已核验；项目独有的截止日期、费用、先修课和附加材料仍须打开项目页确认，页面不会把校级规则伪装成项目专属要求。</p></div>}
       {cptPolicy && <CptPolicyPanel policy={cptPolicy} />}
       <div className="readiness-detail"><small>基于你填写的背景</small><strong>{readiness.label}</strong>{readiness.positives.length > 0 && <p>已具备：{readiness.positives.join("；")}</p>}{readiness.gaps.length > 0 && <ul>{readiness.gaps.map((gap) => <li key={gap}>{gap}</li>)}</ul>}{!readiness.gaps.length && !readiness.positives.length && <p>填写你的背景后，这里会显示公开门槛与待准备事项。</p>}<em>结果仅用于整理公开申请条件，不代表录取概率。</em></div>
-      <div className="detail-grid"><DetailBlock title="学术要求" text={program.academic} /><DetailBlock title="语言要求" text={program.language} /><DetailBlock title="标化考试" text={program.tests} /><DetailBlock title="先修与能力" text={program.prerequisites} /><DetailBlock title="面试" text={program.interview || "以当年申请系统为准"} /><DetailBlock title="学费 / 费用" text={program.tuition || "以官网最新费用页为准"} /><DetailBlock title="周边租房预算" text={program.rentBudget || "暂未收录"} /><DetailBlock title="申请定位" text={program.positioning || "待结合个人背景判断"} /><DetailBlock title="申请要求 / 材料" text={program.applicationRequirements || program.academic} /><DetailBlock title="核验范围" text={typeof policyScope === "string" ? policyScope : "项目官网与最近可用官方公告"} /></div>
+      <LanguageRequirementPanel requirement={languageRequirement} />
+      <div className="detail-grid"><DetailBlock title="学术要求" text={program.academic} /><DetailBlock title="语言要求" text={languageRequirement.text} /><DetailBlock title="标化考试" text={program.tests} /><DetailBlock title="先修与能力" text={program.prerequisites} /><DetailBlock title="面试" text={program.interview || "以当年申请系统为准"} /><DetailBlock title="学费 / 费用" text={program.tuition || "以官网最新费用页为准"} /><DetailBlock title="周边租房预算" text={program.rentBudget || "暂未收录"} /><DetailBlock title="申请定位" text={program.positioning || "待结合个人背景判断"} /><DetailBlock title="申请要求 / 材料" text={program.applicationRequirements || program.academic} /><DetailBlock title="核验范围" text={typeof policyScope === "string" ? policyScope : "项目官网与最近可用官方公告"} /></div>
       <div className="deadline-box"><small>申请时间 / 关键日期</small><strong>{program.deadline}</strong><p>{program.deadlineNote}</p></div>
       <ProjectDocumentRequirements program={program} />
       <div className="detail-section"><h3>申请材料</h3><ul>{program.documents.map((item) => <li key={item}>{item}</li>)}</ul></div>
@@ -1428,6 +1464,17 @@ function DetailDrawer({ program, selected, planned, profile, onClose, onCompare,
       <div className="drawer-actions"><a href={program.source} target="_blank" rel="noreferrer">打开首要官方来源</a><button type="button" onClick={onPlan}>{planned ? "移出申请计划" : "加入申请计划"}</button><button type="button" onClick={onCompare}>{selected ? "移出对比" : "加入对比"}</button></div>
     </section>
   </div>;
+}
+
+function LanguageRequirementPanel({ requirement }: { requirement: LanguageRequirement }) {
+  const current = requirement.status === "current";
+  return <section className={`language-requirement-panel is-${requirement.status}`} aria-label="语言要求适用年份">
+    <div><span>{current ? "当年语言要求" : "往期语言要求"}</span><strong>{requirement.cycle}</strong></div>
+    <p>{requirement.text}</p>
+    <small>{requirement.scope} · 核验于 {formatDate(LANGUAGE_REQUIREMENT_DATA.checkedAt)}</small>
+    <a href={requirement.source} target="_blank" rel="noreferrer"><span>{requirement.sourceLabel}</span><b>打开语言要求来源</b></a>
+    {!current && <em>当前申请季尚未确认新的语言标准，因此暂用上一申请季或最近可用官方政策；提交前必须再次核对。</em>}
+  </section>;
 }
 
 function SignatureEvidencePanel({ tags }: { tags: SignatureTag[] }) {
