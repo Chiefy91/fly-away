@@ -684,6 +684,9 @@ const SIGNATURE_TAG_DATA = signatureTagData as SignatureTagData;
 const DEFAULT_PROFILE: ApplicantProfile = { discipline: "未填写", english: "未填写", targetRegions: [] };
 const PROFILE_STORAGE_KEY = "fly-away-applicant-profile";
 const PLAN_STORAGE_KEY = "fly-away-application-plan";
+const UNIVERSITY_SEARCH_ALIASES: Record<string, string> = {
+  "University of Chicago": "芝加哥大学 芝大 UChicago",
+};
 
 function formatDate(date: string) {
   return date.replaceAll("-", ".");
@@ -1019,7 +1022,7 @@ export default function Home() {
       const cptPolicy = cptPolicyOf(program);
       const writingGuide = writingGuideOf(program);
       const writingText = [writingGuide.summary, ...writingGuide.materials.flatMap((material) => [material.name, material.focus, material.expression])];
-      const haystack = [program.university, program.school, program.program, originalProgramNameOf(program), program.region, program.city, program.category, program.direction, program.prerequisites, program.applicationRequirements, cptPolicy?.summary, cptPolicy?.shortLabel, cptPolicy ? "cpt 美国实习 F-1" : "", ...writingText].join(" ").toLowerCase();
+      const haystack = [program.university, UNIVERSITY_SEARCH_ALIASES[program.university], program.school, program.program, originalProgramNameOf(program), program.region, program.city, program.category, program.direction, program.prerequisites, program.applicationRequirements, cptPolicy?.summary, cptPolicy?.shortLabel, cptPolicy ? "cpt 美国实习 F-1" : "", ...writingText].join(" ").toLowerCase();
       return (!normalized || haystack.includes(normalized))
         && (region === "全部" || program.region === region)
         && (category === "全部" || program.category === category)

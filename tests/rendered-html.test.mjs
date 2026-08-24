@@ -69,6 +69,7 @@ test("shows evidence-backed signature labels only on explicitly matched programs
   assert.match(page, /signatureTagsOf/);
   assert.match(page, /为什么有这个标签/);
   assert.match(page, /查看榜单依据/);
+  assert.match(page, /"University of Chicago": "芝加哥大学 芝大 UChicago"/);
   assert.match(css, /\.signature-evidence/);
   assert.match(css, /\.signature-tag\.signature-quant/);
 });
