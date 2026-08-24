@@ -83,11 +83,13 @@ test("labels current and previous-cycle language requirements with sources", asy
   const languageData = JSON.parse(languageDataSource);
 
   assert.equal(languageData.checkedAt, "2026-08-24");
+  assert.match(languageData.scaleNote, /1–6 分制/);
   assert.ok(languageData.records.length >= 15);
   assert.ok(languageData.records.every((record) => record.cycle && record.text && record.source));
   assert.match(page, /英语要求 · 往期/);
   assert.match(page, /往期语言要求/);
   assert.match(page, /打开语言要求来源/);
+  assert.match(page, /TOEFL 新制提示/);
   assert.match(css, /\.language-requirement-panel/);
   assert.match(css, /\.language-cycle-tag\.is-previous/);
 });

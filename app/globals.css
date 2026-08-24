@@ -423,6 +423,7 @@ footer { padding: 24px var(--page-x); display: flex; justify-content: space-betw
 .language-requirement-panel a { display: flex; justify-content: space-between; gap: 16px; margin-top: 12px; color: var(--sea); font-size: 10px; font-weight: 800; text-decoration: none; }
 .language-requirement-panel a b { color: var(--coral); }
 .language-requirement-panel em { display: block; margin-top: 12px; padding-top: 10px; border-top: 1px solid #e4d7bc; color: #775e35; font-size: 10px; font-weight: 700; font-style: normal; line-height: 1.65; }
+.language-requirement-panel .toefl-scale-note { border-top-color: #c8ddd6; color: #315c52; }
 .signature-evidence { margin: 0 0 20px; padding: 18px; border: 1px solid #c8ddd6; background: linear-gradient(135deg, #f6fbf8, #fffaf0); }
 .signature-evidence-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 18px; }
 .signature-evidence-head p { margin: 0 0 5px; color: var(--coral); font-size: 9px; font-weight: 850; letter-spacing: .11em; }

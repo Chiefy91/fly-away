@@ -42,6 +42,7 @@ type LanguageRequirement = {
 type LanguageRequirementData = {
   checkedAt: string;
   policy: string;
+  scaleNote: string;
   records: LanguageRequirement[];
 };
 
@@ -1473,6 +1474,7 @@ function LanguageRequirementPanel({ requirement }: { requirement: LanguageRequir
     <p>{requirement.text}</p>
     <small>{requirement.scope} · 核验于 {formatDate(LANGUAGE_REQUIREMENT_DATA.checkedAt)}</small>
     <a href={requirement.source} target="_blank" rel="noreferrer"><span>{requirement.sourceLabel}</span><b>打开语言要求来源</b></a>
+    <em className="toefl-scale-note">TOEFL 新制提示：{LANGUAGE_REQUIREMENT_DATA.scaleNote}</em>
     {!current && <em>当前申请季尚未确认新的语言标准，因此暂用上一申请季或最近可用官方政策；提交前必须再次核对。</em>}
   </section>;
 }
