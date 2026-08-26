@@ -53,25 +53,31 @@ test("keeps durable plans, source snapshots, and the CPT decision page in the pr
 });
 
 test("shows evidence-backed signature labels only on explicitly matched programs", async () => {
-  const [page, css, signatureDataSource] = await Promise.all([
+  const [page, css, signatureDataSource, aiProgramSource] = await Promise.all([
     source("app/page.tsx"),
     source("app/globals.css"),
     source("data/signature-tags.json"),
+    source("data/ai-programs.json"),
   ]);
   const signatureData = JSON.parse(signatureDataSource);
+  const aiPrograms = JSON.parse(aiProgramSource);
 
-  assert.equal(signatureData.checkedAt, "2026-08-24");
-  assert.ok(signatureData.tags.length >= 18);
+  assert.equal(signatureData.checkedAt, "2026-08-26");
+  assert.ok(signatureData.tags.length >= 26);
   assert.ok(signatureData.tags.every((tag) => tag.programIds.length > 0 && tag.basis && tag.source));
+  assert.equal(aiPrograms.length, 2);
+  assert.ok(aiPrograms.every((program) => /人工智能|机器学习/.test(program.program) && program.source));
   assert.match(signatureDataSource, /统计强校/);
   assert.match(signatureDataSource, /金工强校/);
   assert.match(signatureDataSource, /计算机强校/);
+  assert.match(signatureDataSource, /AI强校/);
   assert.match(page, /signatureTagsOf/);
   assert.match(page, /为什么有这个标签/);
   assert.match(page, /查看榜单依据/);
   assert.match(page, /"University of Chicago": "芝加哥大学 芝大 UChicago"/);
   assert.match(css, /\.signature-evidence/);
   assert.match(css, /\.signature-tag\.signature-quant/);
+  assert.match(css, /\.signature-tag\.signature-ai/);
 });
 
 test("labels current and previous-cycle language requirements with sources", async () => {

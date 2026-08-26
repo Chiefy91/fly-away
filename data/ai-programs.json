@@ -1,0 +1,114 @@
+[
+  {
+    "id": "cmu-msaii",
+    "region": "美国",
+    "city": "匹兹堡",
+    "university": "卡内基梅隆大学",
+    "school": "计算机学院 · 语言技术研究所",
+    "program": "人工智能与创新理学硕士",
+    "category": "计算机与数据",
+    "direction": "人工智能与机器学习",
+    "background": "强先修要求",
+    "cycle": "2027 入学",
+    "intake": "2027 秋季",
+    "duration": "4 学期",
+    "updated": "2026-08-26",
+    "academic": "通常具有计算机科学、软件工程、生物信息或生物工程等相关本科学位；课程同时强调 AI/机器学习技术、产品创新与团队实践。",
+    "language": "非英语母语、以 F-1/J-1 身份就读者须按 SCS 规则提交 TOEFL、IELTS 或 Duolingo；SCS 不因既往英语授课经历自动豁免。官网给出的近年录取常见区间为 TOEFL 105–114、IELTS 7–8、DET 130–155，并非最低保证线。",
+    "tests": "GRE 由具体项目决定；Fall 2027 项目选项及政策应在 2026-09-09 申请系统开放后复核。",
+    "prerequisites": "应具备扎实编程与计算机基础；培养内容包括机器学习、深度学习、自然语言处理、生成式 AI/大模型及 AI 产品创新。",
+    "deadline": "2026-11-18 早申；2026-12-09 最终截止（均为美东时间 15:00）",
+    "deadlineNote": "SCS Fall 2027 申请时间表 · 核验于 2026-08-26",
+    "tuition": "以 CMU SCS 2027 学年费用页面为准",
+    "applicationRequirements": "SCS 在线申请、各高校成绩单、简历/CV、目的陈述、推荐信、英语成绩（如适用），以及申请系统列明的项目附加材料。",
+    "interview": "官网未将面试列为统一必需材料；以申请系统和项目通知为准",
+    "rentBudget": "暂未收录",
+    "positioning": "适合希望把 AI/ML 技术与产品落地、创新或创业结合的申请者；并非纯研究型机器学习硕士的替代品。",
+    "requirements": [
+      { "label": "学术背景", "value": "计算机/软件工程等相关背景", "level": 84 },
+      { "label": "英语要求", "value": "TOEFL / IELTS / DET；SCS 不自动豁免", "level": 84 },
+      { "label": "标化考试", "value": "项目决定；开放后复核", "level": 48 }
+    ],
+    "documents": ["成绩单", "简历 / CV", "目的陈述 / SOP", "推荐信", "英语成绩（如适用）", "申请系统指定补充材料"],
+    "notes": [
+      "QS 2026 数据科学与人工智能学科第 5",
+      "项目包含机器学习、神经网络、自然语言处理、深度学习及创新实践",
+      "Fall 2027 SCS 申请将于 2026-09-09 开放，当前尚未开放"
+    ],
+    "source": "https://msaii.cs.cmu.edu/",
+    "sources": [
+      { "label": "CMU MSAII 项目官网", "url": "https://msaii.cs.cmu.edu/", "kind": "项目官网", "year": "最近核验 2026-08-26" },
+      { "label": "CMU SCS Fall 2027 招生规则", "url": "https://www.cs.cmu.edu/education/graduate-admissions", "kind": "学院招生官网", "year": "2027 入学" }
+    ],
+    "sourceLabel": "项目官网 + SCS Fall 2027 招生规则",
+    "sourcePayload": {
+      "qsRank": "58",
+      "qsEdition": "2027",
+      "verificationLevel": "官网核验",
+      "recordType": "项目",
+      "originalProgramName": "Master of Science in Artificial Intelligence and Innovation",
+      "translatedProgramName": "人工智能与创新理学硕士",
+      "degreeLevel": "硕士",
+      "applicationStatus": "往期要求",
+      "applicationStatusCheckedAt": "2026-08-26",
+      "applicationStatusNote": "SCS 已宣布 Fall 2027 申请将于 2026-09-09 开放；截至本次核验尚未开放。",
+      "applicationStatusSource": "https://www.cs.cmu.edu/education/graduate-admissions"
+    }
+  },
+  {
+    "id": "cmu-msml",
+    "region": "美国",
+    "city": "匹兹堡",
+    "university": "卡内基梅隆大学",
+    "school": "计算机学院 · 机器学习系",
+    "program": "机器学习理学硕士",
+    "category": "计算机与数据",
+    "direction": "人工智能与机器学习",
+    "background": "强先修要求",
+    "cycle": "2027 入学",
+    "intake": "2027 秋季",
+    "duration": "16 个月 / 3 学期（国际学生通常须按期完成）",
+    "updated": "2026-08-26",
+    "academic": "不强制要求计算机本科，但须有扎实计算机基础、复杂度理论与编程能力，并完成概率统计、矩阵代数和多元微积分等数学训练。",
+    "language": "非英语母语、以 F-1/J-1 身份就读者须按 SCS 规则提交 TOEFL、IELTS 或 Duolingo；SCS 不因既往英语授课经历自动豁免。官网给出的近年录取常见区间为 TOEFL 105–114、IELTS 7–8、DET 130–155，并非最低保证线。",
+    "tests": "项目官网显示 Fall 2026 入学周期 GRE 为可选；Fall 2027 政策须在当前申请系统开放后复核。",
+    "prerequisites": "概率与统计、线性/矩阵代数、多元微积分、编程与计算机科学基础；课程包含 6 门核心课、3 门选修课及机器学习相关实习或研究实践。",
+    "deadline": "2026-11-18 早申；2026-12-09 最终截止（均为美东时间 15:00）",
+    "deadlineNote": "SCS Fall 2027 申请时间表 · 核验于 2026-08-26",
+    "tuition": "项目不提供统一经济资助；以 CMU SCS 2027 学年费用页面为准",
+    "applicationRequirements": "SCS 在线申请、各高校成绩单、简历/CV、目的陈述、推荐信、英语成绩（如适用），以及项目在申请系统中列明的 GRE 或其他附加要求。",
+    "interview": "官网未将面试列为统一必需材料；以申请系统和项目通知为准",
+    "rentBudget": "暂未收录",
+    "positioning": "偏高强度机器学习理论、方法与实践，适合数学、统计与编程基础扎实的申请者。",
+    "requirements": [
+      { "label": "学术背景", "value": "强计算机、概率统计与矩阵基础", "level": 94 },
+      { "label": "英语要求", "value": "TOEFL / IELTS / DET；SCS 不自动豁免", "level": 84 },
+      { "label": "标化考试", "value": "Fall 2026 GRE 可选；2027 待复核", "level": 58 }
+    ],
+    "documents": ["成绩单", "简历 / CV", "目的陈述 / SOP", "推荐信", "英语成绩（如适用）", "GRE（按当前周期政策）"],
+    "notes": [
+      "QS 2026 数据科学与人工智能学科第 5",
+      "CMU 机器学习系官网称其为世界首个同类学术系",
+      "Fall 2027 SCS 申请将于 2026-09-09 开放，当前尚未开放"
+    ],
+    "source": "https://www.ml.cmu.edu/academics/primary-ms-machine-learning-masters",
+    "sources": [
+      { "label": "CMU 机器学习硕士项目官网", "url": "https://www.ml.cmu.edu/academics/primary-ms-machine-learning-masters", "kind": "项目官网", "year": "最近核验 2026-08-26" },
+      { "label": "CMU SCS Fall 2027 招生规则", "url": "https://www.cs.cmu.edu/education/graduate-admissions", "kind": "学院招生官网", "year": "2027 入学" }
+    ],
+    "sourceLabel": "项目官网 + SCS Fall 2027 招生规则",
+    "sourcePayload": {
+      "qsRank": "58",
+      "qsEdition": "2027",
+      "verificationLevel": "深度核验",
+      "recordType": "项目",
+      "originalProgramName": "Master of Science in Machine Learning",
+      "translatedProgramName": "机器学习理学硕士",
+      "degreeLevel": "硕士",
+      "applicationStatus": "往期要求",
+      "applicationStatusCheckedAt": "2026-08-26",
+      "applicationStatusNote": "SCS 已宣布 Fall 2027 申请将于 2026-09-09 开放；截至本次核验尚未开放。",
+      "applicationStatusSource": "https://www.cs.cmu.edu/education/graduate-admissions"
+    }
+  }
+]

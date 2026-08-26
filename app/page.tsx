@@ -7,6 +7,7 @@ import cptPolicyData from "@/data/us-cpt-policies.json";
 import writingGuideData from "@/data/writing-guides.json";
 import signatureTagData from "@/data/signature-tags.json";
 import languageRequirementData from "@/data/language-requirements.json";
+import aiPrograms from "@/data/ai-programs.json";
 
 type Region = "香港" | "新加坡" | "美国" | "欧洲";
 type Category = "计算机与数据" | "金融与量化" | "数学与统计" | "商科与管理" | "工程与技术" | "社会科学" | "自然科学" | "人文与艺术" | "法律与公共事务" | "医学与生命科学" | "教育" | "综合项目目录";
@@ -14,7 +15,7 @@ type Background = "跨专业友好" | "量化背景" | "强先修要求" | "待�
 type Verification = "全部" | "深度核验" | "官网核验" | "目录级收录";
 type ApplicationStatus = "全部" | "已开始申请" | "往期要求";
 type DegreeLevel = "硕士" | "博士";
-type SignatureTagTone = "stats" | "quant" | "cs";
+type SignatureTagTone = "stats" | "quant" | "cs" | "ai";
 type SignatureTag = {
   id: string;
   label: string;
@@ -692,7 +693,15 @@ const VERIFICATIONS: Verification[] = ["全部", "深度核验", "官网核验",
 const APPLICATION_STATUSES: ApplicationStatus[] = ["全部", "已开始申请", "往期要求"];
 const DEGREE_LEVELS: (DegreeLevel | "全部")[] = ["全部", "硕士", "博士"];
 const CYCLES: (Program["cycle"] | "全部")[] = ["全部", "2027 入学", "2026/27 入学", "最近可用"];
-const STATIC_PROGRAMS = (staticPrograms as Program[]).length ? staticPrograms as Program[] : PROGRAMS;
+const CURATED_AI_PROGRAMS = aiPrograms as Program[];
+
+function mergePrograms(base: Program[], additions: Program[]) {
+  const merged = new Map(base.map((program) => [program.id, program]));
+  additions.forEach((program) => merged.set(program.id, program));
+  return [...merged.values()];
+}
+
+const STATIC_PROGRAMS = mergePrograms((staticPrograms as Program[]).length ? staticPrograms as Program[] : PROGRAMS, CURATED_AI_PROGRAMS);
 const GUIDES = guideData as GuideData;
 const US_CPT_DATA = cptPolicyData as CptPolicyData;
 const WRITING_GUIDES = writingGuideData as WritingGuide[];
@@ -940,7 +949,7 @@ export default function Home() {
     fetch("/api/programs")
       .then((response) => response.ok ? response.json() : Promise.reject(new Error("database unavailable")))
       .then((payload: { programs?: Program[] }) => {
-        if (active && payload.programs?.length) setPrograms(payload.programs);
+        if (active && payload.programs?.length) setPrograms(mergePrograms(payload.programs, CURATED_AI_PROGRAMS));
       })
       .catch(() => undefined);
     fetch("/api/guides")
@@ -1055,8 +1064,9 @@ export default function Home() {
       const cptPolicy = cptPolicyOf(program);
       const writingGuide = writingGuideOf(program);
       const languageRequirement = languageRequirementOf(program);
+      const signatureText = signatureTagsOf(program).flatMap((tag) => [tag.label, tag.basis]);
       const writingText = [writingGuide.summary, ...writingGuide.materials.flatMap((material) => [material.name, material.focus, material.expression])];
-      const haystack = [program.university, UNIVERSITY_SEARCH_ALIASES[program.university], program.school, program.program, originalProgramNameOf(program), program.region, program.city, program.category, program.direction, program.prerequisites, program.applicationRequirements, languageRequirement.text, cptPolicy?.summary, cptPolicy?.shortLabel, cptPolicy ? "cpt 美国实习 F-1" : "", ...writingText].join(" ").toLowerCase();
+      const haystack = [program.university, UNIVERSITY_SEARCH_ALIASES[program.university], program.school, program.program, originalProgramNameOf(program), program.region, program.city, program.category, program.direction, program.prerequisites, program.applicationRequirements, languageRequirement.text, cptPolicy?.summary, cptPolicy?.shortLabel, cptPolicy ? "cpt 美国实习 F-1" : "", ...signatureText, ...writingText].join(" ").toLowerCase();
       return (!normalized || haystack.includes(normalized))
         && (region === "全部" || program.region === region)
         && (category === "全部" || program.category === category)

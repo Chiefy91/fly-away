@@ -185,6 +185,7 @@ h1 em { color: var(--coral); font-style: normal; }
 .signature-tag.signature-stats { color: #5d3577; background: #f0e7f5; border-color: #c8acd8; }
 .signature-tag.signature-quant { color: #7a4b12; background: #f7e8c6; border-color: #d9b86c; }
 .signature-tag.signature-cs { color: #174f67; background: #dcecf2; border-color: #94bfd0; }
+.signature-tag.signature-ai { color: #5d244f; background: #f5e0ec; border-color: #d9a4c4; }
 .application-tag.is-open { color: #155b4c; background: #d9eee7; border-color: #89bbaa; }
 .application-tag.is-historical { color: #775e35; background: #f2ebda; border-color: #d9c9a6; }
 .degree-tag.degree-硕士 { color: #174f67; background: #dcecf2; border-color: #a8cbd8; }
