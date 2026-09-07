@@ -113,6 +113,7 @@ npm run lint
 | `data/programs.json` | 广泛项目目录数据。 |
 | `data/programs-fallback.json` | 页面可离线展示的重点项目回退数据。 |
 | `data/ai-programs.json` | 新增并经官网核验的人工智能/机器学习重点项目；无论数据库接口是否可用都会合并展示。 |
+| `data/status-updates.json` | 最近一次官网巡检确认的项目开放状态、截止日期与申请材料覆盖层。 |
 | `data/signature-tags.json` | 统计、金工、计算机与 AI 强校标签的项目级匹配及榜单依据。 |
 | `data/writing-guides.json` | 文书类型与重点项目的写作指引及来源。 |
 | `data/us-cpt-policies.json` | 美国学校/项目 CPT 政策提醒与来源。 |

@@ -99,3 +99,18 @@ test("labels current and previous-cycle language requirements with sources", asy
   assert.match(css, /\.language-requirement-panel/);
   assert.match(css, /\.language-cycle-tag\.is-previous/);
 });
+
+test("applies the latest official application-status refresh as an overlay", async () => {
+  const [page, updateSource] = await Promise.all([
+    source("app/page.tsx"),
+    source("data/status-updates.json"),
+  ]);
+  const updates = JSON.parse(updateSource);
+
+  assert.ok(updates.length >= 10);
+  assert.ok(updates.every((update) => update.sourcePayload?.applicationStatusCheckedAt === "2026-09-07"));
+  assert.equal(updates.find((update) => update.id === "qs2027-ntu-0554941b1b")?.sourcePayload?.applicationStatus, "已开始申请");
+  assert.equal(updates.find((update) => update.id === "hku-msai")?.sourcePayload?.applicationStatus, "往期要求");
+  assert.match(page, /applyProgramUpdates/);
+  assert.match(page, /latestStatusCheck/);
+});

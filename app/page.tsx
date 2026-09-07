@@ -8,6 +8,7 @@ import writingGuideData from "@/data/writing-guides.json";
 import signatureTagData from "@/data/signature-tags.json";
 import languageRequirementData from "@/data/language-requirements.json";
 import aiPrograms from "@/data/ai-programs.json";
+import statusUpdates from "@/data/status-updates.json";
 
 type Region = "香港" | "新加坡" | "美国" | "欧洲";
 type Category = "计算机与数据" | "金融与量化" | "数学与统计" | "商科与管理" | "工程与技术" | "社会科学" | "自然科学" | "人文与艺术" | "法律与公共事务" | "医学与生命科学" | "教育" | "综合项目目录";
@@ -116,6 +117,11 @@ type Program = {
   positioning?: string;
   sources?: Array<{ label: string; url: string; kind: string; year: string }>;
   sourceLabel?: string;
+  sourcePayload?: Record<string, unknown>;
+};
+
+type ProgramStatusUpdate = Partial<Program> & {
+  id: string;
   sourcePayload?: Record<string, unknown>;
 };
 
@@ -694,6 +700,7 @@ const APPLICATION_STATUSES: ApplicationStatus[] = ["全部", "已开始申请", 
 const DEGREE_LEVELS: (DegreeLevel | "全部")[] = ["全部", "硕士", "博士"];
 const CYCLES: (Program["cycle"] | "全部")[] = ["全部", "2027 入学", "2026/27 入学", "最近可用"];
 const CURATED_AI_PROGRAMS = aiPrograms as Program[];
+const STATUS_UPDATES = statusUpdates as ProgramStatusUpdate[];
 
 function mergePrograms(base: Program[], additions: Program[]) {
   const merged = new Map(base.map((program) => [program.id, program]));
@@ -701,7 +708,20 @@ function mergePrograms(base: Program[], additions: Program[]) {
   return [...merged.values()];
 }
 
-const STATIC_PROGRAMS = mergePrograms((staticPrograms as Program[]).length ? staticPrograms as Program[] : PROGRAMS, CURATED_AI_PROGRAMS);
+function applyProgramUpdates(programs: Program[], updates: ProgramStatusUpdate[]) {
+  const updatesById = new Map(updates.map((update) => [update.id, update]));
+  return programs.map((program) => {
+    const update = updatesById.get(program.id);
+    if (!update) return program;
+    return {
+      ...program,
+      ...update,
+      sourcePayload: { ...program.sourcePayload, ...update.sourcePayload },
+    } as Program;
+  });
+}
+
+const STATIC_PROGRAMS = applyProgramUpdates(mergePrograms((staticPrograms as Program[]).length ? staticPrograms as Program[] : PROGRAMS, CURATED_AI_PROGRAMS), STATUS_UPDATES);
 const GUIDES = guideData as GuideData;
 const US_CPT_DATA = cptPolicyData as CptPolicyData;
 const WRITING_GUIDES = writingGuideData as WritingGuide[];
@@ -949,7 +969,7 @@ export default function Home() {
     fetch("/api/programs")
       .then((response) => response.ok ? response.json() : Promise.reject(new Error("database unavailable")))
       .then((payload: { programs?: Program[] }) => {
-        if (active && payload.programs?.length) setPrograms(mergePrograms(payload.programs, CURATED_AI_PROGRAMS));
+        if (active && payload.programs?.length) setPrograms(applyProgramUpdates(mergePrograms(payload.programs, CURATED_AI_PROGRAMS), STATUS_UPDATES));
       })
       .catch(() => undefined);
     fetch("/api/guides")
@@ -1097,6 +1117,7 @@ export default function Home() {
   const officialVerifiedCount = programs.filter((program) => verificationOf(program) === "官网核验").length;
   const openApplicationCount = programs.filter((program) => applicationStatusOf(program) === "已开始申请").length;
   const usCptCoverageCount = programs.filter((program) => cptPolicyOf(program)).length;
+  const latestStatusCheck = programs.reduce((latest, program) => applicationStatusCheckedAtOf(program) > latest ? applicationStatusCheckedAtOf(program) : latest, "");
   const readinessSummary = programs.reduce<Record<Readiness["label"], number>>((summary, program) => {
     const label = readinessOf(program, profile).label;
     summary[label] += 1;
@@ -1302,7 +1323,7 @@ export default function Home() {
             <FilterGroup title="信息年份" values={CYCLES} active={cycle} onChange={(value) => setCycle(value as Program["cycle"] | "全部")} />
             <FilterGroup title="申请状态" values={APPLICATION_STATUSES} active={applicationStatus} onChange={(value) => setApplicationStatus(value as ApplicationStatus)} />
             <FilterGroup title="学位层次" values={DEGREE_LEVELS} active={degreeLevel} onChange={(value) => setDegreeLevel(value as DegreeLevel | "全部")} />
-            <div className="year-note"><b>数据口径</b><p>绿标仅代表项目官网明确已开放当前申请季；其余记录显示最近可用官方要求，并以黄标提示复核。状态最近核验：2026.08.11。</p></div>
+            <div className="year-note"><b>数据口径</b><p>绿标仅代表项目官网明确已开放当前申请季；其余记录显示最近可用官方要求，并以黄标提示复核。状态最近核验：{formatDate(latestStatusCheck)}。</p></div>
           </aside>
 
           <div className="results">
