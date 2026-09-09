@@ -180,12 +180,16 @@ h1 em { color: var(--coral); font-style: normal; }
 .cycle-tag { display: inline-block; padding: 3px 6px; background: var(--mint); color: var(--sea); font-size: 8px; }
 .cycle-tag.is-legacy { background: #eee7d9; color: #79684c; }
 .program-tags { display: flex; flex-wrap: wrap; gap: 5px; align-items: center; }
-.qs-tag, .verification-tag, .directory-tag, .readiness-tag, .application-tag, .degree-tag, .cpt-tag, .signature-tag { display: inline-block; padding: 3px 6px; border: 1px solid var(--line); color: var(--ink-soft); background: var(--paper); font-size: 9px; font-weight: 800; }
+.qs-tag, .verification-tag, .directory-tag, .readiness-tag, .application-tag, .degree-tag, .cpt-tag, .signature-tag, .funding-tag { display: inline-block; padding: 3px 6px; border: 1px solid var(--line); color: var(--ink-soft); background: var(--paper); font-size: 9px; font-weight: 800; }
 .signature-tag { border-width: 1px; letter-spacing: .02em; }
 .signature-tag.signature-stats { color: #5d3577; background: #f0e7f5; border-color: #c8acd8; }
 .signature-tag.signature-quant { color: #7a4b12; background: #f7e8c6; border-color: #d9b86c; }
 .signature-tag.signature-cs { color: #174f67; background: #dcecf2; border-color: #94bfd0; }
 .signature-tag.signature-ai { color: #5d244f; background: #f5e0ec; border-color: #d9a4c4; }
+.funding-tag.funding-full { color: #155b4c; background: #d9eee7; border-color: #72ad99; }
+.funding-tag.funding-auto, .funding-tag.funding-competitive { color: #5d3577; background: #f0e7f5; border-color: #c8acd8; }
+.funding-tag.funding-limited, .funding-tag.funding-unknown { color: #775e35; background: #f2ebda; border-color: #d9c9a6; }
+.funding-tag.funding-none { color: #963c30; background: var(--coral-soft); border-color: #e2a89d; }
 .application-tag.is-open { color: #155b4c; background: #d9eee7; border-color: #89bbaa; }
 .application-tag.is-historical { color: #775e35; background: #f2ebda; border-color: #d9c9a6; }
 .degree-tag.degree-硕士 { color: #174f67; background: #dcecf2; border-color: #a8cbd8; }
@@ -460,6 +464,26 @@ footer { padding: 24px var(--page-x); display: flex; justify-content: space-betw
 .cpt-policy-grid p { margin: 7px 0 0; color: var(--ink-soft); font-size: 12px; font-weight: 600; line-height: 1.72; }
 .cpt-policy-source { display: flex; justify-content: space-between; gap: 18px; margin-top: 15px; color: var(--sea); font-size: 11px; font-weight: 850; text-decoration: none; }
 .cpt-policy-source b { white-space: nowrap; }
+.funding-panel { margin: 0 0 20px; padding: 19px; border: 1px solid #c8acd8; background: #fbf8fd; }
+.funding-panel.funding-full { border-color: #72ad99; background: #f1faf6; }
+.funding-panel.funding-none { border-color: #e2a89d; background: #fff7f3; }
+.funding-panel.funding-limited, .funding-panel.funding-unknown { border-color: #d9c9a6; background: #fdfaf1; }
+.funding-panel-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 18px; }
+.funding-panel-head p { margin: 0 0 6px; color: #6c3f80; font-size: 10px; font-weight: 850; letter-spacing: .08em; }
+.funding-panel-head h3 { margin: 0; color: var(--ink-deep); font-size: 18px; line-height: 1.4; }
+.funding-panel-head > span { flex: 0 0 auto; max-width: 210px; padding: 5px 7px; border: 1px solid #c8acd8; color: #5d3577; background: #f0e7f5; font-size: 10px; font-weight: 850; text-align: right; }
+.funding-none .funding-panel-head > span { border-color: #e2a89d; color: #963c30; background: var(--coral-soft); }
+.funding-full .funding-panel-head > span { border-color: #72ad99; color: #155b4c; background: #d9eee7; }
+.funding-limited .funding-panel-head > span, .funding-unknown .funding-panel-head > span { border-color: #d9c9a6; color: #775e35; background: #f2ebda; }
+.funding-summary, .funding-panel > p { margin: 12px 0 0; color: var(--ink-soft); font-size: 13px; font-weight: 650; line-height: 1.8; }
+.funding-grid { margin-top: 16px; display: grid; grid-template-columns: 1fr 1fr; gap: 1px; border: 1px solid var(--line); background: var(--line); }
+.funding-grid > div { padding: 14px; background: rgba(255,255,255,.78); }
+.funding-grid small { color: var(--muted); font-size: 10px; font-weight: 800; }
+.funding-grid p { margin: 7px 0 0; color: var(--ink-soft); font-size: 12px; font-weight: 600; line-height: 1.72; }
+.funding-panel ul { margin: 14px 0 0; padding-left: 18px; color: var(--ink-soft); font-size: 12px; font-weight: 600; line-height: 1.7; }
+.funding-panel > a { display: flex; justify-content: space-between; gap: 18px; margin-top: 15px; color: var(--sea); font-size: 11px; font-weight: 850; text-decoration: none; }
+.funding-panel > a b { color: var(--coral); white-space: nowrap; }
+.funding-panel > small { display: block; margin-top: 12px; color: var(--muted); font-size: 9px; font-weight: 650; line-height: 1.65; }
 .readiness-detail { margin: 0 0 20px; padding: 16px 18px; border: 1px solid #a8d0c3; background: #e7f3ee; }
 .readiness-detail small { color: #2d6a59; font-size: 10px; font-weight: 800; letter-spacing: .08em; }
 .readiness-detail strong { display: block; margin-top: 6px; color: #155b4c; font-size: 17px; }
@@ -625,7 +649,7 @@ footer { color: var(--ink-soft); font-size: 12px; font-weight: 650; }
   .method { grid-template-columns: 1fr; gap: 24px; padding-top: 54px; padding-bottom: 54px; }
   .method-points { grid-column: auto; }
   .detail-grid { grid-template-columns: 1fr; }
-  .cpt-policy-grid { grid-template-columns: 1fr; }
+  .cpt-policy-grid, .funding-grid { grid-template-columns: 1fr; }
   .drawer-actions { margin-left: -24px; margin-right: -24px; padding-left: 24px; padding-right: 24px; }
   .timeline-card-grid { grid-template-columns: 1fr 1fr; }
   .timeline-monitor { grid-column: 1 / -1; }

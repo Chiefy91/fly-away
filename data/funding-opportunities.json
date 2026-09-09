@@ -1,0 +1,162 @@
+{
+  "checkedAt": "2026-09-09",
+  "policy": "只把学校或项目官网明确写出的资助纳入项目级结论；未查到不等于没有。金额、名额和资格会变化，申请与接受录取前应再次打开官方来源核对。",
+  "records": [
+    {
+      "programIds": ["cmu-msaii"],
+      "status": "明确不提供常规资助",
+      "tone": "none",
+      "coverage": "项目不提供经济资助。二、三学期偶有 TA 岗位，但只能覆盖很小一部分学费，不能作为主要资金来源。",
+      "internationalEligibility": "国际生可自行寻找外部奖学金、贷款或校内工作；项目没有面向国际生的常规资助承诺。",
+      "application": "无需提交项目奖学金申请；如需外部资助或校内岗位，应另行申请。",
+      "deadline": "无项目奖学金截止日",
+      "sourceLabel": "CMU MSAII Fees and Financial Aid",
+      "source": "https://msaii.cs.cmu.edu/node/222215359",
+      "notes": ["官网明确：MSAII 不提供 financial assistance", "TA 通常仅面向第二、第三学期且金额有限"]
+    },
+    {
+      "programIds": ["cmu-msml"],
+      "status": "明确不提供常规资助",
+      "tone": "none",
+      "coverage": "机器学习硕士项目不提供任何经济支持，学费、杂费与生活费需由学生自行承担。",
+      "internationalEligibility": "该结论适用于全部学生；可自行寻找外部奖学金或其他资金来源。",
+      "application": "无项目奖学金申请入口。",
+      "deadline": "无项目奖学金截止日",
+      "sourceLabel": "CMU MS in Machine Learning · Finances",
+      "source": "https://www.ml.cmu.edu/academics/primary-ms-machine-learning-masters.html",
+      "notes": ["官网使用 does not provide any financial support 的明确表述"]
+    },
+    {
+      "programIds": ["ntu-msai"],
+      "status": "国际生暂无项目奖学金",
+      "tone": "none",
+      "coverage": "项目官网写明目前没有本项目可用的大学奖学金、政府服务协议或服务义务计划。新加坡公民/永久居民另有补贴；SG:D Scholarship 仅限新加坡公民。",
+      "internationalEligibility": "普通国际申请人不适用页面列出的本地生补贴与 SG:D Scholarship。",
+      "application": "无面向普通国际生的项目奖学金申请。",
+      "deadline": "不适用",
+      "sourceLabel": "NTU MSAI Tuition Fees and Financial Assistance",
+      "source": "https://www.ntu.edu.sg/education/graduate-programme/master-of-science-in-artificial-intelligence",
+      "notes": ["不要把本地生 study grant 当作国际生奖学金", "费用与补贴每年复核"]
+    },
+    {
+      "programIds": ["qs2027-ntu-0554941b1b"],
+      "status": "有竞争性奖学金",
+      "tone": "competitive",
+      "coverage": "GATE Scholarship 最高 S$10,000，用于抵扣后段学费；另有面向印度尼西亚申请人的 LPDP–NTU INSTEP，覆盖范围由 LPDP 决定。",
+      "internationalEligibility": "GATE 面向所有国籍；INSTEP 仅面向符合条件的印度尼西亚申请人。",
+      "application": "在 2026-11-30 前申请企业人工智能硕士，可自动获 GATE 评审，无需另交奖学金申请；INSTEP 需同时向 NTU 与 LPDP 申请。",
+      "deadline": "GATE 自动考虑节点：2026-11-30",
+      "sourceLabel": "NTU Enterprise AI · Financial Aid",
+      "source": "https://www.ntu.edu.sg/pace/for-individuals/ntu-interdisciplinary-graduate-programme/Master-of-Science-In-Enterprise-Artificial-Intelligence-Programme",
+      "notes": ["看重本科成绩、领导力、相关行业经历与全球视野", "奖学金竞争性强，不保证授予"]
+    },
+    {
+      "programIds": ["nus-mfe"],
+      "status": "自动考虑项目奖学金",
+      "tone": "auto",
+      "coverage": "RMI Scholarship 提供 S$16,000 的全额或部分学费减免；东盟奖学金另面向东盟成员国（新加坡除外）的优秀全日制申请人。",
+      "internationalEligibility": "RMI FAQ 明确国际生可参与；东盟奖学金按国籍限制。中国大陆申请人可参与 RMI Scholarship，但不属于东盟奖学金范围。",
+      "application": "接受录取后自动进入 RMI Scholarship 评审，无需单独申请；通常与录取通知一起告知结果。",
+      "deadline": "随项目申请与接受录取流程",
+      "sourceLabel": "NUS RMI Scholarships and Financial Aid",
+      "source": "https://rmi.nus.edu.sg/mfe-program/scholarships/",
+      "notes": ["评审关注研究经历、团队协作、态度、课程表现潜力与金融职业发展", "有资格者可能被邀请面试"]
+    },
+    {
+      "programIds": ["nus-mcomp"],
+      "status": "有专项奖学金 / 学费减免",
+      "tone": "competitive",
+      "coverage": "官网列出 SG Digital Scholarship、NUS GRTII Master’s Scholarship（S$45,000 学费资助并附两年黄埔区工作服务约定）及可能适用的增强学费回扣。",
+      "internationalEligibility": "各项目资格不同；GRTII 面向符合其细则的人选，SG Digital 需按 IMDA 最新资格核对。",
+      "application": "增强学费回扣无需另申；其他专项奖学金按各自页面另行申请或表达意向。",
+      "deadline": "按各专项奖学金页面",
+      "sourceLabel": "NUS Computing MComp Fees and Scholarships",
+      "source": "https://www.comp.nus.edu.sg/programmes/pg/mcomp-gen/fees/",
+      "notes": ["不要把专项奖学金理解为所有录取者都有", "GRTII 奖学金带服务约定，接受前应核对完整条款"]
+    },
+    {
+      "programIds": ["nus-msstats"],
+      "status": "资助有限 / 以专项资格为准",
+      "tone": "limited",
+      "coverage": "项目页列出 NUS ASEAN Master’s Scholarship，并说明本地生 40% 学费回扣、NUS 校友 20% 回扣；普通国际新生不应默认享有学费回扣。",
+      "internationalEligibility": "东盟奖学金按国籍与项目资格；NUS 校友回扣不限制国籍。中国大陆非 NUS 校友申请人应按全额学费规划。",
+      "application": "奖学金与回扣按项目页或录取通知的具体流程；需准备资金证明。",
+      "deadline": "随专项计划及项目申请周期",
+      "sourceLabel": "NUS MSc Statistics Prospective Students",
+      "source": "https://www.stat.nus.edu.sg/education/graduate/msc-in-statistics/prospective-students/",
+      "notes": ["授课型硕士应按自费为主规划", "页面要求所有申请人提交 S$30,000 资金证明"]
+    },
+    {
+      "programIds": ["nus-phd-statistics-data-science"],
+      "status": "可竞争全额研究奖学金",
+      "tone": "full",
+      "coverage": "NUS Research Scholarship 包含全额学费补贴与生活津贴，统计与数据科学系另可提供 top-up。",
+      "internationalEligibility": "项目页未将该研究奖学金限制为本地生；国际生应按 NUS Graduate School 最新条款核对津贴与义务。",
+      "application": "奖学金申请包含在博士申请包中；系里明确表示优先考虑博士申请人。",
+      "deadline": "随博士申请截止日",
+      "sourceLabel": "NUS Statistics PhD Prospective Students",
+      "source": "https://www.stat.nus.edu.sg/education/graduate/phd-in-statistics-and-data-science/prospective-students/",
+      "notes": ["研究奖学金不是录取即保证", "项目页明确写出学费补贴、津贴与院系 top-up"]
+    },
+    {
+      "programIds": ["stanford-msstats"],
+      "status": "明确不提供院系资助",
+      "tone": "none",
+      "coverage": "统计学硕士不提供 financial aid、奖学金或院系 RA/TA；学生需自行覆盖 5–6 个季度的学费与生活费。",
+      "internationalEligibility": "结论适用于全部硕士生；国际生可使用外部奖助，但不能依赖院系岗位。",
+      "application": "无院系奖学金申请；Knight-Hennessy 等外部/校级项目有独立申请流程。",
+      "deadline": "按外部奖学金单独截止日",
+      "sourceLabel": "Stanford Statistics MS Admissions",
+      "source": "https://statistics.stanford.edu/admissions/ms-admissions",
+      "notes": ["院系 RA/TA 为博士训练岗位，不向统计硕士常规开放"]
+    },
+    {
+      "programIds": ["stanford-phd-statistics"],
+      "status": "录取后保证五年资助",
+      "tone": "full",
+      "coverage": "所有录取的统计学博士保证五年、每年 12 个月资助，通常包括学费、Cardinal Care 医疗保险以及工资或津贴，由 TA/RA 与 fellowship 组合提供。",
+      "internationalEligibility": "项目表述覆盖所有录取博士；Stanford Graduate Fellowship 可由院系提名国际申请人。",
+      "application": "在博士申请中申请 financial aid 不影响录取；部分 fellowship 由院系提名，无需单独申请。",
+      "deadline": "随博士项目申请截止日",
+      "sourceLabel": "Stanford Statistics PhD Financial Support",
+      "source": "https://statistics.stanford.edu/academic-programs/graduate-programs/phd-program/doctoral-program/doctoral-program-financial-support",
+      "notes": ["资助通常伴随教学或研究助理职责", "外部奖学金可能由院系补足至本系资助标准"]
+    },
+    {
+      "programIds": ["mit-mfin"],
+      "status": "自动考虑有限 fellowship",
+      "tone": "auto",
+      "coverage": "有限数量的 merit-based fellowship 面向所有国籍并自动考虑；另有少量竞争性 TA/RA，工作量与报酬不同。多数学生仍主要依靠贷款或自有资金。",
+      "internationalEligibility": "MIT MFin Fellowship 明确适用于美国公民、永久居民和国际生。",
+      "application": "MFin Fellowship 无需另申，通常随录取通知；外部或特定国籍奖学金可能需要单独申请。",
+      "deadline": "自动评审随 MFin 申请；外部项目另有截止日",
+      "sourceLabel": "MIT Sloan MFin Tuition and Financial Aid",
+      "source": "https://mitsloan.mit.edu/mfin/admissions/tuition-and-financial-aid",
+      "notes": ["看重学术成绩、个人成就、职业潜力与班级地域多样性", "官网强调名额有限，不能按全奖预期规划"]
+    },
+    {
+      "programIds": ["uchicago-finmath"],
+      "status": "自动考虑 merit 奖学金",
+      "tone": "auto",
+      "coverage": "所有金融数学申请人，包括国际生和非全日制申请人，都会被考虑项目 merit-based funding。",
+      "internationalEligibility": "明确适用于国际申请人。",
+      "application": "无需额外材料；奖学金决定与录取决定一并公布。",
+      "deadline": "随金融数学项目申请轮次",
+      "sourceLabel": "UChicago Financial Mathematics Tuition",
+      "source": "https://finmath.uchicago.edu/admissions/tuition/",
+      "notes": ["官网未在该页承诺固定金额或覆盖比例", "应按竞争性部分资助理解，不应默认全奖"]
+    },
+    {
+      "programIds": ["princeton-mfin"],
+      "status": "项目资助范围未明确",
+      "tone": "unknown",
+      "coverage": "普林斯顿研究生院说明：硕士资助由院系和项目决定，学校通常不提供中央层面的硕士资助；当前项目页未明确承诺 MFin 奖学金。",
+      "internationalEligibility": "未在项目页确认。",
+      "application": "如需确认 merit aid、need-based aid 或岗位，应直接联系 Bendheim Center，并以录取材料为准。",
+      "deadline": "未确认",
+      "sourceLabel": "Princeton Graduate School · Master’s Degree Funding",
+      "source": "https://gradschool.princeton.edu/financial-support/financial-support-model/master%E2%80%99s-degree-funding",
+      "notes": ["这是学校层面的一般规则，不等于项目明确没有奖学金", "在取得项目级答复前按自费规划更稳妥"]
+    }
+  ]
+}

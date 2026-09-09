@@ -114,3 +114,22 @@ test("applies the latest official application-status refresh as an overlay", asy
   assert.match(page, /applyProgramUpdates/);
   assert.match(page, /latestStatusCheck/);
 });
+
+test("shows project-level scholarship research without treating missing data as no funding", async () => {
+  const [page, css, fundingSource] = await Promise.all([
+    source("app/page.tsx"),
+    source("app/globals.css"),
+    source("data/funding-opportunities.json"),
+  ]);
+  const funding = JSON.parse(fundingSource);
+
+  assert.equal(funding.checkedAt, "2026-09-09");
+  assert.ok(funding.records.length >= 12);
+  assert.ok(funding.records.every((record) => record.programIds.length && record.status && record.coverage && record.application && record.source));
+  assert.match(funding.policy, /未查到不等于没有/);
+  assert.match(page, /FundingOpportunityPanel/);
+  assert.match(page, /项目级待核验/);
+  assert.match(page, /打开奖学金官网/);
+  assert.match(css, /\.funding-panel/);
+  assert.match(css, /\.funding-tag\.funding-full/);
+});
