@@ -108,9 +108,9 @@ test("applies the latest official application-status refresh as an overlay", asy
   const updates = JSON.parse(updateSource);
 
   assert.ok(updates.length >= 10);
-  assert.ok(updates.every((update) => update.sourcePayload?.applicationStatusCheckedAt === "2026-09-07"));
+  assert.ok(updates.every((update) => update.sourcePayload?.applicationStatusCheckedAt === "2026-09-23"));
   assert.equal(updates.find((update) => update.id === "qs2027-ntu-0554941b1b")?.sourcePayload?.applicationStatus, "已开始申请");
-  assert.equal(updates.find((update) => update.id === "hku-msai")?.sourcePayload?.applicationStatus, "往期要求");
+  assert.equal(updates.find((update) => update.id === "hku-msai")?.sourcePayload?.applicationStatus, "已开始申请");
   assert.match(page, /applyProgramUpdates/);
   assert.match(page, /latestStatusCheck/);
 });

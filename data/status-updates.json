@@ -1,96 +1,100 @@
 [
   {
     "id": "baruch-mfe",
-    "updated": "2026-09-07",
+    "updated": "2026-09-23",
+    "tests": "GRE / GMAT 不再要求且申请系统不接收；所有申请人须参加在线 Quantitative Background Assessment（QBA）。",
+    "interview": "入学决定前包含两轮 Zoom 技术面试，重点涉及数学、金融与 C++；仅获选申请人会收到邀请。",
+    "applicationRequirements": "在线申请、合并上传的全部院校成绩单扫描件、个人 Essay、3 封推荐信；提交后参加 QBA，获选者参加两轮技术面试。录取后再提交官方成绩单。",
+    "documents": ["全部院校成绩单扫描件（合并为一个文件）", "个人 Essay", "3 封推荐信", "QBA（提交申请后）", "官方成绩单（录取后）"],
     "sourcePayload": {
       "applicationStatus": "已开始申请",
-      "applicationStatusCheckedAt": "2026-09-07",
-      "applicationStatusNote": "项目官网确认 Fall 2027 网申现已开放；四轮截止日期依次为 2026-11-01、2026-12-01、2027-01-15 与 2027-03-15。",
+      "applicationStatusCheckedAt": "2026-09-23",
+      "applicationStatusNote": "项目官网确认 Fall 2027 网申现已开放；四轮截止日期依次为 2026-11-01、2026-12-01、2027-01-15 与 2027-03-15。GRE/GMAT 已取消，改为全员 QBA。",
       "applicationStatusSource": "https://mfe.baruch.cuny.edu/application-process/"
     }
   },
   {
     "id": "nus-mfe",
-    "updated": "2026-09-07",
+    "updated": "2026-09-23",
     "cycle": "2027 入学",
     "sourcePayload": {
       "applicationStatus": "已开始申请",
-      "applicationStatusCheckedAt": "2026-09-07",
+      "applicationStatusCheckedAt": "2026-09-23",
       "applicationStatusNote": "NUS RMI 官网确认 2027 年 8 月入学申请已开放，申请期为 2026-07-01 至 2027-02-15，并采用滚动审核。",
       "applicationStatusSource": "https://rmi.nus.edu.sg/mfe-program/admission/"
     }
   },
   {
     "id": "nus-phd-statistics-data-science",
-    "updated": "2026-09-07",
+    "updated": "2026-09-23",
     "sourcePayload": {
       "applicationStatus": "已开始申请",
-      "applicationStatusCheckedAt": "2026-09-07",
+      "applicationStatusCheckedAt": "2026-09-23",
       "applicationStatusNote": "项目官网确认 2027 年 8 月博士申请期为 2026-05-16 至 2026-11-15，当前仍在开放期。",
       "applicationStatusSource": "https://www.stat.nus.edu.sg/education/graduate/phd-in-statistics-and-data-science/prospective-students/"
     }
   },
   {
     "id": "hku-phd-statistics-actuarial-science",
-    "updated": "2026-09-07",
+    "updated": "2026-09-23",
     "deadline": "2027/28 申请系统已启用；HKU MPhil/PhD 全年接受申请，HKPFS 通常为 9 月至 12 月初",
     "deadlineNote": "项目官网已提供 2027/28 申请系统；HKPFS 2027/28 截止为 2026-12-01 12:00（香港时间）。",
     "sourcePayload": {
       "applicationStatus": "已开始申请",
-      "applicationStatusCheckedAt": "2026-09-07",
+      "applicationStatusCheckedAt": "2026-09-23",
       "applicationStatusNote": "项目官网说明 MPhil/PhD 全年接受申请，并已提供 2027/28 申请系统；申请 HKPFS 者另须在 2026-12-01 12:00 前完成 RGC 初步申请。",
       "applicationStatusSource": "https://www.saasweb.hku.hk/programme/rpg/mphil-phd"
     }
   },
   {
     "id": "hku-msai",
-    "updated": "2026-09-07",
+    "updated": "2026-09-23",
     "cycle": "2027 入学",
     "intake": "2027/28",
     "deadline": "2026-09-21 开放；主轮 2026-11-16 12:00；第二轮 2027-02-01 12:00（香港时间）",
-    "deadlineNote": "官网已公布 2027/28 时间表；截至 2026-09-07 尚未开放。",
+    "deadlineNote": "官网确认 2027/28 申请已于 2026-09-21 开放；主轮申请人优先审理。",
     "academic": "学士学位或同等资格；应具备线性代数、微积分、概率论、初步统计与计算机编程知识。",
     "sourcePayload": {
-      "applicationStatus": "往期要求",
-      "applicationStatusCheckedAt": "2026-09-07",
-      "applicationStatusNote": "官网确认 2027/28 申请将于 2026-09-21 开放；截至本次核验尚未到开放日期。",
+      "applicationStatus": "已开始申请",
+      "applicationStatusCheckedAt": "2026-09-23",
+      "applicationStatusNote": "项目官网确认 2027/28 申请已于 2026-09-21 开放；主轮截止为 2026-11-16 12:00，清算轮截止为 2027-02-01 12:00（香港时间）。",
       "applicationStatusSource": "https://www.mscai.hku.hk/admissions/"
     }
   },
   {
     "id": "qs2027-hku-28404345a3",
-    "updated": "2026-09-07",
+    "updated": "2026-09-23",
     "cycle": "2027 入学",
     "intake": "2027/28",
     "deadline": "2026-09-21 开放；主轮 2026-11-16 12:00；第二轮 2027-02-01 12:00（香港时间）",
-    "deadlineNote": "官网已公布 2027/28 时间表；截至 2026-09-07 尚未开放。",
+    "deadlineNote": "官网确认 2027/28 申请已于 2026-09-21 开放；主轮申请人优先审理。",
     "academic": "学士学位或同等资格；应具备线性代数、微积分、概率论、初步统计与计算机编程知识。",
     "sourcePayload": {
-      "applicationStatus": "往期要求",
-      "applicationStatusCheckedAt": "2026-09-07",
-      "applicationStatusNote": "官网确认 2027/28 申请将于 2026-09-21 开放；截至本次核验尚未到开放日期。",
+      "applicationStatus": "已开始申请",
+      "applicationStatusCheckedAt": "2026-09-23",
+      "applicationStatusNote": "项目官网确认 2027/28 申请已于 2026-09-21 开放；主轮截止为 2026-11-16 12:00，清算轮截止为 2027-02-01 12:00（香港时间）。",
       "applicationStatusSource": "https://www.mscai.hku.hk/admissions/"
     }
   },
   {
     "id": "qs2027-nus-5a4a93623d",
-    "updated": "2026-09-07",
+    "updated": "2026-09-23",
     "cycle": "2027 入学",
     "intake": "2027 年 8 月",
     "deadline": "2026-10-01 开放；2027-01-31 截止",
-    "deadlineNote": "NUS Computing 已公布当前周期时间表；截至 2026-09-07 尚未开放。",
+    "deadlineNote": "NUS Computing 已公布当前周期时间表；截至 2026-09-23 尚未开放。",
     "applicationRequirements": "在线申请、个人陈述、CV、护照/身份证明、学位证与完整成绩单、英语成绩（如适用）及项目要求的其他支持材料；非英文材料须附认证英文译本。",
     "documents": ["个人陈述", "CV", "护照 / 身份证明", "学位证与完整成绩单", "英语成绩（如适用）", "推荐人信息及其他支持材料"],
     "sourcePayload": {
       "applicationStatus": "往期要求",
-      "applicationStatusCheckedAt": "2026-09-07",
-      "applicationStatusNote": "官网确认 2027 年 8 月入学申请期为 2026-10-01 至 2027-01-31；截至本次核验尚未到开放日期。",
+      "applicationStatusCheckedAt": "2026-09-23",
+      "applicationStatusNote": "官网确认 2027 年 8 月入学申请期为 2026-10-01 至 2027-01-31；截至 2026-09-23 尚未到开放日期。至少需要 1 份推荐人报告。",
       "applicationStatusSource": "https://www.comp.nus.edu.sg/programmes/pg/mcomp-ai/application/"
     }
   },
   {
     "id": "ntu-msai",
-    "updated": "2026-09-07",
+    "updated": "2026-09-23",
     "cycle": "2027 入学",
     "intake": "AY2027/28",
     "duration": "全日制 1 年；非全日制 2 年",
@@ -100,47 +104,47 @@
     "documents": ["护照 / 身份证明", "CV", "学位证", "成绩单", "英语成绩或授课语言证明", "申请原因", "GRE / 推荐信（可选）"],
     "sourcePayload": {
       "applicationStatus": "往期要求",
-      "applicationStatusCheckedAt": "2026-09-07",
+      "applicationStatusCheckedAt": "2026-09-23",
       "applicationStatusNote": "官网已发布 AY2027/28 学费与申请材料，并提供申请入口，但页面未明确列出本轮开放起止日期；暂不改绿。",
       "applicationStatusSource": "https://www.ntu.edu.sg/education/graduate-programme/master-of-science-in-artificial-intelligence"
     }
   },
   {
     "id": "qs2027-ntu-0554941b1b",
-    "updated": "2026-09-07",
+    "updated": "2026-09-23",
     "cycle": "2027 入学",
     "intake": "AY2027",
     "duration": "全日制 1 年 / 3 学期；非全日制约 1.5 年 / 5 学期",
     "deadline": "2026-09-01 至 2027-03-31",
-    "deadlineNote": "项目官网当前申请周期 · 核验于 2026-09-07",
+    "deadlineNote": "项目官网当前申请周期 · 核验于 2026-09-23",
     "academic": "认可院校任何学科的荣誉学士学位或同等资格；非全日制申请者宜具有至少 1 年相关工作经验。",
     "language": "非英语母语申请者须提交 TOEFL iBT 90 或新制 4.5 / IELTS 6.0；满足官网列明的全英语授课条件时可申请豁免。",
     "tuition": "AY2027 项目费 S$60,085（含 GST）；申请费 S$50；录取后缴 S$5,000 接受费并抵扣后续学费",
     "applicationRequirements": "学位与成绩材料、英语证明（如适用）、工作经历信息（非全日制申请者）及项目申请系统要求的材料。",
     "sourcePayload": {
       "applicationStatus": "已开始申请",
-      "applicationStatusCheckedAt": "2026-09-07",
+      "applicationStatusCheckedAt": "2026-09-23",
       "applicationStatusNote": "项目官网明确写明 AY2027 申请期为 2026-09-01 至 2027-03-31，当前已开放。",
       "applicationStatusSource": "https://www.ntu.edu.sg/pace/for-individuals/ntu-interdisciplinary-graduate-programme/Master-of-Science-In-Enterprise-Artificial-Intelligence-Programme"
     }
   },
   {
     "id": "cmu-msaii",
-    "updated": "2026-09-07",
+    "updated": "2026-09-23",
     "sourcePayload": {
-      "applicationStatus": "往期要求",
-      "applicationStatusCheckedAt": "2026-09-07",
-      "applicationStatusNote": "CMU SCS 已确认 Fall 2027 申请将于 2026-09-09 开放；截至本次核验尚未到开放日期。",
+      "applicationStatus": "已开始申请",
+      "applicationStatusCheckedAt": "2026-09-23",
+      "applicationStatusNote": "CMU MSAII 官网确认 Fall 2027 申请现已开放；最终截止为 2026-12-09 15:00（美东时间）。项目要求 GRE、3 封推荐信及 2–3 分钟申请视频。",
       "applicationStatusSource": "https://www.cs.cmu.edu/education/graduate-admissions"
     }
   },
   {
     "id": "cmu-msml",
-    "updated": "2026-09-07",
+    "updated": "2026-09-23",
     "sourcePayload": {
-      "applicationStatus": "往期要求",
-      "applicationStatusCheckedAt": "2026-09-07",
-      "applicationStatusNote": "CMU SCS 已确认 Fall 2027 申请将于 2026-09-09 开放；截至本次核验尚未到开放日期。",
+      "applicationStatus": "已开始申请",
+      "applicationStatusCheckedAt": "2026-09-23",
+      "applicationStatusNote": "CMU SCS Fall 2027 申请门户现已开放；早申截止为 2026-11-18 15:00，最终截止为 2026-12-09 15:00（美东时间）。项目公开页尚未更新 2027 GRE 口径，须以申请系统为准。",
       "applicationStatusSource": "https://www.cs.cmu.edu/education/graduate-admissions"
     }
   }
